@@ -4,7 +4,7 @@
     "code" : 1,
     "event_info_data" :
       {
-        "userHashkey": "a364bc2184b2bb9c53d46d3227e3e3c58d2468adf448223567357629",
+        "user_hashkey": "a364bc2184b2bb9c53d46d3227e3e3c58d2468adf448223567357629",
         "event_hashkey":"0061ddc107e3d586e01de76ad3ab619d667a4b604636cd5b3454cde4",
         "locations" :  [
             {
@@ -39,7 +39,7 @@
   "noLocationHasEventTypeExpected" : {    
       "code" : 3,
       "event_info_data":{
-        "userHashkey": "a364bc2184b2bb9c53d46d3227e3e3c58d2468adf448223567357629",
+        "user_hashkey": "a364bc2184b2bb9c53d46d3227e3e3c58d2468adf448223567357629",
         "event_hashkey":"0061ddc107e3d586e01de76ad3ab619d667a4b604636cd5b3454cde4",
         "locations" : [
             {

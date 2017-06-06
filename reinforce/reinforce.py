@@ -201,7 +201,7 @@ class Reinforce:
 			)
 		)	
 		user_hashkey = rows[0]["user_hashkey"]	
-		self.event_info_data["userHashkey"]= user_hashkey
+		self.event_info_data["user_hashkey"]= user_hashkey
 
 
 

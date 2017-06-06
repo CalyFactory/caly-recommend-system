@@ -1,6 +1,13 @@
+
+
+import os
+import sys
+sys.path.append(os.path.dirname(os.path.abspath(os.path.dirname(__file__))))
+
+
 from common import db_manager
 from common.util import utils
-
+from reco.reco import Reco
 from reinforce import Reinforce
 import unittest
 import pprint
@@ -25,6 +32,9 @@ class TestReinForce(unittest.TestCase):
 		reinforce = Reinforce(has_all)
 		pprint.pprint("1.hasAll result => "+str(reinforce.event_reco_result))		
 		self.assertEqual(reinforce.event_reco_result, has_all_expected)	
+
+		reco_module = Reco(reinforce.event_reco_result["event_info_data"])
+		print(reco_module.get_reco_list())
 
 	def test_noLocation_no_event_type(self):	 		
 		print("==================02================")

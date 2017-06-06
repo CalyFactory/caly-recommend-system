@@ -1,6 +1,6 @@
-from reco.common import db_manager
-from reco.common.util import utils
-from reco.common import mongo_manager
+from common import db_manager
+from common.util import utils
+from common import mongo_manager
 import json
 import re
 import random
@@ -341,7 +341,7 @@ class Reco:
 
         #region 
         if origin_data['region'] in self.location_priority_list:
-            score += (10 - self.location_priority_list[origin_data['region']]) * 100000
+            score += (9 - self.location_priority_list[origin_data['region']]) * 100000
 
         #목적
 
@@ -370,7 +370,7 @@ class Reco:
             'property_food_italian',
         ]
         for property_row in property_list:
-            if property_row not in origin_data:
+            if origin_data[property_row] == None:
                 origin_data[property_row] = 0
             if property_row == 'property_romantic':
                 if self.user_property_score['romanticPriority'] > 0.5:
