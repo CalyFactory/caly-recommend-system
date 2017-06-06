@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
 #from extractor.common import db_manager
 import unittest
-from extractor import event_extractor
+import event_extractor
 import json
 
 # python3 -m unittest -v testRecommendLocation.py
 
-with open('./extractor/common//key/testcase.json') as tcJson:
+with open('./common//key/testcase.json') as tcJson:
 	testcaseJs = json.load(tcJson)
 
 class TestExtract(unittest.TestCase):

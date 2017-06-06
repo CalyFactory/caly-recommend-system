@@ -2,7 +2,7 @@ import sys
 import json
 import string
 
-from extractor.common import db_manager
+from common import db_manager
 
 import MeCab
 
@@ -28,7 +28,7 @@ def load_subway_dict():
 			else:
 				region_dict[splited_address[2]]=[row.station_name+'역']
 	extract_conf_dict={}
-	with open('./extractor/common/key/extract_conf.json') as extract_conf_json:
+	with open('./common/key/extract_conf.json') as extract_conf_json:
 		extract_conf_dict = json.load(extract_conf_json)
 
 
@@ -72,7 +72,7 @@ def extract_info_from_event(sentence,start_dt, end_dt, location):
 	event_type_dict={}
 	standard_time_scope={}
 	extract_conf_dict={}
-	with open('./extractor/common/key/extract_conf.json') as extract_conf_json:
+	with open('./common/key/extract_conf.json') as extract_conf_json:
 		extract_conf_dict = json.load(extract_conf_json)
 	standard_time_scope=extract_conf_dict["time-set"]
 	
@@ -142,7 +142,7 @@ def extract_info_from_event(sentence,start_dt, end_dt, location):
 							else:
 								#print("Can't supported university.")
 								cannot_recommend=True
-							break	
+							continue	
 			elif (m.feature.find("지하철") > -1) and (m.surface.find("역") < 0 or m.surface == '동역사'):
 				parts_of_feature = m.feature.split(',')
 				for part in parts_of_feature:
@@ -150,7 +150,7 @@ def extract_info_from_event(sentence,start_dt, end_dt, location):
 						locations_dict[location_count]={'no':location_count,'region':part}
 						location_count = location_count + 1
 						#result=result+part
-						break
+						continue
 			elif m.feature.find("지하철") > -1:
 				locations_dict[location_count]={'no':location_count,'region':m.surface}
 				location_count = location_count + 1

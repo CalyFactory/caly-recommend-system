@@ -1,5 +1,3 @@
-# #-*- coding: utf-8 -*-
-
 from sqlalchemy import create_engine
 from sqlalchemy.pool import QueuePool
 from sqlalchemy.orm import scoped_session
@@ -7,9 +5,9 @@ from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
 
 import json 
-with open('./common/key/conf.json') as conf_json:
-    conf = json.load(conf_json)
 
+with open('../key/conf.json') as conf_json:
+    conf = json.load(conf_json)
 
 # pool로 커낵션을 잡는다. 오토커밋 옵션을 false로해줘야한다.
 engine = create_engine(
@@ -17,7 +15,7 @@ engine = create_engine(
     pool_size = 20, 
     pool_recycle = 500, 
     max_overflow = 10,
-    echo = True,
+    echo = False,
     echo_pool = True,
     execution_options = {"autocommit": True}
 )
@@ -43,4 +41,8 @@ def query(queryString, params = None):
     else:
         result = session.execute(queryString)
 
+    return result
+
+def queryRawData(queryString):
+    result = session.execute(queryString)
     return result
