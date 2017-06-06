@@ -1,4 +1,7 @@
+import os
 import sys
+sys.path.append(os.path.dirname(os.path.abspath(os.path.dirname(__file__))))
+
 import json
 import string
 
@@ -28,7 +31,7 @@ def load_subway_dict():
 			else:
 				region_dict[splited_address[2]]=[row.station_name+'역']
 	extract_conf_dict={}
-	with open('./common/key/extract_conf.json') as extract_conf_json:
+	with open('../key/extract_conf.json') as extract_conf_json:
 		extract_conf_dict = json.load(extract_conf_json)
 
 
@@ -72,7 +75,7 @@ def extract_info_from_event(sentence,start_dt, end_dt, location):
 	event_type_dict={}
 	standard_time_scope={}
 	extract_conf_dict={}
-	with open('./common/key/extract_conf.json') as extract_conf_json:
+	with open('../key/extract_conf.json') as extract_conf_json:
 		extract_conf_dict = json.load(extract_conf_json)
 	standard_time_scope=extract_conf_dict["time-set"]
 	
