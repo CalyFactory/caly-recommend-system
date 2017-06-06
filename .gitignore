@@ -1,0 +1,12 @@
+*.csv
+*.log
+conf.json
+testcase.json
+
+calyenv/
+mecab_files/
+lib/
+__pycache__
+
+
+

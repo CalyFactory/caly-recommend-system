@@ -1,6 +1,11 @@
 Caly Recommend Engine 
 =========
 
+Naming
+* camel : only class
+* snake : another all
+
+
 ***Analysis Event Module (NLP)***
 ---
 
@@ -11,8 +16,8 @@ Need to next progress
 Install flow
 
 ```
-virtualenv anaenv
-source anaenv/bin/activate
+virtualenv calyenv
+source calyenv/bin/activate
 pip3 install -r requirements.txt
 npm install
 ```
