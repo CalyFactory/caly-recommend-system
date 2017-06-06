@@ -2,7 +2,7 @@ import sys
 import json
 import string
 
-from common import db_manager
+from extractor.common import db_manager
 
 import MeCab
 
@@ -27,11 +27,12 @@ def load_subway_dict():
 			# 해당 키의 항목이 없으면, 새로운 리스트 형태로 추가
 			else:
 				region_dict[splited_address[2]]=[row.station_name+'역']
+	extract_conf_dict={}
+	with open('./extractor/common/key/extract_conf.json') as extract_conf_json:
+		extract_conf_dict = json.load(extract_conf_json)
 
-	with open('./common/key/extract_conf.json') as extract_conf_json:
-	    extract_conf_dict = json.load(extract_conf_json)
 
-	for extra_region in extra_region_dict.keys():
+	for extra_region in extract_conf_dict["extra-region"].keys():
 		region_dict[extra_region]=extract_conf_dict["extra-region"][extra_region]
 
 	univ_dict={}
@@ -70,10 +71,10 @@ def extract_info_from_event(sentence,start_dt, end_dt, location):
 	}
 	event_type_dict={}
 	standard_time_scope={}
-	with open('./common/key/extract_conf.json') as extract_conf_json:
+	extract_conf_dict={}
+	with open('./extractor/common/key/extract_conf.json') as extract_conf_json:
 		extract_conf_dict = json.load(extract_conf_json)
-	standard_time_scope=extract_conf_dict["time-zone"]
-	#print_purpose = extract_conf_dict["print-purpose"]
+	standard_time_scope=extract_conf_dict["time-set"]
 	
 	cannot_recommend=False
 
@@ -113,18 +114,18 @@ def extract_info_from_event(sentence,start_dt, end_dt, location):
 						purpose_count[part]=purpose_count[part]+1
 						event_type_dict[total_purpose_count]={"id":part}
 						total_purpose_count=total_purpose_count+1
-						purposeResult=purposeResult+' '+print_purpose[part]
+						#purposeResult=purposeResult+' '+print_purpose[part]
 
 			### Grep location : google / calyfactorytester3@gmail.com
 			elif (m.feature.find("대학교") > -1):
 				if m.surface.find("대학교") > -1:
-					result=result+m.surface
+					#result=result+m.surface
 					if m.surface in univ_collect_dict:
 						# 첫번째 역으로 가정
 						locations_dict[location_count]={'no':location_count,'region':region_collect_dict[univ_collect_dict[m.surface]][0]}
 						location_count = location_count + 1
 					else:
-						print("Can't supported university.")
+						#print("Can't supported university.")
 						cannot_recommend=True
 
 						
@@ -133,13 +134,13 @@ def extract_info_from_event(sentence,start_dt, end_dt, location):
 					#print(parts_of_feature)
 					for part in parts_of_feature:
 						if part.find('대학교') > 0:
-							result=result+part
+							#result=result+part
 							
 							if part in univ_collect_dict:
 								locations_dict[location_count]={'no':location_count,'region':region_collect_dict[univ_collect_dict[part]][0]}
 								location_count = location_count + 1
 							else:
-								print("Can't supported university.")
+								#print("Can't supported university.")
 								cannot_recommend=True
 							break	
 			elif (m.feature.find("지하철") > -1) and (m.surface.find("역") < 0 or m.surface == '동역사'):
@@ -148,14 +149,14 @@ def extract_info_from_event(sentence,start_dt, end_dt, location):
 					if part.find('역') > -1:
 						locations_dict[location_count]={'no':location_count,'region':part}
 						location_count = location_count + 1
-						result=result+part
+						#result=result+part
 						break
 			elif m.feature.find("지하철") > -1:
 				locations_dict[location_count]={'no':location_count,'region':m.surface}
 				location_count = location_count + 1
 
 			elif m.feature.find("동이름") > 0:
-				result=result+m.surface
+				#result=result+m.surface
 				if m.surface in region_collect_dict:
 					locations_dict[location_count]={'no':location_count,'region':region_collect_dict[m.surface][0]}
 					location_count = location_count + 1
@@ -188,4 +189,4 @@ def extract_info_from_event(sentence,start_dt, end_dt, location):
 		'event_types':event_type_dict
 	}
 
-extract_info_from_event('성신여대 미팅','2017-07-04 12:00:00','2017-07-04 13:00:00','')
+print(extract_info_from_event('성신여대 미팅','2017-07-04 12:00:00','2017-07-04 13:00:00',''))
