@@ -71,10 +71,11 @@ class Reinforce:
 			if len(locations) == 1:
 				region = locations[0]["region"]
 				surrounding_station =  self.__set_surrounding_station(region)				
-				locations.append({
-						"no" : 1,
-						"region" : surrounding_station
-					})
+				if surrounding_station != None:
+					locations.append({
+							"no" : 1,
+							"region" : surrounding_station
+						})
 			#db에 최종본 저장
 			
 			self.__set_event_analaysisDB()
@@ -140,10 +141,11 @@ class Reinforce:
 						"region" : rows[0]["region"]
 					})				
 				surrounding_station =  self.__set_surrounding_station(region)				
-				new_locations.append({
-						"no" : 1,
-						"region" : surrounding_station
-					})
+				if surrounding_station != None:				
+					new_locations.append({
+							"no" : 1,
+							"region" : surrounding_station
+						})
 				
 
 
@@ -172,17 +174,21 @@ class Reinforce:
 			self.event_reco_result = reinforce_result(EventRecoStatusCode.RECO_NO_LOCA_HAS_EVENTTYPE.value,self.event_info_data)
 
 	def __set_surrounding_station(self,station_name):	
+		print(station_name)
 		rows = utils.fetch_all_json(
 				db_manager.query(
 						"""
 					SELECT surrounding_station FROM SUBWAY_INFO
-					WHERE station_name = %s
+					WHERE station_name = %s and address LIKE '서울특별%'
 					limit 1
 						""",
 						(station_name[:len(station_name)-1],)
 				)
-		)					
-		return rows[0]["surrounding_station"] + "역"	
+		)		
+		if len(rows) == 0:
+			return None
+		else:
+			return rows[0]["surrounding_station"] + "역"	
 
 	def __set_user_hashkey_in_result(self):
 		rows = utils.fetch_all_json(
@@ -209,9 +215,14 @@ class Reinforce:
 		locations = self.event_info_data["locations"]
 		#locations db에 다 넣어줌.
 		event_hashkey = self.event_info_data["event_hashkey"]
-
+		# print('locations =>'+locations)
 		#로케이션이 None이아니면
-		if locations != "None":
+		if locations == "None" or locations == "Cannot":
+			location_hashkey = None
+		#로케이션이 None이면
+		#로케이션 해시키가 Null이다.
+		else:
+
 			location_hashkey = utils.make_hashkey(event_hashkey)
 			for location in locations:
 				db_manager.query(
@@ -222,10 +233,6 @@ class Reinforce:
 						""",		
 						(location_hashkey,location["no"],location["region"])					
 				)
-		#로케이션이 None이면
-		#로케이션 해시키가 Null이다.
-		else:
-			location_hashkey = None
 
 
 
@@ -233,7 +240,12 @@ class Reinforce:
 		
 		event_types = self.event_info_data["event_types"]
 		#이벤트 타입이 존재하면
-		if event_types != "None":
+		if event_types == "None":
+			type_hashkey = None
+			
+		#event Type이 None이면
+		#type hashkey가 null이다.
+		else :
 			type_hashkey = utils.make_hashkey(event_hashkey)
 			for event_type in event_types:
 				db_manager.query(
@@ -243,11 +255,7 @@ class Reinforce:
 						VALUES (%s,%s)
 						""",		
 						(type_hashkey,event_type["id"])					
-				)
-		#event Type이 None이면
-		#type hashkey가 null이다.
-		else :
-			type_hashkey = None
+				)			
 
 		#유저시간에맞도록 디비에 넣어준
 		rows = utils.fetch_all_json(

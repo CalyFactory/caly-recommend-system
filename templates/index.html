@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+
+<head>	
+</head>
+
+
+
+<style>
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width:300px;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 5px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+</style>
+
+
+
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+
+<script >
+var reinforceEventsReco = ''
+
+function onClickUser(obj){
+	console.log(obj.value)
+	reqEvents(obj.value)
+}
+function onbuttonclick(id) {
+    // console.log(reinforceEventsReco[id])
+    window.location.href = "http://devapi.caly.io:9254/eventsDetail?eventDetail="+JSON.stringify(reinforceEventsReco[id]);        
+}
+
+function reqEvents(accountHashkey){
+$.get( "http://dev.caly.io:9254/events?accountHashkey="+accountHashkey, function( data ) {
+            // $('#tbOriginEvents').empty() ;
+    $('#tbOriginEvents > tbody > tr > td').parent('tr').empty();
+
+            obj = JSON.parse(data);   
+            originEvents = obj.originEvents                     
+            analysisEvents = obj.analysisEvents  
+            reinforceEvents = obj.reinforceEvents
+
+            reinforceEventsReco  = obj.reinforceEventsReco
+            console.log(obj.reinforceEventsReco)
+
+            var events = ''            
+            
+            $.each(originEvents, function (i, item) {
+            
+            
+                events += '<tr > ' +
+                			'<td height="6px">' +
+                            	originEvents[i].eventSummary +
+                            '</td>' +
+                
+                			'<td height="6px">' +
+                                originEvents[i].eventLocation +
+                            '</td>' +
+
+                			'<td height="6px">' +
+                                originEvents[i].eventStartDt +
+                            '</td>' +
+
+                			'<td height="8px">' +
+                                originEvents[i].eventEndDt + 
+                            '</td>'  +
+                            
+                            '<td height="8px">' +
+								'  '+ 
+                            '</td>'  +
+
+                			'<td height="6px">' +
+                            	analysisEvents[i].event_types +
+                            '</td>' +
+                
+                			'<td height="6px">' +
+                                analysisEvents[i].locations +
+                            '</td>' +
+
+                			'<td height="6px">' +
+                                JSON.stringify(analysisEvents[i].time_set) +
+                            '</td>' +
+
+                            '<td height="8px">' +
+                                '  '+ 
+                            '</td>'  +
+
+                            '<td height="6px">' +
+                                reinforceEvents[i].event_types +
+                            '</td>' +
+                
+                            '<td height="6px">' +
+                                reinforceEvents[i].locations +
+                            '</td>' +
+                            '<td height="6px">' +
+                            '<button id='+i+' onClick="onbuttonclick(this.id)">RanK</button>' +
+                            '</td>' +
+
+
+                           '</tr>'
+
+            });
+
+            // header ="<tr>" +
+            //     "<th>제목</th>"+
+            //     "<th>장소</th>"+
+            //     "<th>시작시간</th>"+
+            //     "<th>종료시간</th>"+
+            //     "<th>    </th>"+
+            //     "<th>목적</th>"+
+            //     "<th>장소</th>"+
+            //     "<th>시간정보</th>"+
+            //     "<th>    </th>"+
+            //     "<th>*보강된*목적</th>"+
+            //     "<th>*보강된*장소</th>"+
+            // "</tr>  " +            
+            // $('#tbOriginEvents').append(header);
+            $('#tbOriginEvents').append(events);
+
+            // var events = ''            
+            // $.each(analysisEvents, function (i, item) {
+            
+            
+            //     events += '<tr>' +
+            //     			'<td height="6px">' +
+            //                 	analysisEvents[i].event_types +
+            //                 '</td>' +
+                
+            //     			'<td height="6px">' +
+            //                     analysisEvents[i].locations +
+            //                 '</td>' +
+
+            //     			'<td height="6px">' +
+            //                     JSON.stringify(analysisEvents[i].time_set) +
+            //                 '</td>' +                			
+            //                '</tr>'
+
+            // });            
+                
+
+            // $('#tbAanalysisEvents').append(events);
+           
+    });    
+
+}
+
+</script>
+
+<body>
+
+<select id="userId" onchange="onClickUser(this)" style="float:left" >
+	<option value="">유저를 선택하세요</option>		
+	{% for user in users %}
+		<option value={{user.accountHashkey}}>{{user.email}}/{{user.loginPlatform}}</option>		
+	{% endfor %}
+</select>
+<br>
+<br>
+<br>
+<!-- <table id = tbOriginEventds style="float:left" >
+            <tr>
+                <th>제목</th>
+                <th>장소</th>
+                <th>시작시간</th>
+                <th>종료시간</th>
+                <th>    </th>
+                <th>목적</th>
+                <th>장소</th>
+                <th>시간정보</th>
+                <th>    </th>
+                <th>*보강된*목적</th>
+                <th>*보강된*장소</th>
+            </tr>  
+</table>  
+ -->
+<table id = tbOriginEvents style="float:left" >
+            <tr>
+                <th>제목</th>
+                <th>장소</th>
+                <th>시작시간</th>
+                <th>종료시간</th>
+                <th>    </th>
+                <th>목적</th>
+                <th>장소</th>
+                <th>시간정보</th>
+                <th>    </th>
+                <th>*보강된*목적</th>
+                <th>*보강된*장소</th>
+                <th>랭크보기</th>
+            </tr>  
+</table>  
+
+<!-- <table id = tbAanalysisEvents style="float:left">
+	<tr>
+		<th>목적</th>
+		<th>장소</th>
+		<th>시작시간</th>
+	</tr>	
+</table>  
+ -->
+
+</body>
+</html>
+

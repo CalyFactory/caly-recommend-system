@@ -31,7 +31,7 @@ def load_subway_dict():
 			else:
 				region_dict[splited_address[2]]=[row.station_name+'역']
 	extract_conf_dict={}
-	with open('../key/extract_conf.json') as extract_conf_json:
+	with open('/home/yenos/caly-recommend-system/extractor/key/extract_conf.json') as extract_conf_json:
 		extract_conf_dict = json.load(extract_conf_json)
 
 
@@ -49,12 +49,12 @@ def load_subway_dict():
 
 	return [region_dict, univ_dict]
 
-def extract_info_from_event(sentence,start_dt, end_dt, location):
+def extract_info_from_event(event_hashkey, sentence,start_dt, end_dt, location):
 	full_sentence=location+' '+sentence
 	region_collect_dict, univ_collect_dict = load_subway_dict()
 	
 	location_count=0
-	locations_dict={}
+	location_list=[]
 	splited_start_dt=str(start_dt).split(' ')
 	splited_end_dt=str(end_dt).split(' ')
 
@@ -72,14 +72,15 @@ def extract_info_from_event(sentence,start_dt, end_dt, location):
 		'CPI05':0,
 		'CPI06':0
 	}
-	event_type_dict={}
+	event_type_list=[]
 	standard_time_scope={}
 	extract_conf_dict={}
-	with open('../key/extract_conf.json') as extract_conf_json:
+	with open('/home/yenos/caly-recommend-system/extractor/key/extract_conf.json') as extract_conf_json:
 		extract_conf_dict = json.load(extract_conf_json)
 	standard_time_scope=extract_conf_dict["time-set"]
 	
 	cannot_recommend=False
+	exist_time=False
 
 	try:
 	
@@ -94,6 +95,7 @@ def extract_info_from_event(sentence,start_dt, end_dt, location):
 			if m.feature.find('SN') > -1 and m.surface.isdigit():
 				time=m.surface
 			elif m.feature.find('NNBC') > -1 and m.feature.find('시') > -1 and time is not -1:
+				exist_time=True
 				end_time = int(time)+1
 				if int(time) < 10:
 					time = '0'+str(time)
@@ -115,7 +117,7 @@ def extract_info_from_event(sentence,start_dt, end_dt, location):
 						if purpose_count[part] > 0:
 							continue
 						purpose_count[part]=purpose_count[part]+1
-						event_type_dict[total_purpose_count]={"id":part}
+						event_type_list.append({"id":part})
 						total_purpose_count=total_purpose_count+1
 						#purposeResult=purposeResult+' '+print_purpose[part]
 
@@ -125,7 +127,7 @@ def extract_info_from_event(sentence,start_dt, end_dt, location):
 					#result=result+m.surface
 					if m.surface in univ_collect_dict:
 						# 첫번째 역으로 가정
-						locations_dict[location_count]={'no':location_count,'region':region_collect_dict[univ_collect_dict[m.surface]][0]}
+						location_list.append({'no':location_count,'region':region_collect_dict[univ_collect_dict[m.surface]][0]})
 						location_count = location_count + 1
 					else:
 						#print("Can't supported university.")
@@ -140,7 +142,7 @@ def extract_info_from_event(sentence,start_dt, end_dt, location):
 							#result=result+part
 							
 							if part in univ_collect_dict:
-								locations_dict[location_count]={'no':location_count,'region':region_collect_dict[univ_collect_dict[part]][0]}
+								location_list.append({'no':location_count,'region':region_collect_dict[univ_collect_dict[part]][0]})
 								location_count = location_count + 1
 							else:
 								#print("Can't supported university.")
@@ -150,18 +152,18 @@ def extract_info_from_event(sentence,start_dt, end_dt, location):
 				parts_of_feature = m.feature.split(',')
 				for part in parts_of_feature:
 					if part.find('역') > -1:
-						locations_dict[location_count]={'no':location_count,'region':part}
+						location_list.append({'no':location_count,'region':part})
 						location_count = location_count + 1
 						#result=result+part
 						continue
 			elif m.feature.find("지하철") > -1:
-				locations_dict[location_count]={'no':location_count,'region':m.surface}
+				location_list.append({'no':location_count,'region':m.surface})
 				location_count = location_count + 1
 
 			elif m.feature.find("동이름") > 0:
 				#result=result+m.surface
 				if m.surface in region_collect_dict:
-					locations_dict[location_count]={'no':location_count,'region':region_collect_dict[m.surface][0]}
+					location_list.append({'no':location_count,'region':region_collect_dict[m.surface][0]})
 					location_count = location_count + 1
 				else:
 					print("Can't supported sub-region.")
@@ -176,20 +178,21 @@ def extract_info_from_event(sentence,start_dt, end_dt, location):
 		print("RuntimeError:", e)
 
 
-	if time is -1:
+	if exist_time is False:
 		time_zone_dict['extract_start']='None'
 		time_zone_dict['extract_end']='None'
 	if total_purpose_count is 0:
-		event_type_dict="None"
+		event_type_list="None"
 	if location_count is 0:
-		locations_dict="None"
+		location_list="None"
 	if cannot_recommend is True:
-		location_dict="Cannot"
+		location_list="Cannot"
 
 	return {
-		'locations': locations_dict,
+		'event_hashkey':event_hashkey,
+		'locations': location_list,
 		'time_set': time_zone_dict, 
-		'event_types':event_type_dict
+		'event_types':event_type_list
 	}
 
-print(extract_info_from_event('성신여대 미팅','2017-07-04 12:00:00','2017-07-04 13:00:00',''))
+# print(extract_info_from_event('성신여대 미팅','2017-07-04 12:00:00','2017-07-04 13:00:00',''))
