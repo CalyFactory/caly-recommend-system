@@ -21,10 +21,14 @@ class Reco:
         'place':40.7
     }
 
-    def __init__(self, json_data, show_external_data = True):
+    def __init__(self, json_data, show_external_data = True, item_data = None):
         self.json_data = json_data
-        self.user_hashkey = json_data['user_hashkey']
+        if 'user_hashkey' not in json_data:
+            self.user_hashkey = ''
+        else:
+            self.user_hashkey = json_data['user_hashkey']
         self.show_external_data = show_external_data
+        self.item_data = item_data
 
         self.init_data()
 
@@ -436,6 +440,15 @@ class Reco:
         return score
 
     def __get_all_list(self):
+        if self.item_data != None:
+            recoList = {}
+
+            for row in self.item_data:
+                recoList[row] = []
+                for item in self.item_data[row]:
+                    recoList[row].append(item)
+
+            return recoList
         data_list = utils.fetch_all_json(    
             db_manager.query(
                 """
@@ -497,8 +510,17 @@ class Reco:
         
     def __get_location_filtered_list(self):
         location_list = self.json_data['locations']
+        if self.item_data != None:
+            recoList = {}
+            location_data = [row['region'] for row in location_list]
+            for row in self.item_data:
+                recoList[row] = []
+                for item in self.item_data[row]:
+                    if item['region'] in location_data:
+                        recoList[row].append(item)
+
+            return recoList
         
-        # TODO : region에 입력된 값이 db에 존재하는지 체크해야하지 않을까?
         query_option_param = ", ".join("'%s'" % location_data['region'] for location_data in location_list)
 
         data_list = utils.fetch_all_json(
