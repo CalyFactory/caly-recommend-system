@@ -21,9 +21,10 @@ class Reco:
         'place':40.7
     }
 
-    def __init__(self, json_data):
+    def __init__(self, json_data, show_external_data = True):
         self.json_data = json_data
         self.user_hashkey = json_data['user_hashkey']
+        self.show_external_data = show_external_data
 
         self.init_data()
 
@@ -78,9 +79,9 @@ class Reco:
 
             position = int(self.get_snd_percent(n, i) * len(distance_list)) - 1
             self.distance_grade_list.append(distance_list[position])
-            print(self.get_snd_percent(n, i))
-        print(self.price_grade_list)
-        print(self.distance_grade_list)
+            #print(self.get_snd_percent(n, i))
+        #print(self.price_grade_list)
+        #print(self.distance_grade_list)
 
         result = utils.fetch_all_json(
             db_manager.query(
@@ -109,8 +110,8 @@ class Reco:
                 )
             )
         )
-        print(account_hash_key_list)
-        print(reco_log_list)
+        #print(account_hash_key_list)
+        #print(reco_log_list)
 
         
         log_leco_hashkey_list = []
@@ -166,7 +167,7 @@ class Reco:
                 if key == 'reco_hashkey':
                     continue
                 self.user_type_click_count[key] += row[key] * hashkey_num
-        print(self.user_type_click_count)
+        #print(self.user_type_click_count)
         self.user_property_score = {}
         if self.user_type_click_count['all'] == 0:
             self.user_property_score['romanticPriority'] = 0.5
@@ -202,7 +203,7 @@ class Reco:
         for food_row in food_list:
             self.user_property_score[food_row] = 4.5 - i
             i+=1
-        print(self.user_property_score)
+        #print(self.user_property_score)
 
     def get_snd_percent(self, n, index):
         if n == index:
@@ -327,7 +328,19 @@ class Reco:
                 if origin_data['score'] < 10000:
                     origin_list[row].remove(origin_data)
         """
+        if self.show_external_data == False:
+            origin_list = self.extract_only_reco_hashkey(origin_list)
         return origin_list
+    
+    def extract_only_reco_hashkey(self, origin_list):
+        reco_list = {}
+        for row in origin_list:
+            reco_list[row] = []
+            for origin_data in origin_list[row]:
+                reco_list[row].append(
+                    origin_data['reco_hashkey']
+                )
+        return reco_list
 
     def get_range(self, array, value):
         for i in range(0, len(array)):
@@ -416,7 +429,7 @@ class Reco:
         price_priority = self.price_priority[origin_data['category']] / sum_priority
         distance_priority = self.distance_priority[origin_data['category']] / sum_priority
 
-        score += int(10 - (price_rank * price_priority + distance_rank * distance_priority)) * 100
+        score += int(10 - (price_rank * price_priority + distance_rank * distance_priority) * 100)
 
 
 
@@ -433,6 +446,13 @@ class Reco:
                     r.price, 
                     r.distance,
                     r.category,
+                    r.property_romantic,
+                    r.property_active_dynamic,
+                    r.property_active_static,
+                    r.property_food_korean,
+                    r.property_food_chinese,
+                    r.property_food_japanese,
+                    r.property_food_italian,
                     CONCAT(
                         "[",
                         GROUP_CONCAT(
