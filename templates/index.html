@@ -10,7 +10,7 @@
 table {
     font-family: arial, sans-serif;
     border-collapse: collapse;
-    width:300px;
+    width:100%;
 }
 
 td, th {
@@ -49,8 +49,8 @@ $.get( "http://dev.caly.io:9254/events?accountHashkey="+accountHashkey, function
             originEvents = obj.originEvents                     
             analysisEvents = obj.analysisEvents  
             reinforceEvents = obj.reinforceEvents
-
             reinforceEventsReco  = obj.reinforceEventsReco
+
             console.log(obj.reinforceEventsReco)
 
             var events = ''            
@@ -59,6 +59,10 @@ $.get( "http://dev.caly.io:9254/events?accountHashkey="+accountHashkey, function
             
             
                 events += '<tr > ' +
+                            '<td height="6px">' +
+                                originEvents[i].calendarName +
+                            '</td>' +
+
                 			'<td height="6px">' +
                             	originEvents[i].eventSummary +
                             '</td>' +
@@ -88,7 +92,9 @@ $.get( "http://dev.caly.io:9254/events?accountHashkey="+accountHashkey, function
                             '</td>' +
 
                 			'<td height="6px">' +
-                                JSON.stringify(analysisEvents[i].time_set) +
+                                // JSON.stringify(analysisEvents[i].time_set) +
+                                'extract_start:'+ analysisEvents[i].time_set.extract_start  + '<br>'+
+                                'extract_end:' + analysisEvents[i].time_set.extract_end   +
                             '</td>' +
 
                             '<td height="8px">' +
@@ -127,6 +133,17 @@ $.get( "http://dev.caly.io:9254/events?accountHashkey="+accountHashkey, function
             // $('#tbOriginEvents').append(header);
             $('#tbOriginEvents').append(events);
 
+
+            userLocations  = obj.userLocations
+            userLocationsString ='  유저 주활동지역 : '
+            $.each(userLocations, function (i, item) {
+                    userLocationsString += userLocations[i]["region"]+ "/" + userLocations[i]["locationCnt"] + " "
+            })
+
+
+            document.getElementById("userMainLocations").innerHTML = userLocationsString;
+
+
             // var events = ''            
             // $.each(analysisEvents, function (i, item) {
             
@@ -164,6 +181,8 @@ $.get( "http://dev.caly.io:9254/events?accountHashkey="+accountHashkey, function
 		<option value={{user.accountHashkey}}>{{user.email}}/{{user.loginPlatform}}</option>		
 	{% endfor %}
 </select>
+
+<p id = "userMainLocations"></p>
 <br>
 <br>
 <br>
@@ -185,6 +204,7 @@ $.get( "http://dev.caly.io:9254/events?accountHashkey="+accountHashkey, function
  -->
 <table id = tbOriginEvents style="float:left" >
             <tr>
+                <th>캘린더이름</th>
                 <th>제목</th>
                 <th>장소</th>
                 <th>시작시간</th>
