@@ -369,12 +369,11 @@ class Reco:
             ing_value = 1
             if event_type_id in origin_data['event_availability']:
                 ing_value = origin_data['event_availability'][event_type_id]['ing']
-            # ○ => 3   //*2000
-            # △ => 2  //*1000
+            # ○ => 3   //*20000
+            # △ => 2  //*10000
             # × => 1   //*0
-
             score += ((ing_value - 1) * 10000) 
-      
+            
         # 개인화 점수 
 
         personal_score = 0
@@ -398,7 +397,7 @@ class Reco:
                     personal_score += (1 - origin_data['property_romantic']) * 4.5
             else:
                 personal_score += origin_data[property_row] * self.user_property_score[property_row]
-
+        
         """
         print(personal_score)
         print(
@@ -435,7 +434,8 @@ class Reco:
         price_priority = self.price_priority[origin_data['category']] / sum_priority
         distance_priority = self.distance_priority[origin_data['category']] / sum_priority
 
-        score += int(10 - (price_rank * price_priority + distance_rank * distance_priority) * 100)
+        score += int(10 - (price_rank * price_priority + distance_rank * distance_priority))* 100
+
 
 
 

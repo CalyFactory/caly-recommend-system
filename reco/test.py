@@ -3,6 +3,7 @@ import sys
 sys.path.append(os.path.dirname(os.path.abspath(os.path.dirname(__file__))))
 
 from reco import Reco 
+import math
 import unittest
 import json
 
@@ -108,8 +109,78 @@ class TestReco(unittest.TestCase):
                 len(expectedList[category]),
                 len(recoList[category])
             )
-
     
+    def test_score_region_1(self):
+        print_test_info()
+        reco = Reco(
+            test_data['test_score_region_1']['input'],
+            '',
+            item_data = test_item_data
+        )
+        recoList = reco.get_reco_list()
+        expectedList = test_data['test_score_region_1']['output']
+
+        for category in expectedList:
+            for row in expectedList[category]:
+                self.assertTrue(
+                    row['reco_hashkey'] in [data['reco_hashkey'] for data in recoList[category]]
+                )
+                recoItem = None
+                for recoItem in recoList[category]:
+                    if row['reco_hashkey'] == recoItem['reco_hashkey']:
+                        break
+                self.assertTrue(
+                    recoItem is not None
+                )
+                for i in range(0, len(row['score'])):
+                    if row['score'][i] == -1:
+                        continue
+                    self.assertEqual(
+                        row['score'][i],
+                        int((recoItem['score'] % math.pow(10, 6-i)) / math.pow(10, 5-i))
+                    )
+            self.assertEqual(
+                len(expectedList[category]),
+                len(recoList[category])
+            )
+    
+    def test_score_purpose_1(self):
+        print_test_info()
+        reco = Reco(
+            test_data['test_score_purpose_1']['input'],
+            '',
+            item_data = test_item_data
+        )
+        recoList = reco.get_reco_list()
+        expectedList = test_data['test_score_purpose_1']['output']
+
+        for category in expectedList:
+            for row in expectedList[category]:
+                print(row['reco_hashkey'])
+                print(row)
+
+                self.assertTrue(
+                    row['reco_hashkey'] in [data['reco_hashkey'] for data in recoList[category]]
+                )
+                recoItem = None
+                for recoItem in recoList[category]:
+                    if row['reco_hashkey'] == recoItem['reco_hashkey']:
+                        break
+                self.assertTrue(
+                    recoItem is not None
+                )
+                print(recoItem)
+                for i in range(0, len(row['score'])):
+                    if row['score'][i] == -1:
+                        continue
+                    self.assertEqual(
+                        row['score'][i],
+                        int((recoItem['score'] % math.pow(10, 6-i)) / math.pow(10, 5-i))
+                    )
+            self.assertEqual(
+                len(expectedList[category]),
+                len(recoList[category])
+            )
 
 
 # 테스트에 사용될 데이터 만드는 함수. 테스트 케이스는 아니고, db의 추천 데이터를 json파일로 만듬
