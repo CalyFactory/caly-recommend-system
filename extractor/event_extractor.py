@@ -31,7 +31,7 @@ def load_subway_dict():
 			else:
 				region_dict[splited_address[2]]=[row.station_name+'역']
 	extract_conf_dict={}
-	with open('/home/yenos/caly-recommend-system/extractor/key/extract_conf.json') as extract_conf_json:
+	with open('/home/yenos/playGround/caly-recommend-system/extractor/key/extract_conf.json') as extract_conf_json:
 		extract_conf_dict = json.load(extract_conf_json)
 
 
@@ -75,7 +75,7 @@ def extract_info_from_event(event_hashkey, sentence,start_dt, end_dt, location):
 	event_type_list=[]
 	standard_time_scope={}
 	extract_conf_dict={}
-	with open('/home/yenos/caly-recommend-system/extractor/key/extract_conf.json') as extract_conf_json:
+	with open('/home/yenos/playGround/caly-recommend-system/extractor/key/extract_conf.json') as extract_conf_json:
 		extract_conf_dict = json.load(extract_conf_json)
 	standard_time_scope=extract_conf_dict["time-set"]
 	

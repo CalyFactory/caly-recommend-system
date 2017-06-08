@@ -31,20 +31,24 @@ tr:nth-child(even) {
 <script >
 var reinforceEventsReco = ''
 
+
 function onClickUser(obj){
 	console.log(obj.value)
 	reqEvents(obj.value)
 }
 function onbuttonclick(id) {
     // console.log(reinforceEventsReco[id])
-    window.location.href = "http://devapi.caly.io:9254/eventsDetail?eventDetail="+JSON.stringify(reinforceEventsReco[id]);        
+    var rankUrl = document.URL + "eventsDetail?eventDetail="+JSON.stringify(reinforceEventsReco[id]);        
+    window.location.href = rankUrl
 }
 
 function reqEvents(accountHashkey){
-$.get( "http://dev.caly.io:9254/events?accountHashkey="+accountHashkey, function( data ) {
+    var reqEventUrl = document.URL+"events?accountHashkey="+accountHashkey
+    console.log(reqEventUrl)
+$.get( reqEventUrl, function( data ) {
             // $('#tbOriginEvents').empty() ;
-    $('#tbOriginEvents > tbody > tr > td').parent('tr').empty();
-
+            $('#tbOriginEvents > tbody > tr > td').parent('tr').empty();
+            // console.log(data)
             obj = JSON.parse(data);   
             originEvents = obj.originEvents                     
             analysisEvents = obj.analysisEvents  

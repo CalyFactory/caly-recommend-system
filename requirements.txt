@@ -1,10 +1,7 @@
 appdirs==1.4.3
 click==6.7
 Flask==0.12.1
-itsdangerous==0.24
-Jinja2==2.9.6
-konlpy==0.4.4
-MarkupSafe==1.0
+Flask-Cors==3.0.2
 itsdangerous==0.24
 Jinja2==2.9.6
 JPype1-py3==0.5.5.2
@@ -13,11 +10,11 @@ MarkupSafe==1.0
 mecab-python3==0.7
 nltk==3.2.2
 packaging==16.8
+pkg-resources==0.0.0
+pymongo==3.4.0
 PyMySQL==0.7.11
 pyparsing==2.2.0
 requests==2.13.0
 six==1.10.0
 SQLAlchemy==1.1.9
 Werkzeug==0.12.1
-pymongo==3.4.0
-

@@ -5,29 +5,59 @@ from extractor.event_extractor import extract_info_from_event
 from reinforce.reinforce import Reinforce
 
 
-class WebMaestro():	
+class RecoMaestro():	
 
-	#실제 유저 이벤트
-	result_events = []
-	#[웹뷰용]형태소분석 된 이후 분석된 이벤트 정보를 웹뷰에 보여주기위한 데이터
-	result_analysis_events_for_web = []
-	#최종 웹에 보여줄 데이터
-	result_final= {}
-	#[웹뷰용]보강된 데이터 넘겨줄 배열
-	result_reinforce_events_for_web = []
-	#실제 넘길데이터
-	result_reinforce_events_real = []
+	# #실제 유저 이벤트
+	# result_events = []
+	# #[웹뷰용]형태소분석 된 이후 분석된 이벤트 정보를 웹뷰에 보여주기위한 데이터
+	# result_analysis_events_for_web = []
+	# #최종 웹에 보여줄 데이터
+	# result_final= {}
+	# #[웹뷰용]보강된 데이터 넘겨줄 배열
+	# result_reinforce_events_for_web = []
+	# #실제 넘길데이터
+	# result_reinforce_events_real = []
 
-	event = {}
-	reinforce_json = {}
-	extracted_json = {}
-	serMainRegion = {}
-	calendar_hashkey = None
-	calendar_name = None
-	user_event_hashkey = None
+	# event = {}
+	# reinforce_json = {}
+	# extracted_json = {}
+	# serMainRegion = {}
+
+	# calendar_hashkey = None
+	# calendar_name = None
+	# user_event_hashkey = None
 	
 	def __init__(self):
-		pass
+		self.calendar_hashkey = None
+		self.calendar_name = None
+		self.user_event_hashkey = None
+		#실제 유저 이벤트
+		self.result_events = []
+		#[웹뷰용]형태소분석 된 이후 분석된 이벤트 정보를 웹뷰에 보여주기위한 데이터
+		self.result_analysis_events_for_web = []
+		#최종 웹에 보여줄 데이터
+		self.result_final= {}
+		#[웹뷰용]보강된 데이터 넘겨줄 배열
+		self.result_reinforce_events_for_web = []
+		#실제 넘길데이터
+		self.result_reinforce_events_real = []
+
+		self.event = {}
+		self.reinforce_json = {}
+		self.fextracted_json = {}
+		self.serMainRegion = {}		
+
+		self.result_statis_json = {}
+
+
+		self.statis_reco_perfect_cnt = 0
+		self.statis_reco_cant_cnt = 0
+		self.statis_reco_no_loca_has_evnttype = 0
+		self.statis_reco_no_loca_no_evnttype = 0
+		self.statis_reco_has_loca_no_evnttype = 0
+
+		self.statis_recommended_cnt = 0
+		self.statis_no_recommended_cnt = 0
 
 	def __get__(self, obj, objtype):
 		return self.val
@@ -80,13 +110,39 @@ class WebMaestro():
 		self.result_final["reinforceEvents"] = self.result_reinforce_events_for_web
 		self.result_final["reinforceEventsReco"] = self.result_reinforce_events_real
 		self.result_final["userLocations"] = self.userMainRegion
+		self.result_statis_json = {
+										"recoPerfectCnt" : self.statis_reco_perfect_cnt,
+										"recoCantCnt" : self.statis_reco_cant_cnt,
+										"recoNoLocaHasEventType" : self.statis_reco_no_loca_has_evnttype,
+										"recoNoLovaNoEventType" : self.statis_reco_no_loca_no_evnttype ,
+										"recoHasLocaNoEventType" : self.statis_reco_has_loca_no_evnttype,
+										"reommendedCnt" :self.statis_recommended_cnt,
+										"noRecommended_cnt":self.statis_no_recommended_cnt
+										 
+									}
+		self.result_final["staticData"] = self.result_statis_json
 
 
 
 
 	def checkRecoStauts(self):
 		reinforce = self.__reinforceFromExtracted()
-		if reinforce.event_reco_result["code"] != 2 :
+		print(reinforce.event_reco_result["code"])
+
+		if reinforce.event_reco_result["code"] == 2 or reinforce.event_reco_result["code"] == 4 or reinforce.event_reco_result["code"] == 5 : 
+		
+			
+			self.statis_no_recommended_cnt += 1
+
+			self.result_reinforce_events_for_web.append(
+											{
+												"event_types":"-",
+												"locations":"-"			
+											}
+										)			
+		else:
+			self.statis_recommended_cnt +=1 
+
 			self.result_reinforce_events_for_web.append(
 											{
 												"event_types":self.__pretty_type(self.reinforce_json["event_types"]),
@@ -94,13 +150,27 @@ class WebMaestro():
 											}
 										)
 
-		else:
-			self.result_reinforce_events_for_web.append(
-											{
-												"event_types":"-",
-												"locations":"-"			
-											}
-										)			
+
+		if reinforce.event_reco_result["code"] == 1:
+			self.statis_reco_perfect_cnt += 1
+
+		elif reinforce.event_reco_result["code"] == 2:	
+			self.statis_reco_cant_cnt += 1
+
+		elif reinforce.event_reco_result["code"] == 3:	
+			self.statis_reco_no_loca_has_evnttype += 1
+
+		elif reinforce.event_reco_result["code"] == 4:				
+			self.statis_reco_no_loca_no_evnttype += 1
+
+		elif reinforce.event_reco_result["code"] == 5:		
+			self.statis_reco_has_loca_no_evnttype += 0
+
+			
+			
+			
+						
+
 
 	def __reinforceFromExtracted(self):
 		reinforce = Reinforce(self.extracted_json)
@@ -127,10 +197,10 @@ class WebMaestro():
 		if self.event["location"] == None:
 			self.event["location"] = ''
 			
-		print('event_title => ' + self.event["summary"])
-		print('event_start_dt => ' + self.event["start_dt"])
-		print('event_end_dt => ' + self.event["end_dt"])
-		print('event_location => ' + self.event["location"])			
+		print('event_title => ' + str(self.event["summary"]))
+		print('event_start_dt => ' + str(self.event["start_dt"]))
+		print('event_end_dt => ' + str(self.event["end_dt"]))
+		print('event_location => ' + str(self.event["location"]))
 		self.extracted_json = extract_info_from_event(self.event["event_hashkey"],self.event["summary"],self.event["start_dt"],self.event["end_dt"],self.event["location"])
 
 	def appendEvent(self):

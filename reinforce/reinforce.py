@@ -26,6 +26,12 @@ class EventRecoStatusCode(Enum):
 	RECO_NO_LOCA_HAS_EVENTTYPE = 3	
 
 
+	#현재 두개다 타입이 없어서 비추천 일 경우이다.
+	RECO_NO_LCOA_NO_EVENTTYPE = 4
+
+	RECO_HAS_LOCA_NO_EVENTTYPE = 5
+
+
 
 class Reinforce:
 
@@ -43,14 +49,22 @@ class Reinforce:
 		# print(self.event_info_data["event_types"] != "None")
 		# print(self.event_info_data["locations"] == "None")
 		#모든데이터가 잘들어가 있는경우
-		if self.event_info_data["locations"] != "None" and self.event_info_data["event_types"] != "None":
+		if self.event_info_data["locations"] != "None" and self.event_info_data["locations"] != "Cannot"  and self.event_info_data["event_types"] != "None":
 			self.__event_reco_status_code = EventRecoStatusCode.RECO_PERFECT  
 
-		#location이 cannot일경우 데이터를 추천해 줄 수없다.
-		#eventType이 None일경우 데이터를 추천해 줄 수 없다.
-		elif self.event_info_data["locations"] == "Cannot" or  self.event_info_data["event_types"] == "None":		
+		#location이 cannot일경우 데이터를 추천해 줄 수없다. 아예 비추천.		
+		elif self.event_info_data["locations"] == "Cannot" :		
 			self.__event_reco_status_code = EventRecoStatusCode.RECO_CANT  
 
+		#eventType이 None일경우 데이터를 추천해 줄 수 없다.	
+		elif  self.event_info_data["event_types"] == "None":
+			# 목적이 없고, 장소도 없는경우
+			if self.event_info_data["locations"] == "None":
+				self.__event_reco_status_code = EventRecoStatusCode.RECO_NO_LCOA_NO_EVENTTYPE
+			#이벤트가 있는경우.
+			else:
+				self.__event_reco_status_code = EventRecoStatusCode.RECO_HAS_LOCA_NO_EVENTTYPE
+				
 
 		#위치가없고 이벤트타입이 있는경우.
 		elif self.event_info_data["locations"] == "None" and self.event_info_data["event_types"] != "None":						
@@ -82,14 +96,14 @@ class Reinforce:
 			self.__set_user_hashkey_in_result()
 			#locations의 길이기 2라면 그냥 패스한다(주변역 없이 원래 넣어진데이터가있따며)
 			#현재infojson을 그냥 사용할수있도록 패스합니다.
-			self.event_reco_result = reinforce_result(EventRecoStatusCode.RECO_PERFECT.value,self.event_info_data)
+			self.event_reco_result = reinforce_result(self.__event_reco_status_code.value,self.event_info_data)
 
-		elif self.__event_reco_status_code == EventRecoStatusCode.RECO_CANT:
+		elif self.__event_reco_status_code == EventRecoStatusCode.RECO_CANT or self.__event_reco_status_code == EventRecoStatusCode.RECO_NO_LCOA_NO_EVENTTYPE or  self.__event_reco_status_code == EventRecoStatusCode.RECO_HAS_LOCA_NO_EVENTTYPE:
 			#db에 최종본 저장
 			self.__set_event_analaysisDB()
 			
 			#현재infojson을 사용할수없게 값을 리턴해줍니다.
-			self.event_reco_result = reinforce_result(EventRecoStatusCode.RECO_CANT.value,"None")
+			self.event_reco_result = reinforce_result(self.__event_reco_status_code.value,"None")
 
 		#이벤트 타입이 있는데, 로케이션이 없다면, 
 		#1. 유저 DB에서 가져와야 한다. 
@@ -171,7 +185,7 @@ class Reinforce:
 
 			self.__set_event_analaysisDB()
 			self.__set_user_hashkey_in_result()
-			self.event_reco_result = reinforce_result(EventRecoStatusCode.RECO_NO_LOCA_HAS_EVENTTYPE.value,self.event_info_data)
+			self.event_reco_result = reinforce_result(self.__event_reco_status_code.value,self.event_info_data)
 
 	def __set_surrounding_station(self,station_name):	
 		print(station_name)
