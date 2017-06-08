@@ -46,6 +46,7 @@ class Reco:
                 """
                 SELECT price 
                 FROM RECOMMENDATION
+                WHERE price IS NOT NULL
                 ORDER BY price 
                 """
             )
@@ -56,6 +57,7 @@ class Reco:
                 """
                 SELECT distance 
                 FROM RECOMMENDATION
+                WHERE distance IS NOT NULL
                 ORDER BY distance 
                 """
             )
