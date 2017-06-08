@@ -4,7 +4,7 @@
             "locations": [
                 {
                     "region": "신사역",
-                    "no": 1
+                    "no": 0
                 }
             ],
             "time_zone": {},
@@ -917,7 +917,7 @@
             "locations": [
                 {
                     "region": "건대입구역",
-                    "no": 1
+                    "no": 0
                 }
             ],
             "time_zone": {},
@@ -1385,7 +1385,7 @@
             "locations": [
                 {
                     "region": "잠실새내역",
-                    "no": 1
+                    "no": 0
                 },
                 {
                     "region": "국회의사당역",
@@ -1589,6 +1589,685 @@
                     "region": "국회의사당역"
                 }
             ],
+            "place": []
+        }
+    },
+    "test_score_region_1": {
+        "input": {
+            "locations": [
+                {
+                    "region": "신사역",
+                    "no": 0
+                },
+                {
+                    "region": "건대입구역",
+                    "no": 1
+                }
+            ],
+            "time_zone": {},
+            "event_types": [
+                {
+                    "id": "CPI01"
+                },
+                {
+                    "id": "CPI02"
+                }
+            ]
+        },
+        "output": {
+            "restaurant": [
+                {
+                    "reco_hashkey": "1fa22916-036a-48da-bbad-993432ff97d6",
+                    "score": [
+                        9
+                    ]
+                },
+                {
+                    "reco_hashkey": "22d3ddb3-7e81-478a-b5d0-6a640100ce14",
+                    "score": [
+                        9
+                    ]
+                },
+                {
+                    "reco_hashkey": "2e76a923-4c67-4e2c-ad1f-d351d261a3c2",
+                    "score": [
+                        9
+                    ]
+                },
+                {
+                    "reco_hashkey": "5da2d285-fd5c-4bdd-98bf-fd644cab2924",
+                    "score": [
+                        9
+                    ]
+                },
+                {
+                    "reco_hashkey": "6be2a7d6-a195-472e-b8b9-1d01356ab419",
+                    "score": [
+                        9
+                    ]
+                },
+                {
+                    "reco_hashkey": "8bd5cf44-97f0-4425-baa4-161c61620928",
+                    "score": [
+                        9
+                    ]
+                },
+                {
+                    "reco_hashkey": "ccc70e05-c8e7-4a87-aa06-318a7e28c7d7",
+                    "score": [
+                        9
+                    ]
+                },
+                {
+                    "reco_hashkey": "cf9da41b-f94e-4e65-9891-cdc2b0b55131",
+                    "score": [
+                        9
+                    ]
+                },
+                {
+                    "reco_hashkey": "1ab303c4-c9d3-4822-b1e5-3469204cb537",
+                    "score": [
+                        8
+                    ]
+                },
+                {
+                    "reco_hashkey": "2d129119-d41b-4cdd-8337-68090c2ecb21",
+                    "score": [
+                        8
+                    ]
+                },
+                {
+                    "reco_hashkey": "2e28ca57-a406-4ac4-9968-9ed299bec53a",
+                    "score": [
+                        8
+                    ]
+                },
+                {
+                    "reco_hashkey": "6179ebb8-b654-47fc-a6d6-61636bc43775",
+                    "score": [
+                        8
+                    ]
+                },
+                {
+                    "reco_hashkey": "8c03eed4-4f45-457a-89d2-f3d25ed0217e",
+                    "score": [
+                        8
+                    ]
+                },
+                {
+                    "reco_hashkey": "99764ab1-199e-49bd-a5c9-e68cf124bc09",
+                    "score": [
+                        8
+                    ]
+                },
+                {
+                    "reco_hashkey": "a2e2fab4-3a4d-4a1b-bba0-4f507c7b8473",
+                    "score": [
+                        8
+                    ]
+                },
+                {
+                    "reco_hashkey": "b5691131-2948-414f-8b65-4b87ab031de8",
+                    "score": [
+                        8
+                    ]
+                },
+                {
+                    "reco_hashkey": "ba5191e5-98b6-44ce-9983-b8198dc1568d",
+                    "score": [
+                        8
+                    ]
+                },
+                {
+                    "reco_hashkey": "cbeacb25-7e48-4a09-8753-f5334ad50c88",
+                    "score": [
+                        8
+                    ]
+                },
+                {
+                    "reco_hashkey": "d01515b9-c3cb-40f3-80be-d0b083d89dfc",
+                    "score": [
+                        8
+                    ]
+                },
+                {
+                    "reco_hashkey": "d74429bf-dcdf-4be9-9197-5485ea13a1c1",
+                    "score": [
+                        8
+                    ]
+                }
+            ],
+            "cafe": [
+                {
+                    "reco_hashkey": "1c9c95f3-7ef3-4e22-ab97-2b487821b780",
+                    "score": [
+                        9
+                    ]
+                },
+                {
+                    "reco_hashkey": "2e431239-24a9-4208-af21-e5d4b4ededad",
+                    "score": [
+                        9
+                    ]
+                },
+                {
+                    "reco_hashkey": "5d78d696-de96-4f48-be72-e9796ed4830e",
+                    "score": [
+                        9
+                    ]
+                },
+                {
+                    "reco_hashkey": "5fc3941a-1b19-468a-ac06-7ab11b2689b8",
+                    "score": [
+                        9
+                    ]
+                },
+                {
+                    "reco_hashkey": "965bd3b5-aa76-4074-8b3b-e66d7c2a4972",
+                    "score": [
+                        9
+                    ]
+                },
+                {
+                    "reco_hashkey": "007afc2f-48c1-47a8-a951-0ba9796c8273",
+                    "score": [
+                        8
+                    ]
+                },
+                {
+                    "reco_hashkey": "1277a5d6-7421-4797-ae1c-57b91ce6957c",
+                    "score": [
+                        8
+                    ]
+                },
+                {
+                    "reco_hashkey": "470f8778-cd3b-4818-99bd-a0bbb7431d19",
+                    "score": [
+                        8
+                    ]
+                },
+                {
+                    "reco_hashkey": "99d4dcb8-6acb-4041-8e5e-7f85ee794fe8",
+                    "score": [
+                        8
+                    ]
+                },
+                {
+                    "reco_hashkey": "cac8dcdc-628e-4c18-9779-7488e561b995",
+                    "score": [
+                        8
+                    ]
+                },
+                {
+                    "reco_hashkey": "eaf9a63c-b2db-498d-b436-7472c7792ec0",
+                    "score": [
+                        8
+                    ]
+                },
+                {
+                    "reco_hashkey": "f405b2a7-8e40-4e92-9360-3454f293ad7d",
+                    "score": [
+                        8
+                    ]
+                }
+            ],
+            "place": [
+                {
+                    "reco_hashkey": "6a40f87f-0466-45e7-93d8-59fc2b435f42",
+                    "score": [
+                        9
+                    ]
+                },
+                {
+                    "reco_hashkey": "9e715833-7ffb-4fb9-99a5-4dd22050649a",
+                    "score": [
+                        9
+                    ]
+                },
+                {
+                    "reco_hashkey": "a4931eb6-d731-473e-b9e1-dd71b29bbabb",
+                    "score": [
+                        9
+                    ]
+                },
+                {
+                    "reco_hashkey": "dc25104d-64cc-4051-a085-9004345b5047",
+                    "score": [
+                        9
+                    ]
+                },
+                {
+                    "reco_hashkey": "ee7bfecd-8068-4b24-922a-80ccd2e84f2d",
+                    "score": [
+                        9
+                    ]
+                },
+                {
+                    "reco_hashkey": "f6f1e506-a505-4f79-8464-bf16e472e3cd",
+                    "score": [
+                        9
+                    ]
+                },
+                {
+                    "reco_hashkey": "0fa8889e-afe8-45e7-abb2-b58adee6e210",
+                    "score": [
+                        8
+                    ]
+                },
+                {
+                    "reco_hashkey": "1c23358c-71aa-4b00-a368-32dd3de3df65",
+                    "score": [
+                        8
+                    ]
+                },
+                {
+                    "reco_hashkey": "254c14dd-755a-4e0f-8141-ae1c700850db",
+                    "score": [
+                        8
+                    ]
+                },
+                {
+                    "reco_hashkey": "72fc2058-8d2b-4ffa-82a6-a842270ff026",
+                    "score": [
+                        8
+                    ]
+                },
+                {
+                    "reco_hashkey": "83a0bc63-4b85-46bf-aa19-327846a19004",
+                    "score": [
+                        8
+                    ]
+                },
+                {
+                    "reco_hashkey": "b4f2820f-c602-48ac-8a27-e683a6e4c090",
+                    "score": [
+                        8
+                    ]
+                },
+                {
+                    "reco_hashkey": "b5a179eb-3f8c-4b37-9afa-ccd2787488bd",
+                    "score": [
+                        8
+                    ]
+                },
+                {
+                    "reco_hashkey": "c1c24b11-75b0-4850-bda3-ef9d35b4cdf0",
+                    "score": [
+                        8
+                    ]
+                },
+                {
+                    "reco_hashkey": "c83b9dbb-6291-4cdb-a6f9-658343f98b07",
+                    "score": [
+                        8
+                    ]
+                }
+            ]
+        }
+    },
+    "test_score_purpose_1": {
+        "input": {
+            "locations": [
+                {
+                    "region": "신사역",
+                    "no": 0
+                },
+                {
+                    "region": "건대입구역",
+                    "no": 1
+                }
+            ],
+            "time_zone": {},
+            "event_types": [
+                {
+                    "id": "CPI01"
+                },
+                {
+                    "id": "CPI02"
+                }
+            ]
+        },
+        "output": {
+            "restaurant": [
+                {
+                    "reco_hashkey": "1fa22916-036a-48da-bbad-993432ff97d6",
+                    "score": [
+                        -1,
+                        4
+                    ]
+                },
+                {
+                    "reco_hashkey": "22d3ddb3-7e81-478a-b5d0-6a640100ce14",
+                    "score": [
+                        -1,4
+                    ]
+                },
+                {
+                    "reco_hashkey": "2e76a923-4c67-4e2c-ad1f-d351d261a3c2",
+                    "score": [
+                        -1,3
+                    ]
+                },
+                {
+                    "reco_hashkey": "5da2d285-fd5c-4bdd-98bf-fd644cab2924",
+                    "score": [
+                        -1,4
+                    ]
+                },
+                {
+                    "reco_hashkey": "6be2a7d6-a195-472e-b8b9-1d01356ab419",
+                    "score": [
+                        -1,4
+                    ]
+                },
+                {
+                    "reco_hashkey": "8bd5cf44-97f0-4425-baa4-161c61620928",
+                    "score": [
+                        -1,3
+                    ]
+                },
+                {
+                    "reco_hashkey": "ccc70e05-c8e7-4a87-aa06-318a7e28c7d7",
+                    "score": [
+                        -1,4
+                    ]
+                },
+                {
+                    "reco_hashkey": "cf9da41b-f94e-4e65-9891-cdc2b0b55131",
+                    "score": [
+                        -1,3
+                    ]
+                },
+                {
+                    "reco_hashkey": "1ab303c4-c9d3-4822-b1e5-3469204cb537",
+                    "score": [
+                        -1,0
+                    ]
+                },
+                {
+                    "reco_hashkey": "2d129119-d41b-4cdd-8337-68090c2ecb21",
+                    "score": [
+                        -1,0
+                    ]
+                },
+                {
+                    "reco_hashkey": "2e28ca57-a406-4ac4-9968-9ed299bec53a",
+                    "score": [
+                        -1,0
+                    ]
+                },
+                {
+                    "reco_hashkey": "6179ebb8-b654-47fc-a6d6-61636bc43775",
+                    "score": [
+                        -1,0
+                    ]
+                },
+                {
+                    "reco_hashkey": "8c03eed4-4f45-457a-89d2-f3d25ed0217e",
+                    "score": [
+                        -1,0
+                    ]
+                },
+                {
+                    "reco_hashkey": "99764ab1-199e-49bd-a5c9-e68cf124bc09",
+                    "score": [
+                        -1,0
+                    ]
+                },
+                {
+                    "reco_hashkey": "a2e2fab4-3a4d-4a1b-bba0-4f507c7b8473",
+                    "score": [
+                        -1,0
+                    ]
+                },
+                {
+                    "reco_hashkey": "b5691131-2948-414f-8b65-4b87ab031de8",
+                    "score": [
+                        -1,0
+                    ]
+                },
+                {
+                    "reco_hashkey": "ba5191e5-98b6-44ce-9983-b8198dc1568d",
+                    "score": [
+                        -1,0
+                    ]
+                },
+                {
+                    "reco_hashkey": "cbeacb25-7e48-4a09-8753-f5334ad50c88",
+                    "score": [
+                        -1,0
+                    ]
+                },
+                {
+                    "reco_hashkey": "d01515b9-c3cb-40f3-80be-d0b083d89dfc",
+                    "score": [
+                        -1,0
+                    ]
+                },
+                {
+                    "reco_hashkey": "d74429bf-dcdf-4be9-9197-5485ea13a1c1",
+                    "score": [
+                        -1,0
+                    ]
+                }
+            ],
+            "cafe": [
+                {
+                    "reco_hashkey": "1c9c95f3-7ef3-4e22-ab97-2b487821b780",
+                    "score": [
+                        -1,4
+                    ]
+                },
+                {
+                    "reco_hashkey": "2e431239-24a9-4208-af21-e5d4b4ededad",
+                    "score": [
+                        -1,4
+                    ]
+                },
+                {
+                    "reco_hashkey": "5d78d696-de96-4f48-be72-e9796ed4830e",
+                    "score": [
+                        -1,4
+                    ]
+                },
+                {
+                    "reco_hashkey": "5fc3941a-1b19-468a-ac06-7ab11b2689b8",
+                    "score": [
+                        -1,4
+                    ]
+                },
+                {
+                    "reco_hashkey": "965bd3b5-aa76-4074-8b3b-e66d7c2a4972",
+                    "score": [
+                        -1,4
+                    ]
+                },
+                {
+                    "reco_hashkey": "007afc2f-48c1-47a8-a951-0ba9796c8273",
+                    "score": [
+                        -1,0
+                    ]
+                },
+                {
+                    "reco_hashkey": "1277a5d6-7421-4797-ae1c-57b91ce6957c",
+                    "score": [
+                        -1,0
+                    ]
+                },
+                {
+                    "reco_hashkey": "470f8778-cd3b-4818-99bd-a0bbb7431d19",
+                    "score": [
+                        -1,0
+                    ]
+                },
+                {
+                    "reco_hashkey": "99d4dcb8-6acb-4041-8e5e-7f85ee794fe8",
+                    "score": [
+                        -1,0
+                    ]
+                },
+                {
+                    "reco_hashkey": "cac8dcdc-628e-4c18-9779-7488e561b995",
+                    "score": [
+                        -1,0
+                    ]
+                },
+                {
+                    "reco_hashkey": "eaf9a63c-b2db-498d-b436-7472c7792ec0",
+                    "score": [
+                        -1,0
+                    ]
+                },
+                {
+                    "reco_hashkey": "f405b2a7-8e40-4e92-9360-3454f293ad7d",
+                    "score": [
+                        -1,0
+                    ]
+                }
+            ],
+            "place": [
+                {
+                    "reco_hashkey": "6a40f87f-0466-45e7-93d8-59fc2b435f42",
+                    "score": [
+                        -1,4
+                    ]
+                },
+                {
+                    "reco_hashkey": "9e715833-7ffb-4fb9-99a5-4dd22050649a",
+                    "score": [
+                        -1,3
+                    ]
+                },
+                {
+                    "reco_hashkey": "a4931eb6-d731-473e-b9e1-dd71b29bbabb",
+                    "score": [
+                        -1,3
+                    ]
+                },
+                {
+                    "reco_hashkey": "dc25104d-64cc-4051-a085-9004345b5047",
+                    "score": [
+                        -1,4
+                    ]
+                },
+                {
+                    "reco_hashkey": "ee7bfecd-8068-4b24-922a-80ccd2e84f2d",
+                    "score": [
+                        -1,3
+                    ]
+                },
+                {
+                    "reco_hashkey": "f6f1e506-a505-4f79-8464-bf16e472e3cd",
+                    "score": [
+                        -1,3
+                    ]
+                },
+                {
+                    "reco_hashkey": "0fa8889e-afe8-45e7-abb2-b58adee6e210",
+                    "score": [
+                        -1,0
+                    ]
+                },
+                {
+                    "reco_hashkey": "1c23358c-71aa-4b00-a368-32dd3de3df65",
+                    "score": [
+                        -1,0
+                    ]
+                },
+                {
+                    "reco_hashkey": "254c14dd-755a-4e0f-8141-ae1c700850db",
+                    "score": [
+                        -1,0
+                    ]
+                },
+                {
+                    "reco_hashkey": "72fc2058-8d2b-4ffa-82a6-a842270ff026",
+                    "score": [
+                        -1,0
+                    ]
+                },
+                {
+                    "reco_hashkey": "83a0bc63-4b85-46bf-aa19-327846a19004",
+                    "score": [
+                        -1,0
+                    ]
+                },
+                {
+                    "reco_hashkey": "b4f2820f-c602-48ac-8a27-e683a6e4c090",
+                    "score": [
+                        -1,0
+                    ]
+                },
+                {
+                    "reco_hashkey": "b5a179eb-3f8c-4b37-9afa-ccd2787488bd",
+                    "score": [
+                        -1,0
+                    ]
+                },
+                {
+                    "reco_hashkey": "c1c24b11-75b0-4850-bda3-ef9d35b4cdf0",
+                    "score": [
+                        -1,0
+                    ]
+                },
+                {
+                    "reco_hashkey": "c83b9dbb-6291-4cdb-a6f9-658343f98b07",
+                    "score": [
+                        -1,0
+                    ]
+                }
+            ]
+        }
+    },
+    "test": {
+        "input": {
+            "event_types": [
+                {
+                    "id": "CPI02"
+                }
+            ],
+            "locations": [
+                {
+                    "no": 0,
+                    "region": "합정역"
+                }
+            ],
+            "event_hashkey": "2ada42fb836c39e943997665648e9306a7f176771148efc9d7a14bd2",
+            "user_hashkey": "bf0f5c59839fa0138c2000069060cdf3e969ab6935474dc052a79cea",
+            "time_set": {
+                "extract_start": "None",
+                "event_end": "09:00",
+                "extract_end": "None",
+                "event_start": "08:00"
+            }
+        },
+        "output": {
+            "restaurant": [],
+            "cafe": [],
+            "place": []
+        }
+    },
+    "example": {
+        "input": {
+            "locations": [
+                {
+                    "region": "신사역",
+                    "no": 1
+                }
+            ],
+            "time_zone": {},
+            "event_types": [
+                {
+                    "id": "CPI01"
+                },
+                {
+                    "id": "CPI02"
+                }
+            ]
+        },
+        "output": {
+            "restaurant": [],
+            "cafe": [],
             "place": []
         }
     }
