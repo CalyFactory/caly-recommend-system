@@ -1,0 +1,1595 @@
+{
+    "test_region_filter_1": {
+        "input": {
+            "locations": [
+                {
+                    "region": "신사역",
+                    "no": 1
+                }
+            ],
+            "time_zone": {},
+            "event_types": []
+        },
+        "output": {
+            "restaurant": [
+                {
+                    "event_availability": {
+                        "CPI06": {
+                            "ing": 2,
+                            "id": 186,
+                            "event_type_id": "CPI06"
+                        },
+                        "CPI04": {
+                            "ing": 2,
+                            "id": 256,
+                            "event_type_id": "CPI04"
+                        },
+                        "CPI01": {
+                            "ing": 3,
+                            "id": 231,
+                            "event_type_id": "CPI01"
+                        },
+                        "CPI02": {
+                            "ing": 3,
+                            "id": 232,
+                            "event_type_id": "CPI02"
+                        },
+                        "CPI03": {
+                            "ing": 3,
+                            "id": 211,
+                            "event_type_id": "CPI03"
+                        },
+                        "CPI05": {
+                            "ing": 2,
+                            "id": 162,
+                            "event_type_id": "CPI05"
+                        }
+                    },
+                    "title": "제이에스가든웍",
+                    "distance": "신사역에서 걸어서 8분",
+                    "property_food_chinese": 1,
+                    "property_food_korean": 0,
+                    "property_romantic": 1,
+                    "price": 20000,
+                    "property_active_dynamic": 0,
+                    "property_food_japanese": 0,
+                    "reco_hashkey": "1fa22916-036a-48da-bbad-993432ff97d6",
+                    "property_active_static": 0,
+                    "category": "restaurant",
+                    "property_food_italian": 0,
+                    "region": "신사역"
+                },
+                {
+                    "event_availability": {
+                        "CPI06": {
+                            "ing": 2,
+                            "id": 151,
+                            "event_type_id": "CPI06"
+                        },
+                        "CPI04": {
+                            "ing": 2,
+                            "id": 175,
+                            "event_type_id": "CPI04"
+                        },
+                        "CPI01": {
+                            "ing": 3,
+                            "id": 210,
+                            "event_type_id": "CPI01"
+                        },
+                        "CPI02": {
+                            "ing": 3,
+                            "id": 152,
+                            "event_type_id": "CPI02"
+                        },
+                        "CPI03": {
+                            "ing": 3,
+                            "id": 225,
+                            "event_type_id": "CPI03"
+                        },
+                        "CPI05": {
+                            "ing": 2,
+                            "id": 200,
+                            "event_type_id": "CPI05"
+                        }
+                    },
+                    "title": "신사연어",
+                    "distance": "신사역에서 걸어서 4분",
+                    "property_food_chinese": 0,
+                    "property_food_korean": 0,
+                    "property_romantic": 1,
+                    "price": 12000,
+                    "property_active_dynamic": 0,
+                    "property_food_japanese": 1,
+                    "reco_hashkey": "22d3ddb3-7e81-478a-b5d0-6a640100ce14",
+                    "property_active_static": 0,
+                    "category": "restaurant",
+                    "property_food_italian": 0,
+                    "region": "신사역"
+                },
+                {
+                    "event_availability": {
+                        "CPI06": {
+                            "ing": 2,
+                            "id": 236,
+                            "event_type_id": "CPI06"
+                        },
+                        "CPI04": {
+                            "ing": 3,
+                            "id": 160,
+                            "event_type_id": "CPI04"
+                        },
+                        "CPI01": {
+                            "ing": 3,
+                            "id": 182,
+                            "event_type_id": "CPI01"
+                        },
+                        "CPI02": {
+                            "ing": 2,
+                            "id": 217,
+                            "event_type_id": "CPI02"
+                        },
+                        "CPI03": {
+                            "ing": 2,
+                            "id": 257,
+                            "event_type_id": "CPI03"
+                        },
+                        "CPI05": {
+                            "ing": 2,
+                            "id": 199,
+                            "event_type_id": "CPI05"
+                        }
+                    },
+                    "title": "신사소곱창",
+                    "distance": "신사역에서 걸어서 4분",
+                    "property_food_chinese": 0,
+                    "property_food_korean": 1,
+                    "property_romantic": 0,
+                    "price": 14000,
+                    "property_active_dynamic": 0,
+                    "property_food_japanese": 0,
+                    "reco_hashkey": "2e76a923-4c67-4e2c-ad1f-d351d261a3c2",
+                    "property_active_static": 0,
+                    "category": "restaurant",
+                    "property_food_italian": 0,
+                    "region": "신사역"
+                },
+                {
+                    "event_availability": {
+                        "CPI06": {
+                            "ing": 3,
+                            "id": 213,
+                            "event_type_id": "CPI06"
+                        },
+                        "CPI04": {
+                            "ing": 2,
+                            "id": 251,
+                            "event_type_id": "CPI04"
+                        },
+                        "CPI01": {
+                            "ing": 3,
+                            "id": 201,
+                            "event_type_id": "CPI01"
+                        },
+                        "CPI02": {
+                            "ing": 3,
+                            "id": 227,
+                            "event_type_id": "CPI02"
+                        },
+                        "CPI03": {
+                            "ing": 2,
+                            "id": 233,
+                            "event_type_id": "CPI03"
+                        },
+                        "CPI05": {
+                            "ing": 3,
+                            "id": 259,
+                            "event_type_id": "CPI05"
+                        }
+                    },
+                    "title": "베가스",
+                    "distance": "신사역에서 걸어서 10분",
+                    "property_food_chinese": 0,
+                    "property_food_korean": 0,
+                    "property_romantic": 0,
+                    "price": 9000,
+                    "property_active_dynamic": 0,
+                    "property_food_japanese": 0,
+                    "reco_hashkey": "5da2d285-fd5c-4bdd-98bf-fd644cab2924",
+                    "property_active_static": 0,
+                    "category": "restaurant",
+                    "property_food_italian": 1,
+                    "region": "신사역"
+                },
+                {
+                    "event_availability": {
+                        "CPI06": {
+                            "ing": 2,
+                            "id": 205,
+                            "event_type_id": "CPI06"
+                        },
+                        "CPI04": {
+                            "ing": 3,
+                            "id": 169,
+                            "event_type_id": "CPI04"
+                        },
+                        "CPI01": {
+                            "ing": 3,
+                            "id": 148,
+                            "event_type_id": "CPI01"
+                        },
+                        "CPI02": {
+                            "ing": 3,
+                            "id": 149,
+                            "event_type_id": "CPI02"
+                        },
+                        "CPI03": {
+                            "ing": 3,
+                            "id": 214,
+                            "event_type_id": "CPI03"
+                        },
+                        "CPI05": {
+                            "ing": 1,
+                            "id": 155,
+                            "event_type_id": "CPI05"
+                        }
+                    },
+                    "title": "미래소년",
+                    "distance": "신사역에서 걸어서 4분",
+                    "property_food_chinese": 0,
+                    "property_food_korean": 0,
+                    "property_romantic": 0,
+                    "price": 11000,
+                    "property_active_dynamic": 0,
+                    "property_food_japanese": 0,
+                    "reco_hashkey": "6be2a7d6-a195-472e-b8b9-1d01356ab419",
+                    "property_active_static": 0,
+                    "category": "restaurant",
+                    "property_food_italian": 1,
+                    "region": "신사역"
+                },
+                {
+                    "event_availability": {
+                        "CPI06": {
+                            "ing": 3,
+                            "id": 209,
+                            "event_type_id": "CPI06"
+                        },
+                        "CPI04": {
+                            "ing": 2,
+                            "id": 188,
+                            "event_type_id": "CPI04"
+                        },
+                        "CPI01": {
+                            "ing": 3,
+                            "id": 212,
+                            "event_type_id": "CPI01"
+                        },
+                        "CPI02": {
+                            "ing": 2,
+                            "id": 190,
+                            "event_type_id": "CPI02"
+                        },
+                        "CPI03": {
+                            "ing": 2,
+                            "id": 158,
+                            "event_type_id": "CPI03"
+                        },
+                        "CPI05": {
+                            "ing": 2,
+                            "id": 161,
+                            "event_type_id": "CPI05"
+                        }
+                    },
+                    "title": "한성돈까스",
+                    "distance": "신사역에서 걸어서 5분",
+                    "property_food_chinese": 0,
+                    "property_food_korean": 1,
+                    "property_romantic": 0,
+                    "price": 8000,
+                    "property_active_dynamic": 0,
+                    "property_food_japanese": 0,
+                    "reco_hashkey": "8bd5cf44-97f0-4425-baa4-161c61620928",
+                    "property_active_static": 0,
+                    "category": "restaurant",
+                    "property_food_italian": 0,
+                    "region": "신사역"
+                },
+                {
+                    "event_availability": {
+                        "CPI06": {
+                            "ing": 3,
+                            "id": 252,
+                            "event_type_id": "CPI06"
+                        },
+                        "CPI04": {
+                            "ing": 1,
+                            "id": 191,
+                            "event_type_id": "CPI04"
+                        },
+                        "CPI01": {
+                            "ing": 3,
+                            "id": 170,
+                            "event_type_id": "CPI01"
+                        },
+                        "CPI02": {
+                            "ing": 3,
+                            "id": 230,
+                            "event_type_id": "CPI02"
+                        },
+                        "CPI03": {
+                            "ing": 3,
+                            "id": 203,
+                            "event_type_id": "CPI03"
+                        },
+                        "CPI05": {
+                            "ing": 2,
+                            "id": 184,
+                            "event_type_id": "CPI05"
+                        }
+                    },
+                    "title": "크레아",
+                    "distance": "신사역에서 걸어서 4분",
+                    "property_food_chinese": 0,
+                    "property_food_korean": 0,
+                    "property_romantic": 1,
+                    "price": 40000,
+                    "property_active_dynamic": 0,
+                    "property_food_japanese": 0,
+                    "reco_hashkey": "ccc70e05-c8e7-4a87-aa06-318a7e28c7d7",
+                    "property_active_static": 0,
+                    "category": "restaurant",
+                    "property_food_italian": 1,
+                    "region": "신사역"
+                },
+                {
+                    "event_availability": {
+                        "CPI06": {
+                            "ing": 2,
+                            "id": 156,
+                            "event_type_id": "CPI06"
+                        },
+                        "CPI04": {
+                            "ing": 3,
+                            "id": 168,
+                            "event_type_id": "CPI04"
+                        },
+                        "CPI01": {
+                            "ing": 3,
+                            "id": 157,
+                            "event_type_id": "CPI01"
+                        },
+                        "CPI02": {
+                            "ing": 2,
+                            "id": 242,
+                            "event_type_id": "CPI02"
+                        },
+                        "CPI03": {
+                            "ing": 3,
+                            "id": 224,
+                            "event_type_id": "CPI03"
+                        },
+                        "CPI05": {
+                            "ing": 2,
+                            "id": 250,
+                            "event_type_id": "CPI05"
+                        }
+                    },
+                    "title": "일도씨곱창",
+                    "distance": "신사역에서 걸어서 8분",
+                    "property_food_chinese": 0,
+                    "property_food_korean": 1,
+                    "property_romantic": 0,
+                    "price": 11000,
+                    "property_active_dynamic": 0,
+                    "property_food_japanese": 0,
+                    "reco_hashkey": "cf9da41b-f94e-4e65-9891-cdc2b0b55131",
+                    "property_active_static": 0,
+                    "category": "restaurant",
+                    "property_food_italian": 0,
+                    "region": "신사역"
+                }
+            ],
+            "cafe": [
+                {
+                    "event_availability": {
+                        "CPI06": {
+                            "ing": 3,
+                            "id": 234,
+                            "event_type_id": "CPI06"
+                        },
+                        "CPI04": {
+                            "ing": 2,
+                            "id": 192,
+                            "event_type_id": "CPI04"
+                        },
+                        "CPI01": {
+                            "ing": 3,
+                            "id": 226,
+                            "event_type_id": "CPI01"
+                        },
+                        "CPI02": {
+                            "ing": 3,
+                            "id": 206,
+                            "event_type_id": "CPI02"
+                        },
+                        "CPI03": {
+                            "ing": 3,
+                            "id": 189,
+                            "event_type_id": "CPI03"
+                        },
+                        "CPI05": {
+                            "ing": 3,
+                            "id": 183,
+                            "event_type_id": "CPI05"
+                        }
+                    },
+                    "title": "더 닐크 팩토리",
+                    "distance": "신사역에서 걸어서 8분",
+                    "property_food_chinese": 0,
+                    "property_food_korean": 0,
+                    "property_romantic": 1,
+                    "price": 6000,
+                    "property_active_dynamic": 0,
+                    "property_food_japanese": 0,
+                    "reco_hashkey": "1c9c95f3-7ef3-4e22-ab97-2b487821b780",
+                    "property_active_static": 0,
+                    "category": "cafe",
+                    "property_food_italian": 0,
+                    "region": "신사역"
+                },
+                {
+                    "event_availability": {
+                        "CPI06": {
+                            "ing": 3,
+                            "id": 185,
+                            "event_type_id": "CPI06"
+                        },
+                        "CPI04": {
+                            "ing": 2,
+                            "id": 249,
+                            "event_type_id": "CPI04"
+                        },
+                        "CPI01": {
+                            "ing": 3,
+                            "id": 221,
+                            "event_type_id": "CPI01"
+                        },
+                        "CPI02": {
+                            "ing": 3,
+                            "id": 163,
+                            "event_type_id": "CPI02"
+                        },
+                        "CPI03": {
+                            "ing": 3,
+                            "id": 196,
+                            "event_type_id": "CPI03"
+                        },
+                        "CPI05": {
+                            "ing": 3,
+                            "id": 219,
+                            "event_type_id": "CPI05"
+                        }
+                    },
+                    "title": "소나",
+                    "distance": "신사역에서 걸어서 11분",
+                    "property_food_chinese": 0,
+                    "property_food_korean": 0,
+                    "property_romantic": 1,
+                    "price": 5000,
+                    "property_active_dynamic": 0,
+                    "property_food_japanese": 0,
+                    "reco_hashkey": "2e431239-24a9-4208-af21-e5d4b4ededad",
+                    "property_active_static": 0,
+                    "category": "cafe",
+                    "property_food_italian": 0,
+                    "region": "신사역"
+                },
+                {
+                    "event_availability": {
+                        "CPI06": {
+                            "ing": 3,
+                            "id": 180,
+                            "event_type_id": "CPI06"
+                        },
+                        "CPI04": {
+                            "ing": 3,
+                            "id": 166,
+                            "event_type_id": "CPI04"
+                        },
+                        "CPI01": {
+                            "ing": 3,
+                            "id": 177,
+                            "event_type_id": "CPI01"
+                        },
+                        "CPI02": {
+                            "ing": 3,
+                            "id": 253,
+                            "event_type_id": "CPI02"
+                        },
+                        "CPI03": {
+                            "ing": 3,
+                            "id": 207,
+                            "event_type_id": "CPI03"
+                        },
+                        "CPI05": {
+                            "ing": 3,
+                            "id": 246,
+                            "event_type_id": "CPI05"
+                        }
+                    },
+                    "title": "듀자미",
+                    "distance": "신사역에서 걸어서 6분",
+                    "property_food_chinese": 0,
+                    "property_food_korean": 0,
+                    "property_romantic": 0,
+                    "price": 5000,
+                    "property_active_dynamic": 0,
+                    "property_food_japanese": 0,
+                    "reco_hashkey": "5d78d696-de96-4f48-be72-e9796ed4830e",
+                    "property_active_static": 0,
+                    "category": "cafe",
+                    "property_food_italian": 0,
+                    "region": "신사역"
+                },
+                {
+                    "event_availability": {
+                        "CPI06": {
+                            "ing": 3,
+                            "id": 208,
+                            "event_type_id": "CPI06"
+                        },
+                        "CPI04": {
+                            "ing": 2,
+                            "id": 198,
+                            "event_type_id": "CPI04"
+                        },
+                        "CPI01": {
+                            "ing": 3,
+                            "id": 164,
+                            "event_type_id": "CPI01"
+                        },
+                        "CPI02": {
+                            "ing": 3,
+                            "id": 229,
+                            "event_type_id": "CPI02"
+                        },
+                        "CPI03": {
+                            "ing": 2,
+                            "id": 193,
+                            "event_type_id": "CPI03"
+                        },
+                        "CPI05": {
+                            "ing": 3,
+                            "id": 238,
+                            "event_type_id": "CPI05"
+                        }
+                    },
+                    "title": "뮬라",
+                    "distance": "신사역에서 걸어서 10분",
+                    "property_food_chinese": 0,
+                    "property_food_korean": 0,
+                    "property_romantic": 0,
+                    "price": 5000,
+                    "property_active_dynamic": 0,
+                    "property_food_japanese": 0,
+                    "reco_hashkey": "5fc3941a-1b19-468a-ac06-7ab11b2689b8",
+                    "property_active_static": 0,
+                    "category": "cafe",
+                    "property_food_italian": 0,
+                    "region": "신사역"
+                },
+                {
+                    "event_availability": {
+                        "CPI06": {
+                            "ing": 3,
+                            "id": 239,
+                            "event_type_id": "CPI06"
+                        },
+                        "CPI04": {
+                            "ing": 3,
+                            "id": 154,
+                            "event_type_id": "CPI04"
+                        },
+                        "CPI01": {
+                            "ing": 3,
+                            "id": 223,
+                            "event_type_id": "CPI01"
+                        },
+                        "CPI02": {
+                            "ing": 3,
+                            "id": 150,
+                            "event_type_id": "CPI02"
+                        },
+                        "CPI03": {
+                            "ing": 3,
+                            "id": 197,
+                            "event_type_id": "CPI03"
+                        },
+                        "CPI05": {
+                            "ing": 2,
+                            "id": 146,
+                            "event_type_id": "CPI05"
+                        }
+                    },
+                    "title": "베질루르",
+                    "distance": "신사역에서 걸어서 11분",
+                    "property_food_chinese": 0,
+                    "property_food_korean": 0,
+                    "property_romantic": 1,
+                    "price": 7000,
+                    "property_active_dynamic": 0,
+                    "property_food_japanese": 0,
+                    "reco_hashkey": "965bd3b5-aa76-4074-8b3b-e66d7c2a4972",
+                    "property_active_static": 0,
+                    "category": "cafe",
+                    "property_food_italian": 0,
+                    "region": "신사역"
+                }
+            ],
+            "place": [
+                {
+                    "event_availability": {
+                        "CPI06": {
+                            "ing": 3,
+                            "id": 235,
+                            "event_type_id": "CPI06"
+                        },
+                        "CPI04": {
+                            "ing": 1,
+                            "id": 181,
+                            "event_type_id": "CPI04"
+                        },
+                        "CPI01": {
+                            "ing": 3,
+                            "id": 171,
+                            "event_type_id": "CPI01"
+                        },
+                        "CPI02": {
+                            "ing": 3,
+                            "id": 228,
+                            "event_type_id": "CPI02"
+                        },
+                        "CPI03": {
+                            "ing": 2,
+                            "id": 241,
+                            "event_type_id": "CPI03"
+                        },
+                        "CPI05": {
+                            "ing": 1,
+                            "id": 195,
+                            "event_type_id": "CPI05"
+                        }
+                    },
+                    "title": "놀숲",
+                    "distance": "신사역에서 걸어서 3분",
+                    "property_food_chinese": 0,
+                    "property_food_korean": 0,
+                    "property_romantic": 0,
+                    "price": 4900,
+                    "property_active_dynamic": 0,
+                    "property_food_japanese": 0,
+                    "reco_hashkey": "6a40f87f-0466-45e7-93d8-59fc2b435f42",
+                    "property_active_static": 1,
+                    "category": "place",
+                    "property_food_italian": 0,
+                    "region": "신사역"
+                },
+                {
+                    "event_availability": {
+                        "CPI06": {
+                            "ing": 3,
+                            "id": 159,
+                            "event_type_id": "CPI06"
+                        },
+                        "CPI04": {
+                            "ing": 1,
+                            "id": 240,
+                            "event_type_id": "CPI04"
+                        },
+                        "CPI01": {
+                            "ing": 2,
+                            "id": 254,
+                            "event_type_id": "CPI01"
+                        },
+                        "CPI02": {
+                            "ing": 3,
+                            "id": 244,
+                            "event_type_id": "CPI02"
+                        },
+                        "CPI03": {
+                            "ing": 3,
+                            "id": 178,
+                            "event_type_id": "CPI03"
+                        },
+                        "CPI05": {
+                            "ing": 1,
+                            "id": 255,
+                            "event_type_id": "CPI05"
+                        }
+                    },
+                    "title": "라인프렌즈",
+                    "distance": "신사역에서 걸어서 8분",
+                    "property_food_chinese": 0,
+                    "property_food_korean": 0,
+                    "property_romantic": 0,
+                    "price": 5000,
+                    "property_active_dynamic": 0,
+                    "property_food_japanese": 0,
+                    "reco_hashkey": "9e715833-7ffb-4fb9-99a5-4dd22050649a",
+                    "property_active_static": 1,
+                    "category": "place",
+                    "property_food_italian": 0,
+                    "region": "신사역"
+                },
+                {
+                    "event_availability": {
+                        "CPI06": {
+                            "ing": 3,
+                            "id": 153,
+                            "event_type_id": "CPI06"
+                        },
+                        "CPI04": {
+                            "ing": 1,
+                            "id": 179,
+                            "event_type_id": "CPI04"
+                        },
+                        "CPI01": {
+                            "ing": 2,
+                            "id": 187,
+                            "event_type_id": "CPI01"
+                        },
+                        "CPI02": {
+                            "ing": 3,
+                            "id": 222,
+                            "event_type_id": "CPI02"
+                        },
+                        "CPI03": {
+                            "ing": 3,
+                            "id": 167,
+                            "event_type_id": "CPI03"
+                        },
+                        "CPI05": {
+                            "ing": 1,
+                            "id": 172,
+                            "event_type_id": "CPI05"
+                        }
+                    },
+                    "title": "라인프렌즈",
+                    "distance": "신사역에서 걸어서 5분",
+                    "property_food_chinese": 0,
+                    "property_food_korean": 0,
+                    "property_romantic": 0,
+                    "price": 5000,
+                    "property_active_dynamic": 0,
+                    "property_food_japanese": 0,
+                    "reco_hashkey": "a4931eb6-d731-473e-b9e1-dd71b29bbabb",
+                    "property_active_static": 1,
+                    "category": "place",
+                    "property_food_italian": 0,
+                    "region": "신사역"
+                },
+                {
+                    "event_availability": {
+                        "CPI06": {
+                            "ing": 3,
+                            "id": 202,
+                            "event_type_id": "CPI06"
+                        },
+                        "CPI04": {
+                            "ing": 1,
+                            "id": 245,
+                            "event_type_id": "CPI04"
+                        },
+                        "CPI01": {
+                            "ing": 3,
+                            "id": 237,
+                            "event_type_id": "CPI01"
+                        },
+                        "CPI02": {
+                            "ing": 3,
+                            "id": 194,
+                            "event_type_id": "CPI02"
+                        },
+                        "CPI03": {
+                            "ing": 2,
+                            "id": 173,
+                            "event_type_id": "CPI03"
+                        },
+                        "CPI05": {
+                            "ing": 1,
+                            "id": 218,
+                            "event_type_id": "CPI05"
+                        }
+                    },
+                    "title": "Dr Jart+",
+                    "distance": "신사역에서 걸어서 8분",
+                    "property_food_chinese": 0,
+                    "property_food_korean": 0,
+                    "property_romantic": 0,
+                    "price": 0,
+                    "property_active_dynamic": 0,
+                    "property_food_japanese": 0,
+                    "reco_hashkey": "dc25104d-64cc-4051-a085-9004345b5047",
+                    "property_active_static": 1,
+                    "category": "place",
+                    "property_food_italian": 0,
+                    "region": "신사역"
+                },
+                {
+                    "event_availability": {
+                        "CPI06": {
+                            "ing": 3,
+                            "id": 215,
+                            "event_type_id": "CPI06"
+                        },
+                        "CPI04": {
+                            "ing": 1,
+                            "id": 176,
+                            "event_type_id": "CPI04"
+                        },
+                        "CPI01": {
+                            "ing": 2,
+                            "id": 165,
+                            "event_type_id": "CPI01"
+                        },
+                        "CPI02": {
+                            "ing": 3,
+                            "id": 220,
+                            "event_type_id": "CPI02"
+                        },
+                        "CPI03": {
+                            "ing": 2,
+                            "id": 204,
+                            "event_type_id": "CPI03"
+                        },
+                        "CPI05": {
+                            "ing": 1,
+                            "id": 248,
+                            "event_type_id": "CPI05"
+                        }
+                    },
+                    "title": "만화카페 섬",
+                    "distance": "신사역에서 걸어서 5분",
+                    "property_food_chinese": 0,
+                    "property_food_korean": 0,
+                    "property_romantic": 0,
+                    "price": 2500,
+                    "property_active_dynamic": 0,
+                    "property_food_japanese": 0,
+                    "reco_hashkey": "ee7bfecd-8068-4b24-922a-80ccd2e84f2d",
+                    "property_active_static": 1,
+                    "category": "place",
+                    "property_food_italian": 0,
+                    "region": "신사역"
+                },
+                {
+                    "event_availability": {
+                        "CPI06": {
+                            "ing": 3,
+                            "id": 247,
+                            "event_type_id": "CPI06"
+                        },
+                        "CPI04": {
+                            "ing": 1,
+                            "id": 243,
+                            "event_type_id": "CPI04"
+                        },
+                        "CPI01": {
+                            "ing": 2,
+                            "id": 216,
+                            "event_type_id": "CPI01"
+                        },
+                        "CPI02": {
+                            "ing": 3,
+                            "id": 147,
+                            "event_type_id": "CPI02"
+                        },
+                        "CPI03": {
+                            "ing": 3,
+                            "id": 258,
+                            "event_type_id": "CPI03"
+                        },
+                        "CPI05": {
+                            "ing": 1,
+                            "id": 174,
+                            "event_type_id": "CPI05"
+                        }
+                    },
+                    "title": "데이데이 스튜디오",
+                    "distance": "신사역에서 걸어서 7분",
+                    "property_food_chinese": 0,
+                    "property_food_korean": 0,
+                    "property_romantic": 0,
+                    "price": 50000,
+                    "property_active_dynamic": 0,
+                    "property_food_japanese": 0,
+                    "reco_hashkey": "f6f1e506-a505-4f79-8464-bf16e472e3cd",
+                    "property_active_static": 1,
+                    "category": "place",
+                    "property_food_italian": 0,
+                    "region": "신사역"
+                }
+            ]
+        }
+    },
+    "test_region_filter_2": {
+        "input": {
+            "locations": [
+                {
+                    "region": "건대입구역",
+                    "no": 1
+                }
+            ],
+            "time_zone": {},
+            "event_types": []
+        },
+        "output": {
+            "cafe": [
+                {
+                    "event_availability": {},
+                    "title": "카페온더플랜",
+                    "distance": "건대입구역에서 걸어서 2분",
+                    "property_food_chinese": 0,
+                    "property_food_korean": 0,
+                    "property_romantic": null,
+                    "price": 4000,
+                    "property_active_dynamic": 0,
+                    "property_food_japanese": 0,
+                    "reco_hashkey": "007afc2f-48c1-47a8-a951-0ba9796c8273",
+                    "property_active_static": 0,
+                    "category": "cafe",
+                    "property_food_italian": 0,
+                    "region": "건대입구역"
+                },
+                {
+                    "event_availability": {},
+                    "title": "라 베란다",
+                    "distance": "건대입구역에서 걸어서 3분",
+                    "property_food_chinese": 0,
+                    "property_food_korean": 0,
+                    "property_romantic": null,
+                    "price": 8000,
+                    "property_active_dynamic": 0,
+                    "property_food_japanese": 0,
+                    "reco_hashkey": "1277a5d6-7421-4797-ae1c-57b91ce6957c",
+                    "property_active_static": 0,
+                    "category": "cafe",
+                    "property_food_italian": 0,
+                    "region": "건대입구역"
+                },
+                {
+                    "event_availability": {},
+                    "title": "최가커피",
+                    "distance": "건대입구역에서 걸어서 6분",
+                    "property_food_chinese": 0,
+                    "property_food_korean": 0,
+                    "property_romantic": null,
+                    "price": 4000,
+                    "property_active_dynamic": 0,
+                    "property_food_japanese": 0,
+                    "reco_hashkey": "470f8778-cd3b-4818-99bd-a0bbb7431d19",
+                    "property_active_static": 0,
+                    "category": "cafe",
+                    "property_food_italian": 0,
+                    "region": "건대입구역"
+                },
+                {
+                    "event_availability": {},
+                    "title": "HO2",
+                    "distance": "건대입구역에서 걸어서 2분",
+                    "property_food_chinese": 0,
+                    "property_food_korean": 0,
+                    "property_romantic": null,
+                    "price": 3500,
+                    "property_active_dynamic": 0,
+                    "property_food_japanese": 0,
+                    "reco_hashkey": "99d4dcb8-6acb-4041-8e5e-7f85ee794fe8",
+                    "property_active_static": 0,
+                    "category": "cafe",
+                    "property_food_italian": 0,
+                    "region": "건대입구역"
+                },
+                {
+                    "event_availability": {},
+                    "title": "칼레오커피 로스터스",
+                    "distance": "건대입구역에서 걸어서 7분",
+                    "property_food_chinese": 0,
+                    "property_food_korean": 0,
+                    "property_romantic": null,
+                    "price": 3500,
+                    "property_active_dynamic": 0,
+                    "property_food_japanese": 0,
+                    "reco_hashkey": "cac8dcdc-628e-4c18-9779-7488e561b995",
+                    "property_active_static": 0,
+                    "category": "cafe",
+                    "property_food_italian": 0,
+                    "region": "건대입구역"
+                },
+                {
+                    "event_availability": {},
+                    "title": "커먼그라운드 알레그리아",
+                    "distance": "건대입구역에서 걸어서 5분",
+                    "property_food_chinese": 0,
+                    "property_food_korean": 0,
+                    "property_romantic": null,
+                    "price": 5000,
+                    "property_active_dynamic": 0,
+                    "property_food_japanese": 0,
+                    "reco_hashkey": "eaf9a63c-b2db-498d-b436-7472c7792ec0",
+                    "property_active_static": 0,
+                    "category": "cafe",
+                    "property_food_italian": 0,
+                    "region": "건대입구역"
+                },
+                {
+                    "event_availability": {},
+                    "title": "K375",
+                    "distance": "건대입구역에서 걸어서 6분",
+                    "property_food_chinese": 0,
+                    "property_food_korean": 0,
+                    "property_romantic": null,
+                    "price": 3800,
+                    "property_active_dynamic": 0,
+                    "property_food_japanese": 0,
+                    "reco_hashkey": "f405b2a7-8e40-4e92-9360-3454f293ad7d",
+                    "property_active_static": 0,
+                    "category": "cafe",
+                    "property_food_italian": 0,
+                    "region": "건대입구역"
+                }
+            ],
+            "restaurant": [
+                {
+                    "event_availability": {},
+                    "title": "로니로티",
+                    "distance": "건대입구역에서 걸어서 1분",
+                    "property_food_chinese": null,
+                    "property_food_korean": null,
+                    "property_romantic": null,
+                    "price": 10000,
+                    "property_active_dynamic": 0,
+                    "property_food_japanese": null,
+                    "reco_hashkey": "1ab303c4-c9d3-4822-b1e5-3469204cb537",
+                    "property_active_static": 0,
+                    "category": "restaurant",
+                    "property_food_italian": null,
+                    "region": "건대입구역"
+                },
+                {
+                    "event_availability": {},
+                    "title": "마녀사냥 매운갈비찜",
+                    "distance": "건대입구역에서 걸어서 4분",
+                    "property_food_chinese": null,
+                    "property_food_korean": null,
+                    "property_romantic": null,
+                    "price": 13000,
+                    "property_active_dynamic": 0,
+                    "property_food_japanese": null,
+                    "reco_hashkey": "2d129119-d41b-4cdd-8337-68090c2ecb21",
+                    "property_active_static": 0,
+                    "category": "restaurant",
+                    "property_food_italian": null,
+                    "region": "건대입구역"
+                },
+                {
+                    "event_availability": {},
+                    "title": "바나바나",
+                    "distance": "건대입구역에서 걸어서 2분",
+                    "property_food_chinese": null,
+                    "property_food_korean": null,
+                    "property_romantic": null,
+                    "price": 13000,
+                    "property_active_dynamic": 0,
+                    "property_food_japanese": null,
+                    "reco_hashkey": "2e28ca57-a406-4ac4-9968-9ed299bec53a",
+                    "property_active_static": 0,
+                    "category": "restaurant",
+                    "property_food_italian": null,
+                    "region": "건대입구역"
+                },
+                {
+                    "event_availability": {},
+                    "title": "스시텐",
+                    "distance": "건대입구역에서 걸어서 8분",
+                    "property_food_chinese": null,
+                    "property_food_korean": null,
+                    "property_romantic": null,
+                    "price": 9500,
+                    "property_active_dynamic": 0,
+                    "property_food_japanese": null,
+                    "reco_hashkey": "6179ebb8-b654-47fc-a6d6-61636bc43775",
+                    "property_active_static": 0,
+                    "category": "restaurant",
+                    "property_food_italian": null,
+                    "region": "건대입구역"
+                },
+                {
+                    "event_availability": {},
+                    "title": "김도사불백",
+                    "distance": "건대입구역에서 걸어서 2분",
+                    "property_food_chinese": null,
+                    "property_food_korean": null,
+                    "property_romantic": null,
+                    "price": 8000,
+                    "property_active_dynamic": 0,
+                    "property_food_japanese": null,
+                    "reco_hashkey": "8c03eed4-4f45-457a-89d2-f3d25ed0217e",
+                    "property_active_static": 0,
+                    "category": "restaurant",
+                    "property_food_italian": null,
+                    "region": "건대입구역"
+                },
+                {
+                    "event_availability": {},
+                    "title": "순곱이네",
+                    "distance": "건대입구에서 걸어서 5분",
+                    "property_food_chinese": null,
+                    "property_food_korean": null,
+                    "property_romantic": null,
+                    "price": 25000,
+                    "property_active_dynamic": 0,
+                    "property_food_japanese": null,
+                    "reco_hashkey": "99764ab1-199e-49bd-a5c9-e68cf124bc09",
+                    "property_active_static": 0,
+                    "category": "restaurant",
+                    "property_food_italian": null,
+                    "region": "건대입구역"
+                },
+                {
+                    "event_availability": {},
+                    "title": "호야초밥",
+                    "distance": "건대입구역에서 걸어서 5분",
+                    "property_food_chinese": null,
+                    "property_food_korean": null,
+                    "property_romantic": null,
+                    "price": 11000,
+                    "property_active_dynamic": 0,
+                    "property_food_japanese": null,
+                    "reco_hashkey": "a2e2fab4-3a4d-4a1b-bba0-4f507c7b8473",
+                    "property_active_static": 0,
+                    "category": "restaurant",
+                    "property_food_italian": null,
+                    "region": "건대입구역"
+                },
+                {
+                    "event_availability": {},
+                    "title": "고베규카츠",
+                    "distance": "건대입구역에서 걸어서 7분",
+                    "property_food_chinese": null,
+                    "property_food_korean": null,
+                    "property_romantic": null,
+                    "price": 12000,
+                    "property_active_dynamic": 0,
+                    "property_food_japanese": null,
+                    "reco_hashkey": "b5691131-2948-414f-8b65-4b87ab031de8",
+                    "property_active_static": 0,
+                    "category": "restaurant",
+                    "property_food_italian": null,
+                    "region": "건대입구역"
+                },
+                {
+                    "event_availability": {},
+                    "title": "경성함바그",
+                    "distance": "건대입구역에서 걸어서 1분",
+                    "property_food_chinese": null,
+                    "property_food_korean": null,
+                    "property_romantic": null,
+                    "price": 10000,
+                    "property_active_dynamic": 0,
+                    "property_food_japanese": null,
+                    "reco_hashkey": "ba5191e5-98b6-44ce-9983-b8198dc1568d",
+                    "property_active_static": 0,
+                    "category": "restaurant",
+                    "property_food_italian": null,
+                    "region": "건대입구역"
+                },
+                {
+                    "event_availability": {},
+                    "title": "니뽕내뽕",
+                    "distance": "건대입구역에서 걸어서 3분",
+                    "property_food_chinese": null,
+                    "property_food_korean": null,
+                    "property_romantic": null,
+                    "price": 7000,
+                    "property_active_dynamic": 0,
+                    "property_food_japanese": null,
+                    "reco_hashkey": "cbeacb25-7e48-4a09-8753-f5334ad50c88",
+                    "property_active_static": 0,
+                    "category": "restaurant",
+                    "property_food_italian": null,
+                    "region": "건대입구역"
+                },
+                {
+                    "event_availability": {},
+                    "title": "페스타마레",
+                    "distance": "건대입구역에서 걸어서 1분",
+                    "property_food_chinese": null,
+                    "property_food_korean": null,
+                    "property_romantic": null,
+                    "price": 8000,
+                    "property_active_dynamic": 0,
+                    "property_food_japanese": null,
+                    "reco_hashkey": "d01515b9-c3cb-40f3-80be-d0b083d89dfc",
+                    "property_active_static": 0,
+                    "category": "restaurant",
+                    "property_food_italian": null,
+                    "region": "건대입구역"
+                },
+                {
+                    "event_availability": {},
+                    "title": "이자와",
+                    "distance": "건대입구역에서 걸어서 3분",
+                    "property_food_chinese": null,
+                    "property_food_korean": null,
+                    "property_romantic": null,
+                    "price": 10000,
+                    "property_active_dynamic": 0,
+                    "property_food_japanese": null,
+                    "reco_hashkey": "d74429bf-dcdf-4be9-9197-5485ea13a1c1",
+                    "property_active_static": 0,
+                    "category": "restaurant",
+                    "property_food_italian": null,
+                    "region": "건대입구역"
+                }
+            ],
+            "place": [
+                {
+                    "event_availability": {},
+                    "title": "큐 방탈출 카페",
+                    "distance": "건대입구역에서 걸어서 5분",
+                    "property_food_chinese": 0,
+                    "property_food_korean": 0,
+                    "property_romantic": null,
+                    "price": 22000,
+                    "property_active_dynamic": null,
+                    "property_food_japanese": 0,
+                    "reco_hashkey": "0fa8889e-afe8-45e7-abb2-b58adee6e210",
+                    "property_active_static": null,
+                    "category": "place",
+                    "property_food_italian": 0,
+                    "region": "건대입구역"
+                },
+                {
+                    "event_availability": {},
+                    "title": "카페데코믹스",
+                    "distance": "건대입구역에서 걸어서 7분",
+                    "property_food_chinese": 0,
+                    "property_food_korean": 0,
+                    "property_romantic": null,
+                    "price": 4700,
+                    "property_active_dynamic": null,
+                    "property_food_japanese": 0,
+                    "reco_hashkey": "1c23358c-71aa-4b00-a368-32dd3de3df65",
+                    "property_active_static": null,
+                    "category": "place",
+                    "property_food_italian": 0,
+                    "region": "건대입구역"
+                },
+                {
+                    "event_availability": {},
+                    "title": "반지더하기",
+                    "distance": "건대입구역에서 걸어서 2분",
+                    "property_food_chinese": 0,
+                    "property_food_korean": 0,
+                    "property_romantic": null,
+                    "price": 25000,
+                    "property_active_dynamic": null,
+                    "property_food_japanese": 0,
+                    "reco_hashkey": "254c14dd-755a-4e0f-8141-ae1c700850db",
+                    "property_active_static": null,
+                    "category": "place",
+                    "property_food_italian": 0,
+                    "region": "건대입구역"
+                },
+                {
+                    "event_availability": {},
+                    "title": "커먼그라운드",
+                    "distance": "건대입구역에서 걸어서 4분",
+                    "property_food_chinese": 0,
+                    "property_food_korean": 0,
+                    "property_romantic": null,
+                    "price": 0,
+                    "property_active_dynamic": null,
+                    "property_food_japanese": 0,
+                    "reco_hashkey": "72fc2058-8d2b-4ffa-82a6-a842270ff026",
+                    "property_active_static": null,
+                    "category": "place",
+                    "property_food_italian": 0,
+                    "region": "건대입구역"
+                },
+                {
+                    "event_availability": {},
+                    "title": "비랩",
+                    "distance": "건대입구역에서 걸어서 1분",
+                    "property_food_chinese": 0,
+                    "property_food_korean": 0,
+                    "property_romantic": null,
+                    "price": 5000,
+                    "property_active_dynamic": null,
+                    "property_food_japanese": 0,
+                    "reco_hashkey": "83a0bc63-4b85-46bf-aa19-327846a19004",
+                    "property_active_static": null,
+                    "category": "place",
+                    "property_food_italian": 0,
+                    "region": "건대입구역"
+                },
+                {
+                    "event_availability": {},
+                    "title": "고양이다락방",
+                    "distance": "건대입구역에서 걸어서 1분",
+                    "property_food_chinese": 0,
+                    "property_food_korean": 0,
+                    "property_romantic": null,
+                    "price": 8000,
+                    "property_active_dynamic": null,
+                    "property_food_japanese": 0,
+                    "reco_hashkey": "b4f2820f-c602-48ac-8a27-e683a6e4c090",
+                    "property_active_static": null,
+                    "category": "place",
+                    "property_food_italian": 0,
+                    "region": "건대입구역"
+                },
+                {
+                    "event_availability": {},
+                    "title": "부야스곱창 건대점",
+                    "distance": "건대입구역에서 걸어서 5분",
+                    "property_food_chinese": 0,
+                    "property_food_korean": 0,
+                    "property_romantic": null,
+                    "price": 9000,
+                    "property_active_dynamic": null,
+                    "property_food_japanese": 0,
+                    "reco_hashkey": "b5a179eb-3f8c-4b37-9afa-ccd2787488bd",
+                    "property_active_static": null,
+                    "category": "place",
+                    "property_food_italian": 0,
+                    "region": "건대입구역"
+                },
+                {
+                    "event_availability": {},
+                    "title": "로맨틱 포차",
+                    "distance": "건대입구역에서 걸어서 5분",
+                    "property_food_chinese": 0,
+                    "property_food_korean": 0,
+                    "property_romantic": null,
+                    "price": 13800,
+                    "property_active_dynamic": null,
+                    "property_food_japanese": 0,
+                    "reco_hashkey": "c1c24b11-75b0-4850-bda3-ef9d35b4cdf0",
+                    "property_active_static": null,
+                    "category": "place",
+                    "property_food_italian": 0,
+                    "region": "건대입구역"
+                },
+                {
+                    "event_availability": {},
+                    "title": "매드밤",
+                    "distance": "건대입구역에서 걸어서 4분",
+                    "property_food_chinese": 0,
+                    "property_food_korean": 0,
+                    "property_romantic": null,
+                    "price": 5000,
+                    "property_active_dynamic": null,
+                    "property_food_japanese": 0,
+                    "reco_hashkey": "c83b9dbb-6291-4cdb-a6f9-658343f98b07",
+                    "property_active_static": null,
+                    "category": "place",
+                    "property_food_italian": 0,
+                    "region": "건대입구역"
+                }
+            ]
+        }
+    },
+    "test_region_filter_3": {
+        "input": {
+            "locations": [
+                {
+                    "region": "잠실새내역",
+                    "no": 1
+                },
+                {
+                    "region": "국회의사당역",
+                    "no": 1
+                }
+            ],
+            "time_zone": {},
+            "event_types": []
+        },
+        "output": {
+            "restaurant": [
+                {
+                    "event_availability": {
+                        "CPI06": {
+                            "ing": 3,
+                            "id": 689,
+                            "event_type_id": "CPI06"
+                        },
+                        "CPI04": {
+                            "ing": 1,
+                            "id": 681,
+                            "event_type_id": "CPI04"
+                        },
+                        "CPI01": {
+                            "ing": 3,
+                            "id": 687,
+                            "event_type_id": "CPI01"
+                        },
+                        "CPI02": {
+                            "ing": 3,
+                            "id": 680,
+                            "event_type_id": "CPI02"
+                        },
+                        "CPI03": {
+                            "ing": 2,
+                            "id": 683,
+                            "event_type_id": "CPI03"
+                        },
+                        "CPI05": {
+                            "ing": 3,
+                            "id": 676,
+                            "event_type_id": "CPI05"
+                        }
+                    },
+                    "title": "파오파오",
+                    "distance": "잠실새내역에서 걸어서 8분",
+                    "property_food_chinese": 1,
+                    "property_food_korean": 0,
+                    "property_romantic": 0,
+                    "price": 3500,
+                    "property_active_dynamic": 0,
+                    "property_food_japanese": 0,
+                    "reco_hashkey": "3c426253-36ef-4940-b23b-30d4f9d5f34d",
+                    "property_active_static": 0,
+                    "category": "restaurant",
+                    "property_food_italian": 0,
+                    "region": "잠실새내역"
+                },
+                {
+                    "event_availability": {
+                        "CPI06": {
+                            "ing": 3,
+                            "id": 682,
+                            "event_type_id": "CPI06"
+                        },
+                        "CPI04": {
+                            "ing": 3,
+                            "id": 679,
+                            "event_type_id": "CPI04"
+                        },
+                        "CPI01": {
+                            "ing": 3,
+                            "id": 686,
+                            "event_type_id": "CPI01"
+                        },
+                        "CPI02": {
+                            "ing": 2,
+                            "id": 691,
+                            "event_type_id": "CPI02"
+                        },
+                        "CPI03": {
+                            "ing": 2,
+                            "id": 684,
+                            "event_type_id": "CPI03"
+                        },
+                        "CPI05": {
+                            "ing": 2,
+                            "id": 688,
+                            "event_type_id": "CPI05"
+                        }
+                    },
+                    "title": "부추곱창",
+                    "distance": "잠실내역 걸어서 3분",
+                    "property_food_chinese": 0,
+                    "property_food_korean": 1,
+                    "property_romantic": 0,
+                    "price": 15000,
+                    "property_active_dynamic": 0,
+                    "property_food_japanese": 0,
+                    "reco_hashkey": "84ba7bfe-a08c-4ede-aba7-9947cef13a92",
+                    "property_active_static": 0,
+                    "category": "restaurant",
+                    "property_food_italian": 0,
+                    "region": "잠실새내역"
+                },
+                {
+                    "event_availability": {
+                        "CPI06": {
+                            "ing": 3,
+                            "id": 677,
+                            "event_type_id": "CPI06"
+                        },
+                        "CPI04": {
+                            "ing": 1,
+                            "id": 675,
+                            "event_type_id": "CPI04"
+                        },
+                        "CPI01": {
+                            "ing": 3,
+                            "id": 674,
+                            "event_type_id": "CPI01"
+                        },
+                        "CPI02": {
+                            "ing": 3,
+                            "id": 690,
+                            "event_type_id": "CPI02"
+                        },
+                        "CPI03": {
+                            "ing": 3,
+                            "id": 678,
+                            "event_type_id": "CPI03"
+                        },
+                        "CPI05": {
+                            "ing": 2,
+                            "id": 685,
+                            "event_type_id": "CPI05"
+                        }
+                    },
+                    "title": "아시안테이블",
+                    "distance": "잠실내역 걸어서 9분",
+                    "property_food_chinese": 1,
+                    "property_food_korean": 0,
+                    "property_romantic": 1,
+                    "price": 12000,
+                    "property_active_dynamic": 0,
+                    "property_food_japanese": 0,
+                    "reco_hashkey": "d481ea5b-e845-4f95-bd8d-42c318ad1b93",
+                    "property_active_static": 0,
+                    "category": "restaurant",
+                    "property_food_italian": 0,
+                    "region": "잠실새내역"
+                },
+                {
+                    "event_availability": {},
+                    "title": "브로드웨이",
+                    "distance": "국회의사당역에서 걸어서 7분",
+                    "property_food_chinese": null,
+                    "property_food_korean": null,
+                    "property_romantic": null,
+                    "price": 50000,
+                    "property_active_dynamic": 0,
+                    "property_food_japanese": null,
+                    "reco_hashkey": "57fe1c6a-4cd6-49e6-a52c-652d9b1df1ed",
+                    "property_active_static": 0,
+                    "category": "restaurant",
+                    "property_food_italian": null,
+                    "region": "국회의사당역"
+                },
+                {
+                    "event_availability": {},
+                    "title": "노조미일식",
+                    "distance": "국회의사당역에서 걸어서 1분",
+                    "property_food_chinese": null,
+                    "property_food_korean": null,
+                    "property_romantic": null,
+                    "price": 40000,
+                    "property_active_dynamic": 0,
+                    "property_food_japanese": null,
+                    "reco_hashkey": "c53daa99-71b0-42dd-87da-4cf98d8bbd76",
+                    "property_active_static": 0,
+                    "category": "restaurant",
+                    "property_food_italian": null,
+                    "region": "국회의사당역"
+                }
+            ],
+            "cafe": [
+                {
+                    "event_availability": {},
+                    "title": "마마스",
+                    "distance": "국회의사당역에서 걸어서 3분",
+                    "property_food_chinese": 0,
+                    "property_food_korean": 0,
+                    "property_romantic": null,
+                    "price": 4000,
+                    "property_active_dynamic": 0,
+                    "property_food_japanese": 0,
+                    "reco_hashkey": "bffffb58-5870-419e-96a9-3cfeef83aad7",
+                    "property_active_static": 0,
+                    "category": "cafe",
+                    "property_food_italian": 0,
+                    "region": "국회의사당역"
+                }
+            ],
+            "place": []
+        }
+    }
+}

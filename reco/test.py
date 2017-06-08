@@ -48,6 +48,7 @@ class TestReco(unittest.TestCase):
         self.assertEqual(a + b, expected_result)
     
     def test_region_filter_1(self):
+        print_test_info()
         reco = Reco(
             test_data['test_region_filter_1']['input'],
             '',
@@ -61,6 +62,53 @@ class TestReco(unittest.TestCase):
                 self.assertTrue(
                     row['reco_hashkey'] in [data['reco_hashkey'] for data in recoList[category]]
                 )
+            self.assertEqual(
+                len(expectedList[category]),
+                len(recoList[category])
+            )
+                
+    def test_region_filter_2(self):
+        print_test_info()
+        reco = Reco(
+            test_data['test_region_filter_2']['input'],
+            '',
+            item_data = test_item_data
+        )
+        recoList = reco.get_reco_list()
+        expectedList = test_data['test_region_filter_2']['output']
+        
+
+        for category in expectedList:
+            for row in expectedList[category]:
+                self.assertTrue(
+                    row['reco_hashkey'] in [data['reco_hashkey'] for data in recoList[category]]
+                )
+            self.assertEqual(
+                len(expectedList[category]),
+                len(recoList[category])
+            )
+    
+    def test_region_filter_3(self):
+        print_test_info()
+        reco = Reco(
+            test_data['test_region_filter_3']['input'],
+            '',
+            item_data = test_item_data
+        )
+        recoList = reco.get_reco_list()
+        expectedList = test_data['test_region_filter_3']['output']
+        
+
+        for category in expectedList:
+            for row in expectedList[category]:
+                self.assertTrue(
+                    row['reco_hashkey'] in [data['reco_hashkey'] for data in recoList[category]]
+                )
+            self.assertEqual(
+                len(expectedList[category]),
+                len(recoList[category])
+            )
+
     
 
 
