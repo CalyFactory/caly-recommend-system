@@ -4,10 +4,10 @@ from pymongo import MongoClient
 import json 
 import sys
 
-with open('../key/conf.json') as conf_json:
-    conf = json.load(conf_json)
-
 if 'test' not in sys.argv:
+
+    with open('../key/conf.json') as conf_json:
+        conf = json.load(conf_json)
     client = MongoClient('mongodb://'+conf["mongo"]["user"]+':' + conf["mysql"]["password"] + '@127.0.0.1')
     base_db = client.calydb
 
