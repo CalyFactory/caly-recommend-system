@@ -611,7 +611,6 @@ class TestReco(unittest.TestCase):
 
         for category in expectedList:
             for row in expectedList[category]:
-                print(row)
                 self.assertTrue(
                     row['reco_hashkey'] in [data['reco_hashkey'] for data in recoList[category]]
                 )
@@ -622,8 +621,69 @@ class TestReco(unittest.TestCase):
                 self.assertTrue(
                     recoItem is not None
                 )
-                print(row['score'])
-                print(recoItem['score'])
+                for i in range(0, len(row['score'])):
+                    if row['score'][i] == -1:
+                        continue
+                    self.assertEqual(
+                        row['score'][i],
+                        int((recoItem['score'] % math.pow(10, 6-i)) / math.pow(10, 5-i))
+                    )
+            self.assertEqual(
+                len(expectedList[category]),
+                len(recoList[category])
+            )
+    
+    """
+    test_score_personal_3
+    특정 지역과 유저의 활동기록을 넣고 score의 개인화점수가 공식에 맞게 계산되는지 테스트 
+
+    input : 
+        지역 : 신사역, 건대입구역  
+        유저활동기록(클릭수) : 
+            전체 : 50
+            한식 : 3
+            중식 : 3
+            일식 : 3
+            양식 : 3
+            로맨틱 : 20
+            능동 : 10
+            수동 : 10
+
+    output : 
+        신사역 목록 -> 천자리의수가 score 공식으로 계산된 목적점수이어야함
+        건대입구역 목록 -> 천자리의수가 score 공식으로 계산된 목적점수이어야함
+
+    assert 내용
+        1. exptected output의 recohashkey가 output안에 들어있는가
+        2. exptected output의 갯수와 output의 결과가 같은가
+        3. output의 score의 천자리수와 expected output의 천자리수가 같은지
+
+    """
+    def test_score_personal_3(self):
+        print_test_info()
+        reco = Reco(
+            test_data['test_score_personal_3']['input']['extracted_data'],
+            '',
+            external_data = {
+                'item_data': test_item_data,
+                'user_click': test_data['test_score_personal_3']['input']['user_click']
+            }
+        )
+        recoList = reco.get_reco_list()
+        expectedList = test_data['test_score_personal_3']['output']
+
+        for category in expectedList:
+            for row in expectedList[category]:
+                self.assertTrue(
+                    row['reco_hashkey'] in [data['reco_hashkey'] for data in recoList[category]]
+                )
+                recoItem = None
+                for recoItem in recoList[category]:
+                    if row['reco_hashkey'] == recoItem['reco_hashkey']:
+                        break
+                self.assertTrue(
+                    recoItem is not None
+                )
                 for i in range(0, len(row['score'])):
                     if row['score'][i] == -1:
                         continue
@@ -661,5 +721,5 @@ def save_all_recommend_item():
 # 테스트 실행
 if __name__ == '__main__':
 	unittest.main(argv=[sys.argv[0]])
-#    test = TestReco("test_score_personal_2")
-#    test.test_score_personal_2()
+#    test = TestReco("test_score_personal_3")
+#    test.test_score_personal_3()

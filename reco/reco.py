@@ -234,7 +234,6 @@ class Reco:
         for i in range(0, len(food_list)):
             self.user_property_score[food_list[i]] = 4.5 - food_list_rank[i] * 0.5
         
-        print(self.user_property_score)
         
 
     def get_snd_percent(self, n, index):
@@ -363,7 +362,7 @@ class Reco:
             'property_food_japanese',
             'property_food_italian',
         ]
-        print(origin_data)
+#        print(origin_data)
         for property_row in property_list:
             if origin_data[property_row] == None:
                 origin_data[property_row] = 0
@@ -374,8 +373,8 @@ class Reco:
                     personal_score += (1 - origin_data['property_romantic']) * 4.5
             else:
                 personal_score += origin_data[property_row] * self.user_property_score[property_row]
-            print(property_row) 
-            print(personal_score)
+#            print(property_row)
+#            print(personal_score)
         """
         print(personal_score)
         print(
