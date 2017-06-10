@@ -205,4 +205,4 @@ def save_all_recommend_item():
 
 # 테스트 실행
 if __name__ == '__main__':
-	unittest.main()
+	unittest.main(argv=[sys.argv[0]])

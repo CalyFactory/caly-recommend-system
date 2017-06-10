@@ -10,6 +10,7 @@ from bson.json_util import dumps
 
 class Reco:
 
+    test_mode = False
     price_priority = {
         'restaurant':67.3, 
         'cafe':41.1, 
@@ -28,12 +29,19 @@ class Reco:
         else:
             self.user_hashkey = json_data['user_hashkey']
         self.show_external_data = show_external_data
-        self.item_data = item_data
+        
+        if item_data != None:
+            self.test_mode = True
+            with open('./testInitData.json') as file:
+                self.init_json_data = json.load(file)
 
+        self.item_data = item_data
         self.init_data()
 
     def init_data(self):
         self.location_priority_list = {}
+        print("data")
+        print (self.json_data)
         for location_data in self.json_data['locations']:
             self.location_priority_list[location_data['region']] = location_data['no']
 
@@ -41,27 +49,31 @@ class Reco:
         for event_type in self.json_data['event_types']:
             self.event_type_id_list.append(event_type['id'])
         
-        price_list = utils.fetch_all_json(
-            db_manager.query(
-                """
-                SELECT price 
-                FROM RECOMMENDATION
-                WHERE price IS NOT NULL
-                ORDER BY price 
-                """
+        if self.test_mode == True:
+            price_list = self.init_json_data['price_list']
+            distance_row_list = self.init_json_data['distance_row_list']
+        else:
+            price_list = utils.fetch_all_json(
+                db_manager.query(
+                    """
+                    SELECT price 
+                    FROM RECOMMENDATION
+                    WHERE price IS NOT NULL
+                    ORDER BY price 
+                    """
+                )
             )
-        )
 
-        distance_row_list = utils.fetch_all_json(
-            db_manager.query(
-                """
-                SELECT distance 
-                FROM RECOMMENDATION
-                WHERE distance IS NOT NULL
-                ORDER BY distance 
-                """
+            distance_row_list = utils.fetch_all_json(
+                db_manager.query(
+                    """
+                    SELECT distance 
+                    FROM RECOMMENDATION
+                    WHERE distance IS NOT NULL
+                    ORDER BY distance 
+                    """
+                )
             )
-        )
 
         distance_list = []
         for distance_row in distance_row_list:
@@ -89,35 +101,41 @@ class Reco:
         #print(self.price_grade_list)
         #print(self.distance_grade_list)
 
-        result = utils.fetch_all_json(
-            db_manager.query(
-                """
-                SELECT account_hashkey
-                FROM USERACCOUNT
-                WHERE
-                user_hashkey = '%s'
-                """
-                % self.user_hashkey
+
+        if self.test_mode == True:
+            result = []
+        else:
+            result = utils.fetch_all_json(
+                db_manager.query(
+                    """
+                    SELECT account_hashkey
+                    FROM USERACCOUNT
+                    WHERE
+                    user_hashkey = '%s'
+                    """
+                    % self.user_hashkey
+                )
             )
-        )
+        
         account_hash_key_list = []
         for row in result:
             account_hash_key_list.append(row['account_hashkey'])
 
         #load user data 
-        reco_log_list = json.loads(
-            dumps(
-                mongo_manager.reco_log.find(
-                    {
-                        "accountHashkey": {
-                            "$all": account_hash_key_list
+        if self.test_mode == True:
+            reco_log_list = []
+        else:
+            reco_log_list = json.loads(
+                dumps(
+                    mongo_manager.reco_log.find(
+                        {
+                            "accountHashkey": {
+                                "$all": account_hash_key_list
+                            }
                         }
-                    }
+                    )
                 )
             )
-        )
-        #print(account_hash_key_list)
-        #print(reco_log_list)
 
         
         log_leco_hashkey_list = []
