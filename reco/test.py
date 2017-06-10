@@ -452,7 +452,6 @@ class TestReco(unittest.TestCase):
 
         for category in expectedList:
             for row in expectedList[category]:
-                print(row)
                 self.assertTrue(
                     row['reco_hashkey'] in [data['reco_hashkey'] for data in recoList[category]]
                 )
@@ -463,8 +462,6 @@ class TestReco(unittest.TestCase):
                 self.assertTrue(
                     recoItem is not None
                 )
-                print(row['score'])
-                print(recoItem['score'])
                 for i in range(0, len(row['score'])):
                     if row['score'][i] == -1:
                         continue

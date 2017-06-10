@@ -254,8 +254,6 @@ class Reco:
     def get_filtered_list(self):
 
         location_filtered_list = self.__get_location_filtered_list()
-#        timeFilteredList = self.__get_time_filtered_list(location_filtered_list)
-#        typeFilteredList = self.__get_type_filtered_list(location_filtered_list)
 
         return location_filtered_list
 
@@ -266,55 +264,7 @@ class Reco:
         if item_a['score'] < item_b['score']:
             return True 
         else:
-            return False 
-
-        #region
-        item_a_region_priority = self.location_priority_list[item_a['region']]
-        item_b_region_priority = self.location_priority_list[itemB['region']]
-
-        if item_a_region_priority < item_b_region_priority:
-            return False
-        elif item_a_region_priority > item_b_region_priority:
-            return True
-
-        #목적지표 event_type_availability
-        ## TODO : 회의때 목적은 여러개인데 목적지표로 순위를 정하는것을 목적이 하나인 경우만 생각해서 정한 것 같다. 고민이 필요함
-
-        event_type_id = self.json_data['event_types'][0]['id']
-
-        item_a_availability_score = self.__get_availability_score(is_second_arg_high_priority, event_type_id)
-        item_b_availability_score = self.__get_availability_score(item_b, event_type_id)
-
-        if item_a_availability_score > item_b_availability_score:
-            return False 
-        elif item_a_availability_score < item_b_availability_score:
-            return True 
-
-        #score 
-        item_a_score = is_second_arg_high_priority['score']
-        item_b_score = item_b['score']
-
-        if item_a_score < item_b_score:
-            return False 
-        elif item_a_score > item_b_score:
-            return True 
-
-        #등록된 시간 순서대로
-
-        return True
-
-        
-
-    def __get_availability_score(self, item, event_type_id):
-
-        #TODO : 테스트중이라 주석차리 하지만 event_type_id가 없는경우가 존재해서는 안됨. 실제론 error를 내야함 
-        if event_type_id not in item['event_availability']:
-            #raise Exception('no event_type_id in item')
-            return 0 # 테스트 후 raise문을 사용할것
-        
-        ing_value = item['event_availability'][event_type_id]['ing'] 
-
-        return ing_value * 2 + afterValue
+            return False         
 
     def sort_list_by_score(self, origin_list):
 
@@ -601,26 +551,6 @@ class Reco:
                     reco_item['event_availability'][json_item['event_type_id']] = json_item
         
         return reco_list
-
-    def __get_time_filtered_list(self, origin_list):
-        timeData = self.json_data['time']
-        return origin_list 
-
-    def __get_type_filtered_list(self, origin_list):
-        event_type_data = self.json_data['event_types']
-        event_type_id = self.json_data['event_types'][0]['id']
-
-        for row in origin_list:
-            for origin_data in origin_list[row][:]:            
-                if event_type_id not in origin_data['event_availability']: 
-                    #raise Exception('no event_type_id in item') #TODO : 테스트일때만 에러를 생략
-                    ing = 0
-                else:
-                    ing = origin_data['event_availability'][event_type_id]['ing']
-
-    #            if ing + after == 0: #TODO : 테스트 일때만 필터링을 안함
-    #                origin_list.remove(origin_data)
-        return origin_list
 
 def hello():
     result = utils.fetch_all_json(
