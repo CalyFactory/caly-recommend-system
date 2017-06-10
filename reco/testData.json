@@ -2219,17 +2219,37 @@
             ]
         }
     },
-    "test": {
+    "test_region_filter_4": {
         "input": {
             "event_types": [
-                {
-                    "id": "CPI02"
-                }
+
+            ],
+            "locations": [
+            ],
+            "event_hashkey": "2ada42fb836c39e943997665648e9306a7f176771148efc9d7a14bd2",
+            "user_hashkey": "bf0f5c59839fa0138c2000069060cdf3e969ab6935474dc052a79cea",
+            "time_set": {
+                "extract_start": "None",
+                "event_end": "09:00",
+                "extract_end": "None",
+                "event_start": "08:00"
+            }
+        },
+        "output": {
+            "restaurant": [],
+            "cafe": [],
+            "place": []
+        }
+    },
+    "test_region_filter_5": {
+        "input": {
+            "event_types": [
+
             ],
             "locations": [
                 {
-                    "no": 0,
-                    "region": "합정역"
+                    "region": "소마역",
+                    "no": 0
                 }
             ],
             "event_hashkey": "2ada42fb836c39e943997665648e9306a7f176771148efc9d7a14bd2",
@@ -2252,7 +2272,7 @@
             "locations": [
                 {
                     "region": "신사역",
-                    "no": 1
+                    "no": 0
                 }
             ],
             "time_zone": {},
