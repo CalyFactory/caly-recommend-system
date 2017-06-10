@@ -1,6 +1,6 @@
 Caly Recommend Engine 
 =========
-![build status](https://travis-ci.org/CalyFactory/caly-recommend-system.svg?branch=master)
+![build status](https://travis-ci.org/CalyFactory/caly-recommend-system.svg)
 
 Naming
 * camel : only class

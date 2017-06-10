@@ -40,8 +40,6 @@ class Reco:
 
     def init_data(self):
         self.location_priority_list = {}
-        print("data")
-        print (self.json_data)
         for location_data in self.json_data['locations']:
             self.location_priority_list[location_data['region']] = location_data['no']
 
