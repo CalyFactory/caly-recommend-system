@@ -60,7 +60,7 @@ $.get( reqEventUrl, function( data ) {
             var events = ''            
             
             $.each(originEvents, function (i, item) {
-            
+                var addButton = false
             
                 events += '<tr > ' +
                             '<td height="6px">' +
@@ -111,13 +111,20 @@ $.get( reqEventUrl, function( data ) {
                 
                             '<td height="6px">' +
                                 reinforceEvents[i].locations +
-                            '</td>' +
-                            '<td height="6px">' +
+                            '</td>' 
+
+
+
+                           
+                if (reinforceEvents[i].event_types != "비추천" && reinforceEvents[i].locations != "비추천"){
+                    events += '<td height="6px">' +
                             '<button id='+i+' onClick="onbuttonclick(this.id)">RanK</button>' +
-                            '</td>' +
+                            '</td>' 
+
+                }
 
 
-                           '</tr>'
+                events += '</tr>'
 
             });
 

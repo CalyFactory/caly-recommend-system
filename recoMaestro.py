@@ -136,8 +136,8 @@ class RecoMaestro():
 
 			self.result_reinforce_events_for_web.append(
 											{
-												"event_types":"-",
-												"locations":"-"			
+												"event_types":"비추천",
+												"locations":"비추천"			
 											}
 										)			
 		else:
