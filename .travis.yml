@@ -9,7 +9,7 @@ install:
 
 script:
   - cd ./reco
-  - coverage run --source python ./test.py test
+  - coverage run ./test.py test
 
 after_success:
   - coveralls
