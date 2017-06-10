@@ -22,7 +22,7 @@ class Reco:
         'place':40.7
     }
 
-    def __init__(self, json_data, show_external_data = True, item_data = None):
+    def __init__(self, json_data, show_external_data = True, external_data = None):
         self.json_data = json_data
         if 'user_hashkey' not in json_data:
             self.user_hashkey = ''
@@ -30,12 +30,13 @@ class Reco:
             self.user_hashkey = json_data['user_hashkey']
         self.show_external_data = show_external_data
         
-        if item_data != None:
+        if external_data != None:
             self.test_mode = True
             with open('./testInitData.json') as file:
                 self.init_json_data = json.load(file)
+            self.item_data = external_data['item_data']
+            self.user_click = external_data['user_click'] 
 
-        self.item_data = item_data
         self.init_data()
 
     def init_data(self):
@@ -189,6 +190,11 @@ class Reco:
                 if key == 'reco_hashkey':
                     continue
                 self.user_type_click_count[key] += row[key] * hashkey_num
+        
+        if self.test_mode == True:
+            if self.user_click != None:
+                self.user_type_click_count = self.user_click
+
         #print(self.user_type_click_count)
         self.user_property_score = {}
         if self.user_type_click_count['all'] == 0:
@@ -207,25 +213,29 @@ class Reco:
             'property_food_japanese',
             'property_food_italian'
         ]
-        food_list.sort(
-            key = lambda e:(self.user_type_click_count[e]),
-            reverse = True
-        )
-        active_list.sort(
-            key = lambda e:(self.user_type_click_count[e]),
-            reverse = True
-        )
         
-        i = 0
-        for active_row in active_list:
-            self.user_property_score[active_row] = 4.5 - i
-            i+=1
+        food_list_rank = [0,0,0,0]
+        active_list_rank = [0,0]
+
+        for i in range(0, len(food_list)):
+            for j in range(0, len(food_list)):
+                if self.user_type_click_count[food_list[i]] < self.user_type_click_count[food_list[j]]:
+                    food_list_rank[i] += 1
+                    
+        for i in range(0, len(active_list)):
+            for j in range(0, len(active_list)):
+                if self.user_type_click_count[active_list[i]] < self.user_type_click_count[active_list[j]]:
+                    active_list_rank[i] += 1
+                    
+                
+        for i in range(0, len(active_list)):
+            self.user_property_score[active_list[i]] = 4.5 - active_list_rank[i] * 0.5
             
-        i = 0
-        for food_row in food_list:
-            self.user_property_score[food_row] = 4.5 - i
-            i+=1
-        #print(self.user_property_score)
+        for i in range(0, len(food_list)):
+            self.user_property_score[food_list[i]] = 4.5 - food_list_rank[i] * 0.5
+        
+        print(self.user_property_score)
+        
 
     def get_snd_percent(self, n, index):
         if n == index:
@@ -342,7 +352,7 @@ class Reco:
             
         # 개인화 점수 
 
-        personal_score = 0
+        personal_score = 0.0
 
         property_list = [
             'property_romantic',
@@ -353,6 +363,7 @@ class Reco:
             'property_food_japanese',
             'property_food_italian',
         ]
+        print(origin_data)
         for property_row in property_list:
             if origin_data[property_row] == None:
                 origin_data[property_row] = 0
@@ -363,7 +374,8 @@ class Reco:
                     personal_score += (1 - origin_data['property_romantic']) * 4.5
             else:
                 personal_score += origin_data[property_row] * self.user_property_score[property_row]
-        
+            print(property_row) 
+            print(personal_score)
         """
         print(personal_score)
         print(

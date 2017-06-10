@@ -63,7 +63,10 @@ class TestReco(unittest.TestCase):
         reco = Reco(
             test_data['test_load_all']['input'],
             '',
-            item_data = test_item_data
+            external_data = {
+                'item_data': test_item_data,
+                'user_click': None
+            }
         )
         recoList = reco.get_all_list()
         expectedList = test_item_data
@@ -97,7 +100,10 @@ class TestReco(unittest.TestCase):
         reco = Reco(
             test_data['empty_data']['input'],
             '',
-            item_data = test_item_data
+            external_data = {
+                'item_data': test_item_data,
+                'user_click': None
+            }
         )
         array = test_data['test_price_rank']['input']['array']
         data = test_data['test_price_rank']['input']['data']
@@ -130,7 +136,10 @@ class TestReco(unittest.TestCase):
         reco = Reco(
             test_data['empty_data']['input'],
             '',
-            item_data = test_item_data
+            external_data = {
+                'item_data': test_item_data,
+                'user_click': None
+            }
         )
         array = test_data['test_distance_rank']['input']['array']
         data = test_data['test_distance_rank']['input']['data']
@@ -163,7 +172,10 @@ class TestReco(unittest.TestCase):
         reco = Reco(
             test_data['test_region_filter_1']['input'],
             '',
-            item_data = test_item_data
+            external_data = {
+                'item_data': test_item_data,
+                'user_click': None
+            }
         )
         recoList = reco.get_reco_list()
         expectedList = test_data['test_region_filter_1']['output']
@@ -198,7 +210,10 @@ class TestReco(unittest.TestCase):
         reco = Reco(
             test_data['test_region_filter_2']['input'],
             '',
-            item_data = test_item_data
+            external_data = {
+                'item_data': test_item_data,
+                'user_click': None
+            }
         )
         recoList = reco.get_reco_list()
         expectedList = test_data['test_region_filter_2']['output']
@@ -234,7 +249,10 @@ class TestReco(unittest.TestCase):
         reco = Reco(
             test_data['test_region_filter_3']['input'],
             '',
-            item_data = test_item_data
+            external_data = {
+                'item_data': test_item_data,
+                'user_click': None
+            }
         )
         recoList = reco.get_reco_list()
         expectedList = test_data['test_region_filter_3']['output']
@@ -269,7 +287,10 @@ class TestReco(unittest.TestCase):
         reco = Reco(
             test_data['test_region_filter_4']['input'],
             '',
-            item_data = test_item_data
+            external_data = {
+                'item_data': test_item_data,
+                'user_click': None
+            }
         )
         recoList = reco.get_reco_list()
         expectedList = test_data['test_region_filter_4']['output']
@@ -304,7 +325,10 @@ class TestReco(unittest.TestCase):
         reco = Reco(
             test_data['test_region_filter_5']['input'],
             '',
-            item_data = test_item_data
+            external_data = {
+                'item_data': test_item_data,
+                'user_click': None
+            }
         )
         recoList = reco.get_reco_list()
         expectedList = test_data['test_region_filter_5']['output']
@@ -342,7 +366,10 @@ class TestReco(unittest.TestCase):
         reco = Reco(
             test_data['test_score_region_1']['input'],
             '',
-            item_data = test_item_data
+            external_data = {
+                'item_data': test_item_data,
+                'user_click': None
+            }
         )
         recoList = reco.get_reco_list()
         expectedList = test_data['test_score_region_1']['output']
@@ -394,7 +421,10 @@ class TestReco(unittest.TestCase):
         reco = Reco(
             test_data['test_score_purpose_1']['input'],
             '',
-            item_data = test_item_data
+            external_data = {
+                'item_data': test_item_data,
+                'user_click': None
+            }
         )
         recoList = reco.get_reco_list()
         expectedList = test_data['test_score_purpose_1']['output']
@@ -445,7 +475,10 @@ class TestReco(unittest.TestCase):
         reco = Reco(
             test_data['test_score_price_distance_1']['input'],
             '',
-            item_data = test_item_data
+            external_data = {
+                'item_data': test_item_data,
+                'user_click': None
+            }
         )
         recoList = reco.get_reco_list()
         expectedList = test_data['test_score_price_distance_1']['output']
@@ -475,26 +508,134 @@ class TestReco(unittest.TestCase):
             )
 
     """
-    TODO
     test_score_personal_1
-    특정 지역을 넣고 score의 개인화점수가 공식에 맞게 계산되는지 테스트 
+    특정 지역과 유저의 활동기록을 넣고 score의 개인화점수가 공식에 맞게 계산되는지 테스트 
 
     input : 
         지역 : 신사역, 건대입구역  
-        목적 : CPI01, CPI02
+        유저활동기록(클릭수) : 
+            전체 : 120
+            한식 : 9
+            중식 : 10
+            일식 : 11
+            양식 : 12
+            로맨틱 : 40
+            능동 : 18
+            수동 : 22
+
     output : 
-        신사역 목록 -> 만자리의수가 score 공식으로 계산된 목적점수이어야함
-        건대입구역 목록 -> 만자리의수가 score 공식으로 계산된 목적점수이어야함
+        신사역 목록 -> 천자리의수가 score 공식으로 계산된 목적점수이어야함
+        건대입구역 목록 -> 천자리의수가 score 공식으로 계산된 목적점수이어야함
 
     assert 내용
         1. exptected output의 recohashkey가 output안에 들어있는가
         2. exptected output의 갯수와 output의 결과가 같은가
-        3. output의 score의 만자리수와 expected output의 만자리수가 같은지
+        3. output의 score의 천자리수와 expected output의 천자리수가 같은지
 
     """
     def test_score_personal_1(self):
+        print_test_info()
+        reco = Reco(
+            test_data['test_score_personal_1']['input']['extracted_data'],
+            '',
+            external_data = {
+                'item_data': test_item_data,
+                'user_click': test_data['test_score_personal_1']['input']['user_click']
+            }
+        )
+        recoList = reco.get_reco_list()
+        expectedList = test_data['test_score_personal_1']['output']
 
-        self.assertTrue(True)
+        for category in expectedList:
+            for row in expectedList[category]:
+                self.assertTrue(
+                    row['reco_hashkey'] in [data['reco_hashkey'] for data in recoList[category]]
+                )
+                recoItem = None
+                for recoItem in recoList[category]:
+                    if row['reco_hashkey'] == recoItem['reco_hashkey']:
+                        break
+                self.assertTrue(
+                    recoItem is not None
+                )
+                for i in range(0, len(row['score'])):
+                    if row['score'][i] == -1:
+                        continue
+                    self.assertEqual(
+                        row['score'][i],
+                        int((recoItem['score'] % math.pow(10, 6-i)) / math.pow(10, 5-i))
+                    )
+            self.assertEqual(
+                len(expectedList[category]),
+                len(recoList[category])
+            )
+    
+    """
+    test_score_personal_2
+    특정 지역과 유저의 활동기록을 넣고 score의 개인화점수가 공식에 맞게 계산되는지 테스트 
+
+    input : 
+        지역 : 신사역, 건대입구역  
+        유저활동기록(클릭수) : 
+            전체 : 10
+            한식 : 3
+            중식 : 0
+            일식 : 0
+            양식 : 0
+            로맨틱 : 9
+            능동 : 1
+            수동 : 0
+
+    output : 
+        신사역 목록 -> 천자리의수가 score 공식으로 계산된 목적점수이어야함
+        건대입구역 목록 -> 천자리의수가 score 공식으로 계산된 목적점수이어야함
+
+    assert 내용
+        1. exptected output의 recohashkey가 output안에 들어있는가
+        2. exptected output의 갯수와 output의 결과가 같은가
+        3. output의 score의 천자리수와 expected output의 천자리수가 같은지
+
+    """
+    def test_score_personal_2(self):
+        print_test_info()
+        reco = Reco(
+            test_data['test_score_personal_2']['input']['extracted_data'],
+            '',
+            external_data = {
+                'item_data': test_item_data,
+                'user_click': test_data['test_score_personal_2']['input']['user_click']
+            }
+        )
+        recoList = reco.get_reco_list()
+        expectedList = test_data['test_score_personal_2']['output']
+
+        for category in expectedList:
+            for row in expectedList[category]:
+                print(row)
+                self.assertTrue(
+                    row['reco_hashkey'] in [data['reco_hashkey'] for data in recoList[category]]
+                )
+                recoItem = None
+                for recoItem in recoList[category]:
+                    if row['reco_hashkey'] == recoItem['reco_hashkey']:
+                        break
+                self.assertTrue(
+                    recoItem is not None
+                )
+                print(row['score'])
+                print(recoItem['score'])
+                for i in range(0, len(row['score'])):
+                    if row['score'][i] == -1:
+                        continue
+                    self.assertEqual(
+                        row['score'][i],
+                        int((recoItem['score'] % math.pow(10, 6-i)) / math.pow(10, 5-i))
+                    )
+            self.assertEqual(
+                len(expectedList[category]),
+                len(recoList[category])
+            )
+    
     
 
 # 테스트에 사용될 데이터 만드는 함수. 테스트 케이스는 아니고, db의 추천 데이터를 json파일로 만듬
@@ -520,3 +661,5 @@ def save_all_recommend_item():
 # 테스트 실행
 if __name__ == '__main__':
 	unittest.main(argv=[sys.argv[0]])
+#    test = TestReco("test_score_personal_2")
+#    test.test_score_personal_2()
