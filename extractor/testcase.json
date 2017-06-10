@@ -769,7 +769,7 @@
                                 "event_end": "21:00"
                         },
                         "event_types" : [
-                                { "id" : "CPI04" }
+                                { "id" : "CPI05" }
                         ]
                 }
         },
@@ -785,10 +785,10 @@
                         "event_hashkey":"d1fc527a42b59919224eea28018d1b8e42f7771ef777a21174d0b4bc",
                         "locations" : null,
                         "time_set" : {
-                                "extract_start": null,
-                                "extract_end": null,
-                                "event_start": "20:00",
-                                "event_end": "21:00"
+                                "extract_start": "12:00",
+                                "extract_end": "13:00",
+                                "event_start": "01:00",
+                                "event_end": "02:00"
                         },
                         "event_types" : null
                 }
@@ -805,28 +805,8 @@
                         "event_hashkey":"0283587e8681ca61eadb3a62d23f6574cfe19b962a06315e80603349",
                         "locations" : null,
                         "time_set" : {
-                                "extract_start": null,
-                                "extract_end": null,
-                                "event_start": "00:00",
-                                "event_end": "00:00"
-                        },
-                        "event_types" : null
-                }
-        },
-        "F005":{
-                "input":{
-                        "event_hashkey":"c6ee77e3-a464-4ec0-9c5e-4b9004278a1b",
-                        "summary":null,
-                        "start_dt":null,
-                        "end_dt":null,
-                        "location":""
-                },
-                "result":{
-                        "event_hashkey":"c6ee77e3-a464-4ec0-9c5e-4b9004278a1b",
-                        "locations" : null,
-                        "time_set" : {
-                                "extract_start": null,
-                                "extract_end": null,
+                                "extract_start": "09:00",
+                                "extract_end": "10:00",
                                 "event_start": "00:00",
                                 "event_end": "00:00"
                         },
