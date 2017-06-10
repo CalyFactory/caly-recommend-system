@@ -450,7 +450,7 @@ class Reco:
         price_priority = self.price_priority[origin_data['category']] / sum_priority
         distance_priority = self.distance_priority[origin_data['category']] / sum_priority
 
-        score += int(10 - (price_rank * price_priority + distance_rank * distance_priority))* 100
+        score += int((10 - (price_rank * price_priority + distance_rank * distance_priority))* 100)
 
 
 

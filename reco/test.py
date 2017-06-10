@@ -112,6 +112,39 @@ class TestReco(unittest.TestCase):
 
 
     """
+    test_distance_rank
+    get_range()함수로 등급을 불러올때 올바르게 불러오는지 테스트
+
+    input : 
+        등급 기준표
+        테스트할 가격 리스트
+    output : 
+        등급
+
+    assert 내용
+        1. exptected output의 등급과 output의 등급이 같은지 
+
+    """
+    def test_distance_rank(self):
+        print_test_info()
+        reco = Reco(
+            test_data['empty_data']['input'],
+            '',
+            item_data = test_item_data
+        )
+        array = test_data['test_distance_rank']['input']['array']
+        data = test_data['test_distance_rank']['input']['data']
+        expectedRank = test_data['test_distance_rank']['output']['rank']
+
+        for i in range(0, len(data)):
+            rank = reco.get_range(array, data[i])
+            self.assertEqual(
+                rank,
+                expectedRank[i]
+            )
+
+
+    """
     test_region_filter_1
     특정 지역을 넣고 해당하는 지역만 나오는지 체크
 
@@ -419,7 +452,7 @@ class TestReco(unittest.TestCase):
 
         for category in expectedList:
             for row in expectedList[category]:
-
+                print(row)
                 self.assertTrue(
                     row['reco_hashkey'] in [data['reco_hashkey'] for data in recoList[category]]
                 )
@@ -430,6 +463,8 @@ class TestReco(unittest.TestCase):
                 self.assertTrue(
                     recoItem is not None
                 )
+                print(row['score'])
+                print(recoItem['score'])
                 for i in range(0, len(row['score'])):
                     if row['score'][i] == -1:
                         continue
