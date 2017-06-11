@@ -5,6 +5,7 @@
 ##2. 다양한 testcase찾아보기.
 ##3. 성민이한테 텀겨줄데이터 세팅하기.
 ##4. 완성된데이터 db에 넣기.
+import datetime
 
 from common import db_manager
 from common.util import utils
@@ -53,8 +54,6 @@ class Reinforce:
 	
 
 	def __check_reco_stauts(self):
-
-		
 		#모든데이터가 잘들어가 있는경우
 		if self.event_info_data["locations"] != None and self.event_info_data["locations"] != "Cannot"  and self.event_info_data["event_types"] != None:
 			self.__event_reco_status_code = EventRecoStatusCode.RECO_PERFECT  
@@ -337,16 +336,27 @@ class Reinforce:
 
 		event = rows[0]
 		
-		start_year = event["start_dt"][:4]
-		start_month = event["start_dt"][5:7]
-		start_date = event["start_dt"][8:10]
-		
-		end_year = event["end_dt"][:4]
-		end_month = event["end_dt"][5:7]
-		end_date = event["end_dt"][8:10]	
+		startEventDate = datetime.datetime.strptime(event["start_dt"], '%Y-%m-%d %H:%M:%S')
+		endEventDate = datetime.datetime.strptime(event["end_dt"], '%Y-%m-%d %H:%M:%S')
 
-		event_start_date = start_year + "-" + start_month + "-" + start_date 
-		event_end_date =  end_year + "-" + end_month + "-" + end_date 
+		# start_year = event["start_dt"][:4]
+		# start_month = event["start_dt"][5:7]
+		# start_date = event["start_dt"][8:10]
+		
+		# end_year = event["end_dt"][:4]
+		# end_month = event["end_dt"][5:7]
+		# end_date = event["end_dt"][8:10]	
+
+		# start_year = eventDate.year
+		# start_month = eventDate.month
+		# start_date = eventDate.day
+		
+		# end_year = event["end_dt"][:4]
+		# end_month = event["end_dt"][5:7]
+		# end_date = event["end_dt"][8:10]			
+
+		event_start_date = str(startEventDate.year) + "-" + str(startEventDate.month) + "-" + str(startEventDate.day)
+		event_end_date =  str(endEventDate.year) + "-" + str(endEventDate.month) + "-" + str(endEventDate.day)
 
 		extract_start = self.event_info_data["time_set"]["extract_start"]
 		extract_end = self.event_info_data["time_set"]["extract_end"]
