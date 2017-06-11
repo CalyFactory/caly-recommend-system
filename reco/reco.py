@@ -11,6 +11,7 @@ from bson.json_util import dumps
 class Reco:
 
     test_mode = False
+    item_data = None
     price_priority = {
         'restaurant':67.3, 
         'cafe':41.1, 
