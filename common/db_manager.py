@@ -1,3 +1,6 @@
+import os
+import sys
+
 from sqlalchemy import create_engine
 from sqlalchemy.pool import QueuePool
 from sqlalchemy.orm import scoped_session
@@ -5,26 +8,36 @@ from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
 
 import json 
+import sys 
 
-with open('/home/yenos/playGround/caly-recommend-system/key/conf.json') as conf_json:
-    conf = json.load(conf_json)
 
-# pool로 커낵션을 잡는다. 오토커밋 옵션을 false로해줘야한다.
-engine = create_engine(
-    'mysql+pymysql://'+conf["mysql"]["user"]+':'+conf["mysql"]["password"]+'@'+conf["mysql"]["host"]+'/'+conf["mysql"]["database"]+"?charset=utf8",
-    pool_size = 20, 
-    pool_recycle = 500, 
-    max_overflow = 10,
-    echo = False,
-    echo_pool = True,
-    execution_options = {"autocommit": True}
-)
- 
-session = scoped_session(sessionmaker(autocommit=True,
-                                         autoflush=False,
-                                         bind=engine))
+root_path = os.path.dirname(os.path.dirname(__file__));
+
+session = None
+if 'test' not in sys.argv:
+
+    with open(root_path+'/key/conf.json') as conf_json:
+        conf = json.load(conf_json)
+
+    # pool로 커낵션을 잡는다. 오토커밋 옵션을 false로해줘야한다.
+    engine = create_engine(
+        'mysql+pymysql://'+conf["mysql"]["user"]+':'+conf["mysql"]["password"]+'@'+conf["mysql"]["host"]+'/'+conf["mysql"]["database"]+"?charset=utf8",
+        pool_size = 20, 
+        pool_recycle = 500, 
+        max_overflow = 10,
+        echo = False,
+        echo_pool = True,
+        execution_options = {"autocommit": True}
+    )
+    
+    session = scoped_session(sessionmaker(autocommit=True,
+                                            autoflush=False,
+                                            bind=engine))
 
 def query(queryString, params = None):
+    if session == None:
+        raise Exception("DB Session is not inited")
+
     i=0
     while '%s' in queryString:
         queryString = queryString.replace('%s', ':p'+str(i), 1)
@@ -44,5 +57,7 @@ def query(queryString, params = None):
     return result
 
 def queryRawData(queryString):
+    if session == None:
+        raise Exception("DB Session is not inited")
     result = session.execute(queryString)
     return result

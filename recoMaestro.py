@@ -27,7 +27,10 @@ class RecoMaestro():
 	# calendar_name = None
 	# user_event_hashkey = None
 	
-	def __init__(self):
+	def __init__(self,account_hashkey,switchExtractor = False):
+		#유저 계정해시키를 저장한다.
+		self.account_hashkey = account_hashkey
+
 		self.calendar_hashkey = None
 		self.calendar_name = None
 		self.user_event_hashkey = None
@@ -59,13 +62,45 @@ class RecoMaestro():
 		self.statis_recommended_cnt = 0
 		self.statis_no_recommended_cnt = 0
 
+		self.switchExtractor = switchExtractor
+
+		self.main()
+
 	def __get__(self, obj, objtype):
 		return self.val
 
 	def __set__(self, obj, val):
 		self.val = val
 
-	def getUserMainRegion(self):
+
+	def main(self):
+		#calendarlist를 추출한다.
+		calendars  = self.__getCalendarList(self.account_hashkey)
+		for calendar in calendars:
+			self.calendar_hashkey = calendar["calendar_hashkey"]
+			self.calendar_name = calendar["calendar_name"]
+			events = self.__getEventsList(self.calendar_hashkey)
+			
+			for event in events:
+				if 'summary' in event:
+					print("events ==>" + str(event))
+					self.event = event
+
+					self.__appendEvent()				
+
+					self.__extractFromEvent()
+
+					print("extcted_json => "+ str(self.extracted_json))
+
+					self.__append_analaysis_events_for_web()
+
+					self.__checkRecoStauts()
+
+		self.__getUserMainRegion()
+		self.__makeFinalReuslt()
+
+
+	def __getUserMainRegion(self):
 		self.userMainRegion = utils.fetch_all_json(
 			db_manager.query(
 					"""
@@ -104,7 +139,7 @@ class RecoMaestro():
 				)
 			)		
 
-	def makeFinalReuslt(self):
+	def __makeFinalReuslt(self):
 		self.result_final["originEvents"] = self.result_events
 		self.result_final["analysisEvents"] = self.result_analysis_events_for_web
 		self.result_final["reinforceEvents"] = self.result_reinforce_events_for_web
@@ -125,7 +160,7 @@ class RecoMaestro():
 
 
 
-	def checkRecoStauts(self):
+	def __checkRecoStauts(self):
 		reinforce = self.__reinforceFromExtracted()
 		print(reinforce.event_reco_result["code"])
 
@@ -183,7 +218,7 @@ class RecoMaestro():
 
 			
 			
-	def append_analaysis_events_for_web(self):
+	def __append_analaysis_events_for_web(self):
 		self.result_analysis_events_for_web.append(
 														{
 															"event_types":self.__pretty_type(self.extracted_json["event_types"]),
@@ -192,7 +227,7 @@ class RecoMaestro():
 														}
 													)
 
-	def extractFromEvent(self):
+	def __extractFromEvent(self):
 
 		if self.event["location"] == None:
 			self.event["location"] = ''
@@ -201,9 +236,33 @@ class RecoMaestro():
 		print('event_start_dt => ' + str(self.event["start_dt"]))
 		print('event_end_dt => ' + str(self.event["end_dt"]))
 		print('event_location => ' + str(self.event["location"]))
-		self.extracted_json = extract_info_from_event(self.event["event_hashkey"],self.event["summary"],self.event["start_dt"],self.event["end_dt"],self.event["location"])
+		#실제 데이터 ..
+		if self.switchExtractor == True:
+			self.extracted_json = extract_info_from_event(self.event["event_hashkey"],self.event["summary"],self.event["start_dt"],self.event["end_dt"],self.event["location"])
+		#목업 데이터 ..
+		else:
+			self.extracted_json = {
+									    "event_hashkey":"ce5676473fc542e42dee19af6ed89617d73d4901f7a391bd30019a51",
+									    "locations" :  [
+									        {
+									            "no" : 0,
+									            "region" : "신사역"
+									        }
+									    ],
+									    "time_set" : {
+									      "extract_start": "18:00",
+									      "extract_end": "19:00",
+									      "event_start": "10:00",
+									      "event_end": "11:00"
+									    },
+									    "event_types" : [
+									        {
+									            "id" : "CPI02"
+									        }
+									    ]
+									}		
 
-	def appendEvent(self):
+	def __appendEvent(self):
 		self.user_event_hashkey = self.event["event_hashkey"]
 		self.result_events.append(
 						{
@@ -216,7 +275,7 @@ class RecoMaestro():
 					)	
 
 
-	def getEventsList(self,calendar_hashkey):
+	def __getEventsList(self,calendar_hashkey):
 		return utils.fetch_all_json(
 			db_manager.query(
 					"""
@@ -227,7 +286,7 @@ class RecoMaestro():
 					(calendar_hashkey,)
 			)
 		)		
-	def getCalendarList(self,account_hashkey):
+	def __getCalendarList(self,account_hashkey):
 		return utils.fetch_all_json(
 			db_manager.query(
 					"""

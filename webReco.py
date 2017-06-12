@@ -78,44 +78,8 @@ def events():
 
 	account_hashkey = request.args['accountHashkey']
 
-	# #실제 유저 이벤트
-	# user_event_hashkey = ''
-	reco_maestro = recoMaestro.RecoMaestro()
-	calendars = reco_maestro.getCalendarList(account_hashkey)	
-	pprint.pprint(calendars)
-
-	for calendar in calendars:
-		reco_maestro.calendar_hashkey = calendar["calendar_hashkey"]
-		reco_maestro.calendar_name = calendar["calendar_name"]
-		
-		events = reco_maestro.getEventsList(reco_maestro.calendar_hashkey)
-		
-		#1. 캘린더당 몇개의 이벤트가 있는가.
-		#2. 이벤트중  oo/xo/ox/xx인 경우는 몇가지인가.
-		#3. 
-		#캘린더의 이름입니다.
-		calendar_name =  reco_maestro.calendar_name
-		#이벤트의 카운트입니다. 
-		eventsCnt = len(events)		
-
-		for event in events:
-			if 'summary' in event:
-				print("events ==> "+str(event))
-				reco_maestro.event = event
-				reco_maestro.appendEvent()				
-
-				reco_maestro.extractFromEvent()
-
-				print("extcted_json => "+ str(reco_maestro.extracted_json))
-
-				reco_maestro.append_analaysis_events_for_web()
-
-				reco_maestro.checkRecoStauts()
-
-	reco_maestro.getUserMainRegion()
-	reco_maestro.makeFinalReuslt()
-
-	print("staticsJson ->"+str(reco_maestro.result_statis_json))
+	#account_hashkey와 extractor 옵션을 넣어준다.
+	reco_maestro = recoMaestro.RecoMaestro(account_hashkey,False)
 	
 	return json.dumps(reco_maestro.result_final)
 	
