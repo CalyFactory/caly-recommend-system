@@ -29,12 +29,28 @@ tr:nth-child(even) {
 <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 
 <script >
+
+
+
+
+function atStart(){
+    n =  new Date();
+    y = n.getFullYear();
+    m = n.getMonth() + 1;
+    d = n.getDate();
+    hour = n.getHours();
+    min = n.getMinutes();
+
+    document.getElementById("startDt").value = y + "-" + m + "-" + d +" "+ hour+ ":"+min;
+    document.getElementById("endDt").value = y + "-" + m + "-" + d +" "+ hour+ ":"+min;
+
+}
 var reinforceEventsReco = ''
 
 
 function onClickUser(obj){
-	console.log(obj.value)
-	reqEvents(obj.value)
+	
+	reqEvents(obj.value);
 }
 function onbuttonclick(id) {
     // console.log(reinforceEventsReco[id])
@@ -42,177 +58,162 @@ function onbuttonclick(id) {
     window.location.href = rankUrl
 }
 
+function onClickCustomEvent(){
+    reqCustomEvents();
+}
+
+function setEventsData(obj){
+    $('#tbOriginEvents > tbody > tr > td').parent('tr').empty();
+    originEvents = obj.originEvents                     
+    analysisEvents = obj.analysisEvents  
+    reinforceEvents = obj.reinforceEvents
+    reinforceEventsReco  = obj.reinforceEventsReco
+
+    console.log(obj)
+
+    var events = ''            
+    
+    $.each(originEvents, function (i, item) {
+        var addButton = false
+    
+        events += '<tr > ' +
+                    '<td height="6px">' +
+                        originEvents[i].calendarName +
+                    '</td>' +
+
+                    '<td height="6px">' +
+                        originEvents[i].eventSummary +
+                    '</td>' +
+        
+                    '<td height="6px">' +
+                        originEvents[i].eventLocation +
+                    '</td>' +
+
+                    '<td height="6px">' +
+                        originEvents[i].eventStartDt +
+                    '</td>' +
+
+                    '<td height="8px">' +
+                        originEvents[i].eventEndDt + 
+                    '</td>'  +
+                    
+                    '<td height="8px">' +
+                        '  '+ 
+                    '</td>'  +
+
+                    '<td height="6px" bgcolor="#cbedc7">' +
+                        analysisEvents[i].event_types +
+                    '</td>' +
+        
+                    '<td height="6px" bgcolor="#cbedc7">' +
+                        analysisEvents[i].locations +
+                    '</td>' +
+
+                    '<td height="6px bgcolor="#cbedc7"">' +
+                        // JSON.stringify(analysisEvents[i].time_set) +
+                        'extract_start:'+ analysisEvents[i].time_set.extract_start  + '<br>'+
+                        'extract_end:' + analysisEvents[i].time_set.extract_end   +
+                    '</td>' +
+
+                    '<td height="8px">' +
+                        '  '+ 
+                    '</td>'  +
+
+                    '<td height="6px" bgcolor="#f4cafd">' +
+                        reinforceEvents[i].event_types +
+                    '</td>' +
+        
+                    '<td height="6px" bgcolor="#f4cafd">' +
+                        reinforceEvents[i].locations +
+                    '</td>' 
+
+
+
+                   
+        if (reinforceEvents[i].event_types != "비추천" && reinforceEvents[i].locations != "비추천"){
+            events += '<td height="6px">' +
+                    '<button id='+i+' onClick="onbuttonclick(this.id)">RanK</button>' +
+                    '</td>' 
+
+        }
+
+
+        events += '</tr>'
+
+    });
+
+    $('#tbOriginEvents').append(events);
+
+
+    userLocations  = obj.userLocations
+    userLocationsString ='  유저 주활동지역 : '
+    $.each(userLocations, function (i, item) {
+            userLocationsString += userLocations[i]["region"]+ "/" + userLocations[i]["locationCnt"] + " "
+    })
+
+
+    document.getElementById("userMainLocations").innerHTML = userLocationsString;
+
+
+
+}
+
+function reqCustomEvents(){
+    console.log("reqCustomEvents")
+    var eventName = document.getElementById("eventName").value
+    var location = document.getElementById("location").value
+    var startDt = document.getElementById("startDt").value
+    var endDt = document.getElementById("endDt").value
+
+
+    var reqEventUrl = document.URL + "customEvent?"+
+                    "eventName=" + eventName+ 
+                    "&location=" + location+ 
+                    "&startDt=" + startDt + 
+                    "&endDt=" + endDt 
+    $.get( reqEventUrl, function( data ) {
+        obj = JSON.parse(data);           
+        setEventsData(obj)
+    });    
+}
+
 function reqEvents(accountHashkey){
     var reqEventUrl = document.URL+"events?accountHashkey="+accountHashkey
-    console.log(reqEventUrl)
-$.get( reqEventUrl, function( data ) {
-            // $('#tbOriginEvents').empty() ;
-            $('#tbOriginEvents > tbody > tr > td').parent('tr').empty();
-            // console.log(data)
-            obj = JSON.parse(data);   
-            originEvents = obj.originEvents                     
-            analysisEvents = obj.analysisEvents  
-            reinforceEvents = obj.reinforceEvents
-            reinforceEventsReco  = obj.reinforceEventsReco
-
-            console.log(obj.reinforceEventsReco)
-
-            var events = ''            
-            
-            $.each(originEvents, function (i, item) {
-                var addButton = false
-            
-                events += '<tr > ' +
-                            '<td height="6px">' +
-                                originEvents[i].calendarName +
-                            '</td>' +
-
-                			'<td height="6px">' +
-                            	originEvents[i].eventSummary +
-                            '</td>' +
-                
-                			'<td height="6px">' +
-                                originEvents[i].eventLocation +
-                            '</td>' +
-
-                			'<td height="6px">' +
-                                originEvents[i].eventStartDt +
-                            '</td>' +
-
-                			'<td height="8px">' +
-                                originEvents[i].eventEndDt + 
-                            '</td>'  +
-                            
-                            '<td height="8px">' +
-								'  '+ 
-                            '</td>'  +
-
-                			'<td height="6px">' +
-                            	analysisEvents[i].event_types +
-                            '</td>' +
-                
-                			'<td height="6px">' +
-                                analysisEvents[i].locations +
-                            '</td>' +
-
-                			'<td height="6px">' +
-                                // JSON.stringify(analysisEvents[i].time_set) +
-                                'extract_start:'+ analysisEvents[i].time_set.extract_start  + '<br>'+
-                                'extract_end:' + analysisEvents[i].time_set.extract_end   +
-                            '</td>' +
-
-                            '<td height="8px">' +
-                                '  '+ 
-                            '</td>'  +
-
-                            '<td height="6px">' +
-                                reinforceEvents[i].event_types +
-                            '</td>' +
-                
-                            '<td height="6px">' +
-                                reinforceEvents[i].locations +
-                            '</td>' 
-
-
-
-                           
-                if (reinforceEvents[i].event_types != "비추천" && reinforceEvents[i].locations != "비추천"){
-                    events += '<td height="6px">' +
-                            '<button id='+i+' onClick="onbuttonclick(this.id)">RanK</button>' +
-                            '</td>' 
-
-                }
-
-
-                events += '</tr>'
-
-            });
-
-            // header ="<tr>" +
-            //     "<th>제목</th>"+
-            //     "<th>장소</th>"+
-            //     "<th>시작시간</th>"+
-            //     "<th>종료시간</th>"+
-            //     "<th>    </th>"+
-            //     "<th>목적</th>"+
-            //     "<th>장소</th>"+
-            //     "<th>시간정보</th>"+
-            //     "<th>    </th>"+
-            //     "<th>*보강된*목적</th>"+
-            //     "<th>*보강된*장소</th>"+
-            // "</tr>  " +            
-            // $('#tbOriginEvents').append(header);
-            $('#tbOriginEvents').append(events);
-
-
-            userLocations  = obj.userLocations
-            userLocationsString ='  유저 주활동지역 : '
-            $.each(userLocations, function (i, item) {
-                    userLocationsString += userLocations[i]["region"]+ "/" + userLocations[i]["locationCnt"] + " "
-            })
-
-
-            document.getElementById("userMainLocations").innerHTML = userLocationsString;
-
-
-            // var events = ''            
-            // $.each(analysisEvents, function (i, item) {
-            
-            
-            //     events += '<tr>' +
-            //     			'<td height="6px">' +
-            //                 	analysisEvents[i].event_types +
-            //                 '</td>' +
-                
-            //     			'<td height="6px">' +
-            //                     analysisEvents[i].locations +
-            //                 '</td>' +
-
-            //     			'<td height="6px">' +
-            //                     JSON.stringify(analysisEvents[i].time_set) +
-            //                 '</td>' +                			
-            //                '</tr>'
-
-            // });            
-                
-
-            // $('#tbAanalysisEvents').append(events);
-           
+    
+    $.get( reqEventUrl, function( data ) {
+        obj = JSON.parse(data);   
+        setEventsData(obj)
     });    
-
 }
 
 </script>
 
-<body>
+<body onload="atStart()">
 
+<p>1. caly 유저 선택해서 분석해보기. </p>
+<br>
 <select id="userId" onchange="onClickUser(this)" style="float:left" >
 	<option value="">유저를 선택하세요</option>		
 	{% for user in users %}
 		<option value={{user.accountHashkey}}>{{user.email}}/{{user.loginPlatform}}</option>		
 	{% endfor %}
 </select>
+<br>
 
 <p id = "userMainLocations"></p>
 <br>
 <br>
+<p>2. Custom 이벤트 등록해서 분석해보기. </p>
+
+  <input type="text" id="eventName" placeholder="이벤트명"><br>
+  <input type="text" id="location" placeholder="장소"><br>
+  <input type="text" id="startDt"><br>
+  <input type="text" id="endDt"><br>
+  <button id="btnCustomEvent" onclick="onClickCustomEvent();">조회해볼까?</button>
+
 <br>
-<!-- <table id = tbOriginEventds style="float:left" >
-            <tr>
-                <th>제목</th>
-                <th>장소</th>
-                <th>시작시간</th>
-                <th>종료시간</th>
-                <th>    </th>
-                <th>목적</th>
-                <th>장소</th>
-                <th>시간정보</th>
-                <th>    </th>
-                <th>*보강된*목적</th>
-                <th>*보강된*장소</th>
-            </tr>  
-</table>  
- -->
+<br>
+
 <table id = tbOriginEvents style="float:left" >
             <tr>
                 <th>캘린더이름</th>
@@ -221,13 +222,13 @@ $.get( reqEventUrl, function( data ) {
                 <th>시작시간</th>
                 <th>종료시간</th>
                 <th>    </th>
-                <th>목적</th>
-                <th>장소</th>
-                <th>시간정보</th>
+                <th bgcolor="#cbedc7">*추출된*목적</th>
+                <th bgcolor="#cbedc7">*추출된*장소</th>
+                <th bgcolor="#cbedc7">*추출된*시간정보</th>
                 <th>    </th>
-                <th>*보강된*목적</th>
-                <th>*보강된*장소</th>
-                <th>랭크보기</th>
+                <th bgcolor="#f4cafd">*보강된*목적</th>
+                <th bgcolor="#f4cafd">*보강된*장소</th>
+                <th >랭크보기</th>
             </tr>  
 </table>  
 

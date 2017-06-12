@@ -27,7 +27,7 @@ class RecoMaestro():
 	# calendar_name = None
 	# user_event_hashkey = None
 	
-	def __init__(self,account_hashkey,switchExtractor = False):
+	def __init__(self, account_hashkey = None, switchExtractor = False):
 		#유저 계정해시키를 저장한다.
 		self.account_hashkey = account_hashkey
 
@@ -64,13 +64,19 @@ class RecoMaestro():
 
 		self.switchExtractor = switchExtractor
 
+		
 		self.main()
+	
+
 
 	def __get__(self, obj, objtype):
 		return self.val
 
 	def __set__(self, obj, val):
 		self.val = val
+
+	
+
 
 
 	def main(self):
@@ -95,8 +101,10 @@ class RecoMaestro():
 					self.__append_analaysis_events_for_web()
 
 					self.__checkRecoStauts()
-
+		
+		print('userMain'+str(self.user_event_hashkey))
 		self.__getUserMainRegion()
+		print('userMain'+str(self.userMainRegion))
 		self.__makeFinalReuslt()
 
 
@@ -129,7 +137,7 @@ class RecoMaestro():
 								WHERE e.calendar_hashkey = cal.calendar_hashkey
 								AND ue.event_hashkey = e.event_hashkey
 								AND ue.location_hashkey = ul.location_hashkey
-								AND ul.priority = 1
+								AND ul.priority = 0
 								) AS locations
 								GROUP by region
 								ORDER BY locationCnt DESC
@@ -164,7 +172,7 @@ class RecoMaestro():
 		reinforce = self.__reinforceFromExtracted()
 		print(reinforce.event_reco_result["code"])
 
-		if reinforce.event_reco_result["code"] == 2 or reinforce.event_reco_result["code"] == 4 or reinforce.event_reco_result["code"] == 5 : 
+		if reinforce.event_reco_result["code"] == 2 or reinforce.event_reco_result["code"] == 3 or reinforce.event_reco_result["code"] == 5  or reinforce.event_reco_result["code"] == 6 : 
 		
 			
 			self.statis_no_recommended_cnt += 1
@@ -209,6 +217,13 @@ class RecoMaestro():
 
 	def __reinforceFromExtracted(self):
 		reinforce = Reinforce(self.extracted_json)
+		
+		#### TODO
+		##!!!! user_event_hashkey를 가지고 mainRegion을 추출한다.
+		### 실제 Extracted붙였을떄 확인해봐야한다!!!!
+		##원래는 append에붙어있엇음...
+		self.user_event_hashkey = reinforce.event_reco_result["event_info_data"]["event_hashkey"]
+
 		self.reinforce_json = reinforce.event_reco_result["event_info_data"]					
 		self.result_reinforce_events_real.append(self.reinforce_json)
 		return reinforce
@@ -231,11 +246,15 @@ class RecoMaestro():
 
 		if self.event["location"] == None:
 			self.event["location"] = ''
-			
+		
+
 		print('event_title => ' + str(self.event["summary"]))
 		print('event_start_dt => ' + str(self.event["start_dt"]))
 		print('event_end_dt => ' + str(self.event["end_dt"]))
 		print('event_location => ' + str(self.event["location"]))
+
+		#### TODO
+		####False 일때 221 LINE을 확인해봐야한다!!!
 		#실제 데이터 ..
 		if self.switchExtractor == True:
 			self.extracted_json = extract_info_from_event(self.event["event_hashkey"],self.event["summary"],self.event["start_dt"],self.event["end_dt"],self.event["location"])
@@ -260,7 +279,7 @@ class RecoMaestro():
 									            "id" : "CPI02"
 									        }
 									    ]
-									}		
+									}	
 
 	def __appendEvent(self):
 		self.user_event_hashkey = self.event["event_hashkey"]
@@ -281,7 +300,7 @@ class RecoMaestro():
 					"""
 					SELECT * FROM EVENT 
 					WHERE calendar_hashkey = %s 
-					ORDER BY start_dt
+					ORDER BY start_dt DESC
 					""",							
 					(calendar_hashkey,)
 			)

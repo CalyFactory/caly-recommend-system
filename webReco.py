@@ -79,10 +79,38 @@ def events():
 	account_hashkey = request.args['accountHashkey']
 
 	#account_hashkey와 extractor 옵션을 넣어준다.
-	reco_maestro = recoMaestro.RecoMaestro(account_hashkey,False)
+	# p1 : 유저 커스텀이벤트인가?
+	# p2 :
+	reco_maestro = recoMaestro.RecoMaestro( account_hashkey = account_hashkey, switchExtractor = False)
 	
 	return json.dumps(reco_maestro.result_final)
 	
+@app.route("/customEvent", methods = ["GET"])
+def customEvent(): 
+	event_name = request.args['eventName']	
+	location = request.args['location']
+	start_dt = request.args['startDt']
+	end_dt = request.args['endDt']
+	event_hashkey = utils.make_hashkey("salttt");
+
+	if len(event_name) == 0:
+		event_name = None
+	if len(location) == 0:
+		location = None
+		
+	db_manager.query(
+			"""
+			INSERT INTO EVENT  
+			(event_hashkey,calendar_hashkey,event_id,summary,start_dt,end_dt,location) 
+			VALUES 
+			(%s, 'admin_calendar_hashkey','admin_event_id', %s, %s, %s, %s) 
+			""",
+			(event_hashkey,event_name,start_dt,end_dt,location)							
+	)
+	reco_maestro = recoMaestro.RecoMaestro( account_hashkey = 'admin_account_hashkey', switchExtractor = False)	
+	
+
+	return json.dumps(reco_maestro.result_final)
 
 
 
