@@ -100,22 +100,19 @@ def extract_info_from_event(event_hashkey,summary,start_dt, end_dt, location):
 				time=standard_time_scope[m.surface]
 			elif m.feature.find("SN") > -1 and m.surface.isdigit():
 				number=m.surface
-				# m.next 해서 그 다음 바로 시가 나오는지 체크?
 				# 의존성 무시
 			elif m.feature.find("NNBC") > -1 and m.feature.find("시") > -1 and number is not -1:
 				exist_time=True 
 				# 시를 한번 받고 나서 다음에 또 숫자와 시가 안나온 것을 체크하고 end time 가정해서 입력
 				
-
 				end_time = int(number)+1 # delta hour 등
-				if int(time) < 10:
-					time = "0"+str(time)
+				if int(number) < 10:
+					number = "0"+str(number)
 				if int(end_time) < 10: # 코드 반복
 					end_time = "0"+str(end_time)
 				# 뽑아내는 것은 format 기능으로, c언어 스트링 다루듯이 ( 예외처리 고려 X )
-				time_set_dict["extract_start"]=str(time)+":00"
+				time_set_dict["extract_start"]=str(number)+":00"
 				time_set_dict["extract_end"]=str(end_time)+":00"
-			
 
 			### Grep purpose
 			elif m.feature.find("CPI") > -1:
@@ -157,9 +154,9 @@ def extract_info_from_event(event_hashkey,summary,start_dt, end_dt, location):
 
 	except RuntimeError as e:
 		print("RuntimeError:", e)
-		# raise exception
+		raise Exception('Event parsing error '+ str(e))
 		# https://github.com/CalyFactory/caly/blob/develop/caldavclient/util.py
-		# Except 발생 시, 죽어야되는건지, 값을 보정해줘야되는건지, 예외적인 상황을 반환해야되는건지, 다른 값으로 대체해야되는건지
+
 
 
 	# Docs 참고

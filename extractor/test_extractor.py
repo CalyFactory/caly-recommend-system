@@ -50,9 +50,10 @@ class TestExtract(unittest.TestCase):
 		"""
 
 	def test_time(self):
-		"""
-		self.assertEqual(event_extractor.extract_info_from_event(testcaseJs["N40101"]["input"]["event_hashkey"],testcaseJs["N40101"]["input"]["summary"],testcaseJs["N40101"]["input"]["start_dt"],testcaseJs["N40101"]["input"]["end_dt"],testcaseJs["N40101"]["input"]["location"]), testcaseJs["N40101"]["result"])
+		
+		#self.assertEqual(event_extractor.extract_info_from_event(testcaseJs["N40101"]["input"]["event_hashkey"],testcaseJs["N40101"]["input"]["summary"],testcaseJs["N40101"]["input"]["start_dt"],testcaseJs["N40101"]["input"]["end_dt"],testcaseJs["N40101"]["input"]["location"]), testcaseJs["N40101"]["result"])
 		self.assertEqual(event_extractor.extract_info_from_event(testcaseJs["N40201"]["input"]["event_hashkey"],testcaseJs["N40201"]["input"]["summary"],testcaseJs["N40201"]["input"]["start_dt"],testcaseJs["N40201"]["input"]["end_dt"],testcaseJs["N40201"]["input"]["location"]), testcaseJs["N40201"]["result"])
+		"""
 		self.assertEqual(event_extractor.extract_info_from_event(testcaseJs["N40301"]["input"]["event_hashkey"],testcaseJs["N40301"]["input"]["summary"],testcaseJs["N40301"]["input"]["start_dt"],testcaseJs["N40301"]["input"]["end_dt"],testcaseJs["N40301"]["input"]["location"]), testcaseJs["N40301"]["result"])
 		self.assertEqual(event_extractor.extract_info_from_event(testcaseJs["N40401"]["input"]["event_hashkey"],testcaseJs["N40401"]["input"]["summary"],testcaseJs["N40401"]["input"]["start_dt"],testcaseJs["N40401"]["input"]["end_dt"],testcaseJs["N40401"]["input"]["location"]), testcaseJs["N40401"]["result"])
 		self.assertEqual(event_extractor.extract_info_from_event(testcaseJs["N40501"]["input"]["event_hashkey"],testcaseJs["N40501"]["input"]["summary"],testcaseJs["N40501"]["input"]["start_dt"],testcaseJs["N40501"]["input"]["end_dt"],testcaseJs["N40501"]["input"]["location"]), testcaseJs["N40501"]["result"])
@@ -61,6 +62,7 @@ class TestExtract(unittest.TestCase):
 		self.assertEqual(event_extractor.extract_info_from_event(testcaseJs["N41301"]["input"]["event_hashkey"],testcaseJs["N41301"]["input"]["summary"],testcaseJs["N41301"]["input"]["start_dt"],testcaseJs["N41301"]["input"]["end_dt"],testcaseJs["N41301"]["input"]["location"]), testcaseJs["N41301"]["result"])
 		self.assertEqual(event_extractor.extract_info_from_event(testcaseJs["N41401"]["input"]["event_hashkey"],testcaseJs["N41401"]["input"]["summary"],testcaseJs["N41401"]["input"]["start_dt"],testcaseJs["N41401"]["input"]["end_dt"],testcaseJs["N41401"]["input"]["location"]), testcaseJs["N41401"]["result"])
 		self.assertEqual(event_extractor.extract_info_from_event(testcaseJs["N41501"]["input"]["event_hashkey"],testcaseJs["N41501"]["input"]["summary"],testcaseJs["N41501"]["input"]["start_dt"],testcaseJs["N41501"]["input"]["end_dt"],testcaseJs["N41501"]["input"]["location"]), testcaseJs["N41501"]["result"])
+		self.assertEqual(event_extractor.extract_info_from_event(testcaseJs["N42001"]["input"]["event_hashkey"],testcaseJs["N42001"]["input"]["summary"],testcaseJs["N42001"]["input"]["start_dt"],testcaseJs["N42001"]["input"]["end_dt"],testcaseJs["N42001"]["input"]["location"]), testcaseJs["N42001"]["result"])
 		"""
 		
 
