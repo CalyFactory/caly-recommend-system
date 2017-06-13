@@ -321,17 +321,14 @@ class Reco:
     
     def extract_only_reco_hashkey(self, origin_list):
         reco_list = {}
-        print("extract")
         for row in origin_list:
             reco_list[row] = []
-            print(row)
             for origin_data in origin_list[row]:
                 reco_list[row].append(
                     {
                         "reco_hashkey": origin_data['reco_hashkey']
                     }
                 )
-            print(reco_list[row])
         return reco_list
 
     def get_range(self, array, value):
