@@ -1,0 +1,119 @@
+
+{
+
+  "ret10" : {
+    "event_hashkey":"ce5676473fc542e42dee19af6ed89617d73d4901f7a391bd30019a51",
+    "locations" :  [
+        {
+            "no" : 0,
+            "region" : "신사역"
+        }
+    ],
+    "time_set" : {
+      "extract_start": "18:00",
+      "extract_end": "19:00",
+      "event_start": "10:00",
+      "event_end": "11:00"
+    },
+    "event_types" : [
+        {
+            "id" : "CPI02"
+        }
+    ]
+  },
+  "ret11" : {
+    "event_hashkey":"ce5676473fc542e42dee19af6ed89617d73d4901f7a391bd30019a51",
+    "locations" :  [
+        {
+            "no" : 0,
+            "region" : "수원역"
+        }
+    ],
+    "time_set" : {
+      "extract_start": "18:00",
+      "extract_end": "19:00",
+      "event_start": "10:00",
+      "event_end": "11:00"
+    },
+    "event_types" : [
+        {
+            "id" : "CPI02"
+        }
+    ]
+  }
+  ,
+  "ret20" : {
+      "event_hashkey":"32dcd46685f6c26085aa8eeed7d7e919c1a41856f692b3403a6d1d6e",
+      "locations" : null,
+      "time_set" : {
+        "extract_start": "18:00",
+        "extract_end": "19:00",
+        "event_start": "10:00",
+        "event_end": "11:00"
+      },
+      "event_types" : null
+  },
+  "ret30" : {    
+    "event_hashkey":"f261a1ae95bb4b60e7ae0c50178c995f7ca7f3886b8f58e268cf4b79",
+    "locations" :  null,
+    "time_set" : {
+      "extract_start": "18:00",
+      "extract_end": "19:00",
+      "event_start": "10:00",
+      "event_end": "11:00"
+    },
+    "event_types" : [
+        {
+            "id" : "CPI04"
+        }
+    ]
+  }, 
+  "ret31" : {    
+    "event_hashkey":"ce5676473fc542e42dee19af6ed89617d73d4901f7a391bd30019a51",
+    "locations" :  null,
+    "time_set" : {
+      "extract_start": "18:00",
+      "extract_end": "19:00",
+      "event_start": "10:00",
+      "event_end": "11:00"
+    },
+    "event_types" : [
+        {
+            "id" : "CPI04"
+        }
+    ]
+  },
+  "ret40" : {    
+    "event_hashkey":"cdaf8025a90f11d8de09a4d75fc751beeb6c154e3cbb6066930ab236",
+    "locations" :  null,
+    "time_set" : {
+      "extract_start": "18:00",
+      "extract_end": "19:00",
+      "event_start": "10:00",
+      "event_end": "11:00"
+    },
+    "event_types" : [
+        {
+            "id" : "CPI04"
+        }
+    ]
+  },
+  "ret50" : {    
+    "event_hashkey":"f261a1ae95bb4b60e7ae0c50178c995f7ca7f3886b8f58e268cf4b79",
+    "locations" :  [
+        {
+            "no" : 0,
+            "region" : "신사역"
+        }
+    ],
+    "time_set" : {
+      "extract_start": "18:00",
+      "extract_end": "19:00",
+      "event_start": "10:00",
+      "event_end": "11:00"
+    },
+    "event_types" : null
+  }  
+
+
+}

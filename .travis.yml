@@ -1,0 +1,14 @@
+
+language: python
+python: 
+  - "3.6" 
+
+install: 
+  - pip install -r requirement.txt
+
+script:
+  - cd ./reco
+  - coverage run --source=reco ./test.py test
+
+after_success:
+  - coveralls
