@@ -70,12 +70,13 @@ Coverage
 Recommand Module
 
 ```
-Name      Stmts   Miss  Cover
------------------------------
-reco.py     261     98    62%
-test.py     110      8    93%
------------------------------
-TOTAL       371    106    71%
+
+Name                         Stmts   Miss  Cover
+------------------------------------------------
+../common/db_manager.py         34     23    32%
+../common/mongo_manager.py      13      9    31%
+./reco.py                      236     44    81%
+./test.py                      235     10    96%
+------------------------------------------------
+TOTAL                          518     86    83%
 ```
-
-
