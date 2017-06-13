@@ -9,8 +9,10 @@ from bson.json_util import dumps
 
 
 class Reco:
+    
     item_data = None
     test_mode = False
+    item_data = None
     price_priority = {
         'restaurant':67.3, 
         'cafe':41.1, 

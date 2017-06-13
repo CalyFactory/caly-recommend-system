@@ -7,25 +7,6 @@ from reinforce.reinforce import Reinforce
 
 class RecoMaestro():	
 
-	# #실제 유저 이벤트
-	# result_events = []
-	# #[웹뷰용]형태소분석 된 이후 분석된 이벤트 정보를 웹뷰에 보여주기위한 데이터
-	# result_analysis_events_for_web = []
-	# #최종 웹에 보여줄 데이터
-	# result_final= {}
-	# #[웹뷰용]보강된 데이터 넘겨줄 배열
-	# result_reinforce_events_for_web = []
-	# #실제 넘길데이터
-	# result_reinforce_events_real = []
-
-	# event = {}
-	# reinforce_json = {}
-	# extracted_json = {}
-	# serMainRegion = {}
-
-	# calendar_hashkey = None
-	# calendar_name = None
-	# user_event_hashkey = None
 	
 	def __init__(self, account_hashkey = None, switchExtractor = False):
 		#유저 계정해시키를 저장한다.
@@ -97,14 +78,12 @@ class RecoMaestro():
 					self.__extractFromEvent()
 
 					print("extcted_json => "+ str(self.extracted_json))
-
 					self.__append_analaysis_events_for_web()
 
 					self.__checkRecoStauts()
 		
-		print('userMain'+str(self.user_event_hashkey))
-		self.__getUserMainRegion()
-		print('userMain'+str(self.userMainRegion))
+		
+		self.__getUserMainRegion()		
 		self.__makeFinalReuslt()
 
 
@@ -170,9 +149,9 @@ class RecoMaestro():
 
 	def __checkRecoStauts(self):
 		reinforce = self.__reinforceFromExtracted()
-		print(reinforce.event_reco_result["code"])
+		print("reinforce_json =>"+str(self.reinforce_json))
 
-		if reinforce.event_reco_result["code"] == 2 or reinforce.event_reco_result["code"] == 3 or reinforce.event_reco_result["code"] == 5  or reinforce.event_reco_result["code"] == 6 : 
+		if reinforce.event_reco_result["code"] == 2 or reinforce.event_reco_result["code"] == 3 or reinforce.event_reco_result["code"] == 5  : 
 		
 			
 			self.statis_no_recommended_cnt += 1
@@ -184,12 +163,12 @@ class RecoMaestro():
 											}
 										)			
 		else:
-			self.statis_recommended_cnt +=1 
-
+			
+			self.statis_recommended_cnt += 1  			
 			self.result_reinforce_events_for_web.append(
 											{
-												"event_types":self.__pretty_type(self.reinforce_json["event_types"]),
-												"locations":self.__pretty_locations(self.reinforce_json["locations"])														
+												"event_types" : self.__pretty_type(self.reinforce_json["event_types"]),
+												"locations" : self.__pretty_locations(self.reinforce_json["locations"])														
 											}
 										)
 
@@ -222,7 +201,7 @@ class RecoMaestro():
 		##!!!! user_event_hashkey를 가지고 mainRegion을 추출한다.
 		### 실제 Extracted붙였을떄 확인해봐야한다!!!!
 		##원래는 append에붙어있엇음...
-		self.user_event_hashkey = reinforce.event_reco_result["event_info_data"]["event_hashkey"]
+		# self.user_event_hashkey = reinforce.event_reco_result["event_info_data"]["event_hashkey"]
 
 		self.reinforce_json = reinforce.event_reco_result["event_info_data"]					
 		self.result_reinforce_events_real.append(self.reinforce_json)
@@ -248,10 +227,10 @@ class RecoMaestro():
 			self.event["location"] = ''
 		
 
-		print('event_title => ' + str(self.event["summary"]))
-		print('event_start_dt => ' + str(self.event["start_dt"]))
-		print('event_end_dt => ' + str(self.event["end_dt"]))
-		print('event_location => ' + str(self.event["location"]))
+		print('extractor에게 넘겨주는 summary => ' + str(self.event["summary"]))
+		print('extractor에게 넘겨주는 start_dt => ' + str(self.event["start_dt"]))
+		print('extractor에게 넘겨주는 end_dt => ' + str(self.event["end_dt"]))
+		print('extractor에게 넘겨주는 locataion => ' + str(self.event["location"]))
 
 		#### TODO
 		####False 일때 221 LINE을 확인해봐야한다!!!
@@ -318,7 +297,7 @@ class RecoMaestro():
 		)		
 
 	def __pretty_locations(self,extracted_locations):
-		if extracted_locations == 'None' or extracted_locations == 'Cannot':
+		if extracted_locations == None or extracted_locations == 'Cannot':
 			real_extracted_locations = extracted_locations				
 		else :	
 			real_extracted_locations = ''		
@@ -329,7 +308,7 @@ class RecoMaestro():
 		return real_extracted_locations
 
 	def __pretty_type(self,extracted_event_types):
-		if extracted_event_types == 'None' :
+		if extracted_event_types == None :
 			real_extracted_event_types = extracted_event_types	
 		else:
 			real_extracted_event_types = ''

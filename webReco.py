@@ -81,7 +81,7 @@ def events():
 	#account_hashkey와 extractor 옵션을 넣어준다.
 	# p1 : 유저 커스텀이벤트인가?
 	# p2 :
-	reco_maestro = recoMaestro.RecoMaestro( account_hashkey = account_hashkey, switchExtractor = False)
+	reco_maestro = recoMaestro.RecoMaestro( account_hashkey = account_hashkey, switchExtractor = True)
 	
 	return json.dumps(reco_maestro.result_final)
 	
@@ -107,7 +107,7 @@ def customEvent():
 			""",
 			(event_hashkey,event_name,start_dt,end_dt,location)							
 	)
-	reco_maestro = recoMaestro.RecoMaestro( account_hashkey = 'admin_account_hashkey', switchExtractor = False)	
+	reco_maestro = recoMaestro.RecoMaestro( account_hashkey = 'admin_account_hashkey', switchExtractor = True)	
 	
 
 	return json.dumps(reco_maestro.result_final)

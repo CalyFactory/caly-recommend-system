@@ -33,6 +33,7 @@ class EventRecoStatusCode(Enum):
 	#현재 두개다 타입이 없어서 비추천 일 경우이다.
 	RECO_NO_LCOA_NO_EVENTTYPE = 5
 
+	#위치는 존재하고 이벤트 타입이 없을경우 추천해주기로한다. 대신 none으로 그대로넘긴다.
 	RECO_HAS_LOCA_NO_EVENTTYPE = 6
 
 
@@ -129,13 +130,18 @@ class Reinforce:
 			self.__set_event_analaysisDB()
 			self.__set_user_hashkey_in_result()
 
-		elif self.__event_reco_status_code == EventRecoStatusCode.RECO_CANT or self.__event_reco_status_code == EventRecoStatusCode.RECO_NO_LCOA_NO_EVENTTYPE or  self.__event_reco_status_code == EventRecoStatusCode.RECO_HAS_LOCA_NO_EVENTTYPE:
+		elif self.__event_reco_status_code == EventRecoStatusCode.RECO_CANT or self.__event_reco_status_code == EventRecoStatusCode.RECO_NO_LCOA_NO_EVENTTYPE :
 			#db에 최종본 저장
 			self.__set_event_analaysisDB()
 			
 			#현재infojson을 사용할수없게 값을 리턴해줍니다.
 			self.event_reco_result = reinforce_result(self.__event_reco_status_code.value,None)
 
+			#로케이션은 있는데 이벤트가 없는 경우.
+		elif self.__event_reco_status_code == EventRecoStatusCode.RECO_HAS_LOCA_NO_EVENTTYPE:
+			self.__set_event_analaysisDB()
+			self.__set_user_hashkey_in_result()
+			
 		#이벤트 타입이 있는데, 로케이션이 없다면, 
 		#1. 유저 DB에서 가져와야 한다. 
 		#2. 핫플레이스에서 가져와야한다. 		
@@ -281,6 +287,23 @@ class Reinforce:
 		locations = self.event_info_data["locations"]
 		#locations db에 다 넣어줌.
 		event_hashkey = self.event_info_data["event_hashkey"]
+		rows = utils.fetch_all_json(
+			db_manager.query(
+					"""
+					SELECT *FROM USER_EVENT_ANALYSIS
+					WHERE event_hashkey = %s					
+					""",		
+					(self.event_info_data["event_hashkey"],)					
+			)
+		)
+		print("userAnalysis = > "+ str(rows))
+		if len(rows) != 0:
+			return
+
+
+
+
+
 		# print('locations =>'+locations)
 		#로케이션이 None이아니면
 		if locations == None or locations == "Cannot":
@@ -338,22 +361,6 @@ class Reinforce:
 		
 		startEventDate = datetime.datetime.strptime(event["start_dt"], '%Y-%m-%d %H:%M:%S')
 		endEventDate = datetime.datetime.strptime(event["end_dt"], '%Y-%m-%d %H:%M:%S')
-
-		# start_year = event["start_dt"][:4]
-		# start_month = event["start_dt"][5:7]
-		# start_date = event["start_dt"][8:10]
-		
-		# end_year = event["end_dt"][:4]
-		# end_month = event["end_dt"][5:7]
-		# end_date = event["end_dt"][8:10]	
-
-		# start_year = eventDate.year
-		# start_month = eventDate.month
-		# start_date = eventDate.day
-		
-		# end_year = event["end_dt"][:4]
-		# end_month = event["end_dt"][5:7]
-		# end_date = event["end_dt"][8:10]			
 
 		event_start_date = str(startEventDate.year) + "-" + str(startEventDate.month) + "-" + str(startEventDate.day)
 		event_end_date =  str(endEventDate.year) + "-" + str(endEventDate.month) + "-" + str(endEventDate.day)
