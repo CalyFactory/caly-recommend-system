@@ -9,7 +9,8 @@ from bson.json_util import dumps
 
 
 class Reco:
-
+    
+    item_data = None
     test_mode = False
     item_data = None
     price_priority = {
