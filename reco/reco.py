@@ -31,6 +31,11 @@ class Reco:
             self.user_hashkey = json_data['user_hashkey']
         self.show_external_data = show_external_data
         
+        if json_data['locations']==None:
+            json_data['locations'] = []
+        if json_data['event_types']==None:
+            json_data['event_types'] = []
+
         if external_data != None:
             self.test_mode = True
             with open('./testInitData.json') as file:

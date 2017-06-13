@@ -82,6 +82,44 @@ class TestReco(unittest.TestCase):
             )
 
     """
+    test_load_all_null
+    get_all_list()함수로 모든 데이터를 불러올 수 있는지 테스트
+
+    input : 
+        없음
+    output : 
+        저장된 모든 데이터
+
+    assert 내용
+        1. exptected output의 recohashkey가 output안에 들어있는가
+        2. exptected output의 갯수와 output의 결과가 같은가
+
+    """
+    def test_load_all_null(self):
+        print_test_info()
+        reco = Reco(
+            test_data['test_load_all_null']['input'],
+            '',
+            external_data = {
+                'item_data': test_item_data,
+                'user_click': None
+            }
+        )
+        recoList = reco.get_all_list()
+        expectedList = test_item_data
+        
+        for category in expectedList:
+            for row in expectedList[category]:
+                self.assertTrue(
+                    row['reco_hashkey'] in [data['reco_hashkey'] for data in recoList[category]]
+                )
+            self.assertEqual(
+                len(expectedList[category]),
+                len(recoList[category])
+            )
+
+
+    """
     test_load_all_external_1
     get_all_list()함수로 모든 데이터를 불러올 수 있는지 테스트
     show_external_data 파라미터를 true로 설정해 reco_hashkey 이외의 데이터도 나오는지 테스트
