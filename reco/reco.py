@@ -304,7 +304,7 @@ class Reco:
                
         """
         #필터링 
-        
+         
         for row in origin_list:
             for origin_data in origin_list[row][:]:      
                 if origin_data['score'] < 10000:
@@ -316,12 +316,17 @@ class Reco:
     
     def extract_only_reco_hashkey(self, origin_list):
         reco_list = {}
+        print("extract")
         for row in origin_list:
             reco_list[row] = []
+            print(row)
             for origin_data in origin_list[row]:
                 reco_list[row].append(
-                    origin_data['reco_hashkey']
+                    {
+                        "reco_hashkey": origin_data['reco_hashkey']
+                    }
                 )
+            print(reco_list[row])
         return reco_list
 
     def get_range(self, array, value):
