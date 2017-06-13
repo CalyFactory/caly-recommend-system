@@ -6570,6 +6570,18 @@
             ]
         }
     },
+    "test_load_all_null": {
+        "input": {
+            "locations": null,
+            "time_zone": null,
+            "event_types": null
+        },
+        "output": {
+            "restaurant": [],
+            "cafe": [],
+            "place": []
+        }
+    },
     "example": {
         "input": {
             "locations": [

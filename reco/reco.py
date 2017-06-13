@@ -31,6 +31,11 @@ class Reco:
             self.user_hashkey = json_data['user_hashkey']
         self.show_external_data = show_external_data
         
+        if json_data['locations']==None:
+            json_data['locations'] = []
+        if json_data['event_types']==None:
+            json_data['event_types'] = []
+
         if external_data != None:
             self.test_mode = True
             with open('./testInitData.json') as file:
@@ -304,7 +309,7 @@ class Reco:
                
         """
         #필터링 
-        
+         
         for row in origin_list:
             for origin_data in origin_list[row][:]:      
                 if origin_data['score'] < 10000:
@@ -320,7 +325,9 @@ class Reco:
             reco_list[row] = []
             for origin_data in origin_list[row]:
                 reco_list[row].append(
-                    origin_data['reco_hashkey']
+                    {
+                        "reco_hashkey": origin_data['reco_hashkey']
+                    }
                 )
         return reco_list
 
