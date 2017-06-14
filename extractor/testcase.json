@@ -826,7 +826,7 @@
                         "event_hashkey":"N40401",
                         "locations" : [{
                                 "no":0,
-                                "region":"홍대입구역"
+                                "region":"상수역"
                         }],
                         "time_set" : {
                                 "extract_start": "15:30",
