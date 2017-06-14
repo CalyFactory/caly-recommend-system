@@ -7,6 +7,7 @@ from datetime import datetime, date, time, timedelta
 import pprint
 
 EXTRACTOR_CONF_JS = "../key/extract_conf.json"
+os.environ["CALY_DB_CONF"] = "../key/conf.json"
 from common import db_manager
 
 import MeCab
@@ -91,19 +92,19 @@ def extract_info_from_event(event_hashkey,summary,start_dt, end_dt, location):
 	}
 	event_type_list=[]
 
-	standard_time_scope={}
+	expect_dt=None
+	expect_time_scope={}
 	time_list=[]
 
 	extract_conf_dict={}
 	with open(EXTRACTOR_CONF_JS) as extract_conf_json:
 		extract_conf_dict = json.load(extract_conf_json)
-	standard_time_scope=extract_conf_dict["time-set"]
+	expect_time_scope=extract_conf_dict["time-set"]
 	represent_dict = extract_conf_dict["represent-region"]
 
 	cannot_recommend=False
 
 	try:
-	
 		t = MeCab.Tagger ("-d /usr/local/lib/mecab/dic/mecab-ko-dic")
 	
 		t.parse(full_sentence)
@@ -113,10 +114,14 @@ def extract_info_from_event(event_hashkey,summary,start_dt, end_dt, location):
 		m = t.parseToNode(full_sentence)
 		
 		while m: 
+			""" 
+			print()
+			print(full_sentence)
 			print(m.surface + ' / '+m.feature)
+			print()"""
 			### Grep time
 			if m.surface.find("아침") > -1 or m.surface.find("브런치") > -1 or m.surface.find("점심") > -1 or m.surface.find("저녁") > -1 or m.surface.find("밤") > -1:
-				py_dt=datetime.strptime(standard_time_scope[m.surface], "%H:%M")
+				expect_dt=datetime.strptime(expect_time_scope[m.surface], "%H:%M")
 
 				# Additional event type
 				if event_type_count["CPI01"] == 0:
@@ -148,6 +153,11 @@ def extract_info_from_event(event_hashkey,summary,start_dt, end_dt, location):
 				py_dt=None
 
 			### Grep event type
+			elif m.surface.find("CGV") > -1:
+				if event_type_count["CPI06"] == 0:
+					event_type_list.append({"id":"CPI06"})
+				event_type_count["CPI06"]=event_type_count["CPI06"]+1
+			
 			elif m.feature.find("CPI") > -1:
 				cpi = m.feature.split(",")[3]
 				if cpi.find("CPI") > -1:
@@ -157,6 +167,7 @@ def extract_info_from_event(event_hashkey,summary,start_dt, end_dt, location):
 						
 			### Grep location : google / calyfactorytester3@gmail.com
 			elif m.feature.find("대표지이름") > -1 and len(location_list) < 1:
+
 				if m.surface in represent_dict:
 					location_list.append({"no":len(location_list),"region":represent_dict[m.surface]})
 				else:
@@ -203,7 +214,11 @@ def extract_info_from_event(event_hashkey,summary,start_dt, end_dt, location):
 		print("RuntimeError:", e)
 		raise Exception('Event parsing error '+ str(e))
 		# https://github.com/CalyFactory/caly/blob/develop/caldavclient/util.py
-
+	if expect_dt != None:
+		time_set_dict["extract_start"]=expect_dt.strftime("%H:%M")
+		expect_date = str(expect_dt.strftime("%H:%M"))
+		expect_end_dt = datetime.strptime(expect_date,"%H:%M") + timedelta(hours=1)
+		time_set_dict["extract_end"]=expect_end_dt.strftime("%H:%M")
 	if len(time_list) == 2:
 		time_set_dict["extract_start"]=time_list[0]
 		time_set_dict["extract_end"]=time_list[1]
@@ -212,9 +227,10 @@ def extract_info_from_event(event_hashkey,summary,start_dt, end_dt, location):
 		origin_date = str(time_list[0])
 		extract_end_dt = datetime.strptime(origin_date,"%H:%M") + timedelta(hours=1)
 		time_set_dict["extract_end"]=extract_end_dt.strftime("%H:%M")
-	else:
+	elif len(time_list) == 0 and expect_dt == None:
 		time_set_dict["extract_start"]=None
 		time_set_dict["extract_end"]=None
+
 	if len(event_type_list) < 1:
 		event_type_list=None
 	if len(location_list) == 0:
@@ -230,4 +246,4 @@ def extract_info_from_event(event_hashkey,summary,start_dt, end_dt, location):
 		"event_types":event_type_list
 	}
 
-#print(extract_info_from_event("-","세시반 홍대","2017-07-04 12:00:00","2017-07-04 13:00:00",""))
+#print(extract_info_from_event("-","평강이랑 저녁","2017-07-04 12:00:00","2017-07-04 13:00:00","합정"))

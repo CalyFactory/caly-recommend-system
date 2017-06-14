@@ -93,8 +93,8 @@
                                 "region":"신촌(경의중앙선)역"
                         }],
                         "time_set" : {
-                                "extract_start": null,
-                                "extract_end": null,
+                                "extract_start": "19:00",
+                                "extract_end": "20:00",
                                 "event_start": "12:00",
                                 "event_end": "13:00"
                         },
@@ -119,8 +119,8 @@
                                 "region":"신촌(경의중앙선)역"
                         }],
                         "time_set" : {
-                                "extract_start": null,
-                                "extract_end": null,
+                                "extract_start": "19:00",
+                                "extract_end": "20:00",
                                 "event_start": "12:00",
                                 "event_end": "13:00"
                         },
@@ -142,11 +142,11 @@
                         "cannot_reco" : false,
                         "locations" : [{
                                 "no":0,
-                                "region":"이대역"
+                                "region":"신촌(경의중앙선)역"
                         }],
                         "time_set" : {
-                                "extract_start": null,
-                                "extract_end": null,
+                                "extract_start": "19:00",
+                                "extract_end": "20:00",
                                 "event_start": "12:00",
                                 "event_end": "13:00"
                         },
@@ -177,8 +177,8 @@
                                 "event_end": "13:00"
                         },
                         "event_types" : [
-                                { "id" : "CPI01" },
-                                { "id" : "CPI04" }
+                                { "id" : "CPI04" },
+                                { "id" : "CPI01" }
                         ]
                 }
         },
@@ -198,8 +198,8 @@
                                 "region":"압구정역"
                         }],
                         "time_set" : {
-                                "extract_start": null,
-                                "extract_end": null,
+                                "extract_start": "09:00",
+                                "extract_end": "10:00",
                                 "event_start": "12:00",
                                 "event_end": "13:00"
                         },
