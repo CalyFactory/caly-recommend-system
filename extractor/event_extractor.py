@@ -1,14 +1,14 @@
 import os
-import sys
-
-import json
+root_path = os.path.dirname(os.path.dirname(__file__))
 import string
-from datetime import timedelta
+from datetime import datetime, date, time, timedelta
+import pprint
 
 from common import db_manager
 
 import MeCab
 
+os.environ["EXTRACTOR_CONF_JS"] = "../key/extract_conf.json"
 
 def load_subway_dict():
 	region_dict={}
@@ -32,8 +32,7 @@ def load_subway_dict():
 			else:
 				region_dict[splited_address[2]]=[row.station_name+"역"]
 	extract_conf_dict={}
-
-	with open(os.path.dirname(__file__)+"/key/extract_conf.json") as extract_conf_json:
+	with open(os.environ["EXTRACTOR_CONF_JS"]) as extract_conf_json:
 		extract_conf_dict = json.load(extract_conf_json)
 
 
@@ -55,20 +54,22 @@ def load_subway_dict():
 def extract_info_from_event(event_hashkey,summary,start_dt, end_dt, location):
 	full_sentence=location+" "+summary
 	region_collect_dict, univ_collect_dict = load_subway_dict()
-
+	# pp = pprint.PrettyPrinter(indent=4)
+	# pp.pprint(region_collect_dict)
 	location_list=[]
-	# 2017-07-04 12:00:00
-	splited_start_dt=str(start_dt).split(" ")
-	splited_end_dt=str(end_dt).split(" ")
-	# 12:00:00
+	
+	py_start_dt = datetime.strptime(start_dt, "%Y-%m-%d %H:%M:%S")
+	py_end_dt = datetime.strptime(end_dt, "%Y-%m-%d %H:%M:%S")
+	py_dt = None
+
 	time_set_dict={
 		"event_start":"",
 		"event_end":"",
-		"event_start":splited_start_dt[1][:5],
-		"event_end":splited_end_dt[1][:5]
+		"event_start":py_start_dt.strftime("%H:%M"),
+		"event_end":py_end_dt.strftime("%H:%M")
 	}
-	# 12:00
-	purpose_count = {
+
+	event_type_count = {
 		"CPI01":0,
 		"CPI02":0,
 		"CPI03":0,
@@ -77,55 +78,70 @@ def extract_info_from_event(event_hashkey,summary,start_dt, end_dt, location):
 		"CPI06":0
 	}
 	event_type_list=[]
-	standard_time_scope={}
-	extract_conf_dict={}
 
-	with open(os.path.dirname(__file__)+"/key/extract_conf.json") as extract_conf_json:
+	standard_time_scope={}
+	time_list=[]
+
+	extract_conf_dict={}
+	with open(os.environ["EXTRACTOR_CONF_JS"]) as extract_conf_json:
 		extract_conf_dict = json.load(extract_conf_json)
 	standard_time_scope=extract_conf_dict["time-set"]
 	
 	cannot_recommend=False
-	exist_time=False
 
 	try:
 	
 		t = MeCab.Tagger ("-d /usr/local/lib/mecab/dic/mecab-ko-dic")
 	
 		t.parse(full_sentence)
-		time = -1
-		number = -1
-		total_purpose_count=0
+		number = None
+		ten_number = 0 # 한/두/세 시
+
 		m = t.parseToNode(full_sentence)
 		
 		while m: 
-			### Grep time-zone : ical / line_plus@naver.com
-
-			if (m.surface.find("아침") > -1) or (m.surface.find("브런치") > -1) or (m.surface.find("점심") > -1) or (m.surface.find("저녁") > -1) or (m.surface.find("밤") > -1):
-				time=standard_time_scope[m.surface]
+			### Grep time
+			if m.surface.find("아침") > -1 or m.surface.find("브런치") > -1 or m.surface.find("점심") > -1 or m.surface.find("저녁") > -1 or m.surface.find("밤") > -1:
+				py_dt=datetime.strptime(standard_time_scope[m.surface], "%H:%M")
 			elif m.feature.find("SN") > -1 and m.surface.isdigit():
-				number=m.surface
-				# 의존성 무시
-			elif m.feature.find("NNBC") > -1 and m.feature.find("시") > -1 and number is not -1:
-				exist_time=True 
-				# 시를 한번 받고 나서 다음에 또 숫자와 시가 안나온 것을 체크하고 end time 가정해서 입력
-				
-				end_time = int(number)+1 # delta hour 등
-				if int(number) < 10:
-					number = "0"+str(number)
-				if int(end_time) < 10: # 코드 반복
-					end_time = "0"+str(end_time)
-				# 뽑아내는 것은 format 기능으로, c언어 스트링 다루듯이 ( 예외처리 고려 X )
-				time_set_dict["extract_start"]=str(number)+":00"
-				time_set_dict["extract_end"]=str(end_time)+":00"
+				number = m.surface
+			elif m.feature.find("NR,*,T,열") > -1:
+				ten_number=10
+				number=ten_number
+			elif m.feature.find("NR") > -1:
+				single_number=0
+				if m.surface.find("다섯") > -1:
+					single_number = 5
+				elif m.surface.find("여섯") > -1:
+					single_number = 6
+				elif m.surface.find("일곱") > -1:
+					single_nubmer = 7
+				elif m.surface.find("여덟") > -1:
+					single_nubmer = 8
+				elif m.surface.find("아홉") > -1:
+					single_number = 9
+				number = ten_number + single_number
+
+				#number=korean_number+
+			elif m.feature.find("NNBC") > -1 and m.feature.find("시") > -1 and number != None:
+				py_dt=datetime.strptime(number, "%H")
+				time_list.append( py_dt.strftime("%H:%M"))
+				number = None
+			elif m.feature.find("NNBC") > -1 and m.feature.find("분") > -1 and number != None and py_dt != None:
+				time_list[ len(time_list)-1 ] = datetime.strptime(py_dt.strftime("%H")+":"+number, "%H:%M").strftime("%H:%M")
+				number = None
+				py_dt=None
+			elif m.surface.find("반") > -1 and py_dt != None:
+				time_list[ len(time_list)-1 ] = datetime.strptime(py_dt.strftime("%H")+":30", "%H:%M").strftime("%H:%M")
+				py_dt=None
 
 			### Grep purpose
-
-			elif m.feature.find("CPI") > -1:
+			if m.feature.find("CPI") > -1:
 				cpi = m.feature.split(",")[3]
 				if cpi.find("CPI") > -1:
-					if purpose_count[cpi] == 0:
+					if event_type_count[cpi] == 0:
 						event_type_list.append({"id":cpi})
-					purpose_count[cpi]=purpose_count[cpi]+1
+					event_type_count[cpi]=event_type_count[cpi]+1
 						
 			### Grep location : google / calyfactorytester3@gmail.com
 			elif (m.feature.find("대학교") > -1) and len(location_list) < 1:
@@ -135,22 +151,26 @@ def extract_info_from_event(event_hashkey,summary,start_dt, end_dt, location):
 						# 첫번째 역으로 가정
 
 						location_list.append({"no":len(location_list),"region":region_collect_dict[univ_collect_dict[m.surface]][0]})
+					else:
+						print("Can't supported univ.")
 
 				else:
+					univ = m.feature.split(",")[7]
+					if (univ.find("대학교") > 0) and (univ in univ_collect_dict):
 
-					univ = m.feature.split(",")[3]
-					if (univ.find("대학교") > 0) and (part in univ_collect_dict):
 						location_list.append({"no":len(location_list),"region":region_collect_dict[univ_collect_dict[univ]][0]})
+					else:
+						print("Can't supported univ.")
 	
-			elif (m.feature.find("지하철") > -1) and (m.surface.find("역") == -1) and (len(location_list) < 1):
+			elif m.feature.find("지하철") > -1 and m.surface.find("역") == -1 and len(location_list) < 1:
 				subway = m.feature.split(",")[7]
 				if subway.find("역") > -1:
 					location_list.append({"no":len(location_list),"region":subway})
 
-			elif (m.feature.find("지하철") > -1) and (len(location_list) < 1):
+			elif m.feature.find("지하철") > -1 and len(location_list) < 1:
 				location_list.append({"no":len(location_list),"region":m.surface})
 
-			elif (m.feature.find("동이름") > 0) and ( len(location_list) < 1 ):	
+			elif m.feature.find("동이름") > 0 and len(location_list) < 1:	
 				# only supported sub-region
 				if m.surface in region_collect_dict:
 					location_list.append({"no":len(location_list),"region":region_collect_dict[m.surface][0]})
@@ -164,18 +184,22 @@ def extract_info_from_event(event_hashkey,summary,start_dt, end_dt, location):
 		raise Exception('Event parsing error '+ str(e))
 		# https://github.com/CalyFactory/caly/blob/develop/caldavclient/util.py
 
-
-
-
-	# Docs 참고
-	if exist_time == False:
+	if len(time_list) == 2:
+		time_set_dict["extract_start"]=time_list[0]
+		time_set_dict["extract_end"]=time_list[1]
+	elif len(time_list) == 1:
+		time_set_dict["extract_start"]=time_list[0]
+		origin_date = str(time_list[0])
+		extract_end_dt = datetime.strptime(origin_date,"%H:%M") + timedelta(hours=1)
+		time_set_dict["extract_end"]=extract_end_dt.strftime("%H:%M")
+	else:
 		time_set_dict["extract_start"]=None
 		time_set_dict["extract_end"]=None
 	if len(event_type_list) < 1:
 		event_type_list=None
 	if len(location_list) == 0:
 		location_list=None
-	
+
 	
 	return {
 		"event_hashkey": event_hashkey,
