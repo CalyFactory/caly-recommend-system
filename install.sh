@@ -1,1 +1,1 @@
-python3 ./reco/setup.py install 
+python3 ./reco/setup.py install --user
