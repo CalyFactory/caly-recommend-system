@@ -7,13 +7,13 @@ import math
 import unittest
 import json
 
-with open('./test_data/jsonData.json') as file:
+with open('./jsonData.json') as file:
     json_data = json.load(file)
 
-with open('./test_data/testData.json') as file:
+with open('./testData.json') as file:
     test_data = json.load(file)
 
-with open('./test_data/testItemData.json') as file:
+with open('./testItemData.json') as file:
     test_item_data = json.load(file)
 
 
