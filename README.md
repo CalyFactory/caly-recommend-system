@@ -1,7 +1,20 @@
 Caly Recommend Engine 
 =========
 ![build status](https://travis-ci.org/CalyFactory/caly-recommend-system.svg)
-[![Coverage Status](https://coveralls.io/repos/github/CalyFactory/caly-recommend-system/badge.svg?branch=recommender)](https://coveralls.io/github/CalyFactory/caly-recommend-system?branch=recommender)
+[![Coverage Status](https://coveralls.io/repos/github/CalyFactory/caly-recommend-system/badge.svg?branch=master)](https://coveralls.io/github/CalyFactory/caly-recommend-system?branch=master)
+
+testWeb
+___
+caly의 추천 엔진 그리고 이를 적용할수있는 web버전입니다. 
+실제 일정을 입력해보고 추천을 받아볼 수 있습니다. 
+
+
+```
+python3 -m venv
+source env/bin/activate
+pip3 install -r requirements.txt
+python3 webReco.py
+```
 
 
 Naming
@@ -57,10 +70,13 @@ Coverage
 Recommand Module
 
 ```
-Name      Stmts   Miss  Cover
------------------------------
-reco.py     261     98    62%
-test.py     110      8    93%
------------------------------
-TOTAL       371    106    71%
+
+Name                         Stmts   Miss  Cover
+------------------------------------------------
+../common/db_manager.py         34     23    32%
+../common/mongo_manager.py      13      9    31%
+./reco.py                      236     44    81%
+./test.py                      235     10    96%
+------------------------------------------------
+TOTAL                          518     86    83%
 ```

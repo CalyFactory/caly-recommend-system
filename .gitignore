@@ -18,6 +18,7 @@ __pycache__/
 # Distribution / packaging
 .Python
 calyenv/
+envReco/
 mecab_files/
 env/
 build/

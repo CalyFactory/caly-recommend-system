@@ -5,6 +5,8 @@ import sys
 sys.path.append(os.path.dirname(os.path.abspath(os.path.dirname(__file__))))
 
 
+
+
 from common import db_manager
 from common.util import utils
 from reco.reco import Reco
@@ -25,41 +27,64 @@ with open('./expectedData.json') as expected_data:
 
 class TestReinForce(unittest.TestCase):
 
-	def test_hasAll(self):		
+	def test_ret10(self):		
 		print("==================01================")
-		has_all = test_data["hasAll"]
-		has_all_expected = expected_data["hasAllExpected"]
-		reinforce = Reinforce(has_all)
-		pprint.pprint("1.hasAll result => "+str(reinforce.event_reco_result))		
-		self.assertEqual(reinforce.event_reco_result, has_all_expected)	
-
-		reco_module = Reco(reinforce.event_reco_result["event_info_data"])
-		print(reco_module.get_reco_list())
-
-	def test_noLocation_no_event_type(self):	 		
-		print("==================02================")
-		noLocation_no_event_type = test_data["noLocationNoEventType"]
-		noLocation_no_event_type_expected = expected_data["noLocationNoEventTypeExpected"]
-		reinforce = Reinforce(noLocation_no_event_type)			
-		pprint.pprint("2. noLocationNoEventType result => "+str(reinforce.event_reco_result))
-		self.assertEqual(reinforce.event_reco_result, noLocation_no_event_type_expected)	
+		ret10 = test_data["ret10"]
+		ret10_expected = expected_data["ret10"]
+		reinforce = Reinforce(ret10)
+		pprint.pprint("1.ret10 result => "+str(reinforce.event_reco_result["event_info_data"]))		
+		self.assertEqual(reinforce.event_reco_result, ret10_expected)	
+		reoco = Reco(reinforce.event_reco_result["event_info_data"])
+		print(reoco.get_reco_list())
 		
-	def test_no_location_has_event_type(self):
-		print("==================03================")
-		noLocation_has_event_type = test_data["noLocationHasEventType"]
-		noLocation_has_event_type_expected = expected_data["noLocationHasEventTypeExpected"]
 
-		reinforce = Reinforce(noLocation_has_event_type)			
-		pprint.pprint("3. noLocationHasEventType result => "+str(reinforce.event_reco_result))
-		self.assertEqual(reinforce.event_reco_result, noLocation_has_event_type_expected)
+	# def test_ret11(self):	 		
+	# 	print("==================02================")
+	# 	ret11 = test_data["ret11"]
+	# 	ret11_expected = expected_data["ret11"]
+	# 	reinforce = Reinforce(ret11)			
+	# 	pprint.pprint("2. ret11 result => "+str(reinforce.event_reco_result))
+	# 	self.assertEqual(reinforce.event_reco_result, ret11_expected)	
+		
+	# def test_ret20(self):
+	# 	print("==================03================")
+	# 	ret20 = test_data["ret20"]
+	# 	ret20_expected = expected_data["ret20"]
+	# 	reinforce = Reinforce(ret20)			
+	# 	pprint.pprint("3. ret20 result => "+str(reinforce.event_reco_result))
+	# 	self.assertEqual(reinforce.event_reco_result, ret20_expected)
 
-	def test_has_location_no_event_type(self):
-		print("==================04================")
-		hasLocation_no_event_type = test_data["hasLocationNoEventType"]
-		hasLocation_no_event_type_expected = expected_data["hasLocationNoEventTypeExpected"]		
-		reinforce = Reinforce(hasLocation_no_event_type)			
-		pprint.pprint("4. hasLocationNoEventType result => "+str(reinforce.event_reco_result))
-		self.assertEqual(reinforce.event_reco_result, hasLocation_no_event_type_expected)			
+	# def test_ret30(self):
+	# 	print("==================04================")
+	# 	ret30 = test_data["ret30"]
+	# 	ret30_expected = expected_data["ret30"]		
+	# 	reinforce = Reinforce(ret30)			
+	# 	pprint.pprint("4. ret30 result => "+str(reinforce.event_reco_result))
+	# 	self.assertEqual(reinforce.event_reco_result, ret30_expected)			
+
+	# def test_ret31(self):
+	# 	print("==================05================")
+	# 	ret31 = test_data["ret31"]
+	# 	ret31_expected = expected_data["ret31"]		
+	# 	reinforce = Reinforce(ret31)			
+	# 	pprint.pprint("5. ret31 result => "+str(reinforce.event_reco_result))
+	# 	self.assertEqual(reinforce.event_reco_result, ret31_expected)					
+	
+	# def test_ret40(self):
+	# 	print("==================06================")
+	# 	ret40 = test_data["ret40"]
+	# 	ret40_expected = expected_data["ret40"]		
+	# 	reinforce = Reinforce(ret40)			
+	# 	pprint.pprint("6. ret40 result => "+str(reinforce.event_reco_result))
+	# 	self.assertEqual(reinforce.event_reco_result, ret40_expected)							
+	
+	# def test_ret50(self):
+	# 	print("==================07================")
+	# 	ret50 = test_data["ret50"]
+	# 	ret50_expected = expected_data["ret50"]		
+	# 	reinforce = Reinforce(ret50)			
+	# 	pprint.pprint("7. ret50 result => "+str(reinforce.event_reco_result))
+	# 	self.assertEqual(reinforce.event_reco_result, ret50_expected)									
 
 
 if __name__ == '__main__':

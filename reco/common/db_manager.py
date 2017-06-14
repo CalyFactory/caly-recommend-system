@@ -16,7 +16,7 @@ root_path = os.path.dirname(os.path.dirname(__file__));
 session = None
 if 'test' not in sys.argv:
 
-    with open(root_path+'/key/conf.json') as conf_json:
+    with open(os.environ["CALY_DB_CONF"]) as conf_json:
         conf = json.load(conf_json)
 
     # pool로 커낵션을 잡는다. 오토커밋 옵션을 false로해줘야한다.

@@ -1,6 +1,6 @@
 import os
 import sys
-sys.path.append(os.path.dirname(os.path.abspath(os.path.dirname(__file__))))
+os.environ["CALY_DB_CONF"] = "../key/conf.json"
 
 from reco import Reco 
 import math
@@ -82,6 +82,132 @@ class TestReco(unittest.TestCase):
             )
 
     """
+    test_load_all_null
+    get_all_list()함수로 모든 데이터를 불러올 수 있는지 테스트
+
+    input : 
+        없음
+    output : 
+        저장된 모든 데이터
+
+    assert 내용
+        1. exptected output의 recohashkey가 output안에 들어있는가
+        2. exptected output의 갯수와 output의 결과가 같은가
+
+    """
+    def test_load_all_null(self):
+        print_test_info()
+        reco = Reco(
+            test_data['test_load_all_null']['input'],
+            '',
+            external_data = {
+                'item_data': test_item_data,
+                'user_click': None
+            }
+        )
+        recoList = reco.get_all_list()
+        expectedList = test_item_data
+        
+        for category in expectedList:
+            for row in expectedList[category]:
+                self.assertTrue(
+                    row['reco_hashkey'] in [data['reco_hashkey'] for data in recoList[category]]
+                )
+            self.assertEqual(
+                len(expectedList[category]),
+                len(recoList[category])
+            )
+
+
+    """
+    test_load_all_external_1
+    get_all_list()함수로 모든 데이터를 불러올 수 있는지 테스트
+    show_external_data 파라미터를 true로 설정해 reco_hashkey 이외의 데이터도 나오는지 테스트
+
+    input : 
+        없음
+    output : 
+        저장된 모든 데이터
+
+    assert 내용
+        1. exptected output의 recohashkey가 output안에 들어있는가
+        2. exptected output의 갯수와 output의 결과가 같은가
+
+    """
+    def test_load_all_external_1(self):
+        print_test_info()
+        reco = Reco(
+            test_data['test_region_filter_1']['input'],
+            show_external_data = True, 
+            external_data = {
+                'item_data': test_item_data,
+                'user_click': None
+            }
+        )
+        recoList = reco.get_reco_list()
+        expectedList = test_data['test_region_filter_1']['output']
+        
+        for category in expectedList:
+            for row in recoList[category]:
+                self.assertNotEqual(
+                    1,
+                    len(row)
+                )
+
+            for row in expectedList[category]:
+                self.assertTrue(
+                    row['reco_hashkey'] in [data['reco_hashkey'] for data in recoList[category]]
+                )
+            self.assertEqual(
+                len(expectedList[category]),
+                len(recoList[category])
+            ) 
+
+    """ 
+    test_load_all_external_2
+    get_all_list()함수로 모든 데이터를 불러올 수 있는지 테스트
+    show_external_data 파라미터를 true로 설정해 reco_hashkey 이외의 데이터도 나오는지 테스트
+
+    input : 
+        없음
+    output : 
+        저장된 모든 데이터
+
+    assert 내용
+        1. exptected output의 recohashkey가 output안에 들어있는가
+        2. exptected output의 갯수와 output의 결과가 같은가
+
+    """
+    def test_load_all_external_2(self):
+        print_test_info() 
+        reco = Reco( 
+            test_data['test_region_filter_1']['input'],
+            show_external_data = False,
+            external_data = {
+                'item_data': test_item_data,
+                'user_click': None
+            }
+        )
+        recoList = reco.get_reco_list()
+        expectedList = test_data['test_region_filter_1']['output']
+        
+        for category in expectedList:
+            for row in recoList[category]:
+                self.assertEqual(
+                    1,
+                    len(row)
+                )
+
+            for row in expectedList[category]:
+                self.assertTrue(
+                    row['reco_hashkey'] in [data['reco_hashkey'] for data in recoList[category]]
+                )
+            self.assertEqual(
+                len(expectedList[category]),
+                len(recoList[category])
+            )
+
+    """
     test_price_rank
     get_range()함수로 등급을 불러올때 올바르게 불러오는지 테스트
 
@@ -99,7 +225,7 @@ class TestReco(unittest.TestCase):
         print_test_info()
         reco = Reco(
             test_data['empty_data']['input'],
-            '',
+            True,
             external_data = {
                 'item_data': test_item_data,
                 'user_click': None
@@ -135,7 +261,7 @@ class TestReco(unittest.TestCase):
         print_test_info()
         reco = Reco(
             test_data['empty_data']['input'],
-            '',
+            True,
             external_data = {
                 'item_data': test_item_data,
                 'user_click': None
@@ -171,7 +297,7 @@ class TestReco(unittest.TestCase):
         print_test_info()
         reco = Reco(
             test_data['test_region_filter_1']['input'],
-            '',
+            True,
             external_data = {
                 'item_data': test_item_data,
                 'user_click': None
@@ -209,7 +335,7 @@ class TestReco(unittest.TestCase):
         print_test_info()
         reco = Reco(
             test_data['test_region_filter_2']['input'],
-            '',
+            True,
             external_data = {
                 'item_data': test_item_data,
                 'user_click': None
@@ -248,7 +374,7 @@ class TestReco(unittest.TestCase):
         print_test_info()
         reco = Reco(
             test_data['test_region_filter_3']['input'],
-            '',
+            True,
             external_data = {
                 'item_data': test_item_data,
                 'user_click': None
@@ -286,7 +412,7 @@ class TestReco(unittest.TestCase):
         print_test_info()
         reco = Reco(
             test_data['test_region_filter_4']['input'],
-            '',
+            True,
             external_data = {
                 'item_data': test_item_data,
                 'user_click': None
@@ -324,7 +450,7 @@ class TestReco(unittest.TestCase):
         print_test_info()
         reco = Reco(
             test_data['test_region_filter_5']['input'],
-            '',
+            True,
             external_data = {
                 'item_data': test_item_data,
                 'user_click': None
@@ -365,7 +491,7 @@ class TestReco(unittest.TestCase):
         print_test_info()
         reco = Reco(
             test_data['test_score_region_1']['input'],
-            '',
+            True,
             external_data = {
                 'item_data': test_item_data,
                 'user_click': None
@@ -420,7 +546,7 @@ class TestReco(unittest.TestCase):
         print_test_info()
         reco = Reco(
             test_data['test_score_purpose_1']['input'],
-            '',
+            True,
             external_data = {
                 'item_data': test_item_data,
                 'user_click': None
@@ -474,7 +600,7 @@ class TestReco(unittest.TestCase):
         print_test_info()
         reco = Reco(
             test_data['test_score_price_distance_1']['input'],
-            '',
+            True,
             external_data = {
                 'item_data': test_item_data,
                 'user_click': None
@@ -537,7 +663,7 @@ class TestReco(unittest.TestCase):
         print_test_info()
         reco = Reco(
             test_data['test_score_personal_1']['input']['extracted_data'],
-            '',
+            True,
             external_data = {
                 'item_data': test_item_data,
                 'user_click': test_data['test_score_personal_1']['input']['user_click']
@@ -600,7 +726,7 @@ class TestReco(unittest.TestCase):
         print_test_info()
         reco = Reco(
             test_data['test_score_personal_2']['input']['extracted_data'],
-            '',
+            True,
             external_data = {
                 'item_data': test_item_data,
                 'user_click': test_data['test_score_personal_2']['input']['user_click']
@@ -663,7 +789,7 @@ class TestReco(unittest.TestCase):
         print_test_info()
         reco = Reco(
             test_data['test_score_personal_3']['input']['extracted_data'],
-            '',
+            True,
             external_data = {
                 'item_data': test_item_data,
                 'user_click': test_data['test_score_personal_3']['input']['user_click']

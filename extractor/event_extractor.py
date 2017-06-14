@@ -1,7 +1,5 @@
 import os
 root_path = os.path.dirname(os.path.dirname(__file__))
-
-import json
 import string
 from datetime import datetime, date, time, timedelta
 import pprint
@@ -51,6 +49,7 @@ def load_subway_dict():
 			univ_dict[row.univ_name]=splited_address[2]
 
 	return [region_dict, univ_dict]
+
 
 def extract_info_from_event(event_hashkey,summary,start_dt, end_dt, location):
 	full_sentence=location+" "+summary
@@ -150,6 +149,7 @@ def extract_info_from_event(event_hashkey,summary,start_dt, end_dt, location):
 					# only supported university
 					if m.surface in univ_collect_dict:
 						# 첫번째 역으로 가정
+
 						location_list.append({"no":len(location_list),"region":region_collect_dict[univ_collect_dict[m.surface]][0]})
 					else:
 						print("Can't supported univ.")
@@ -157,6 +157,7 @@ def extract_info_from_event(event_hashkey,summary,start_dt, end_dt, location):
 				else:
 					univ = m.feature.split(",")[7]
 					if (univ.find("대학교") > 0) and (univ in univ_collect_dict):
+
 						location_list.append({"no":len(location_list),"region":region_collect_dict[univ_collect_dict[univ]][0]})
 					else:
 						print("Can't supported univ.")
@@ -183,8 +184,6 @@ def extract_info_from_event(event_hashkey,summary,start_dt, end_dt, location):
 		raise Exception('Event parsing error '+ str(e))
 		# https://github.com/CalyFactory/caly/blob/develop/caldavclient/util.py
 
-	# Docs 참고
-	# if time_list.length == 1 set end_time
 	if len(time_list) == 2:
 		time_set_dict["extract_start"]=time_list[0]
 		time_set_dict["extract_end"]=time_list[1]
@@ -209,4 +208,4 @@ def extract_info_from_event(event_hashkey,summary,start_dt, end_dt, location):
 		"event_types":event_type_list
 	}
 
-print(extract_info_from_event("-","건대 7시 소리랑 데이트","2017-07-04 12:00:00","2017-07-04 13:00:00",""))
+#print(extract_info_from_event("-","신촌 데이트","2017-07-04 12:00:00","2017-07-04 13:00:00",""))
