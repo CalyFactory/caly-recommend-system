@@ -1,12 +1,13 @@
 import os
 root_path = os.path.dirname(os.path.dirname(__file__))
+current_path = os.path.dirname(__file__)
 
 import json
 import string
 from datetime import datetime, date, time, timedelta
 import pprint
 
-EXTRACTOR_CONF_JS = "../key/extract_conf.json"
+EXTRACTOR_CONF_JS = current_path + "/key/extract_conf.json"
 from common import db_manager
 
 import MeCab
