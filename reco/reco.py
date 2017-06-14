@@ -1,6 +1,6 @@
-from common import db_manager
-from common.util import utils
-from common import mongo_manager
+from reco.common import db_manager
+from reco.common.util import utils
+from reco.common import mongo_manager
 import json
 import re
 import random
