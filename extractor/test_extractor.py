@@ -6,9 +6,11 @@ root_path = os.path.dirname(os.path.dirname(__file__))
 import unittest
 import event_extractor
 import json
+
 # python3 -m unittest -v testRecommendLocation.py
 
 os.environ["EXTRACTOR_TESTCASE_JS"] = "../extractor/testcase.json"
+os.environ["CONF_JS"] = "key/conf.json"
 
 
 with open(os.environ["EXTRACTOR_TESTCASE_JS"]) as tcJson:
@@ -61,8 +63,8 @@ class TestExtract(unittest.TestCase):
 		self.assertEqual(event_extractor.extract_info_from_event(testcaseJs["N40101"]["input"]["event_hashkey"],testcaseJs["N40101"]["input"]["summary"],testcaseJs["N40101"]["input"]["start_dt"],testcaseJs["N40101"]["input"]["end_dt"],testcaseJs["N40101"]["input"]["location"]), testcaseJs["N40101"]["result"])
 		self.assertEqual(event_extractor.extract_info_from_event(testcaseJs["N40102"]["input"]["event_hashkey"],testcaseJs["N40102"]["input"]["summary"],testcaseJs["N40102"]["input"]["start_dt"],testcaseJs["N40102"]["input"]["end_dt"],testcaseJs["N40102"]["input"]["location"]), testcaseJs["N40102"]["result"])
 		self.assertEqual(event_extractor.extract_info_from_event(testcaseJs["N40201"]["input"]["event_hashkey"],testcaseJs["N40201"]["input"]["summary"],testcaseJs["N40201"]["input"]["start_dt"],testcaseJs["N40201"]["input"]["end_dt"],testcaseJs["N40201"]["input"]["location"]), testcaseJs["N40201"]["result"])
-		#self.assertEqual(event_extractor.extract_info_from_event(testcaseJs["N40301"]["input"]["event_hashkey"],testcaseJs["N40301"]["input"]["summary"],testcaseJs["N40301"]["input"]["start_dt"],testcaseJs["N40301"]["input"]["end_dt"],testcaseJs["N40301"]["input"]["location"]), testcaseJs["N40301"]["result"])
-		#self.assertEqual(event_extractor.extract_info_from_event(testcaseJs["N40401"]["input"]["event_hashkey"],testcaseJs["N40401"]["input"]["summary"],testcaseJs["N40401"]["input"]["start_dt"],testcaseJs["N40401"]["input"]["end_dt"],testcaseJs["N40401"]["input"]["location"]), testcaseJs["N40401"]["result"])
+		self.assertEqual(event_extractor.extract_info_from_event(testcaseJs["N40301"]["input"]["event_hashkey"],testcaseJs["N40301"]["input"]["summary"],testcaseJs["N40301"]["input"]["start_dt"],testcaseJs["N40301"]["input"]["end_dt"],testcaseJs["N40301"]["input"]["location"]), testcaseJs["N40301"]["result"])
+		self.assertEqual(event_extractor.extract_info_from_event(testcaseJs["N40401"]["input"]["event_hashkey"],testcaseJs["N40401"]["input"]["summary"],testcaseJs["N40401"]["input"]["start_dt"],testcaseJs["N40401"]["input"]["end_dt"],testcaseJs["N40401"]["input"]["location"]), testcaseJs["N40401"]["result"])
 		
 		"""
 		self.assertEqual(event_extractor.extract_info_from_event(testcaseJs["N40301"]["input"]["event_hashkey"],testcaseJs["N40301"]["input"]["summary"],testcaseJs["N40301"]["input"]["start_dt"],testcaseJs["N40301"]["input"]["end_dt"],testcaseJs["N40301"]["input"]["location"]), testcaseJs["N40301"]["result"])

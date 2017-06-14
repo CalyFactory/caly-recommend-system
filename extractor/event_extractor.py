@@ -1,14 +1,16 @@
 import os
 root_path = os.path.dirname(os.path.dirname(__file__))
+
+import json
 import string
 from datetime import datetime, date, time, timedelta
 import pprint
 
+os.environ["EXTRACTOR_CONF_JS"] = "../key/extract_conf.json"
 from common import db_manager
 
 import MeCab
 
-os.environ["EXTRACTOR_CONF_JS"] = "../key/extract_conf.json"
 
 def load_subway_dict():
 	region_dict={}
@@ -50,7 +52,6 @@ def load_subway_dict():
 
 	return [region_dict, univ_dict]
 
-
 def extract_info_from_event(event_hashkey,summary,start_dt, end_dt, location):
 	full_sentence=location+" "+summary
 	region_collect_dict, univ_collect_dict = load_subway_dict()
@@ -68,7 +69,18 @@ def extract_info_from_event(event_hashkey,summary,start_dt, end_dt, location):
 		"event_start":py_start_dt.strftime("%H:%M"),
 		"event_end":py_end_dt.strftime("%H:%M")
 	}
-
+	korean_time_dict={
+		"한":1,
+		"두":2,
+		"세":3,
+		"네":4,
+		"다섯":5,
+		"여섯":6,
+		"일곱":7,
+		"여덟":8,
+		"아홉":9,
+		"열":10
+	}
 	event_type_count = {
 		"CPI01":0,
 		"CPI02":0,
@@ -100,6 +112,7 @@ def extract_info_from_event(event_hashkey,summary,start_dt, end_dt, location):
 		m = t.parseToNode(full_sentence)
 		
 		while m: 
+			#print(m.surface + ' / '+m.feature)
 			### Grep time
 			if m.surface.find("아침") > -1 or m.surface.find("브런치") > -1 or m.surface.find("점심") > -1 or m.surface.find("저녁") > -1 or m.surface.find("밤") > -1:
 				py_dt=datetime.strptime(standard_time_scope[m.surface], "%H:%M")
@@ -108,23 +121,16 @@ def extract_info_from_event(event_hashkey,summary,start_dt, end_dt, location):
 			elif m.feature.find("NR,*,T,열") > -1:
 				ten_number=10
 				number=ten_number
-			elif m.feature.find("NR") > -1:
-				single_number=0
-				if m.surface.find("다섯") > -1:
-					single_number = 5
-				elif m.surface.find("여섯") > -1:
-					single_number = 6
-				elif m.surface.find("일곱") > -1:
-					single_nubmer = 7
-				elif m.surface.find("여덟") > -1:
-					single_nubmer = 8
-				elif m.surface.find("아홉") > -1:
-					single_number = 9
-				number = ten_number + single_number
-
-				#number=korean_number+
+			elif m.feature.find("MM,~가산명사") > -1 or m.feature.find("NR") > -1:
+				single_number = 0
+				if m.surface in korean_time_dict:
+					single_number=korean_time_dict[m.surface]
+					number = ten_number + single_number
 			elif m.feature.find("NNBC") > -1 and m.feature.find("시") > -1 and number != None:
-				py_dt=datetime.strptime(number, "%H")
+				if int(number) < 6:
+					number = int(number) + 12
+				str_number = str(number)
+				py_dt=datetime.strptime(str_number, "%H")
 				time_list.append( py_dt.strftime("%H:%M"))
 				number = None
 			elif m.feature.find("NNBC") > -1 and m.feature.find("분") > -1 and number != None and py_dt != None:
@@ -149,7 +155,6 @@ def extract_info_from_event(event_hashkey,summary,start_dt, end_dt, location):
 					# only supported university
 					if m.surface in univ_collect_dict:
 						# 첫번째 역으로 가정
-
 						location_list.append({"no":len(location_list),"region":region_collect_dict[univ_collect_dict[m.surface]][0]})
 					else:
 						print("Can't supported univ.")
@@ -157,7 +162,6 @@ def extract_info_from_event(event_hashkey,summary,start_dt, end_dt, location):
 				else:
 					univ = m.feature.split(",")[7]
 					if (univ.find("대학교") > 0) and (univ in univ_collect_dict):
-
 						location_list.append({"no":len(location_list),"region":region_collect_dict[univ_collect_dict[univ]][0]})
 					else:
 						print("Can't supported univ.")
@@ -208,4 +212,4 @@ def extract_info_from_event(event_hashkey,summary,start_dt, end_dt, location):
 		"event_types":event_type_list
 	}
 
-#print(extract_info_from_event("-","신촌 데이트","2017-07-04 12:00:00","2017-07-04 13:00:00",""))
+#print(extract_info_from_event("-","세시반 홍대","2017-07-04 12:00:00","2017-07-04 13:00:00",""))

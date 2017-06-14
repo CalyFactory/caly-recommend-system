@@ -6,7 +6,7 @@ setup(
     author = "refgjin",
     author_email = "refgjin@gmail.com",
     py_modules=[
-        'extractor', 
+        'event_extractor', 
         'common/db_manager'
     ],
     description = "caly extractor lib",
