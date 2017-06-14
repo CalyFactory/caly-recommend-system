@@ -8,7 +8,8 @@ install:
   - sh ./install.sh
 
 script:
-  - sh ./test/test.sh
+  - cd test
+  - sh test.sh
 
 after_success:
   - coveralls
