@@ -794,7 +794,7 @@
         "N40301":{
                 "input":{
                         "event_hashkey":"N40301",
-                        "summary":"세시반 홍대",
+                        "summary":"다섯시 신촌",
                         "start_dt":"2017-07-04 12:00:00",
                         "end_dt":"2017-07-04 13:00:00",
                         "location":""
@@ -803,11 +803,11 @@
                         "event_hashkey":"N40301",
                         "locations" : [{
                                 "no":0,
-                                "region":"홍대입구역"
+                                "region":"신촌역"
                         }],
                         "time_set" : {
-                                "extract_start": "15:30",
-                                "extract_end": "16:30",
+                                "extract_start": "17:00",
+                                "extract_end": "18:00",
                                 "event_start": "12:00",
                                 "event_end": "13:00"
                         },
@@ -817,7 +817,7 @@
         "N40401":{
                 "input":{
                         "event_hashkey":"N40401",
-                        "summary":"다섯시 신촌",
+                        "summary":"세시반 홍대",
                         "start_dt":"2017-07-04 12:00:00",
                         "end_dt":"2017-07-04 13:00:00",
                         "location":""
@@ -826,11 +826,11 @@
                         "event_hashkey":"N40401",
                         "locations" : [{
                                 "no":0,
-                                "region":"신촌역"
+                                "region":"홍대입구역"
                         }],
                         "time_set" : {
-                                "extract_start": "17:00",
-                                "extract_end": "18:00",
+                                "extract_start": "15:30",
+                                "extract_end": "16:30",
                                 "event_start": "12:00",
                                 "event_end": "13:00"
                         },
