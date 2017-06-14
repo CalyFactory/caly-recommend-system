@@ -1,12 +1,17 @@
 # -*- coding: utf-8 -*-
 #from extractor.common import db_manager
+import os
+root_path = os.path.dirname(os.path.dirname(__file__))
+
 import unittest
 import event_extractor
 import json
-
 # python3 -m unittest -v testRecommendLocation.py
 
-with open('../extractor/testcase.json') as tcJson:
+os.environ["EXTRACTOR_TESTCASE_JS"] = "../extractor/testcase.json"
+
+
+with open(os.environ["EXTRACTOR_TESTCASE_JS"]) as tcJson:
 	testcaseJs = json.load(tcJson)
 
 class TestExtract(unittest.TestCase):

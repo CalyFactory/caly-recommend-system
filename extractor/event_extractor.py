@@ -1,6 +1,5 @@
 import os
-import sys
-sys.path.append(os.path.dirname(os.path.abspath(os.path.dirname(__file__))))
+root_path = os.path.dirname(os.path.dirname(__file__))
 
 import json
 import string
@@ -10,6 +9,8 @@ import pprint
 from common import db_manager
 
 import MeCab
+
+os.environ["EXTRACTOR_CONF_JS"] = "../key/extract_conf.json"
 
 def load_subway_dict():
 	region_dict={}
@@ -33,7 +34,7 @@ def load_subway_dict():
 			else:
 				region_dict[splited_address[2]]=[row.station_name+"역"]
 	extract_conf_dict={}
-	with open("../key/extract_conf.json") as extract_conf_json:
+	with open(os.environ["EXTRACTOR_CONF_JS"]) as extract_conf_json:
 		extract_conf_dict = json.load(extract_conf_json)
 
 
@@ -83,7 +84,7 @@ def extract_info_from_event(event_hashkey,summary,start_dt, end_dt, location):
 	time_list=[]
 
 	extract_conf_dict={}
-	with open("../key/extract_conf.json") as extract_conf_json:
+	with open(os.environ["EXTRACTOR_CONF_JS"]) as extract_conf_json:
 		extract_conf_dict = json.load(extract_conf_json)
 	standard_time_scope=extract_conf_dict["time-set"]
 	
@@ -94,8 +95,9 @@ def extract_info_from_event(event_hashkey,summary,start_dt, end_dt, location):
 		t = MeCab.Tagger ("-d /usr/local/lib/mecab/dic/mecab-ko-dic")
 	
 		t.parse(full_sentence)
-		time = -1
 		number = None
+		ten_number = 0 # 한/두/세 시
+
 		m = t.parseToNode(full_sentence)
 		
 		while m: 
@@ -104,6 +106,24 @@ def extract_info_from_event(event_hashkey,summary,start_dt, end_dt, location):
 				py_dt=datetime.strptime(standard_time_scope[m.surface], "%H:%M")
 			elif m.feature.find("SN") > -1 and m.surface.isdigit():
 				number = m.surface
+			elif m.feature.find("NR,*,T,열") > -1:
+				ten_number=10
+				number=ten_number
+			elif m.feature.find("NR") > -1:
+				single_number=0
+				if m.surface.find("다섯") > -1:
+					single_number = 5
+				elif m.surface.find("여섯") > -1:
+					single_number = 6
+				elif m.surface.find("일곱") > -1:
+					single_nubmer = 7
+				elif m.surface.find("여덟") > -1:
+					single_nubmer = 8
+				elif m.surface.find("아홉") > -1:
+					single_number = 9
+				number = ten_number + single_number
+
+				#number=korean_number+
 			elif m.feature.find("NNBC") > -1 and m.feature.find("시") > -1 and number != None:
 				py_dt=datetime.strptime(number, "%H")
 				time_list.append( py_dt.strftime("%H:%M"))
@@ -189,4 +209,4 @@ def extract_info_from_event(event_hashkey,summary,start_dt, end_dt, location):
 		"event_types":event_type_list
 	}
 
-#print(extract_info_from_event("-","건대 7시 소리랑 데이트","2017-07-04 12:00:00","2017-07-04 13:00:00",""))
+print(extract_info_from_event("-","건대 7시 소리랑 데이트","2017-07-04 12:00:00","2017-07-04 13:00:00",""))
