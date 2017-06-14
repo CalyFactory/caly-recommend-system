@@ -6,6 +6,7 @@ sys.path.append(os.path.dirname(os.path.abspath(os.path.dirname(__file__))))
 
 
 
+os.environ["CALY_DB_CONF"] = "../key/conf.json"
 
 from common import db_manager
 from common.util import utils
@@ -32,10 +33,10 @@ class TestReinForce(unittest.TestCase):
 		ret10 = test_data["ret10"]
 		ret10_expected = expected_data["ret10"]
 		reinforce = Reinforce(ret10)
-		pprint.pprint("1.ret10 result => "+str(reinforce.event_reco_result["event_info_data"]))		
+		# pprint.pprint("1.ret10 result => "+str(reinforce.event_reco_result["event_info_data"]))		
 		self.assertEqual(reinforce.event_reco_result, ret10_expected)	
-		reoco = Reco(reinforce.event_reco_result["event_info_data"])
-		print(reoco.get_reco_list())
+		# reoco = Reco(reinforce.event_reco_result["event_info_data"])
+		# print(reoco.get_reco_list())
 		
 
 	# def test_ret11(self):	 		

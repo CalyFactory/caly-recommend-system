@@ -1,3 +1,6 @@
+import os
+os.environ["CALY_DB_CONF"] = "./key/conf.json"
+
 import pprint
 import flask 
 from flask import redirect
@@ -17,6 +20,8 @@ from reco.reco import Reco
 from flask_cors import CORS
 
 import json
+
+
 app = flask.Flask(__name__, static_url_path='')
 CORS(app)
 
