@@ -10,6 +10,7 @@ setup(
         'extractor/event_extractor', 
         'extractor/common/db_manager'
     ],
+    package_data = [('key', ['key/extract_conf.json'])],
     description = "caly extractor lib",
 )
 
@@ -32,7 +33,7 @@ setup(
 setup(
     name = "reco",
     version = "1.0.0",
-    author = "reco",
+    author = "jspiner",
     author_email = "jspiner@naver.com",
     py_modules=[
         'reco/reco', 
