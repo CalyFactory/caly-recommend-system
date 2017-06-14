@@ -1,6 +1,6 @@
 import os
 import sys
-sys.path.append(os.path.dirname(os.path.abspath(os.path.dirname(__file__))))
+os.environ["CALY_DB_CONF"] = "../key/conf.json"
 
 from reco import Reco 
 import math
