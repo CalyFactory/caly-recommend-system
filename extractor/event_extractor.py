@@ -6,7 +6,7 @@ import string
 from datetime import datetime, date, time, timedelta
 import pprint
 
-os.environ["EXTRACTOR_CONF_JS"] = "../key/extract_conf.json"
+EXTRACTOR_CONF_JS = "../key/extract_conf.json"
 from common import db_manager
 
 import MeCab
@@ -34,7 +34,7 @@ def load_subway_dict():
 			else:
 				region_dict[splited_address[2]]=[row.station_name+"역"]
 	extract_conf_dict={}
-	with open(os.environ["EXTRACTOR_CONF_JS"]) as extract_conf_json:
+	with open(EXTRACTOR_CONF_JS) as extract_conf_json:
 		extract_conf_dict = json.load(extract_conf_json)
 
 
@@ -95,10 +95,11 @@ def extract_info_from_event(event_hashkey,summary,start_dt, end_dt, location):
 	time_list=[]
 
 	extract_conf_dict={}
-	with open(os.environ["EXTRACTOR_CONF_JS"]) as extract_conf_json:
+	with open(EXTRACTOR_CONF_JS) as extract_conf_json:
 		extract_conf_dict = json.load(extract_conf_json)
 	standard_time_scope=extract_conf_dict["time-set"]
-	
+	represent_dict = extract_conf_dict["represent-region"]
+
 	cannot_recommend=False
 
 	try:
@@ -112,10 +113,15 @@ def extract_info_from_event(event_hashkey,summary,start_dt, end_dt, location):
 		m = t.parseToNode(full_sentence)
 		
 		while m: 
-			#print(m.surface + ' / '+m.feature)
+			print(m.surface + ' / '+m.feature)
 			### Grep time
 			if m.surface.find("아침") > -1 or m.surface.find("브런치") > -1 or m.surface.find("점심") > -1 or m.surface.find("저녁") > -1 or m.surface.find("밤") > -1:
 				py_dt=datetime.strptime(standard_time_scope[m.surface], "%H:%M")
+
+				# Additional event type
+				if event_type_count["CPI01"] == 0:
+					event_type_list.append({"id":"CPI01"})
+				event_type_count["CPI01"]=event_type_count["CPI01"]+1
 			elif m.feature.find("SN") > -1 and m.surface.isdigit():
 				number = m.surface
 			elif m.feature.find("NR,*,T,열") > -1:
@@ -141,8 +147,8 @@ def extract_info_from_event(event_hashkey,summary,start_dt, end_dt, location):
 				time_list[ len(time_list)-1 ] = datetime.strptime(py_dt.strftime("%H")+":30", "%H:%M").strftime("%H:%M")
 				py_dt=None
 
-			### Grep purpose
-			if m.feature.find("CPI") > -1:
+			### Grep event type
+			elif m.feature.find("CPI") > -1:
 				cpi = m.feature.split(",")[3]
 				if cpi.find("CPI") > -1:
 					if event_type_count[cpi] == 0:
@@ -150,21 +156,30 @@ def extract_info_from_event(event_hashkey,summary,start_dt, end_dt, location):
 					event_type_count[cpi]=event_type_count[cpi]+1
 						
 			### Grep location : google / calyfactorytester3@gmail.com
-			elif (m.feature.find("대학교") > -1) and len(location_list) < 1:
+			elif m.feature.find("대표지이름") > -1 and len(location_list) < 1:
+				if m.surface in represent_dict:
+					location_list.append({"no":len(location_list),"region":represent_dict[m.surface]})
+				else:
+					cannot_recommend=True
+					location_list.append({"no":len(location_list),"region":m.surface})
+
+			elif m.feature.find("대학교") > -1 and len(location_list) < 1:
 				if m.surface.find("대학교") > -1:
 					# only supported university
 					if m.surface in univ_collect_dict:
 						# 첫번째 역으로 가정
 						location_list.append({"no":len(location_list),"region":region_collect_dict[univ_collect_dict[m.surface]][0]})
 					else:
-						print("Can't supported univ.")
+						cannot_recommend=True
+						location_list.append({"no":len(location_list),"region":m.surface})
 
 				else:
 					univ = m.feature.split(",")[7]
 					if (univ.find("대학교") > 0) and (univ in univ_collect_dict):
 						location_list.append({"no":len(location_list),"region":region_collect_dict[univ_collect_dict[univ]][0]})
 					else:
-						print("Can't supported univ.")
+						cannot_recommend=True
+						location_list.append({"no":len(location_list),"region":m.surface})
 	
 			elif m.feature.find("지하철") > -1 and m.surface.find("역") == -1 and len(location_list) < 1:
 				subway = m.feature.split(",")[7]
@@ -178,8 +193,9 @@ def extract_info_from_event(event_hashkey,summary,start_dt, end_dt, location):
 				# only supported sub-region
 				if m.surface in region_collect_dict:
 					location_list.append({"no":len(location_list),"region":region_collect_dict[m.surface][0]})
-
-
+				else:
+					cannot_recommend=True
+					location_list.append({"no":len(location_list),"region":m.surface})
 
 			m = m.next
 
@@ -203,10 +219,12 @@ def extract_info_from_event(event_hashkey,summary,start_dt, end_dt, location):
 		event_type_list=None
 	if len(location_list) == 0:
 		location_list=None
+	
 
 	
 	return {
 		"event_hashkey": event_hashkey,
+		"cannot_reco": cannot_recommend,
 		"locations": location_list,
 		"time_set": time_set_dict, 
 		"event_types":event_type_list
