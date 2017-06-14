@@ -9,7 +9,7 @@ install:
   - pip3 list
 
 script:
-  - cd test
+  - cd reco/test
   - sh test.sh
 
 after_success:

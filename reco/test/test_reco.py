@@ -2,7 +2,7 @@ import os
 import sys
 os.environ["CALY_DB_CONF"] = "../key/conf.json"
 
-from reco import Reco 
+from reco.reco import Reco 
 import math
 import unittest
 import json
