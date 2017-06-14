@@ -5,10 +5,10 @@ python:
 
 install: 
   - pip install -r requirement.txt
+  - sh ./install.sh
 
 script:
-  - cd ./reco
-  - coverage run --source=reco ./test.py test
+  - sh ./test/test.sh
 
 after_success:
   - coveralls
