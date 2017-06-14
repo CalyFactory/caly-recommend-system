@@ -55,8 +55,6 @@ class Reinforce:
 	
 
 	def __check_reco_stauts(self):
-		print('reinforce checkreco=>'+str(self.event_info_data["locations"]))
-		print('reinforce checkreco=>'+str(self.event_info_data["event_types"]))
 		#모든데이터가 잘들어가 있는경우
 		if self.event_info_data["locations"] != None and self.event_info_data["locations"] != "Cannot"  and self.event_info_data["event_types"] != None:
 			self.__event_reco_status_code = EventRecoStatusCode.RECO_PERFECT  
@@ -72,7 +70,6 @@ class Reinforce:
 				self.__event_reco_status_code = EventRecoStatusCode.RECO_NO_LCOA_NO_EVENTTYPE
 			#이벤트가 있는경우.
 			else:
-				print("RECO_HAS_LOCA_NO_EVENTTYPE")
 				self.__event_reco_status_code = EventRecoStatusCode.RECO_HAS_LOCA_NO_EVENTTYPE				
 
 		#위치가없고 이벤트타입이 있는경우.
@@ -93,17 +90,31 @@ class Reinforce:
 					)
 				)
 			
-	
+	# def __check_support_region(self,region,locations):
+	# 	rows = self.__get_possible_loca_In_db(region)
+	# 	#로케이션이 수원같은경우면 더이상 주위역을 찾을 필요가없다. => 비추천.
+	# 	if len(rows) == 0 :
+	# 		#!!!RECOMMENDATION
+	# 		self.event_reco_result = reinforce_result(EventRecoStatusCode.RECO_CANT_IMPOSSIBLE_LOCA.value,None)							
+	# 	#실제 정책상 지원해줄수 있는경우이다.
+	# 	else:	
+	# 		surrounding_station =  self.__set_surrounding_station(region)				
+	# 		if surrounding_station != None:
+	# 			locations.append({
+	# 					"no" : 1,
+	# 					"region" : surrounding_station
+	# 				})		
 
 	def __rein_force_for_eventData(self):
 
 		# 추천이 완벽할경우.값을 바로 사용할수있도록 한다.
 		if self.__event_reco_status_code == EventRecoStatusCode.RECO_PERFECT:
-			print("perfect")
+			
 			locations = self.event_info_data["locations"]
 			#locations의 길이가 1이라면..
 			if len(locations) == 1:
 				region = locations[0]["region"]
+
 				rows = self.__get_possible_loca_In_db(region)
 				#로케이션이 수원같은경우면 더이상 주위역을 찾을 필요가없다. => 비추천.
 				if len(rows) == 0 :
@@ -117,6 +128,7 @@ class Reinforce:
 								"no" : 1,
 								"region" : surrounding_station
 							})
+
 					self.event_reco_result = reinforce_result(self.__event_reco_status_code.value,self.event_info_data)							
 
 			#db에 최종본 저장
@@ -125,7 +137,6 @@ class Reinforce:
 			self.__set_user_hashkey_in_result()
 
 		elif self.__event_reco_status_code == EventRecoStatusCode.RECO_CANT or self.__event_reco_status_code == EventRecoStatusCode.RECO_NO_LCOA_NO_EVENTTYPE :
-			print("noCase!!")
 			#db에 최종본 저장
 			self.__set_event_analaysisDB()
 			
@@ -134,16 +145,37 @@ class Reinforce:
 
 			#로케이션은 있는데 이벤트가 없는 경우.
 		elif self.__event_reco_status_code == EventRecoStatusCode.RECO_HAS_LOCA_NO_EVENTTYPE:
-			print("hasLoc,noEvent!!")
+
+			locations = self.event_info_data["locations"]
+			#locations의 길이가 1이라면..
+			if len(locations) == 1:
+				region = locations[0]["region"]
+
+				rows = self.__get_possible_loca_In_db(region)
+				#로케이션이 수원같은경우면 더이상 주위역을 찾을 필요가없다. => 비추천.
+				if len(rows) == 0 :
+					#!!!RECOMMENDATION
+					self.event_reco_result = reinforce_result(EventRecoStatusCode.RECO_CANT_IMPOSSIBLE_LOCA.value,None)							
+				#실제 정책상 지원해줄수 있는경우이다.
+				else:	
+					surrounding_station =  self.__set_surrounding_station(region)				
+					if surrounding_station != None:
+						locations.append({
+								"no" : 1,
+								"region" : surrounding_station
+							})
+
+					self.event_reco_result = reinforce_result(self.__event_reco_status_code.value,self.event_info_data)		
+
+
 			self.__set_event_analaysisDB()
 			self.__set_user_hashkey_in_result()
-			self.event_reco_result = reinforce_result(self.__event_reco_status_code.value,self.event_info_data)
+			# self.event_reco_result = reinforce_result(self.__event_reco_status_code.value,self.event_info_data)
 			
 		#이벤트 타입이 있는데, 로케이션이 없다면, 
 		#1. 유저 DB에서 가져와야 한다. 
 		#2. 핫플레이스에서 가져와야한다. 		
 		elif self.__event_reco_status_code == EventRecoStatusCode.RECO_NO_LOCA_HAS_EVENTTYPE:		
-			print("noloca hasevet")
 			#유저DB에 가져온경우나, hotplace인 경우는 유저 실제데이터가 아님으로 location에 저장하지 않아야함으로 바로 현재데이터를 db에 저장한다.			
 			self.__set_event_analaysisDB()
 
@@ -188,9 +220,11 @@ class Reinforce:
 			if len(rows) != 0:
 				region = rows[0]["region"]	
 				noRecoRows = self.__get_possible_loca_In_db(region)
-				#로케이션이 수원같은경우면 더이상 주위역을 찾을 필요가없다. => 비추천.
+				#로케이션이 수원같은경우면 핫플레이스를 검색해 보여
 				if len(noRecoRows) == 0 :
-					self.event_reco_result = reinforce_result(EventRecoStatusCode.RECO_CANT_IMPOSSIBLE_LOCA.value,None)							
+					self.__set_hot_place(new_locations)
+					self.event_reco_result = reinforce_result(self.__event_reco_status_code.value,self.event_info_data)
+					# self.event_reco_result = reinforce_result(EventRecoStatusCode.RECO_CANT_IMPOSSIBLE_LOCA.value,None)							
 				else:
 					new_locations.append({
 							"no" : 0,
@@ -205,46 +239,42 @@ class Reinforce:
 						self.event_reco_result = reinforce_result(self.__event_reco_status_code.value,self.event_info_data)
 				
 
-
-
 			#유저데이터가 없을때
 			#hotplace를 넣어준다.
 			else:
-				print("hotplace!!")
-				rows = utils.fetch_all_json(
-
-					#test용
-
-					db_manager.query(
-							"""
-							SELECT * FROM DEFAULT_HOT_PLACE ORDER BY id DESC LIMIT 2
-							""",							
-					)
-					# db_manager.query(
-					# 		"""
-					# 		SELECT * FROM
-					# 		(SELECT * FROM DEFAULT_HOT_PLACE ORDER BY rand() LIMIT 2 ) AS e
-					# 		ORDER BY id
-					# 		""",							
-					# )					
-				)
-
-				for idx,row in enumerate(rows):	
-					new_locations.append({
-							"no" : idx ,
-							"region" : row["region"]
-					})				
-			
-				self.event_reco_result = reinforce_result(self.__event_reco_status_code.value,self.event_info_data)
+				self.__set_hot_place()
 
 			self.event_info_data["locations"] = new_locations	
 
 			
 			self.__set_user_hashkey_in_result()
 			
+	def __set_hot_place(self,new_locations):
+		rows = utils.fetch_all_json(
+			
+			db_manager.query(
+					"""
+					SELECT * FROM DEFAULT_HOT_PLACE ORDER BY id DESC LIMIT 2
+					""",							
+			)
+			# db_manager.query(
+			# 		"""
+			# 		SELECT * FROM
+			# 		(SELECT * FROM DEFAULT_HOT_PLACE ORDER BY rand() LIMIT 2 ) AS e
+			# 		ORDER BY id
+			# 		""",							
+			# )					
+		)
+
+		for idx,row in enumerate(rows):	
+			new_locations.append({
+					"no" : idx ,
+					"region" : row["region"]
+			})				
+	
+		self.event_reco_result = reinforce_result(self.__event_reco_status_code.value,self.event_info_data)		
 
 	def __set_surrounding_station(self,station_name):	
-		print(station_name)
 		rows = utils.fetch_all_json(
 				db_manager.query(
 						"""
@@ -298,8 +328,6 @@ class Reinforce:
 		if len(rows) != 0:
 			print("already save!")
 			return
-
-
 
 
 
