@@ -62,7 +62,6 @@ def index():
 								"accountHashkey":row["account_hashkey"]
 							}
 						)
-	# print(users)
 
 
 	return render_template('index.html',

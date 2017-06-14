@@ -149,7 +149,7 @@ class RecoMaestro():
 
 	def __checkRecoStauts(self):
 		reinforce = self.__reinforceFromExtracted()
-		print("reinforce_json =>"+str(self.reinforce_json))
+		print("result=>"+ str(reinforce.event_reco_result))
 
 		if reinforce.event_reco_result["code"] == 2 or reinforce.event_reco_result["code"] == 3 or reinforce.event_reco_result["code"] == 5  : 
 		

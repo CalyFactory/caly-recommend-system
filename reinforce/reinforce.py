@@ -41,9 +41,9 @@ class EventRecoStatusCode(Enum):
 class Reinforce:
 
 	def __init__(self,event_info_data):
-		self.__event_reco_status_code = EventRecoStatusCode.RECO_CANT  
+		self.__event_reco_status_code = EventRecoStatusCode.RECO_CANT 
 		self.event_info_data = event_info_data	
-		self.event_reco_result = reinforce_result(EventRecoStatusCode.RECO_CANT,self.event_info_data)							
+		self.event_reco_result = reinforce_result(EventRecoStatusCode.RECO_CANT.value,self.event_info_data)							
 		#형태소 분석기에서 나온 상태가 현재 어떤 추천 상태를 가질수 있는지를 판단합니다.
 		self.__check_reco_stauts()
 		#위에서 정해진 상태를보고 어떻게 이벤트데이터를 추천할지 정해 추천해줍니다.
@@ -55,6 +55,8 @@ class Reinforce:
 	
 
 	def __check_reco_stauts(self):
+		print('reinforce checkreco=>'+str(self.event_info_data["locations"]))
+		print('reinforce checkreco=>'+str(self.event_info_data["event_types"]))
 		#모든데이터가 잘들어가 있는경우
 		if self.event_info_data["locations"] != None and self.event_info_data["locations"] != "Cannot"  and self.event_info_data["event_types"] != None:
 			self.__event_reco_status_code = EventRecoStatusCode.RECO_PERFECT  
@@ -70,6 +72,7 @@ class Reinforce:
 				self.__event_reco_status_code = EventRecoStatusCode.RECO_NO_LCOA_NO_EVENTTYPE
 			#이벤트가 있는경우.
 			else:
+				print("RECO_HAS_LOCA_NO_EVENTTYPE")
 				self.__event_reco_status_code = EventRecoStatusCode.RECO_HAS_LOCA_NO_EVENTTYPE				
 
 		#위치가없고 이벤트타입이 있는경우.
@@ -77,15 +80,6 @@ class Reinforce:
 			self.__event_reco_status_code = EventRecoStatusCode.RECO_NO_LOCA_HAS_EVENTTYPE
 
 
-	# def __check_is_reco_possible_loca(self):
-
-	# 	#이 유저의 해당 locations이 비추천지역인지 아닌지를 판단해줍니다.
-	# 	if self.event_info_data != None:
-	# 		locaMainSubway = self.event_info_data["locations"][0] 
-	# 		rows = self.__get_possible_loca_In_db(locaMainSubway)
-	# 		if len(rows) == 0 :
-	# 			#!!!RECOMMENDATION
-	# 			self.event_reco_result = reinforce_result(EventRecoStatusCode.RECO_CANT_IMPOSSIBLE_LOCA,None)							
 
 
 	def __get_possible_loca_In_db(self,locaMainSubway):
@@ -131,6 +125,7 @@ class Reinforce:
 			self.__set_user_hashkey_in_result()
 
 		elif self.__event_reco_status_code == EventRecoStatusCode.RECO_CANT or self.__event_reco_status_code == EventRecoStatusCode.RECO_NO_LCOA_NO_EVENTTYPE :
+			print("noCase!!")
 			#db에 최종본 저장
 			self.__set_event_analaysisDB()
 			
@@ -139,13 +134,16 @@ class Reinforce:
 
 			#로케이션은 있는데 이벤트가 없는 경우.
 		elif self.__event_reco_status_code == EventRecoStatusCode.RECO_HAS_LOCA_NO_EVENTTYPE:
+			print("hasLoc,noEvent!!")
 			self.__set_event_analaysisDB()
 			self.__set_user_hashkey_in_result()
+			self.event_reco_result = reinforce_result(self.__event_reco_status_code.value,self.event_info_data)
 			
 		#이벤트 타입이 있는데, 로케이션이 없다면, 
 		#1. 유저 DB에서 가져와야 한다. 
 		#2. 핫플레이스에서 가져와야한다. 		
 		elif self.__event_reco_status_code == EventRecoStatusCode.RECO_NO_LOCA_HAS_EVENTTYPE:		
+			print("noloca hasevet")
 			#유저DB에 가져온경우나, hotplace인 경우는 유저 실제데이터가 아님으로 location에 저장하지 않아야함으로 바로 현재데이터를 db에 저장한다.			
 			self.__set_event_analaysisDB()
 
@@ -298,13 +296,13 @@ class Reinforce:
 		)
 		print("userAnalysis = > "+ str(rows))
 		if len(rows) != 0:
+			print("already save!")
 			return
 
 
 
 
 
-		# print('locations =>'+locations)
 		#로케이션이 None이아니면
 		if locations == None or locations == "Cannot":
 			location_hashkey = None

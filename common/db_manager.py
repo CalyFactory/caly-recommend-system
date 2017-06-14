@@ -18,7 +18,7 @@ engine = create_engine(
     pool_size = 20, 
     pool_recycle = 500, 
     max_overflow = 10,
-    echo = True,
+    echo = False,
     echo_pool = True,
     execution_options = {"autocommit": True}
 )
