@@ -39,7 +39,7 @@ class Reco:
 
         if external_data != None:
             self.test_mode = True
-            with open('./testInitData.json') as file:
+            with open('test_data/testInitData.json') as file:
                 self.init_json_data = json.load(file)
             self.item_data = external_data['item_data']
             self.user_click = external_data['user_click'] 
