@@ -1048,7 +1048,10 @@
                 "result":{
                         "event_hashkey":"N42101",
                         "cannot_reco" : false,
-                        "locations" : null,
+                        "locations" : [{
+                                "no":0,
+                                "region":"강남역"
+                        }],
                         "time_set" : {
                                 "extract_start": null,
                                 "extract_end": null,

@@ -246,4 +246,4 @@ def extract_info_from_event(event_hashkey,summary,start_dt, end_dt, location):
 		"event_types":event_type_list
 	}
 
-#print(extract_info_from_event("-","평강이랑 저녁","2017-07-04 12:00:00","2017-07-04 13:00:00","합정"))
+#print(extract_info_from_event("-","한시 반 영어회화","2017-07-04 12:00:00","2017-07-04 13:00:00","합정"))
