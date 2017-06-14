@@ -7,8 +7,8 @@
 ##4. 완성된데이터 db에 넣기.
 import datetime
 
-from common import db_manager
-from common.util import utils
+from reinforce.common import db_manager
+from reinforce.common.util import utils
 from enum import Enum
 
 reinforce_result = lambda state,data : {'code':state,'event_info_data':data}
