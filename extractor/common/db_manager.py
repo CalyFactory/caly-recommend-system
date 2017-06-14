@@ -1,3 +1,5 @@
+import os
+
 from sqlalchemy import create_engine
 from sqlalchemy.pool import QueuePool
 from sqlalchemy.orm import scoped_session
@@ -6,7 +8,7 @@ from sqlalchemy.ext.declarative import declarative_base
 
 import json 
 
-with open('../key/conf.json') as conf_json:
+with open(os.environ["CALY_DB_CONF"]) as conf_json:
     conf = json.load(conf_json)
 
 # pool로 커낵션을 잡는다. 오토커밋 옵션을 false로해줘야한다.
