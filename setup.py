@@ -10,7 +10,8 @@ setup(
         'extractor/event_extractor', 
         'extractor/common/db_manager'
     ],
-    package_data = [('key', ['key/extract_conf.json'])],
+    data_files=[('lib/python3.5/site-packages/extractor/key', ['extractor/key/extract_conf.json'])],    
+
     description = "caly extractor lib",
 )
 
