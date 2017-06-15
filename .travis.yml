@@ -12,6 +12,7 @@ script:
   - cd reco/test
   - sh test.sh
   - cd ..
+  - cd ..
   - cd reinforce
   - sh test.sh
 
