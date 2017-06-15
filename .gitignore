@@ -1,8 +1,8 @@
 *.log
 
 # key file
-key/
-conf.json
+key/conf.json
+
 
 # Created by https://www.gitignore.io/api/python
 

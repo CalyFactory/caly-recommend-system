@@ -242,7 +242,7 @@ class Reinforce:
 			#유저데이터가 없을때
 			#hotplace를 넣어준다.
 			else:
-				self.__set_hot_place()
+				self.__set_hot_place(new_locations)
 
 			self.event_info_data["locations"] = new_locations	
 
@@ -325,94 +325,90 @@ class Reinforce:
 			)
 		)
 		print("userAnalysis = > "+ str(rows))
-		if len(rows) != 0:
-			print("already save!")
-			return
+		if len(rows) == 0:
+				
+			#로케이션이 None이아니면
+			if locations == None or locations == "Cannot":
+				location_hashkey = None
+			#로케이션이 None이면
+			#로케이션 해시키가 Null이다.
+			else:
+
+				location_hashkey = utils.make_hashkey(event_hashkey)
+				for location in locations:
+					db_manager.query(
+							"""
+							INSERT INTO USER_EVENT_LOCATION
+							(location_hashkey,priority,region)
+							VALUES (%s,%s,%s)
+							""",		
+							(location_hashkey,location["no"],location["region"])					
+					)
 
 
 
-		#로케이션이 None이아니면
-		if locations == None or locations == "Cannot":
-			location_hashkey = None
-		#로케이션이 None이면
-		#로케이션 해시키가 Null이다.
-		else:
-
-			location_hashkey = utils.make_hashkey(event_hashkey)
-			for location in locations:
-				db_manager.query(
-						"""
-						INSERT INTO USER_EVENT_LOCATION
-						(location_hashkey,priority,region)
-						VALUES (%s,%s,%s)
-						""",		
-						(location_hashkey,location["no"],location["region"])					
-				)
-
-
-
-		#type 넣어줌
-		
-		event_types = self.event_info_data["event_types"]
-		#이벤트 타입이 존재하면
-		if event_types == None:
-			type_hashkey = None
+			#type 넣어줌
 			
-		#event Type이 None이면
-		#type hashkey가 null이다.
-		else :
-			type_hashkey = utils.make_hashkey(event_hashkey)
-			for event_type in event_types:
+			event_types = self.event_info_data["event_types"]
+			#이벤트 타입이 존재하면
+			if event_types == None:
+				type_hashkey = None
+				
+			#event Type이 None이면
+			#type hashkey가 null이다.
+			else :
+				type_hashkey = utils.make_hashkey(event_hashkey)
+				for event_type in event_types:
+					db_manager.query(
+							"""
+							INSERT INTO USER_EVENT_TYPE
+							(type_hashkey,event_type)
+							VALUES (%s,%s)
+							""",		
+							(type_hashkey,event_type["id"])					
+					)			
+
+			#유저시간에맞도록 디비에 넣어준
+			rows = utils.fetch_all_json(
 				db_manager.query(
 						"""
-						INSERT INTO USER_EVENT_TYPE
-						(type_hashkey,event_type)
-						VALUES (%s,%s)
+						SELECT *FROM EVENT
+						WHERE event_hashkey = %s
 						""",		
-						(type_hashkey,event_type["id"])					
-				)			
+						(self.event_info_data["event_hashkey"],)					
+				)
+			)
 
-		#유저시간에맞도록 디비에 넣어준
-		rows = utils.fetch_all_json(
+			event = rows[0]
+			
+			startEventDate = datetime.datetime.strptime(event["start_dt"], '%Y-%m-%d %H:%M:%S')
+			endEventDate = datetime.datetime.strptime(event["end_dt"], '%Y-%m-%d %H:%M:%S')
+
+			event_start_date = str(startEventDate.year) + "-" + str(startEventDate.month) + "-" + str(startEventDate.day)
+			event_end_date =  str(endEventDate.year) + "-" + str(endEventDate.month) + "-" + str(endEventDate.day)
+
+			extract_start = self.event_info_data["time_set"]["extract_start"]
+			extract_end = self.event_info_data["time_set"]["extract_end"]
+			event_start = self.event_info_data["time_set"]["event_start"]
+			event_end = self.event_info_data["time_set"]["event_end"]
+
+			if extract_start != None:
+				extract_start = event_start_date + " " + extract_start
+				extract_end = event_end_date + " " + extract_end
+			else :
+				extract_start = None
+				extract_end = None
+
+			event_start = event_start_date + " " + event_start
+			event_end = event_end_date + " " + event_end
+
 			db_manager.query(
-					"""
-					SELECT *FROM EVENT
-					WHERE event_hashkey = %s
-					""",		
-					(self.event_info_data["event_hashkey"],)					
-			)
-		)
-
-		event = rows[0]
-		
-		startEventDate = datetime.datetime.strptime(event["start_dt"], '%Y-%m-%d %H:%M:%S')
-		endEventDate = datetime.datetime.strptime(event["end_dt"], '%Y-%m-%d %H:%M:%S')
-
-		event_start_date = str(startEventDate.year) + "-" + str(startEventDate.month) + "-" + str(startEventDate.day)
-		event_end_date =  str(endEventDate.year) + "-" + str(endEventDate.month) + "-" + str(endEventDate.day)
-
-		extract_start = self.event_info_data["time_set"]["extract_start"]
-		extract_end = self.event_info_data["time_set"]["extract_end"]
-		event_start = self.event_info_data["time_set"]["event_start"]
-		event_end = self.event_info_data["time_set"]["event_end"]
-
-		if extract_start != None:
-			extract_start = event_start_date + " " + extract_start
-			extract_end = event_end_date + " " + extract_end
-		else :
-			extract_start = None
-			extract_end = None
-
-		event_start = event_start_date + " " + event_start
-		event_end = event_end_date + " " + event_end
-
-		db_manager.query(
-					"""
-					INSERT INTO USER_EVENT_ANALYSIS
-					(event_hashkey,location_hashkey,extract_start,extract_end,event_start,event_end,type_hashkey)
-					VALUES (%s,%s,%s,%s,%s,%s,%s)
-					""",		
-					(event_hashkey,location_hashkey,extract_start,extract_end,event_start,event_end,type_hashkey)					
-			)
+						"""
+						INSERT INTO USER_EVENT_ANALYSIS
+						(event_hashkey,location_hashkey,extract_start,extract_end,event_start,event_end,type_hashkey)
+						VALUES (%s,%s,%s,%s,%s,%s,%s)
+						""",		
+						(event_hashkey,location_hashkey,extract_start,extract_end,event_start,event_end,type_hashkey)					
+				)
 
 				
