@@ -120,13 +120,15 @@ def extract_info_from_event(event_hashkey,summary,start_dt, end_dt, location):
 			print(m.surface + ' / '+m.feature)
 			print()"""
 			### Grep time
-			if m.surface.find("아침") > -1 or m.surface.find("브런치") > -1 or m.surface.find("점심") > -1 or m.surface.find("저녁") > -1 or m.surface.find("밤") > -1:
+			if m.surface in expect_time_scope:
 				expect_dt=datetime.strptime(expect_time_scope[m.surface], "%H:%M")
-
+				
 				# Additional event type
-				if event_type_count["CPI01"] == 0:
-					event_type_list.append({"id":"CPI01"})
-				event_type_count["CPI01"]=event_type_count["CPI01"]+1
+				if m.surface.find("점심") > -1 or m.surface.find("저녁") > -1:
+					if event_type_count["CPI01"] == 0:
+						event_type_list.append({"id":"CPI01"})
+					event_type_count["CPI01"]=event_type_count["CPI01"]+1
+
 			elif m.feature.find("SN") > -1 and m.surface.isdigit():
 				number = m.surface
 			elif m.feature.find("NR,*,T,열") > -1:
