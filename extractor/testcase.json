@@ -1365,8 +1365,8 @@
                                 "region":"강남역"
                         }],
                         "time_set" : {
-                                "extract_start": "20:00",
-                                "extract_end": "21:00",
+                                "extract_start": "08:00",
+                                "extract_end": "09:00",
                                 "event_start": "18:00",
                                 "event_end": "19:00"
                         },

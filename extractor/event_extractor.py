@@ -140,6 +140,11 @@ def extract_info_from_event(event_hashkey,summary,start_dt, end_dt, location):
 			elif m.feature.find("NNBC") > -1 and m.feature.find("시") > -1 and number != None:
 				if int(number) < 6:
 					number = int(number) + 12
+				elif len(time_list) == 1:
+					prev_dt = datetime.strptime(time_list[0], "%H:%M")
+					if int(prev_dt.strftime("%H")) > 12 and int(number) < 12:
+						number = int(number) + 12
+
 				str_number = str(number)
 				py_dt=datetime.strptime(str_number, "%H")
 				time_list.append( py_dt.strftime("%H:%M"))
