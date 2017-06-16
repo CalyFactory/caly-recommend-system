@@ -1,3 +1,4 @@
+*.csv
 *.log
 
 # key file
@@ -18,7 +19,6 @@ __pycache__/
 # Distribution / packaging
 .Python
 calyenv/
-envReco/
 mecab_files/
 env/
 build/

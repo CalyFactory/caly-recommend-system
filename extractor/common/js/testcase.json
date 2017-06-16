@@ -93,8 +93,8 @@
                                 "region":"신촌(경의중앙선)역"
                         }],
                         "time_set" : {
-                                "extract_start": null,
-                                "extract_end": null,
+                                "extract_start": "19:00",
+                                "extract_end": "20:00",
                                 "event_start": "12:00",
                                 "event_end": "13:00"
                         },
@@ -119,8 +119,8 @@
                                 "region":"신촌(경의중앙선)역"
                         }],
                         "time_set" : {
-                                "extract_start": null,
-                                "extract_end": null,
+                                "extract_start": "19:00",
+                                "extract_end": "20:00",
                                 "event_start": "12:00",
                                 "event_end": "13:00"
                         },
@@ -142,11 +142,11 @@
                         "cannot_reco" : false,
                         "locations" : [{
                                 "no":0,
-                                "region":"이대역"
+                                "region":"신촌(경의중앙선)역"
                         }],
                         "time_set" : {
-                                "extract_start": null,
-                                "extract_end": null,
+                                "extract_start": "19:00",
+                                "extract_end": "20:00",
                                 "event_start": "12:00",
                                 "event_end": "13:00"
                         },
@@ -177,8 +177,8 @@
                                 "event_end": "13:00"
                         },
                         "event_types" : [
-                                { "id" : "CPI01" },
-                                { "id" : "CPI04" }
+                                { "id" : "CPI04" },
+                                { "id" : "CPI01" }
                         ]
                 }
         },
@@ -198,8 +198,8 @@
                                 "region":"압구정역"
                         }],
                         "time_set" : {
-                                "extract_start": null,
-                                "extract_end": null,
+                                "extract_start": "09:00",
+                                "extract_end": "10:00",
                                 "event_start": "12:00",
                                 "event_end": "13:00"
                         },
@@ -292,6 +292,30 @@
                         "locations" : [{
                                 "no":0,
                                 "region":"삼성역"
+                        }],
+                        "time_set" : {
+                                "extract_start": "07:00",
+                                "extract_end": "08:00",
+                                "event_start": "12:00",
+                                "event_end": "13:00"
+                        },
+                        "event_types" : null
+                }
+        },
+        "N21502":{
+                "input":{
+                        "event_hashkey":"N21502",
+                        "summary":"7시 명동",
+                        "start_dt":"2017-07-04 12:00:00",
+                        "end_dt":"2017-07-04 13:00:00",
+                        "location":""
+                },
+                "result":{
+                        "event_hashkey":"N21502",
+                        "cannot_reco" : false,
+                        "locations" : [{
+                                "no":0,
+                                "region":"명동역"
                         }],
                         "time_set" : {
                                 "extract_start": "07:00",
@@ -1009,7 +1033,7 @@
                                 "event_end": "13:00"
                         },
                         "event_types" : [
-                                { "id" : "CPI04" }
+                                { "id" : "CPI05" }
                         ]
                 }
         },
@@ -1048,7 +1072,10 @@
                 "result":{
                         "event_hashkey":"N42101",
                         "cannot_reco" : false,
-                        "locations" : null,
+                        "locations" : [{
+                                "no":0,
+                                "region":"강남역"
+                        }],
                         "time_set" : {
                                 "extract_start": null,
                                 "extract_end": null,
@@ -1362,8 +1389,8 @@
                                 "region":"강남역"
                         }],
                         "time_set" : {
-                                "extract_start": "20:00",
-                                "extract_end": "21:00",
+                                "extract_start": "08:00",
+                                "extract_end": "09:00",
                                 "event_start": "18:00",
                                 "event_end": "19:00"
                         },
@@ -1420,14 +1447,14 @@
         },
         "F001":{
                 "input":{
-                        "event_hashkey":"c20f170d669c7e7fc6e568e9a5297d09e8389e8ceb5de7b8c17eb302",
+                        "event_hashkey":"F001",
                         "summary":"애드",
                         "start_dt":"2017-02-16 06:30:00",
                         "end_dt":"2017-02-16 07:30:00",
                         "location":"강남역, 대한민국 서울특별시 역삼1동"
                 },
                 "result":{
-                        "event_hashkey":"c20f170d669c7e7fc6e568e9a5297d09e8389e8ceb5de7b8c17eb302",
+                        "event_hashkey":"F001",
                         "cannot_reco" : false,
                         "locations" : [
                                 {
@@ -1445,14 +1472,14 @@
         },
         "F002":{
                 "input":{
-                        "event_hashkey":"7429aa524692dc566c3591437cadcbddf76eda72d408dffa72b2783e",
+                        "event_hashkey":"F002",
                         "summary":"이다현과 알밤막걸리",
                         "start_dt":"2015-11-20 20:00:00",
                         "end_dt":"2015-11-20 21:00:00",
                         "location":""
                 },
                 "result":{
-                        "event_hashkey":"7429aa524692dc566c3591437cadcbddf76eda72d408dffa72b2783e",
+                        "event_hashkey":"F002",
                         "cannot_reco" : false,
                         "locations" : null,
                         "time_set" : {
@@ -1462,20 +1489,20 @@
                                 "event_end": "21:00"
                         },
                         "event_types" : [
-                                { "id" : "CPI05" }
+                                { "id" : "CPI04" }
                         ]
                 }
         },
         "F003":{
                 "input":{
-                        "event_hashkey":"d1fc527a42b59919224eea28018d1b8e42f7771ef777a21174d0b4bc",
+                        "event_hashkey":"F003",
                         "summary":"서울프렌즈 현수막 밤 열두시까지",
                         "start_dt":"2016-09-06 01:00:00",
                         "end_dt":"2016-09-06 02:00:00",
                         "location":""
                 },
                 "result":{
-                        "event_hashkey":"d1fc527a42b59919224eea28018d1b8e42f7771ef777a21174d0b4bc",
+                        "event_hashkey":"F003",
                         "cannot_reco" : false,
                         "locations" : null,
                         "time_set" : {
@@ -1489,14 +1516,14 @@
         },
         "F004":{
                 "input":{
-                        "event_hashkey":"0283587e8681ca61eadb3a62d23f6574cfe19b962a06315e80603349",
+                        "event_hashkey":"F004",
                         "summary":"아침아홉시까지",
                         "start_dt":"2017-05-22 00:00:00",
                         "end_dt":"2017-05-23 00:00:00",
                         "location":""
                 },
                 "result":{
-                        "event_hashkey":"0283587e8681ca61eadb3a62d23f6574cfe19b962a06315e80603349",
+                        "event_hashkey":"F004",
                         "cannot_reco" : false,
                         "locations" : null,
                         "time_set" : {
@@ -1510,14 +1537,14 @@
         },
         "F005":{
                 "input":{
-                        "event_hashkey":"7d16b4c450948b2458f1bb3c21100c8844992c12dbb72c0164d55b70",
+                        "event_hashkey":"F005",
                         "summary":"강남 7시 소리랑 데이트",
                         "start_dt":"2017-06-13 10:44:00",
                         "end_dt":"2017-06-13 10:44:00",
                         "location":""
                 },
                 "result":{
-                        "event_hashkey":"7d16b4c450948b2458f1bb3c21100c8844992c12dbb72c0164d55b70",
+                        "event_hashkey":"F005",
                         "cannot_reco" : false,
                         "locations" : [{
                                 "no":0,
@@ -1531,6 +1558,107 @@
                         },
                         "event_types" : [
                                 { "id" : "CPI02" }
+                        ]
+                }
+        },
+        "F006":{
+                "input":{
+                        "event_hashkey":"F006",
+                        "summary":"건대 7시 밥",
+                        "start_dt":"2017-06-13 14:26:00",
+                        "end_dt":"2017-06-13 14:26:00",
+                        "location":""
+                },
+                "result":{
+                        "event_hashkey":"F006",
+                        "cannot_reco" : false,
+                        "locations" : [{
+                                "no":0,
+                                "region":"건대입구역"
+                        }],
+                        "time_set" : {
+                                "extract_start": "07:00",
+                                "extract_end": "08:00",
+                                "event_start": "14:26",
+                                "event_end": "14:26"
+                        },
+                        "event_types" : [
+                                { "id" : "CPI01" }
+                        ]
+                }
+        },
+        "F007":{
+                "input":{
+                        "event_hashkey":"F007",
+                        "summary":"영화",
+                        "start_dt":"2017-06-06 14:00:00",
+                        "end_dt":"2017-06-06 16:00:00",
+                        "location":"CGV 홍대"
+                },
+                "result":{
+                        "event_hashkey":"F007",
+                        "cannot_reco" : false,
+                        "locations" : [{
+                                "no":0,
+                                "region":"상수역"
+                        }],
+                        "time_set" : {
+                                "extract_start": null,
+                                "extract_end": null,
+                                "event_start": "14:00",
+                                "event_end": "16:00"
+                        },
+                        "event_types" : [
+                                { "id" : "CPI06" }
+                        ]
+                }
+        },
+        "F008":{
+                "input":{
+                        "event_hashkey":"F008",
+                        "summary":"홍대 점심",
+                        "start_dt":"2017-06-13 15:39:00",
+                        "end_dt":"2017-06-13 15:39:00",
+                        "location":""
+                },
+                "result":{
+                        "event_hashkey":"F008",
+                        "cannot_reco" : false,
+                        "locations" : [{
+                                "no":0,
+                                "region":"상수역"
+                        }],
+                        "time_set" : {
+                                "extract_start": "13:00",
+                                "extract_end": "14:00",
+                                "event_start": "15:39",
+                                "event_end": "15:39"
+                        },
+                        "event_types" : [
+                                { "id" : "CPI01" }
+                        ]
+                }
+        },
+        "F009":{
+                "input":{
+                        "event_hashkey":"F009",
+                        "summary":"서래마을 7시 저녁밥 약속",
+                        "start_dt":"2017-05-29 10:30:00",
+                        "end_dt":"2017-05-29 11:30:00",
+                        "location":""
+                },
+                "result":{
+                        "event_hashkey":"F009",
+                        "cannot_reco" : false,
+                        "locations" : null,
+                        "time_set" : {
+                                "extract_start": "07:00",
+                                "extract_end": "08:00",
+                                "event_start": "10:30",
+                                "event_end": "11:30"
+                        },
+                        "event_types" : [
+                                { "id" : "CPI01" }
                         ]
                 }
         }
