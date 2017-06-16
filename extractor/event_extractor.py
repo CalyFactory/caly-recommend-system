@@ -252,5 +252,5 @@ def extract_info_from_event(event_hashkey,summary,start_dt, end_dt, location):
 		"event_types":event_type_list
 	}
 
-print(extract_info_from_event("-","중민이랑엄지 언주역","2017-07-04 12:00:00","2017-07-04 13:00:00",""))
+#print(extract_info_from_event("-","중민이랑엄지 언주역","2017-07-04 12:00:00","2017-07-04 13:00:00",""))
 
