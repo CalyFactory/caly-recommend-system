@@ -1,7 +1,7 @@
+*.csv
 *.log
 
 # key file
-key/
 conf.json
 
 # Created by https://www.gitignore.io/api/python
@@ -18,7 +18,6 @@ __pycache__/
 # Distribution / packaging
 .Python
 calyenv/
-envReco/
 mecab_files/
 env/
 build/

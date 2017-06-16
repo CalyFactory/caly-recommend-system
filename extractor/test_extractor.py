@@ -5,7 +5,7 @@ root_path = os.path.dirname(os.path.dirname(__file__))
 
 import unittest
 
-EXTRACTOR_TESTCASE_JS = "../extractor/testcase.json"
+EXTRACTOR_TESTCASE_JS = "../extractor/common/js/testcase.json"
 import event_extractor
 import json
 
