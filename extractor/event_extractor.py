@@ -6,13 +6,9 @@ import string
 from datetime import datetime, date, time, timedelta
 import pprint
 
-if 'current_path' in globals():
-	EXTRACTOR_CONF_JS = current_path + "/common/js/extract_conf.json"
-	from extractor.common import db_manager
-else:
-	EXTRACTOR_CONF_JS = "../extractor/common/js/extract_conf.json"
-	os.environ["CALY_DB_CONF"] = "../key/conf.json"
-	from common import db_manager
+EXTRACTOR_CONF_JS = "../extractor/common/js/extract_conf.json"
+os.environ["CALY_DB_CONF"] = "../key/conf.json"
+from common import db_manager
 
 import MeCab
 
@@ -219,6 +215,7 @@ def extract_info_from_event(event_hashkey,summary,start_dt, end_dt, location):
 		print("RuntimeError:", e)
 		raise Exception('Event parsing error '+ str(e))
 		# https://github.com/CalyFactory/caly/blob/develop/caldavclient/util.py
+		
 	if expect_dt != None:
 		time_set_dict["extract_start"]=expect_dt.strftime("%H:%M")
 		expect_date = str(expect_dt.strftime("%H:%M"))
@@ -250,6 +247,3 @@ def extract_info_from_event(event_hashkey,summary,start_dt, end_dt, location):
 		"time_set": time_set_dict, 
 		"event_types":event_type_list
 	}
-
-#print(extract_info_from_event("-","중민이랑엄지 언주역","2017-07-04 12:00:00","2017-07-04 13:00:00",""))
-

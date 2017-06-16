@@ -1033,7 +1033,7 @@
                                 "event_end": "13:00"
                         },
                         "event_types" : [
-                                { "id" : "CPI04" }
+                                { "id" : "CPI05" }
                         ]
                 }
         },
