@@ -6,9 +6,13 @@ import string
 from datetime import datetime, date, time, timedelta
 import pprint
 
-EXTRACTOR_CONF_JS = "../extractor/common/js/extract_conf.json"
-os.environ["CALY_DB_CONF"] = "../key/conf.json"
-from common import db_manager
+if 'current_path' in globals():
+	EXTRACTOR_CONF_JS = current_path + "/common/js/extract_conf.json"
+	from extractor.common import db_manager
+else:
+	EXTRACTOR_CONF_JS = "../extractor/common/js/extract_conf.json"
+	os.environ["CALY_DB_CONF"] = "../key/conf.json"
+	from common import db_manager
 
 import MeCab
 
