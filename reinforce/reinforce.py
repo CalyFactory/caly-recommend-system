@@ -7,8 +7,8 @@
 ##4. 완성된데이터 db에 넣기.
 import datetime
 
-from common import db_manager
-from common.util import utils
+from reinforce.common import db_manager
+from reinforce.common.util import utils
 from enum import Enum
 
 reinforce_result = lambda state,data : {'code':state,'event_info_data':data}
@@ -41,9 +41,9 @@ class EventRecoStatusCode(Enum):
 class Reinforce:
 
 	def __init__(self,event_info_data):
-		self.__event_reco_status_code = EventRecoStatusCode.RECO_CANT  
+		self.__event_reco_status_code = EventRecoStatusCode.RECO_CANT 
 		self.event_info_data = event_info_data	
-		self.event_reco_result = reinforce_result(EventRecoStatusCode.RECO_CANT,self.event_info_data)							
+		self.event_reco_result = reinforce_result(EventRecoStatusCode.RECO_CANT.value,self.event_info_data)							
 		#형태소 분석기에서 나온 상태가 현재 어떤 추천 상태를 가질수 있는지를 판단합니다.
 		self.__check_reco_stauts()
 		#위에서 정해진 상태를보고 어떻게 이벤트데이터를 추천할지 정해 추천해줍니다.
@@ -77,15 +77,6 @@ class Reinforce:
 			self.__event_reco_status_code = EventRecoStatusCode.RECO_NO_LOCA_HAS_EVENTTYPE
 
 
-	# def __check_is_reco_possible_loca(self):
-
-	# 	#이 유저의 해당 locations이 비추천지역인지 아닌지를 판단해줍니다.
-	# 	if self.event_info_data != None:
-	# 		locaMainSubway = self.event_info_data["locations"][0] 
-	# 		rows = self.__get_possible_loca_In_db(locaMainSubway)
-	# 		if len(rows) == 0 :
-	# 			#!!!RECOMMENDATION
-	# 			self.event_reco_result = reinforce_result(EventRecoStatusCode.RECO_CANT_IMPOSSIBLE_LOCA,None)							
 
 
 	def __get_possible_loca_In_db(self,locaMainSubway):
@@ -99,17 +90,31 @@ class Reinforce:
 					)
 				)
 			
-	
+	# def __check_support_region(self,region,locations):
+	# 	rows = self.__get_possible_loca_In_db(region)
+	# 	#로케이션이 수원같은경우면 더이상 주위역을 찾을 필요가없다. => 비추천.
+	# 	if len(rows) == 0 :
+	# 		#!!!RECOMMENDATION
+	# 		self.event_reco_result = reinforce_result(EventRecoStatusCode.RECO_CANT_IMPOSSIBLE_LOCA.value,None)							
+	# 	#실제 정책상 지원해줄수 있는경우이다.
+	# 	else:	
+	# 		surrounding_station =  self.__set_surrounding_station(region)				
+	# 		if surrounding_station != None:
+	# 			locations.append({
+	# 					"no" : 1,
+	# 					"region" : surrounding_station
+	# 				})		
 
 	def __rein_force_for_eventData(self):
 
 		# 추천이 완벽할경우.값을 바로 사용할수있도록 한다.
 		if self.__event_reco_status_code == EventRecoStatusCode.RECO_PERFECT:
-			print("perfect")
+			
 			locations = self.event_info_data["locations"]
 			#locations의 길이가 1이라면..
 			if len(locations) == 1:
 				region = locations[0]["region"]
+
 				rows = self.__get_possible_loca_In_db(region)
 				#로케이션이 수원같은경우면 더이상 주위역을 찾을 필요가없다. => 비추천.
 				if len(rows) == 0 :
@@ -123,6 +128,7 @@ class Reinforce:
 								"no" : 1,
 								"region" : surrounding_station
 							})
+
 					self.event_reco_result = reinforce_result(self.__event_reco_status_code.value,self.event_info_data)							
 
 			#db에 최종본 저장
@@ -139,8 +145,32 @@ class Reinforce:
 
 			#로케이션은 있는데 이벤트가 없는 경우.
 		elif self.__event_reco_status_code == EventRecoStatusCode.RECO_HAS_LOCA_NO_EVENTTYPE:
+
+			locations = self.event_info_data["locations"]
+			#locations의 길이가 1이라면..
+			if len(locations) == 1:
+				region = locations[0]["region"]
+
+				rows = self.__get_possible_loca_In_db(region)
+				#로케이션이 수원같은경우면 더이상 주위역을 찾을 필요가없다. => 비추천.
+				if len(rows) == 0 :
+					#!!!RECOMMENDATION
+					self.event_reco_result = reinforce_result(EventRecoStatusCode.RECO_CANT_IMPOSSIBLE_LOCA.value,None)							
+				#실제 정책상 지원해줄수 있는경우이다.
+				else:	
+					surrounding_station =  self.__set_surrounding_station(region)				
+					if surrounding_station != None:
+						locations.append({
+								"no" : 1,
+								"region" : surrounding_station
+							})
+
+					self.event_reco_result = reinforce_result(self.__event_reco_status_code.value,self.event_info_data)		
+
+
 			self.__set_event_analaysisDB()
 			self.__set_user_hashkey_in_result()
+			# self.event_reco_result = reinforce_result(self.__event_reco_status_code.value,self.event_info_data)
 			
 		#이벤트 타입이 있는데, 로케이션이 없다면, 
 		#1. 유저 DB에서 가져와야 한다. 
@@ -190,9 +220,11 @@ class Reinforce:
 			if len(rows) != 0:
 				region = rows[0]["region"]	
 				noRecoRows = self.__get_possible_loca_In_db(region)
-				#로케이션이 수원같은경우면 더이상 주위역을 찾을 필요가없다. => 비추천.
+				#로케이션이 수원같은경우면 핫플레이스를 검색해 보여
 				if len(noRecoRows) == 0 :
-					self.event_reco_result = reinforce_result(EventRecoStatusCode.RECO_CANT_IMPOSSIBLE_LOCA.value,None)							
+					self.__set_hot_place(new_locations)
+					self.event_reco_result = reinforce_result(self.__event_reco_status_code.value,self.event_info_data)
+					# self.event_reco_result = reinforce_result(EventRecoStatusCode.RECO_CANT_IMPOSSIBLE_LOCA.value,None)							
 				else:
 					new_locations.append({
 							"no" : 0,
@@ -207,46 +239,42 @@ class Reinforce:
 						self.event_reco_result = reinforce_result(self.__event_reco_status_code.value,self.event_info_data)
 				
 
-
-
 			#유저데이터가 없을때
 			#hotplace를 넣어준다.
 			else:
-				print("hotplace!!")
-				rows = utils.fetch_all_json(
-
-					#test용
-
-					db_manager.query(
-							"""
-							SELECT * FROM DEFAULT_HOT_PLACE ORDER BY id DESC LIMIT 2
-							""",							
-					)
-					# db_manager.query(
-					# 		"""
-					# 		SELECT * FROM
-					# 		(SELECT * FROM DEFAULT_HOT_PLACE ORDER BY rand() LIMIT 2 ) AS e
-					# 		ORDER BY id
-					# 		""",							
-					# )					
-				)
-
-				for idx,row in enumerate(rows):	
-					new_locations.append({
-							"no" : idx ,
-							"region" : row["region"]
-					})				
-			
-				self.event_reco_result = reinforce_result(self.__event_reco_status_code.value,self.event_info_data)
+				self.__set_hot_place(new_locations)
 
 			self.event_info_data["locations"] = new_locations	
 
 			
 			self.__set_user_hashkey_in_result()
 			
+	def __set_hot_place(self,new_locations):
+		rows = utils.fetch_all_json(
+			
+			db_manager.query(
+					"""
+					SELECT * FROM DEFAULT_HOT_PLACE ORDER BY id DESC LIMIT 2
+					""",							
+			)
+			# db_manager.query(
+			# 		"""
+			# 		SELECT * FROM
+			# 		(SELECT * FROM DEFAULT_HOT_PLACE ORDER BY rand() LIMIT 2 ) AS e
+			# 		ORDER BY id
+			# 		""",							
+			# )					
+		)
+
+		for idx,row in enumerate(rows):	
+			new_locations.append({
+					"no" : idx ,
+					"region" : row["region"]
+			})				
+	
+		self.event_reco_result = reinforce_result(self.__event_reco_status_code.value,self.event_info_data)		
 
 	def __set_surrounding_station(self,station_name):	
-		print(station_name)
 		rows = utils.fetch_all_json(
 				db_manager.query(
 						"""
@@ -297,96 +325,90 @@ class Reinforce:
 			)
 		)
 		print("userAnalysis = > "+ str(rows))
-		if len(rows) != 0:
-			return
+		if len(rows) == 0:
+				
+			#로케이션이 None이아니면
+			if locations == None or locations == "Cannot":
+				location_hashkey = None
+			#로케이션이 None이면
+			#로케이션 해시키가 Null이다.
+			else:
+
+				location_hashkey = utils.make_hashkey(event_hashkey)
+				for location in locations:
+					db_manager.query(
+							"""
+							INSERT INTO USER_EVENT_LOCATION
+							(location_hashkey,priority,region)
+							VALUES (%s,%s,%s)
+							""",		
+							(location_hashkey,location["no"],location["region"])					
+					)
 
 
 
-
-
-		# print('locations =>'+locations)
-		#로케이션이 None이아니면
-		if locations == None or locations == "Cannot":
-			location_hashkey = None
-		#로케이션이 None이면
-		#로케이션 해시키가 Null이다.
-		else:
-
-			location_hashkey = utils.make_hashkey(event_hashkey)
-			for location in locations:
-				db_manager.query(
-						"""
-						INSERT INTO USER_EVENT_LOCATION
-						(location_hashkey,priority,region)
-						VALUES (%s,%s,%s)
-						""",		
-						(location_hashkey,location["no"],location["region"])					
-				)
-
-
-
-		#type 넣어줌
-		
-		event_types = self.event_info_data["event_types"]
-		#이벤트 타입이 존재하면
-		if event_types == None:
-			type_hashkey = None
+			#type 넣어줌
 			
-		#event Type이 None이면
-		#type hashkey가 null이다.
-		else :
-			type_hashkey = utils.make_hashkey(event_hashkey)
-			for event_type in event_types:
+			event_types = self.event_info_data["event_types"]
+			#이벤트 타입이 존재하면
+			if event_types == None:
+				type_hashkey = None
+				
+			#event Type이 None이면
+			#type hashkey가 null이다.
+			else :
+				type_hashkey = utils.make_hashkey(event_hashkey)
+				for event_type in event_types:
+					db_manager.query(
+							"""
+							INSERT INTO USER_EVENT_TYPE
+							(type_hashkey,event_type)
+							VALUES (%s,%s)
+							""",		
+							(type_hashkey,event_type["id"])					
+					)			
+
+			#유저시간에맞도록 디비에 넣어준
+			rows = utils.fetch_all_json(
 				db_manager.query(
 						"""
-						INSERT INTO USER_EVENT_TYPE
-						(type_hashkey,event_type)
-						VALUES (%s,%s)
+						SELECT *FROM EVENT
+						WHERE event_hashkey = %s
 						""",		
-						(type_hashkey,event_type["id"])					
-				)			
+						(self.event_info_data["event_hashkey"],)					
+				)
+			)
 
-		#유저시간에맞도록 디비에 넣어준
-		rows = utils.fetch_all_json(
+			event = rows[0]
+			
+			startEventDate = datetime.datetime.strptime(event["start_dt"], '%Y-%m-%d %H:%M:%S')
+			endEventDate = datetime.datetime.strptime(event["end_dt"], '%Y-%m-%d %H:%M:%S')
+
+			event_start_date = str(startEventDate.year) + "-" + str(startEventDate.month) + "-" + str(startEventDate.day)
+			event_end_date =  str(endEventDate.year) + "-" + str(endEventDate.month) + "-" + str(endEventDate.day)
+
+			extract_start = self.event_info_data["time_set"]["extract_start"]
+			extract_end = self.event_info_data["time_set"]["extract_end"]
+			event_start = self.event_info_data["time_set"]["event_start"]
+			event_end = self.event_info_data["time_set"]["event_end"]
+
+			if extract_start != None:
+				extract_start = event_start_date + " " + extract_start
+				extract_end = event_end_date + " " + extract_end
+			else :
+				extract_start = None
+				extract_end = None
+
+			event_start = event_start_date + " " + event_start
+			event_end = event_end_date + " " + event_end
+
 			db_manager.query(
-					"""
-					SELECT *FROM EVENT
-					WHERE event_hashkey = %s
-					""",		
-					(self.event_info_data["event_hashkey"],)					
-			)
-		)
-
-		event = rows[0]
-		
-		startEventDate = datetime.datetime.strptime(event["start_dt"], '%Y-%m-%d %H:%M:%S')
-		endEventDate = datetime.datetime.strptime(event["end_dt"], '%Y-%m-%d %H:%M:%S')
-
-		event_start_date = str(startEventDate.year) + "-" + str(startEventDate.month) + "-" + str(startEventDate.day)
-		event_end_date =  str(endEventDate.year) + "-" + str(endEventDate.month) + "-" + str(endEventDate.day)
-
-		extract_start = self.event_info_data["time_set"]["extract_start"]
-		extract_end = self.event_info_data["time_set"]["extract_end"]
-		event_start = self.event_info_data["time_set"]["event_start"]
-		event_end = self.event_info_data["time_set"]["event_end"]
-
-		if extract_start != None:
-			extract_start = event_start_date + " " + extract_start
-			extract_end = event_end_date + " " + extract_end
-		else :
-			extract_start = None
-			extract_end = None
-
-		event_start = event_start_date + " " + event_start
-		event_end = event_end_date + " " + event_end
-
-		db_manager.query(
-					"""
-					INSERT INTO USER_EVENT_ANALYSIS
-					(event_hashkey,location_hashkey,extract_start,extract_end,event_start,event_end,type_hashkey)
-					VALUES (%s,%s,%s,%s,%s,%s,%s)
-					""",		
-					(event_hashkey,location_hashkey,extract_start,extract_end,event_start,event_end,type_hashkey)					
-			)
+						"""
+						INSERT INTO USER_EVENT_ANALYSIS
+						(event_hashkey,location_hashkey,extract_start,extract_end,event_start,event_end,type_hashkey)
+						VALUES (%s,%s,%s,%s,%s,%s,%s)
+						""",		
+						(event_hashkey,location_hashkey,extract_start,extract_end,event_start,event_end,type_hashkey)					
+				)
 
 				

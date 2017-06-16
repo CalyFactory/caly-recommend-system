@@ -9,6 +9,7 @@
                 },
                 "result":{
                         "event_hashkey":"N10000",
+                        "cannot_reco" : false,
                         "locations" : [{
                                 "no":0,
                                 "region":"신도림역"
@@ -34,6 +35,7 @@
                 },
                 "result":{
                         "event_hashkey":"N20101",
+                        "cannot_reco" : false,
                         "locations" : [{
                                 "no":0,
                                 "region":"혜화역"
@@ -59,6 +61,7 @@
                 },
                 "result":{
                         "event_hashkey":"N20201",
+                        "cannot_reco" : false,
                         "locations" : [{
                                 "no":0,
                                 "region":"경복궁역"
@@ -84,9 +87,10 @@
                 },
                 "result":{
                         "event_hashkey":"N20301",
+                        "cannot_reco" : false,
                         "locations" : [{
                                 "no":0,
-                                "region":"이대역"
+                                "region":"신촌(경의중앙선)역"
                         }],
                         "time_set" : {
                                 "extract_start": null,
@@ -109,9 +113,10 @@
                 },
                 "result":{
                         "event_hashkey":"N20401",
+                        "cannot_reco" : false,
                         "locations" : [{
                                 "no":0,
-                                "region":"이대역"
+                                "region":"신촌(경의중앙선)역"
                         }],
                         "time_set" : {
                                 "extract_start": null,
@@ -134,6 +139,7 @@
                 },
                 "result":{
                         "event_hashkey":"N20402",
+                        "cannot_reco" : false,
                         "locations" : [{
                                 "no":0,
                                 "region":"이대역"
@@ -159,6 +165,7 @@
                 },
                 "result":{
                         "event_hashkey":"N20501",
+                        "cannot_reco" : false,
                         "locations" : [{
                                 "no":0,
                                 "region":"잠실새내역"
@@ -185,6 +192,7 @@
                 },
                 "result":{
                         "event_hashkey":"N21101",
+                        "cannot_reco" : false,
                         "locations" : [{
                                 "no":0,
                                 "region":"압구정역"
@@ -208,6 +216,7 @@
                 },
                 "result":{
                         "event_hashkey":"N21201",
+                        "cannot_reco" : false,
                         "locations" : [{
                                 "no":0,
                                 "region":"논현역"
@@ -231,6 +240,7 @@
                 },
                 "result":{
                         "event_hashkey":"N21301",
+                        "cannot_reco" : false,
                         "locations" : [{
                                 "no":0,
                                 "region":"회기역"
@@ -254,6 +264,7 @@
                 },
                 "result":{
                         "event_hashkey":"N21401",
+                        "cannot_reco" : false,
                         "locations" : [{
                                 "no":0,
                                 "region":"회기역"
@@ -277,6 +288,7 @@
                 },
                 "result":{
                         "event_hashkey":"N21501",
+                        "cannot_reco" : false,
                         "locations" : [{
                                 "no":0,
                                 "region":"삼성역"
@@ -300,6 +312,7 @@
                 },
                 "result":{
                         "event_hashkey":"N22101",
+                        "cannot_reco" : false,
                         "locations" : [{
                                 "no":0,
                                 "region":"혜화역"
@@ -325,6 +338,7 @@
                 },
                 "result":{
                         "event_hashkey":"N22201",
+                        "cannot_reco" : false,
                         "locations" : [{
                                 "no":0,
                                 "region":"사당역"
@@ -350,6 +364,7 @@
                 },
                 "result":{
                         "event_hashkey":"N22301",
+                        "cannot_reco" : false,
                         "locations" : [{
                                 "no":0,
                                 "region":"한양대역"
@@ -375,6 +390,7 @@
                 },
                 "result":{
                         "event_hashkey":"N22401",
+                        "cannot_reco" : false,
                         "locations" : [{
                                 "no":0,
                                 "region":"한양대역"
@@ -400,9 +416,10 @@
                 },
                 "result":{
                         "event_hashkey":"N22501",
+                        "cannot_reco" : true,
                         "locations" : [{
                                 "no":0,
-                                "region":"삼성역"
+                                "region":"부암동"
                         }],
                         "time_set" : {
                                 "extract_start": null,
@@ -425,6 +442,7 @@
                 },
                 "result":{
                         "event_hashkey":"N30101",
+                        "cannot_reco" : false,
                         "locations" : [{
                                 "no":0,
                                 "region":"강남역"
@@ -450,9 +468,36 @@
                 },
                 "result":{
                         "event_hashkey":"N30201",
+                        "cannot_reco" : false,
                         "locations" : [{
                                 "no":0,
                                 "region":"성신여대입구역"
+                        }],
+                        "time_set" : {
+                                "extract_start": null,
+                                "extract_end": null,
+                                "event_start": "12:00",
+                                "event_end": "13:00"
+                        },
+                        "event_types" : [
+                                { "id" : "CPI02" }
+                        ]
+                }
+        },
+        "N30202":{
+                "input":{
+                        "event_hashkey":"N30202",
+                        "summary":"강남 데이트",
+                        "start_dt":"2017-07-04 12:00:00",
+                        "end_dt":"2017-07-04 13:00:00",
+                        "location":""
+                },
+                "result":{
+                        "event_hashkey":"N30202",
+                        "cannot_reco" : false,
+                        "locations" : [{
+                                "no":0,
+                                "region":"강남역"
                         }],
                         "time_set" : {
                                 "extract_start": null,
@@ -475,6 +520,7 @@
                 },
                 "result":{
                         "event_hashkey":"N30301",
+                        "cannot_reco" : false,
                         "locations" : [{
                                 "no":0,
                                 "region":"신촌역"
@@ -500,6 +546,7 @@
                 },
                 "result":{
                         "event_hashkey":"N30401",
+                        "cannot_reco" : false,
                         "locations" : [{
                                 "no":0,
                                 "region":"선릉역"
@@ -525,6 +572,7 @@
                 },
                 "result":{
                         "event_hashkey":"N30501",
+                        "cannot_reco" : false,
                         "locations" : [{
                                 "no":0,
                                 "region":"신당역"
@@ -550,6 +598,7 @@
                 },
                 "result":{
                         "event_hashkey":"N30601",
+                        "cannot_reco" : false,
                         "locations" : [{
                                 "no":0,
                                 "region":"잠실역"
@@ -575,6 +624,7 @@
                 },
                 "result":{
                         "event_hashkey":"N31101",
+                        "cannot_reco" : false,
                         "locations" : null,
                         "time_set" : {
                                 "extract_start": "07:00",
@@ -597,6 +647,7 @@
                 },
                 "result":{
                         "event_hashkey":"N31201",
+                        "cannot_reco" : false,
                         "locations" : null,
                         "time_set" : {
                                 "extract_start": "13:00",
@@ -619,6 +670,7 @@
                 },
                 "result":{
                         "event_hashkey":"N31301",
+                        "cannot_reco" : false,
                         "locations" : null,
                         "time_set" : {
                                 "extract_start": "07:00",
@@ -641,6 +693,7 @@
                 },
                 "result":{
                         "event_hashkey":"N31401",
+                        "cannot_reco" : false,
                         "locations" : null,
                         "time_set" : {
                                 "extract_start": "08:00",
@@ -663,6 +716,7 @@
                 },
                 "result":{
                         "event_hashkey":"N31501",
+                        "cannot_reco" : false,
                         "locations" : null,
                         "time_set" : {
                                 "extract_start": "17:00",
@@ -685,6 +739,7 @@
                 },
                 "result":{
                         "event_hashkey":"N31601",
+                        "cannot_reco" : false,
                         "locations" : null,
                         "time_set" : {
                                 "extract_start": "10:00",
@@ -700,36 +755,14 @@
         "N40101":{
                 "input":{
                         "event_hashkey":"N40101",
-                        "summary":"6시반 건대",
-                        "start_dt":"2017-07-04 12:00:00",
-                        "end_dt":"2017-07-04 13:00:00",
-                        "location":""
-                },
-                "result":{
-                        "event_hashkey":"N40101",
-                        "locations" : [{
-                                "no":0,
-                                "region":"건대입구역"
-                        }],
-                        "time_set" : {
-                                "extract_start": "06:30",
-                                "extract_end": "07:30",
-                                "event_start": "12:00",
-                                "event_end": "13:00"
-                        },
-                        "event_types" : null
-                }
-        },
-        "N40201":{
-                "input":{
-                        "event_hashkey":"N40201",
                         "summary":"7시 강남",
                         "start_dt":"2017-07-04 12:00:00",
                         "end_dt":"2017-07-04 13:00:00",
                         "location":""
                 },
                 "result":{
-                        "event_hashkey":"N40201",
+                        "event_hashkey":"N40101",
+                        "cannot_reco" : false,
                         "locations" : [{
                                 "no":0,
                                 "region":"강남역"
@@ -743,23 +776,72 @@
                         "event_types" : null
                 }
         },
+        "N40102":{
+                "input":{
+                        "event_hashkey":"N40102",
+                        "summary":"7시 20분 강남",
+                        "start_dt":"2017-07-04 12:00:00",
+                        "end_dt":"2017-07-04 13:00:00",
+                        "location":""
+                },
+                "result":{
+                        "event_hashkey":"N40102",
+                        "cannot_reco" : false,
+                        "locations" : [{
+                                "no":0,
+                                "region":"강남역"
+                        }],
+                        "time_set" : {
+                                "extract_start": "07:20",
+                                "extract_end": "08:20",
+                                "event_start": "12:00",
+                                "event_end": "13:00"
+                        },
+                        "event_types" : null
+                }
+        },
+        "N40201":{
+                "input":{
+                        "event_hashkey":"N40201",
+                        "summary":"6시 반 건대",
+                        "start_dt":"2017-07-04 12:00:00",
+                        "end_dt":"2017-07-04 13:00:00",
+                        "location":""
+                },
+                "result":{
+                        "event_hashkey":"N40201",
+                        "cannot_reco" : false,
+                        "locations" : [{
+                                "no":0,
+                                "region":"건대입구역"
+                        }],
+                        "time_set" : {
+                                "extract_start": "06:30",
+                                "extract_end": "07:30",
+                                "event_start": "12:00",
+                                "event_end": "13:00"
+                        },
+                        "event_types" : null
+                }
+        },
         "N40301":{
                 "input":{
                         "event_hashkey":"N40301",
-                        "summary":"세시반 홍대",
+                        "summary":"다섯시 신촌",
                         "start_dt":"2017-07-04 12:00:00",
                         "end_dt":"2017-07-04 13:00:00",
                         "location":""
                 },
                 "result":{
                         "event_hashkey":"N40301",
+                        "cannot_reco" : false,
                         "locations" : [{
                                 "no":0,
-                                "region":"홍대입구역"
+                                "region":"신촌역"
                         }],
                         "time_set" : {
-                                "extract_start": "15:30",
-                                "extract_end": "16:30",
+                                "extract_start": "17:00",
+                                "extract_end": "18:00",
                                 "event_start": "12:00",
                                 "event_end": "13:00"
                         },
@@ -769,20 +851,21 @@
         "N40401":{
                 "input":{
                         "event_hashkey":"N40401",
-                        "summary":"다섯시 신촌",
+                        "summary":"세시반 홍대",
                         "start_dt":"2017-07-04 12:00:00",
                         "end_dt":"2017-07-04 13:00:00",
                         "location":""
                 },
                 "result":{
                         "event_hashkey":"N40401",
+                        "cannot_reco" : false,
                         "locations" : [{
                                 "no":0,
-                                "region":"신촌역"
+                                "region":"상수역"
                         }],
                         "time_set" : {
-                                "extract_start": "17:00",
-                                "extract_end": "18:00",
+                                "extract_start": "15:30",
+                                "extract_end": "16:30",
                                 "event_start": "12:00",
                                 "event_end": "13:00"
                         },
@@ -799,6 +882,7 @@
                 },
                 "result":{
                         "event_hashkey":"N40501",
+                        "cannot_reco" : false,
                         "locations" : [{
                                 "no":0,
                                 "region":"합정역"
@@ -817,13 +901,60 @@
         "N41101":{
                 "input":{
                         "event_hashkey":"N41101",
-                        "summary":"2시 반 선호랑 밥",
+                        "summary":"6시 롯데시네마",
                         "start_dt":"2017-07-04 12:00:00",
                         "end_dt":"2017-07-04 13:00:00",
                         "location":""
                 },
                 "result":{
                         "event_hashkey":"N41101",
+                        "cannot_reco" : false,
+                        "locations" : null,
+                        "time_set" : {
+                                "extract_start": "06:00",
+                                "extract_end": "07:00",
+                                "event_start": "12:00",
+                                "event_end": "13:00"
+                        },
+                        "event_types" : [
+                                { "id" : "CPI06" }
+                        ]
+                }
+        },
+        "N41102":{
+                "input":{
+                        "event_hashkey":"N41102",
+                        "summary":"2시 40분 선호랑 밥",
+                        "start_dt":"2017-07-04 12:00:00",
+                        "end_dt":"2017-07-04 13:00:00",
+                        "location":""
+                },
+                "result":{
+                        "event_hashkey":"N41102",
+                        "cannot_reco" : false,
+                        "locations" : null,
+                        "time_set" : {
+                                "extract_start": "14:40",
+                                "extract_end": "15:40",
+                                "event_start": "12:00",
+                                "event_end": "13:00"
+                        },
+                        "event_types" : [
+                                { "id" : "CPI06" }
+                        ]
+                }
+        },
+        "N41201":{
+                "input":{
+                        "event_hashkey":"N41201",
+                        "summary":"2시 반 선호랑 밥",
+                        "start_dt":"2017-07-04 12:00:00",
+                        "end_dt":"2017-07-04 13:00:00",
+                        "location":""
+                },
+                "result":{
+                        "event_hashkey":"N41201",
+                        "cannot_reco" : false,
                         "locations" : null,
                         "time_set" : {
                                 "extract_start": "14:30",
@@ -836,64 +967,44 @@
                         ]
                 }
         },
-        "N41201":{
-                "input":{
-                        "event_hashkey":"N41201",
-                        "summary":"6시 롯데시네마",
-                        "start_dt":"2017-07-04 12:00:00",
-                        "end_dt":"2017-07-04 13:00:00",
-                        "location":""
-                },
-                "result":{
-                        "event_hashkey":"N41201",
-                        "locations" : null,
-                        "time_set" : {
-                                "extract_start": "18:00",
-                                "extract_end": "19:00",
-                                "event_start": "12:00",
-                                "event_end": "13:00"
-                        },
-                        "event_types" : [
-                                { "id" : "CPI06" }
-                        ]
-                }
-        },
         "N41301":{
                 "input":{
                         "event_hashkey":"N41301",
-                        "summary":"한시 반 영어회화",
-                        "start_dt":"2017-07-04 12:00:00",
-                        "end_dt":"2017-07-04 13:00:00",
-                        "location":""
-                },
-                "result":{
-                        "event_hashkey":"N41301",
-                        "locations" : null,
-                        "time_set" : {
-                                "extract_start": "13:30",
-                                "extract_end": "14:30",
-                                "event_start": "12:00",
-                                "event_end": "13:00"
-                        },
-                        "event_types" : [
-                                { "id" : "CPI05" }
-                        ]
-                }
-        },
-        "N41401":{
-                "input":{
-                        "event_hashkey":"N41401",
                         "summary":"여섯시 동아리 회식",
                         "start_dt":"2017-07-04 12:00:00",
                         "end_dt":"2017-07-04 13:00:00",
                         "location":""
                 },
                 "result":{
-                        "event_hashkey":"N41401",
+                        "event_hashkey":"N41301",
+                        "cannot_reco" : false,
                         "locations" : null,
                         "time_set" : {
-                                "extract_start": "18:00",
-                                "extract_end": "19:00",
+                                "extract_start": "06:00",
+                                "extract_end": "07:00",
+                                "event_start": "12:00",
+                                "event_end": "13:00"
+                        },
+                        "event_types" : [
+                                { "id" : "CPI04" }
+                        ]
+                }
+        },
+        "N41401":{
+                "input":{
+                        "event_hashkey":"N41401",
+                        "summary":"한시 반 영어회화",
+                        "start_dt":"2017-07-04 12:00:00",
+                        "end_dt":"2017-07-04 13:00:00",
+                        "location":""
+                },
+                "result":{
+                        "event_hashkey":"N41401",
+                        "cannot_reco" : false,
+                        "locations" : null,
+                        "time_set" : {
+                                "extract_start": "13:30",
+                                "extract_end": "14:30",
                                 "event_start": "12:00",
                                 "event_end": "13:00"
                         },
@@ -912,10 +1023,11 @@
                 },
                 "result":{
                         "event_hashkey":"N41501",
+                        "cannot_reco" : false,
                         "locations" : null,
                         "time_set" : {
-                                "extract_start": "12:00",
-                                "extract_end": "13:00",
+                                "extract_start": "19:00",
+                                "extract_end": "20:00",
                                 "event_start": "12:00",
                                 "event_end": "13:00"
                         },
@@ -925,22 +1037,383 @@
                         ]
                 }
         },
-        "N42001":{
+        "N42101":{
                 "input":{
-                        "event_hashkey":"N41501",
+                        "event_hashkey":"N42101",
                         "summary":"강남 호준이",
                         "start_dt":"2017-07-08 18:00:00",
                         "end_dt":"2017-07-08 19:00:00",
                         "location":""
                 },
                 "result":{
-                        "event_hashkey":"N41501",
+                        "event_hashkey":"N42101",
+                        "cannot_reco" : false,
                         "locations" : null,
                         "time_set" : {
-                                "extract_start": "18:00",
-                                "extract_end": "19:00",
-                                "event_start": "12:00",
-                                "event_end": "13:00"
+                                "extract_start": null,
+                                "extract_end": null,
+                                "event_start": "18:00",
+                                "event_end": "19:00"
+                        },
+                        "event_types" : null
+                }
+        },
+        "N43101":{
+                "input":{
+                        "event_hashkey":"N43101",
+                        "summary":"3시~4시 강남 호준이",
+                        "start_dt":"2017-07-08 18:00:00",
+                        "end_dt":"2017-07-08 19:00:00",
+                        "location":""
+                },
+                "result":{
+                        "event_hashkey":"N43101",
+                        "cannot_reco" : false,
+                        "locations" : [{
+                                "no":0,
+                                "region":"강남역"
+                        }],
+                        "time_set" : {
+                                "extract_start": "15:00",
+                                "extract_end": "16:00",
+                                "event_start": "18:00",
+                                "event_end": "19:00"
+                        },
+                        "event_types" : null
+                }
+        },
+        "N43102":{
+                "input":{
+                        "event_hashkey":"N43102",
+                        "summary":"3시~4시20분 강남 호준이",
+                        "start_dt":"2017-07-08 18:00:00",
+                        "end_dt":"2017-07-08 19:00:00",
+                        "location":""
+                },
+                "result":{
+                        "event_hashkey":"N43102",
+                        "cannot_reco" : false,
+                        "locations" : [{
+                                "no":0,
+                                "region":"강남역"
+                        }],
+                        "time_set" : {
+                                "extract_start": "15:00",
+                                "extract_end": "16:20",
+                                "event_start": "18:00",
+                                "event_end": "19:00"
+                        },
+                        "event_types" : null
+                }
+        },
+        "N43103":{
+                "input":{
+                        "event_hashkey":"N43103",
+                        "summary":"3시30분~4시 강남 호준이",
+                        "start_dt":"2017-07-08 18:00:00",
+                        "end_dt":"2017-07-08 19:00:00",
+                        "location":""
+                },
+                "result":{
+                        "event_hashkey":"N43103",
+                        "cannot_reco" : false,
+                        "locations" : [{
+                                "no":0,
+                                "region":"강남역"
+                        }],
+                        "time_set" : {
+                                "extract_start": "15:30",
+                                "extract_end": "16:00",
+                                "event_start": "18:00",
+                                "event_end": "19:00"
+                        },
+                        "event_types" : null
+                }
+        },
+        "N43104":{
+                "input":{
+                        "event_hashkey":"N43104",
+                        "summary":"3시40분~4시50분 강남 호준이",
+                        "start_dt":"2017-07-08 18:00:00",
+                        "end_dt":"2017-07-08 19:00:00",
+                        "location":""
+                },
+                "result":{
+                        "event_hashkey":"N43104",
+                        "cannot_reco" : false,
+                        "locations" : [{
+                                "no":0,
+                                "region":"강남역"
+                        }],
+                        "time_set" : {
+                                "extract_start": "15:40",
+                                "extract_end": "16:50",
+                                "event_start": "18:00",
+                                "event_end": "19:00"
+                        },
+                        "event_types" : null
+                }
+        },
+        "N43201":{
+                "input":{
+                        "event_hashkey":"N43201",
+                        "summary":"3시반~4시반 강남 호준이",
+                        "start_dt":"2017-07-08 18:00:00",
+                        "end_dt":"2017-07-08 19:00:00",
+                        "location":""
+                },
+                "result":{
+                        "event_hashkey":"N43201",
+                        "cannot_reco" : false,
+                        "locations" : [{
+                                "no":0,
+                                "region":"강남역"
+                        }],
+                        "time_set" : {
+                                "extract_start": "15:30",
+                                "extract_end": "16:30",
+                                "event_start": "18:00",
+                                "event_end": "19:00"
+                        },
+                        "event_types" : null
+                }
+        },
+        "N43202":{
+                "input":{
+                        "event_hashkey":"N43202",
+                        "summary":"1시~2시반 강남 호준이",
+                        "start_dt":"2017-07-08 18:00:00",
+                        "end_dt":"2017-07-08 19:00:00",
+                        "location":""
+                },
+                "result":{
+                        "event_hashkey":"N43202",
+                        "cannot_reco" : false,
+                        "locations" : [{
+                                "no":0,
+                                "region":"강남역"
+                        }],
+                        "time_set" : {
+                                "extract_start": "13:00",
+                                "extract_end": "14:30",
+                                "event_start": "18:00",
+                                "event_end": "19:00"
+                        },
+                        "event_types" : null
+                }
+        },
+        "N43203":{
+                "input":{
+                        "event_hashkey":"N43203",
+                        "summary":"5시반~6시 강남 호준이",
+                        "start_dt":"2017-07-08 18:00:00",
+                        "end_dt":"2017-07-08 19:00:00",
+                        "location":""
+                },
+                "result":{
+                        "event_hashkey":"N43203",
+                        "cannot_reco" : false,
+                        "locations" : [{
+                                "no":0,
+                                "region":"강남역"
+                        }],
+                        "time_set" : {
+                                "extract_start": "17:30",
+                                "extract_end": "18:00",
+                                "event_start": "18:00",
+                                "event_end": "19:00"
+                        },
+                        "event_types" : null
+                }
+        },
+        "N43301":{
+                "input":{
+                        "event_hashkey":"N43301",
+                        "summary":"두시부터 세시 강남 호준이",
+                        "start_dt":"2017-07-08 18:00:00",
+                        "end_dt":"2017-07-08 19:00:00",
+                        "location":""
+                },
+                "result":{
+                        "event_hashkey":"N43301",
+                        "cannot_reco" : false,
+                        "locations" : [{
+                                "no":0,
+                                "region":"강남역"
+                        }],
+                        "time_set" : {
+                                "extract_start": "14:00",
+                                "extract_end": "15:00",
+                                "event_start": "18:00",
+                                "event_end": "19:00"
+                        },
+                        "event_types" : null
+                }
+        },
+        "N43302":{
+                "input":{
+                        "event_hashkey":"N43302",
+                        "summary":"한시부터 한시반 강남 호준이",
+                        "start_dt":"2017-07-08 18:00:00",
+                        "end_dt":"2017-07-08 19:00:00",
+                        "location":""
+                },
+                "result":{
+                        "event_hashkey":"N43302",
+                        "cannot_reco" : false,
+                        "locations" : [{
+                                "no":0,
+                                "region":"강남역"
+                        }],
+                        "time_set" : {
+                                "extract_start": "13:00",
+                                "extract_end": "13:30",
+                                "event_start": "18:00",
+                                "event_end": "19:00"
+                        },
+                        "event_types" : null
+                }
+        },
+        "N43303":{
+                "input":{
+                        "event_hashkey":"N43303",
+                        "summary":"두시 반에서 네시 강남 호준이",
+                        "start_dt":"2017-07-08 18:00:00",
+                        "end_dt":"2017-07-08 19:00:00",
+                        "location":""
+                },
+                "result":{
+                        "event_hashkey":"N43303",
+                        "cannot_reco" : false,
+                        "locations" : [{
+                                "no":0,
+                                "region":"강남역"
+                        }],
+                        "time_set" : {
+                                "extract_start": "14:30",
+                                "extract_end": "16:00",
+                                "event_start": "18:00",
+                                "event_end": "19:00"
+                        },
+                        "event_types" : null
+                }
+        },
+        "N43304":{
+                "input":{
+                        "event_hashkey":"N43304",
+                        "summary":"다섯시반에서 여섯시반 강남 호준이",
+                        "start_dt":"2017-07-08 18:00:00",
+                        "end_dt":"2017-07-08 19:00:00",
+                        "location":""
+                },
+                "result":{
+                        "event_hashkey":"N43304",
+                        "cannot_reco" : false,
+                        "locations" : [{
+                                "no":0,
+                                "region":"강남역"
+                        }],
+                        "time_set" : {
+                                "extract_start": "17:30",
+                                "extract_end": "18:30",
+                                "event_start": "18:00",
+                                "event_end": "19:00"
+                        },
+                        "event_types" : null
+                }
+        },
+        "N43401":{
+                "input":{
+                        "event_hashkey":"N43401",
+                        "summary":"3시~5시 강남 호준이",
+                        "start_dt":"2017-07-08 18:00:00",
+                        "end_dt":"2017-07-08 19:00:00",
+                        "location":""
+                },
+                "result":{
+                        "event_hashkey":"N43401",
+                        "cannot_reco" : false,
+                        "locations" : [{
+                                "no":0,
+                                "region":"강남역"
+                        }],
+                        "time_set" : {
+                                "extract_start": "15:00",
+                                "extract_end": "17:00",
+                                "event_start": "18:00",
+                                "event_end": "19:00"
+                        },
+                        "event_types" : null
+                }
+        },
+        "N43402":{
+                "input":{
+                        "event_hashkey":"N43402",
+                        "summary":"8시-9시 강남 호준이",
+                        "start_dt":"2017-07-08 18:00:00",
+                        "end_dt":"2017-07-08 19:00:00",
+                        "location":""
+                },
+                "result":{
+                        "event_hashkey":"N43402",
+                        "cannot_reco" : false,
+                        "locations" : [{
+                                "no":0,
+                                "region":"강남역"
+                        }],
+                        "time_set" : {
+                                "extract_start": "20:00",
+                                "extract_end": "21:00",
+                                "event_start": "18:00",
+                                "event_end": "19:00"
+                        },
+                        "event_types" : null
+                }
+        },
+        "N43403":{
+                "input":{
+                        "event_hashkey":"N43403",
+                        "summary":"네시에서 다섯시 강남 호준이",
+                        "start_dt":"2017-07-08 18:00:00",
+                        "end_dt":"2017-07-08 19:00:00",
+                        "location":""
+                },
+                "result":{
+                        "event_hashkey":"N43403",
+                        "cannot_reco" : false,
+                        "locations" : [{
+                                "no":0,
+                                "region":"강남역"
+                        }],
+                        "time_set" : {
+                                "extract_start": "16:00",
+                                "extract_end": "17:00",
+                                "event_start": "18:00",
+                                "event_end": "19:00"
+                        },
+                        "event_types" : null
+                }
+        },
+        "N43404":{
+                "input":{
+                        "event_hashkey":"N43404",
+                        "summary":"두시부터 세시 강남 호준이",
+                        "start_dt":"2017-07-08 18:00:00",
+                        "end_dt":"2017-07-08 19:00:00",
+                        "location":""
+                },
+                "result":{
+                        "event_hashkey":"N43404",
+                        "cannot_reco" : false,
+                        "locations" : [{
+                                "no":0,
+                                "region":"강남역"
+                        }],
+                        "time_set" : {
+                                "extract_start": "14:00",
+                                "extract_end": "15:00",
+                                "event_start": "18:00",
+                                "event_end": "19:00"
                         },
                         "event_types" : null
                 }
@@ -955,6 +1428,7 @@
                 },
                 "result":{
                         "event_hashkey":"c20f170d669c7e7fc6e568e9a5297d09e8389e8ceb5de7b8c17eb302",
+                        "cannot_reco" : false,
                         "locations" : [
                                 {
                                         "no":0,
@@ -979,6 +1453,7 @@
                 },
                 "result":{
                         "event_hashkey":"7429aa524692dc566c3591437cadcbddf76eda72d408dffa72b2783e",
+                        "cannot_reco" : false,
                         "locations" : null,
                         "time_set" : {
                                 "extract_start": null,
@@ -1001,6 +1476,7 @@
                 },
                 "result":{
                         "event_hashkey":"d1fc527a42b59919224eea28018d1b8e42f7771ef777a21174d0b4bc",
+                        "cannot_reco" : false,
                         "locations" : null,
                         "time_set" : {
                                 "extract_start": "12:00",
@@ -1021,6 +1497,7 @@
                 },
                 "result":{
                         "event_hashkey":"0283587e8681ca61eadb3a62d23f6574cfe19b962a06315e80603349",
+                        "cannot_reco" : false,
                         "locations" : null,
                         "time_set" : {
                                 "extract_start": "09:00",
@@ -1030,5 +1507,32 @@
                         },
                         "event_types" : null
                 }
+        },
+        "F005":{
+                "input":{
+                        "event_hashkey":"7d16b4c450948b2458f1bb3c21100c8844992c12dbb72c0164d55b70",
+                        "summary":"강남 7시 소리랑 데이트",
+                        "start_dt":"2017-06-13 10:44:00",
+                        "end_dt":"2017-06-13 10:44:00",
+                        "location":""
+                },
+                "result":{
+                        "event_hashkey":"7d16b4c450948b2458f1bb3c21100c8844992c12dbb72c0164d55b70",
+                        "cannot_reco" : false,
+                        "locations" : [{
+                                "no":0,
+                                "region":"강남역"
+                        }],
+                        "time_set" : {
+                                "extract_start": "07:00",
+                                "extract_end": "08:00",
+                                "event_start": "10:44",
+                                "event_end": "10:44"
+                        },
+                        "event_types" : [
+                                { "id" : "CPI02" }
+                        ]
+                }
         }
+
 }

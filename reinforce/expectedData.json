@@ -99,7 +99,23 @@
   },
   "ret50" : {    
       "code" : 6,
-    "event_info_data" :null
+    "event_info_data" :{    
+      "user_hashkey": "92ef74b299745d8f14fe0fd6de8590501d2dd2268585ab6c7886e72e",
+      "event_hashkey":"f261a1ae95bb4b60e7ae0c50178c995f7ca7f3886b8f58e268cf4b79",
+      "locations" :  [
+          {
+              "no" : 0,
+              "region" : "신사역"
+          }
+      ],
+      "time_set" : {
+        "extract_start": "18:00",
+        "extract_end": "19:00",
+        "event_start": "10:00",
+        "event_end": "11:00"
+      },
+      "event_types" : null
+    }  
 
   }
 
