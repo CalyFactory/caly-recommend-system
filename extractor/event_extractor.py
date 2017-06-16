@@ -1,5 +1,6 @@
 import os
 root_path = os.path.dirname(os.path.dirname(__file__))
+current_path = os.path.dirname(__file__)
 
 import json
 import string
@@ -113,11 +114,6 @@ def extract_info_from_event(event_hashkey,summary,start_dt, end_dt, location):
 		m = t.parseToNode(full_sentence)
 		
 		while m: 
-			""" """
-			print()
-			print(full_sentence)
-			print(m.surface + ' / '+m.feature)
-			print() 
 			### Grep time
 			if m.surface in expect_time_scope:
 				expect_dt=datetime.strptime(expect_time_scope[m.surface], "%H:%M")
