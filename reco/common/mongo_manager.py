@@ -15,7 +15,7 @@ if 'test' not in sys.argv:
 
     with open(os.environ["CALY_DB_CONF"]) as conf_json:
         conf = json.load(conf_json)
-    client = MongoClient('mongodb://'+conf["mongo"]["user"]+':' + conf["mysql"]["password"] + '@127.0.0.1')
+    client = MongoClient('mongodb://'+conf["mongo"]["user"]+':' + conf["mongo"]["password"] + '@' +conf["mongo"]["host"])
     base_db = client.calydb
 # >>>>>>> c86396f9855b30252acaf3b787507e8b4cb7e5fe
 

@@ -8,7 +8,7 @@ from datetime import datetime, date, time, timedelta
 import pprint
 
 EXTRACTOR_CONF_JS = current_path + "/key/extract_conf.json"
-from common import db_manager
+from extractor.common import db_manager
 
 import MeCab
 
