@@ -56,8 +56,7 @@ def load_subway_dict():
 def extract_info_from_event(event_hashkey,summary,start_dt, end_dt, location):
 	full_sentence=location+" "+summary
 	region_collect_dict, univ_collect_dict = load_subway_dict()
-	# pp = pprint.PrettyPrinter(indent=4)
-	# pp.pprint(region_collect_dict)
+	
 	location_list=[]
 	
 	py_start_dt = datetime.strptime(start_dt, "%Y-%m-%d %H:%M:%S")
@@ -114,11 +113,11 @@ def extract_info_from_event(event_hashkey,summary,start_dt, end_dt, location):
 		m = t.parseToNode(full_sentence)
 		
 		while m: 
-			""" 
+			""" """
 			print()
 			print(full_sentence)
 			print(m.surface + ' / '+m.feature)
-			print()"""
+			print() 
 			### Grep time
 			if m.surface in expect_time_scope:
 				expect_dt=datetime.strptime(expect_time_scope[m.surface], "%H:%M")
@@ -199,7 +198,7 @@ def extract_info_from_event(event_hashkey,summary,start_dt, end_dt, location):
 						cannot_recommend=True
 						location_list.append({"no":len(location_list),"region":m.surface})
 	
-			elif m.feature.find("지하철") > -1 and m.surface.find("역") == -1 and len(location_list) < 1:
+			elif m.feature.find("지하철") > -1 and m.surface.endswith("역") == False and len(location_list) < 1:
 				subway = m.feature.split(",")[7]
 				if subway.find("역") > -1:
 					location_list.append({"no":len(location_list),"region":subway})
@@ -253,4 +252,5 @@ def extract_info_from_event(event_hashkey,summary,start_dt, end_dt, location):
 		"event_types":event_type_list
 	}
 
-#print(extract_info_from_event("-","한시 반 영어회화","2017-07-04 12:00:00","2017-07-04 13:00:00","합정"))
+print(extract_info_from_event("-","중민이랑엄지 언주역","2017-07-04 12:00:00","2017-07-04 13:00:00",""))
+

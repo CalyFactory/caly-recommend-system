@@ -302,6 +302,30 @@
                         "event_types" : null
                 }
         },
+        "N21502":{
+                "input":{
+                        "event_hashkey":"N21502",
+                        "summary":"7시 명동",
+                        "start_dt":"2017-07-04 12:00:00",
+                        "end_dt":"2017-07-04 13:00:00",
+                        "location":""
+                },
+                "result":{
+                        "event_hashkey":"N21502",
+                        "cannot_reco" : false,
+                        "locations" : [{
+                                "no":0,
+                                "region":"명동역"
+                        }],
+                        "time_set" : {
+                                "extract_start": "07:00",
+                                "extract_end": "08:00",
+                                "event_start": "12:00",
+                                "event_end": "13:00"
+                        },
+                        "event_types" : null
+                }
+        },
         "N22101":{
                 "input":{
                         "event_hashkey":"N22101",
