@@ -260,7 +260,6 @@ class Reco:
         #allList = self.get_all_list()
         sorted_list = self.sort_list_by_score(filtered_list)
 
-        #카테고리별로 분류해서 리턴하기
         return sorted_list
 
     def get_all_list(self):
@@ -349,12 +348,11 @@ class Reco:
             score += (9 - self.location_priority_list[origin_data['region']]) * 100000
 
         #목적
-
         for i in range(0, len(self.event_type_id_list)):
             event_type_id = self.event_type_id_list[i]
             ing_value = 1
             if event_type_id in origin_data['event_availability']:
-                ing_value = origin_data['event_availability'][event_type_id]['ing']
+                ing_value = origin_data['event_availability'][event_type_id]['type_score']
             # ○ => 3   //*20000
             # △ => 2  //*10000
             # × => 1   //*0
@@ -462,7 +460,7 @@ class Reco:
                             JSON_OBJECT(
                                 'id', etr.id,
                                 'event_type_id', etr.event_type_id,
-                                'ing', etr.ing
+                                'type_score', etr.ing
                             )
                         ),
                         "]"
@@ -536,7 +534,7 @@ class Reco:
                             JSON_OBJECT(
                                 'id', etr.id,
                                 'event_type_id', etr.event_type_id,
-                                'ing', etr.ing
+                                'type_score', etr.ing
                             )
                         ),
                         "]"

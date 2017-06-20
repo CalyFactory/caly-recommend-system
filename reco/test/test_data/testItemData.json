@@ -251,32 +251,32 @@
             "event_availability": {
                 "CPI06": {
                     "event_type_id": "CPI06",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 362
                 },
                 "CPI01": {
                     "event_type_id": "CPI01",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 266
                 },
                 "CPI04": {
                     "event_type_id": "CPI04",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 388
                 },
                 "CPI03": {
                     "event_type_id": "CPI03",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 365
                 },
                 "CPI02": {
                     "event_type_id": "CPI02",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 387
                 },
                 "CPI05": {
                     "event_type_id": "CPI05",
-                    "ing": 1,
+                    "type_score": 1,
                     "id": 280
                 }
             },
@@ -298,32 +298,32 @@
             "event_availability": {
                 "CPI06": {
                     "event_type_id": "CPI06",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 649
                 },
                 "CPI01": {
                     "event_type_id": "CPI01",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 635
                 },
                 "CPI04": {
                     "event_type_id": "CPI04",
-                    "ing": 1,
+                    "type_score": 1,
                     "id": 673
                 },
                 "CPI03": {
                     "event_type_id": "CPI03",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 669
                 },
                 "CPI02": {
                     "event_type_id": "CPI02",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 652
                 },
                 "CPI05": {
                     "event_type_id": "CPI05",
-                    "ing": 1,
+                    "type_score": 1,
                     "id": 636
                 }
             },
@@ -345,32 +345,32 @@
             "event_availability": {
                 "CPI06": {
                     "event_type_id": "CPI06",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 463
                 },
                 "CPI02": {
                     "event_type_id": "CPI02",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 405
                 },
                 "CPI04": {
                     "event_type_id": "CPI04",
-                    "ing": 1,
+                    "type_score": 1,
                     "id": 423
                 },
                 "CPI03": {
                     "event_type_id": "CPI03",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 445
                 },
                 "CPI01": {
                     "event_type_id": "CPI01",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 427
                 },
                 "CPI05": {
                     "event_type_id": "CPI05",
-                    "ing": 1,
+                    "type_score": 1,
                     "id": 433
                 }
             },
@@ -408,32 +408,32 @@
             "event_availability": {
                 "CPI01": {
                     "event_type_id": "CPI01",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 133
                 },
                 "CPI02": {
                     "event_type_id": "CPI02",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 127
                 },
                 "CPI05": {
                     "event_type_id": "CPI05",
-                    "ing": 1,
+                    "type_score": 1,
                     "id": 113
                 },
                 "CPI03": {
                     "event_type_id": "CPI03",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 144
                 },
                 "CPI06": {
                     "event_type_id": "CPI06",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 138
                 },
                 "CPI04": {
                     "event_type_id": "CPI04",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 134
                 }
             },
@@ -535,32 +535,32 @@
             "event_availability": {
                 "CPI02": {
                     "event_type_id": "CPI02",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 385
                 },
                 "CPI01": {
                     "event_type_id": "CPI01",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 301
                 },
                 "CPI05": {
                     "event_type_id": "CPI05",
-                    "ing": 1,
+                    "type_score": 1,
                     "id": 392
                 },
                 "CPI03": {
                     "event_type_id": "CPI03",
-                    "ing": 1,
+                    "type_score": 1,
                     "id": 300
                 },
                 "CPI06": {
                     "event_type_id": "CPI06",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 340
                 },
                 "CPI04": {
                     "event_type_id": "CPI04",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 339
                 }
             },
@@ -710,32 +710,32 @@
             "event_availability": {
                 "CPI02": {
                     "event_type_id": "CPI02",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 644
                 },
                 "CPI01": {
                     "event_type_id": "CPI01",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 659
                 },
                 "CPI04": {
                     "event_type_id": "CPI04",
-                    "ing": 1,
+                    "type_score": 1,
                     "id": 639
                 },
                 "CPI03": {
                     "event_type_id": "CPI03",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 643
                 },
                 "CPI06": {
                     "event_type_id": "CPI06",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 650
                 },
                 "CPI05": {
                     "event_type_id": "CPI05",
-                    "ing": 1,
+                    "type_score": 1,
                     "id": 655
                 }
             },
@@ -789,32 +789,32 @@
             "event_availability": {
                 "CPI02": {
                     "event_type_id": "CPI02",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 742
                 },
                 "CPI01": {
                     "event_type_id": "CPI01",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 752
                 },
                 "CPI05": {
                     "event_type_id": "CPI05",
-                    "ing": 1,
+                    "type_score": 1,
                     "id": 743
                 },
                 "CPI03": {
                     "event_type_id": "CPI03",
-                    "ing": 1,
+                    "type_score": 1,
                     "id": 744
                 },
                 "CPI06": {
                     "event_type_id": "CPI06",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 751
                 },
                 "CPI04": {
                     "event_type_id": "CPI04",
-                    "ing": 1,
+                    "type_score": 1,
                     "id": 747
                 }
             },
@@ -852,32 +852,32 @@
             "event_availability": {
                 "CPI06": {
                     "event_type_id": "CPI06",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 642
                 },
                 "CPI02": {
                     "event_type_id": "CPI02",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 654
                 },
                 "CPI04": {
                     "event_type_id": "CPI04",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 671
                 },
                 "CPI03": {
                     "event_type_id": "CPI03",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 663
                 },
                 "CPI01": {
                     "event_type_id": "CPI01",
-                    "ing": 1,
+                    "type_score": 1,
                     "id": 665
                 },
                 "CPI05": {
                     "event_type_id": "CPI05",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 646
                 }
             },
@@ -1091,32 +1091,32 @@
             "event_availability": {
                 "CPI06": {
                     "event_type_id": "CPI06",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 125
                 },
                 "CPI02": {
                     "event_type_id": "CPI02",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 128
                 },
                 "CPI04": {
                     "event_type_id": "CPI04",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 142
                 },
                 "CPI03": {
                     "event_type_id": "CPI03",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 139
                 },
                 "CPI01": {
                     "event_type_id": "CPI01",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 129
                 },
                 "CPI05": {
                     "event_type_id": "CPI05",
-                    "ing": 1,
+                    "type_score": 1,
                     "id": 119
                 }
             },
@@ -1282,32 +1282,32 @@
             "event_availability": {
                 "CPI06": {
                     "event_type_id": "CPI06",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 278
                 },
                 "CPI02": {
                     "event_type_id": "CPI02",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 327
                 },
                 "CPI05": {
                     "event_type_id": "CPI05",
-                    "ing": 1,
+                    "type_score": 1,
                     "id": 400
                 },
                 "CPI03": {
                     "event_type_id": "CPI03",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 267
                 },
                 "CPI01": {
                     "event_type_id": "CPI01",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 289
                 },
                 "CPI04": {
                     "event_type_id": "CPI04",
-                    "ing": 1,
+                    "type_score": 1,
                     "id": 360
                 }
             },
@@ -1377,32 +1377,32 @@
             "event_availability": {
                 "CPI06": {
                     "event_type_id": "CPI06",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 653
                 },
                 "CPI02": {
                     "event_type_id": "CPI02",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 666
                 },
                 "CPI05": {
                     "event_type_id": "CPI05",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 632
                 },
                 "CPI03": {
                     "event_type_id": "CPI03",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 657
                 },
                 "CPI01": {
                     "event_type_id": "CPI01",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 658
                 },
                 "CPI04": {
                     "event_type_id": "CPI04",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 651
                 }
             },
@@ -1440,32 +1440,32 @@
             "event_availability": {
                 "CPI06": {
                     "event_type_id": "CPI06",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 670
                 },
                 "CPI01": {
                     "event_type_id": "CPI01",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 633
                 },
                 "CPI04": {
                     "event_type_id": "CPI04",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 661
                 },
                 "CPI03": {
                     "event_type_id": "CPI03",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 647
                 },
                 "CPI02": {
                     "event_type_id": "CPI02",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 656
                 },
                 "CPI05": {
                     "event_type_id": "CPI05",
-                    "ing": 1,
+                    "type_score": 1,
                     "id": 662
                 }
             },
@@ -1487,32 +1487,32 @@
             "event_availability": {
                 "CPI02": {
                     "event_type_id": "CPI02",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 608
                 },
                 "CPI01": {
                     "event_type_id": "CPI01",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 537
                 },
                 "CPI04": {
                     "event_type_id": "CPI04",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 617
                 },
                 "CPI03": {
                     "event_type_id": "CPI03",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 532
                 },
                 "CPI06": {
                     "event_type_id": "CPI06",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 560
                 },
                 "CPI05": {
                     "event_type_id": "CPI05",
-                    "ing": 1,
+                    "type_score": 1,
                     "id": 557
                 }
             },
@@ -1710,32 +1710,32 @@
             "event_availability": {
                 "CPI02": {
                     "event_type_id": "CPI02",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 750
                 },
                 "CPI01": {
                     "event_type_id": "CPI01",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 746
                 },
                 "CPI04": {
                     "event_type_id": "CPI04",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 741
                 },
                 "CPI03": {
                     "event_type_id": "CPI03",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 757
                 },
                 "CPI06": {
                     "event_type_id": "CPI06",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 756
                 },
                 "CPI05": {
                     "event_type_id": "CPI05",
-                    "ing": 1,
+                    "type_score": 1,
                     "id": 753
                 }
             },
@@ -1805,32 +1805,32 @@
             "event_availability": {
                 "CPI06": {
                     "event_type_id": "CPI06",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 569
                 },
                 "CPI01": {
                     "event_type_id": "CPI01",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 556
                 },
                 "CPI04": {
                     "event_type_id": "CPI04",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 621
                 },
                 "CPI03": {
                     "event_type_id": "CPI03",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 593
                 },
                 "CPI02": {
                     "event_type_id": "CPI02",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 581
                 },
                 "CPI05": {
                     "event_type_id": "CPI05",
-                    "ing": 1,
+                    "type_score": 1,
                     "id": 527
                 }
             },
@@ -2060,32 +2060,32 @@
             "event_availability": {
                 "CPI02": {
                     "event_type_id": "CPI02",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 228
                 },
                 "CPI01": {
                     "event_type_id": "CPI01",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 171
                 },
                 "CPI04": {
                     "event_type_id": "CPI04",
-                    "ing": 1,
+                    "type_score": 1,
                     "id": 181
                 },
                 "CPI03": {
                     "event_type_id": "CPI03",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 241
                 },
                 "CPI06": {
                     "event_type_id": "CPI06",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 235
                 },
                 "CPI05": {
                     "event_type_id": "CPI05",
-                    "ing": 1,
+                    "type_score": 1,
                     "id": 195
                 }
             },
@@ -2123,32 +2123,32 @@
             "event_availability": {
                 "CPI01": {
                     "event_type_id": "CPI01",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 524
                 },
                 "CPI02": {
                     "event_type_id": "CPI02",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 606
                 },
                 "CPI05": {
                     "event_type_id": "CPI05",
-                    "ing": 1,
+                    "type_score": 1,
                     "id": 543
                 },
                 "CPI03": {
                     "event_type_id": "CPI03",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 551
                 },
                 "CPI06": {
                     "event_type_id": "CPI06",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 586
                 },
                 "CPI04": {
                     "event_type_id": "CPI04",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 565
                 }
             },
@@ -2362,32 +2362,32 @@
             "event_availability": {
                 "CPI01": {
                     "event_type_id": "CPI01",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 714
                 },
                 "CPI02": {
                     "event_type_id": "CPI02",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 707
                 },
                 "CPI05": {
                     "event_type_id": "CPI05",
-                    "ing": 1,
+                    "type_score": 1,
                     "id": 725
                 },
                 "CPI03": {
                     "event_type_id": "CPI03",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 692
                 },
                 "CPI06": {
                     "event_type_id": "CPI06",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 709
                 },
                 "CPI04": {
                     "event_type_id": "CPI04",
-                    "ing": 1,
+                    "type_score": 1,
                     "id": 706
                 }
             },
@@ -2633,32 +2633,32 @@
             "event_availability": {
                 "CPI06": {
                     "event_type_id": "CPI06",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 121
                 },
                 "CPI02": {
                     "event_type_id": "CPI02",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 135
                 },
                 "CPI04": {
                     "event_type_id": "CPI04",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 120
                 },
                 "CPI03": {
                     "event_type_id": "CPI03",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 117
                 },
                 "CPI01": {
                     "event_type_id": "CPI01",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 130
                 },
                 "CPI05": {
                     "event_type_id": "CPI05",
-                    "ing": 1,
+                    "type_score": 1,
                     "id": 132
                 }
             },
@@ -2680,32 +2680,32 @@
             "event_availability": {
                 "CPI02": {
                     "event_type_id": "CPI02",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 641
                 },
                 "CPI01": {
                     "event_type_id": "CPI01",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 667
                 },
                 "CPI05": {
                     "event_type_id": "CPI05",
-                    "ing": 1,
+                    "type_score": 1,
                     "id": 640
                 },
                 "CPI03": {
                     "event_type_id": "CPI03",
-                    "ing": 1,
+                    "type_score": 1,
                     "id": 648
                 },
                 "CPI06": {
                     "event_type_id": "CPI06",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 645
                 },
                 "CPI04": {
                     "event_type_id": "CPI04",
-                    "ing": 1,
+                    "type_score": 1,
                     "id": 664
                 }
             },
@@ -2855,32 +2855,32 @@
             "event_availability": {
                 "CPI02": {
                     "event_type_id": "CPI02",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 126
                 },
                 "CPI01": {
                     "event_type_id": "CPI01",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 110
                 },
                 "CPI04": {
                     "event_type_id": "CPI04",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 145
                 },
                 "CPI03": {
                     "event_type_id": "CPI03",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 111
                 },
                 "CPI06": {
                     "event_type_id": "CPI06",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 118
                 },
                 "CPI05": {
                     "event_type_id": "CPI05",
-                    "ing": 1,
+                    "type_score": 1,
                     "id": 136
                 }
             },
@@ -3046,32 +3046,32 @@
             "event_availability": {
                 "CPI06": {
                     "event_type_id": "CPI06",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 159
                 },
                 "CPI01": {
                     "event_type_id": "CPI01",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 254
                 },
                 "CPI05": {
                     "event_type_id": "CPI05",
-                    "ing": 1,
+                    "type_score": 1,
                     "id": 255
                 },
                 "CPI03": {
                     "event_type_id": "CPI03",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 178
                 },
                 "CPI02": {
                     "event_type_id": "CPI02",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 244
                 },
                 "CPI04": {
                     "event_type_id": "CPI04",
-                    "ing": 1,
+                    "type_score": 1,
                     "id": 240
                 }
             },
@@ -3109,32 +3109,32 @@
             "event_availability": {
                 "CPI01": {
                     "event_type_id": "CPI01",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 539
                 },
                 "CPI02": {
                     "event_type_id": "CPI02",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 630
                 },
                 "CPI05": {
                     "event_type_id": "CPI05",
-                    "ing": 1,
+                    "type_score": 1,
                     "id": 545
                 },
                 "CPI03": {
                     "event_type_id": "CPI03",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 589
                 },
                 "CPI06": {
                     "event_type_id": "CPI06",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 588
                 },
                 "CPI04": {
                     "event_type_id": "CPI04",
-                    "ing": 1,
+                    "type_score": 1,
                     "id": 582
                 }
             },
@@ -3236,32 +3236,32 @@
             "event_availability": {
                 "CPI06": {
                     "event_type_id": "CPI06",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 153
                 },
                 "CPI02": {
                     "event_type_id": "CPI02",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 222
                 },
                 "CPI05": {
                     "event_type_id": "CPI05",
-                    "ing": 1,
+                    "type_score": 1,
                     "id": 172
                 },
                 "CPI03": {
                     "event_type_id": "CPI03",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 167
                 },
                 "CPI01": {
                     "event_type_id": "CPI01",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 187
                 },
                 "CPI04": {
                     "event_type_id": "CPI04",
-                    "ing": 1,
+                    "type_score": 1,
                     "id": 179
                 }
             },
@@ -3523,32 +3523,32 @@
             "event_availability": {
                 "CPI06": {
                     "event_type_id": "CPI06",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 624
                 },
                 "CPI01": {
                     "event_type_id": "CPI01",
-                    "ing": 1,
+                    "type_score": 1,
                     "id": 535
                 },
                 "CPI04": {
                     "event_type_id": "CPI04",
-                    "ing": 1,
+                    "type_score": 1,
                     "id": 598
                 },
                 "CPI03": {
                     "event_type_id": "CPI03",
-                    "ing": 1,
+                    "type_score": 1,
                     "id": 566
                 },
                 "CPI02": {
                     "event_type_id": "CPI02",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 559
                 },
                 "CPI05": {
                     "event_type_id": "CPI05",
-                    "ing": 1,
+                    "type_score": 1,
                     "id": 580
                 }
             },
@@ -3858,32 +3858,32 @@
             "event_availability": {
                 "CPI06": {
                     "event_type_id": "CPI06",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 288
                 },
                 "CPI02": {
                     "event_type_id": "CPI02",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 398
                 },
                 "CPI05": {
                     "event_type_id": "CPI05",
-                    "ing": 1,
+                    "type_score": 1,
                     "id": 276
                 },
                 "CPI03": {
                     "event_type_id": "CPI03",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 325
                 },
                 "CPI01": {
                     "event_type_id": "CPI01",
-                    "ing": 1,
+                    "type_score": 1,
                     "id": 371
                 },
                 "CPI04": {
                     "event_type_id": "CPI04",
-                    "ing": 1,
+                    "type_score": 1,
                     "id": 315
                 }
             },
@@ -3905,32 +3905,32 @@
             "event_availability": {
                 "CPI06": {
                     "event_type_id": "CPI06",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 775
                 },
                 "CPI01": {
                     "event_type_id": "CPI01",
-                    "ing": 1,
+                    "type_score": 1,
                     "id": 764
                 },
                 "CPI05": {
                     "event_type_id": "CPI05",
-                    "ing": 1,
+                    "type_score": 1,
                     "id": 762
                 },
                 "CPI03": {
                     "event_type_id": "CPI03",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 802
                 },
                 "CPI02": {
                     "event_type_id": "CPI02",
-                    "ing": 1,
+                    "type_score": 1,
                     "id": 797
                 },
                 "CPI04": {
                     "event_type_id": "CPI04",
-                    "ing": 1,
+                    "type_score": 1,
                     "id": 780
                 }
             },
@@ -3968,32 +3968,32 @@
             "event_availability": {
                 "CPI02": {
                     "event_type_id": "CPI02",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 591
                 },
                 "CPI01": {
                     "event_type_id": "CPI01",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 613
                 },
                 "CPI05": {
                     "event_type_id": "CPI05",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 563
                 },
                 "CPI03": {
                     "event_type_id": "CPI03",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 570
                 },
                 "CPI06": {
                     "event_type_id": "CPI06",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 604
                 },
                 "CPI04": {
                     "event_type_id": "CPI04",
-                    "ing": 1,
+                    "type_score": 1,
                     "id": 567
                 }
             },
@@ -4031,32 +4031,32 @@
             "event_availability": {
                 "CPI01": {
                     "event_type_id": "CPI01",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 237
                 },
                 "CPI02": {
                     "event_type_id": "CPI02",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 194
                 },
                 "CPI04": {
                     "event_type_id": "CPI04",
-                    "ing": 1,
+                    "type_score": 1,
                     "id": 245
                 },
                 "CPI03": {
                     "event_type_id": "CPI03",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 173
                 },
                 "CPI06": {
                     "event_type_id": "CPI06",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 202
                 },
                 "CPI05": {
                     "event_type_id": "CPI05",
-                    "ing": 1,
+                    "type_score": 1,
                     "id": 218
                 }
             },
@@ -4078,32 +4078,32 @@
             "event_availability": {
                 "CPI02": {
                     "event_type_id": "CPI02",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 338
                 },
                 "CPI01": {
                     "event_type_id": "CPI01",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 335
                 },
                 "CPI05": {
                     "event_type_id": "CPI05",
-                    "ing": 1,
+                    "type_score": 1,
                     "id": 353
                 },
                 "CPI03": {
                     "event_type_id": "CPI03",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 374
                 },
                 "CPI06": {
                     "event_type_id": "CPI06",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 363
                 },
                 "CPI04": {
                     "event_type_id": "CPI04",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 355
                 }
             },
@@ -4333,32 +4333,32 @@
             "event_availability": {
                 "CPI02": {
                     "event_type_id": "CPI02",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 220
                 },
                 "CPI01": {
                     "event_type_id": "CPI01",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 165
                 },
                 "CPI05": {
                     "event_type_id": "CPI05",
-                    "ing": 1,
+                    "type_score": 1,
                     "id": 248
                 },
                 "CPI03": {
                     "event_type_id": "CPI03",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 204
                 },
                 "CPI06": {
                     "event_type_id": "CPI06",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 215
                 },
                 "CPI04": {
                     "event_type_id": "CPI04",
-                    "ing": 1,
+                    "type_score": 1,
                     "id": 176
                 }
             },
@@ -4460,32 +4460,32 @@
             "event_availability": {
                 "CPI01": {
                     "event_type_id": "CPI01",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 216
                 },
                 "CPI02": {
                     "event_type_id": "CPI02",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 147
                 },
                 "CPI05": {
                     "event_type_id": "CPI05",
-                    "ing": 1,
+                    "type_score": 1,
                     "id": 174
                 },
                 "CPI03": {
                     "event_type_id": "CPI03",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 258
                 },
                 "CPI06": {
                     "event_type_id": "CPI06",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 247
                 },
                 "CPI04": {
                     "event_type_id": "CPI04",
-                    "ing": 1,
+                    "type_score": 1,
                     "id": 243
                 }
             },
@@ -4507,32 +4507,32 @@
             "event_availability": {
                 "CPI06": {
                     "event_type_id": "CPI06",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 124
                 },
                 "CPI01": {
                     "event_type_id": "CPI01",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 123
                 },
                 "CPI04": {
                     "event_type_id": "CPI04",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 114
                 },
                 "CPI03": {
                     "event_type_id": "CPI03",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 143
                 },
                 "CPI02": {
                     "event_type_id": "CPI02",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 131
                 },
                 "CPI05": {
                     "event_type_id": "CPI05",
-                    "ing": 1,
+                    "type_score": 1,
                     "id": 115
                 }
             },
@@ -4554,32 +4554,32 @@
             "event_availability": {
                 "CPI06": {
                     "event_type_id": "CPI06",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 260
                 },
                 "CPI02": {
                     "event_type_id": "CPI02",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 381
                 },
                 "CPI04": {
                     "event_type_id": "CPI04",
-                    "ing": 1,
+                    "type_score": 1,
                     "id": 296
                 },
                 "CPI03": {
                     "event_type_id": "CPI03",
-                    "ing": 1,
+                    "type_score": 1,
                     "id": 402
                 },
                 "CPI01": {
                     "event_type_id": "CPI01",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 391
                 },
                 "CPI05": {
                     "event_type_id": "CPI05",
-                    "ing": 1,
+                    "type_score": 1,
                     "id": 352
                 }
             },
@@ -4617,32 +4617,32 @@
             "event_availability": {
                 "CPI06": {
                     "event_type_id": "CPI06",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 672
                 },
                 "CPI01": {
                     "event_type_id": "CPI01",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 637
                 },
                 "CPI04": {
                     "event_type_id": "CPI04",
-                    "ing": 1,
+                    "type_score": 1,
                     "id": 634
                 },
                 "CPI03": {
                     "event_type_id": "CPI03",
-                    "ing": 1,
+                    "type_score": 1,
                     "id": 638
                 },
                 "CPI02": {
                     "event_type_id": "CPI02",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 660
                 },
                 "CPI05": {
                     "event_type_id": "CPI05",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 668
                 }
             },
@@ -5098,32 +5098,32 @@
             "event_availability": {
                 "CPI06": {
                     "event_type_id": "CPI06",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 730
                 },
                 "CPI02": {
                     "event_type_id": "CPI02",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 738
                 },
                 "CPI05": {
                     "event_type_id": "CPI05",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 703
                 },
                 "CPI03": {
                     "event_type_id": "CPI03",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 723
                 },
                 "CPI01": {
                     "event_type_id": "CPI01",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 735
                 },
                 "CPI04": {
                     "event_type_id": "CPI04",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 720
                 }
             },
@@ -5193,32 +5193,32 @@
             "event_availability": {
                 "CPI06": {
                     "event_type_id": "CPI06",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 602
                 },
                 "CPI01": {
                     "event_type_id": "CPI01",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 592
                 },
                 "CPI05": {
                     "event_type_id": "CPI05",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 533
                 },
                 "CPI03": {
                     "event_type_id": "CPI03",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 574
                 },
                 "CPI02": {
                     "event_type_id": "CPI02",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 596
                 },
                 "CPI04": {
                     "event_type_id": "CPI04",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 585
                 }
             },
@@ -5320,32 +5320,32 @@
             "event_availability": {
                 "CPI06": {
                     "event_type_id": "CPI06",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 272
                 },
                 "CPI01": {
                     "event_type_id": "CPI01",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 281
                 },
                 "CPI04": {
                     "event_type_id": "CPI04",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 332
                 },
                 "CPI03": {
                     "event_type_id": "CPI03",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 394
                 },
                 "CPI02": {
                     "event_type_id": "CPI02",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 330
                 },
                 "CPI05": {
                     "event_type_id": "CPI05",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 393
                 }
             },
@@ -5399,32 +5399,32 @@
             "event_availability": {
                 "CPI06": {
                     "event_type_id": "CPI06",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 447
                 },
                 "CPI01": {
                     "event_type_id": "CPI01",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 469
                 },
                 "CPI05": {
                     "event_type_id": "CPI05",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 408
                 },
                 "CPI03": {
                     "event_type_id": "CPI03",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 415
                 },
                 "CPI02": {
                     "event_type_id": "CPI02",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 456
                 },
                 "CPI04": {
                     "event_type_id": "CPI04",
-                    "ing": 1,
+                    "type_score": 1,
                     "id": 454
                 }
             },
@@ -5478,32 +5478,32 @@
             "event_availability": {
                 "CPI01": {
                     "event_type_id": "CPI01",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 734
                 },
                 "CPI02": {
                     "event_type_id": "CPI02",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 704
                 },
                 "CPI04": {
                     "event_type_id": "CPI04",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 737
                 },
                 "CPI03": {
                     "event_type_id": "CPI03",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 696
                 },
                 "CPI06": {
                     "event_type_id": "CPI06",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 736
                 },
                 "CPI05": {
                     "event_type_id": "CPI05",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 727
                 }
             },
@@ -5653,32 +5653,32 @@
             "event_availability": {
                 "CPI06": {
                     "event_type_id": "CPI06",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 234
                 },
                 "CPI02": {
                     "event_type_id": "CPI02",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 206
                 },
                 "CPI05": {
                     "event_type_id": "CPI05",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 183
                 },
                 "CPI03": {
                     "event_type_id": "CPI03",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 189
                 },
                 "CPI01": {
                     "event_type_id": "CPI01",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 226
                 },
                 "CPI04": {
                     "event_type_id": "CPI04",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 192
                 }
             },
@@ -5940,32 +5940,32 @@
             "event_availability": {
                 "CPI02": {
                     "event_type_id": "CPI02",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 839
                 },
                 "CPI01": {
                     "event_type_id": "CPI01",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 838
                 },
                 "CPI05": {
                     "event_type_id": "CPI05",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 841
                 },
                 "CPI03": {
                     "event_type_id": "CPI03",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 836
                 },
                 "CPI06": {
                     "event_type_id": "CPI06",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 840
                 },
                 "CPI04": {
                     "event_type_id": "CPI04",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 837
                 }
             },
@@ -6003,32 +6003,32 @@
             "event_availability": {
                 "CPI06": {
                     "event_type_id": "CPI06",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 185
                 },
                 "CPI02": {
                     "event_type_id": "CPI02",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 163
                 },
                 "CPI04": {
                     "event_type_id": "CPI04",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 249
                 },
                 "CPI03": {
                     "event_type_id": "CPI03",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 196
                 },
                 "CPI01": {
                     "event_type_id": "CPI01",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 221
                 },
                 "CPI05": {
                     "event_type_id": "CPI05",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 219
                 }
             },
@@ -6082,32 +6082,32 @@
             "event_availability": {
                 "CPI06": {
                     "event_type_id": "CPI06",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 774
                 },
                 "CPI01": {
                     "event_type_id": "CPI01",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 815
                 },
                 "CPI04": {
                     "event_type_id": "CPI04",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 772
                 },
                 "CPI03": {
                     "event_type_id": "CPI03",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 792
                 },
                 "CPI02": {
                     "event_type_id": "CPI02",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 790
                 },
                 "CPI05": {
                     "event_type_id": "CPI05",
-                    "ing": 1,
+                    "type_score": 1,
                     "id": 811
                 }
             },
@@ -6321,32 +6321,32 @@
             "event_availability": {
                 "CPI06": {
                     "event_type_id": "CPI06",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 487
                 },
                 "CPI02": {
                     "event_type_id": "CPI02",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 420
                 },
                 "CPI05": {
                     "event_type_id": "CPI05",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 443
                 },
                 "CPI03": {
                     "event_type_id": "CPI03",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 484
                 },
                 "CPI01": {
                     "event_type_id": "CPI01",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 462
                 },
                 "CPI04": {
                     "event_type_id": "CPI04",
-                    "ing": 1,
+                    "type_score": 1,
                     "id": 470
                 }
             },
@@ -6816,32 +6816,32 @@
             "event_availability": {
                 "CPI01": {
                     "event_type_id": "CPI01",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 177
                 },
                 "CPI02": {
                     "event_type_id": "CPI02",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 253
                 },
                 "CPI04": {
                     "event_type_id": "CPI04",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 166
                 },
                 "CPI03": {
                     "event_type_id": "CPI03",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 207
                 },
                 "CPI06": {
                     "event_type_id": "CPI06",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 180
                 },
                 "CPI05": {
                     "event_type_id": "CPI05",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 246
                 }
             },
@@ -6895,32 +6895,32 @@
             "event_availability": {
                 "CPI02": {
                     "event_type_id": "CPI02",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 229
                 },
                 "CPI01": {
                     "event_type_id": "CPI01",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 164
                 },
                 "CPI05": {
                     "event_type_id": "CPI05",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 238
                 },
                 "CPI03": {
                     "event_type_id": "CPI03",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 193
                 },
                 "CPI06": {
                     "event_type_id": "CPI06",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 208
                 },
                 "CPI04": {
                     "event_type_id": "CPI04",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 198
                 }
             },
@@ -6974,32 +6974,32 @@
             "event_availability": {
                 "CPI06": {
                     "event_type_id": "CPI06",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 856
                 },
                 "CPI01": {
                     "event_type_id": "CPI01",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 847
                 },
                 "CPI04": {
                     "event_type_id": "CPI04",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 849
                 },
                 "CPI03": {
                     "event_type_id": "CPI03",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 843
                 },
                 "CPI02": {
                     "event_type_id": "CPI02",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 854
                 },
                 "CPI05": {
                     "event_type_id": "CPI05",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 852
                 }
             },
@@ -7245,32 +7245,32 @@
             "event_availability": {
                 "CPI01": {
                     "event_type_id": "CPI01",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 303
                 },
                 "CPI02": {
                     "event_type_id": "CPI02",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 284
                 },
                 "CPI04": {
                     "event_type_id": "CPI04",
-                    "ing": 1,
+                    "type_score": 1,
                     "id": 344
                 },
                 "CPI03": {
                     "event_type_id": "CPI03",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 298
                 },
                 "CPI06": {
                     "event_type_id": "CPI06",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 341
                 },
                 "CPI05": {
                     "event_type_id": "CPI05",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 292
                 }
             },
@@ -7324,32 +7324,32 @@
             "event_availability": {
                 "CPI01": {
                     "event_type_id": "CPI01",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 550
                 },
                 "CPI02": {
                     "event_type_id": "CPI02",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 576
                 },
                 "CPI05": {
                     "event_type_id": "CPI05",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 525
                 },
                 "CPI03": {
                     "event_type_id": "CPI03",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 562
                 },
                 "CPI06": {
                     "event_type_id": "CPI06",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 564
                 },
                 "CPI04": {
                     "event_type_id": "CPI04",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 541
                 }
             },
@@ -7627,32 +7627,32 @@
             "event_availability": {
                 "CPI06": {
                     "event_type_id": "CPI06",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 397
                 },
                 "CPI02": {
                     "event_type_id": "CPI02",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 262
                 },
                 "CPI04": {
                     "event_type_id": "CPI04",
-                    "ing": 1,
+                    "type_score": 1,
                     "id": 313
                 },
                 "CPI03": {
                     "event_type_id": "CPI03",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 307
                 },
                 "CPI01": {
                     "event_type_id": "CPI01",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 336
                 },
                 "CPI05": {
                     "event_type_id": "CPI05",
-                    "ing": 1,
+                    "type_score": 1,
                     "id": 350
                 }
             },
@@ -7834,32 +7834,32 @@
             "event_availability": {
                 "CPI06": {
                     "event_type_id": "CPI06",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 771
                 },
                 "CPI01": {
                     "event_type_id": "CPI01",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 818
                 },
                 "CPI04": {
                     "event_type_id": "CPI04",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 819
                 },
                 "CPI03": {
                     "event_type_id": "CPI03",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 761
                 },
                 "CPI02": {
                     "event_type_id": "CPI02",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 805
                 },
                 "CPI05": {
                     "event_type_id": "CPI05",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 785
                 }
             },
@@ -7897,32 +7897,32 @@
             "event_availability": {
                 "CPI06": {
                     "event_type_id": "CPI06",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 777
                 },
                 "CPI02": {
                     "event_type_id": "CPI02",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 827
                 },
                 "CPI04": {
                     "event_type_id": "CPI04",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 808
                 },
                 "CPI03": {
                     "event_type_id": "CPI03",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 788
                 },
                 "CPI01": {
                     "event_type_id": "CPI01",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 812
                 },
                 "CPI05": {
                     "event_type_id": "CPI05",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 816
                 }
             },
@@ -8024,32 +8024,32 @@
             "event_availability": {
                 "CPI06": {
                     "event_type_id": "CPI06",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 305
                 },
                 "CPI01": {
                     "event_type_id": "CPI01",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 304
                 },
                 "CPI04": {
                     "event_type_id": "CPI04",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 294
                 },
                 "CPI03": {
                     "event_type_id": "CPI03",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 368
                 },
                 "CPI02": {
                     "event_type_id": "CPI02",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 328
                 },
                 "CPI05": {
                     "event_type_id": "CPI05",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 323
                 }
             },
@@ -8311,32 +8311,32 @@
             "event_availability": {
                 "CPI06": {
                     "event_type_id": "CPI06",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 547
                 },
                 "CPI01": {
                     "event_type_id": "CPI01",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 548
                 },
                 "CPI05": {
                     "event_type_id": "CPI05",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 568
                 },
                 "CPI03": {
                     "event_type_id": "CPI03",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 584
                 },
                 "CPI02": {
                     "event_type_id": "CPI02",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 579
                 },
                 "CPI04": {
                     "event_type_id": "CPI04",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 578
                 }
             },
@@ -8406,32 +8406,32 @@
             "event_availability": {
                 "CPI06": {
                     "event_type_id": "CPI06",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 239
                 },
                 "CPI02": {
                     "event_type_id": "CPI02",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 150
                 },
                 "CPI05": {
                     "event_type_id": "CPI05",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 146
                 },
                 "CPI03": {
                     "event_type_id": "CPI03",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 197
                 },
                 "CPI01": {
                     "event_type_id": "CPI01",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 223
                 },
                 "CPI04": {
                     "event_type_id": "CPI04",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 154
                 }
             },
@@ -8453,32 +8453,32 @@
             "event_availability": {
                 "CPI06": {
                     "event_type_id": "CPI06",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 421
                 },
                 "CPI01": {
                     "event_type_id": "CPI01",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 416
                 },
                 "CPI04": {
                     "event_type_id": "CPI04",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 409
                 },
                 "CPI03": {
                     "event_type_id": "CPI03",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 481
                 },
                 "CPI02": {
                     "event_type_id": "CPI02",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 426
                 },
                 "CPI05": {
                     "event_type_id": "CPI05",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 442
                 }
             },
@@ -8628,32 +8628,32 @@
             "event_availability": {
                 "CPI06": {
                     "event_type_id": "CPI06",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 844
                 },
                 "CPI01": {
                     "event_type_id": "CPI01",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 842
                 },
                 "CPI05": {
                     "event_type_id": "CPI05",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 859
                 },
                 "CPI03": {
                     "event_type_id": "CPI03",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 857
                 },
                 "CPI02": {
                     "event_type_id": "CPI02",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 848
                 },
                 "CPI04": {
                     "event_type_id": "CPI04",
-                    "ing": 1,
+                    "type_score": 1,
                     "id": 853
                 }
             },
@@ -8691,32 +8691,32 @@
             "event_availability": {
                 "CPI06": {
                     "event_type_id": "CPI06",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 490
                 },
                 "CPI02": {
                     "event_type_id": "CPI02",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 495
                 },
                 "CPI05": {
                     "event_type_id": "CPI05",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 512
                 },
                 "CPI03": {
                     "event_type_id": "CPI03",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 502
                 },
                 "CPI01": {
                     "event_type_id": "CPI01",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 506
                 },
                 "CPI04": {
                     "event_type_id": "CPI04",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 488
                 }
             },
@@ -8866,32 +8866,32 @@
             "event_availability": {
                 "CPI06": {
                     "event_type_id": "CPI06",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 452
                 },
                 "CPI02": {
                     "event_type_id": "CPI02",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 479
                 },
                 "CPI05": {
                     "event_type_id": "CPI05",
-                    "ing": 1,
+                    "type_score": 1,
                     "id": 411
                 },
                 "CPI03": {
                     "event_type_id": "CPI03",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 414
                 },
                 "CPI01": {
                     "event_type_id": "CPI01",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 455
                 },
                 "CPI04": {
                     "event_type_id": "CPI04",
-                    "ing": 1,
+                    "type_score": 1,
                     "id": 475
                 }
             },
@@ -8929,32 +8929,32 @@
             "event_availability": {
                 "CPI06": {
                     "event_type_id": "CPI06",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 428
                 },
                 "CPI02": {
                     "event_type_id": "CPI02",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 478
                 },
                 "CPI05": {
                     "event_type_id": "CPI05",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 458
                 },
                 "CPI03": {
                     "event_type_id": "CPI03",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 436
                 },
                 "CPI01": {
                     "event_type_id": "CPI01",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 430
                 },
                 "CPI04": {
                     "event_type_id": "CPI04",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 446
                 }
             },
@@ -8976,32 +8976,32 @@
             "event_availability": {
                 "CPI06": {
                     "event_type_id": "CPI06",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 293
                 },
                 "CPI02": {
                     "event_type_id": "CPI02",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 290
                 },
                 "CPI05": {
                     "event_type_id": "CPI05",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 382
                 },
                 "CPI03": {
                     "event_type_id": "CPI03",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 357
                 },
                 "CPI01": {
                     "event_type_id": "CPI01",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 308
                 },
                 "CPI04": {
                     "event_type_id": "CPI04",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 376
                 }
             },
@@ -9167,32 +9167,32 @@
             "event_availability": {
                 "CPI01": {
                     "event_type_id": "CPI01",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 575
                 },
                 "CPI02": {
                     "event_type_id": "CPI02",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 631
                 },
                 "CPI04": {
                     "event_type_id": "CPI04",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 611
                 },
                 "CPI03": {
                     "event_type_id": "CPI03",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 540
                 },
                 "CPI06": {
                     "event_type_id": "CPI06",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 620
                 },
                 "CPI05": {
                     "event_type_id": "CPI05",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 612
                 }
             },
@@ -9246,32 +9246,32 @@
             "event_availability": {
                 "CPI06": {
                     "event_type_id": "CPI06",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 122
                 },
                 "CPI01": {
                     "event_type_id": "CPI01",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 116
                 },
                 "CPI04": {
                     "event_type_id": "CPI04",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 112
                 },
                 "CPI03": {
                     "event_type_id": "CPI03",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 141
                 },
                 "CPI02": {
                     "event_type_id": "CPI02",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 140
                 },
                 "CPI05": {
                     "event_type_id": "CPI05",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 137
                 }
             },
@@ -9661,32 +9661,32 @@
             "event_availability": {
                 "CPI02": {
                     "event_type_id": "CPI02",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 274
                 },
                 "CPI01": {
                     "event_type_id": "CPI01",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 386
                 },
                 "CPI05": {
                     "event_type_id": "CPI05",
-                    "ing": 1,
+                    "type_score": 1,
                     "id": 271
                 },
                 "CPI03": {
                     "event_type_id": "CPI03",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 358
                 },
                 "CPI06": {
                     "event_type_id": "CPI06",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 334
                 },
                 "CPI04": {
                     "event_type_id": "CPI04",
-                    "ing": 1,
+                    "type_score": 1,
                     "id": 306
                 }
             },
@@ -9708,32 +9708,32 @@
             "event_availability": {
                 "CPI06": {
                     "event_type_id": "CPI06",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 530
                 },
                 "CPI01": {
                     "event_type_id": "CPI01",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 553
                 },
                 "CPI05": {
                     "event_type_id": "CPI05",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 618
                 },
                 "CPI03": {
                     "event_type_id": "CPI03",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 594
                 },
                 "CPI02": {
                     "event_type_id": "CPI02",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 571
                 },
                 "CPI04": {
                     "event_type_id": "CPI04",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 542
                 }
             },
@@ -9803,32 +9803,32 @@
             "event_availability": {
                 "CPI06": {
                     "event_type_id": "CPI06",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 705
                 },
                 "CPI02": {
                     "event_type_id": "CPI02",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 712
                 },
                 "CPI04": {
                     "event_type_id": "CPI04",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 728
                 },
                 "CPI03": {
                     "event_type_id": "CPI03",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 718
                 },
                 "CPI01": {
                     "event_type_id": "CPI01",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 716
                 },
                 "CPI05": {
                     "event_type_id": "CPI05",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 702
                 }
             },
@@ -9962,32 +9962,32 @@
             "event_availability": {
                 "CPI02": {
                     "event_type_id": "CPI02",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 555
                 },
                 "CPI01": {
                     "event_type_id": "CPI01",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 529
                 },
                 "CPI05": {
                     "event_type_id": "CPI05",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 615
                 },
                 "CPI03": {
                     "event_type_id": "CPI03",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 549
                 },
                 "CPI06": {
                     "event_type_id": "CPI06",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 595
                 },
                 "CPI04": {
                     "event_type_id": "CPI04",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 600
                 }
             },
@@ -10249,32 +10249,32 @@
             "event_availability": {
                 "CPI06": {
                     "event_type_id": "CPI06",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 418
                 },
                 "CPI02": {
                     "event_type_id": "CPI02",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 437
                 },
                 "CPI04": {
                     "event_type_id": "CPI04",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 424
                 },
                 "CPI03": {
                     "event_type_id": "CPI03",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 486
                 },
                 "CPI01": {
                     "event_type_id": "CPI01",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 453
                 },
                 "CPI05": {
                     "event_type_id": "CPI05",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 440
                 }
             },
@@ -10312,32 +10312,32 @@
             "event_availability": {
                 "CPI01": {
                     "event_type_id": "CPI01",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 850
                 },
                 "CPI02": {
                     "event_type_id": "CPI02",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 858
                 },
                 "CPI05": {
                     "event_type_id": "CPI05",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 845
                 },
                 "CPI03": {
                     "event_type_id": "CPI03",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 851
                 },
                 "CPI06": {
                     "event_type_id": "CPI06",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 855
                 },
                 "CPI04": {
                     "event_type_id": "CPI04",
-                    "ing": 1,
+                    "type_score": 1,
                     "id": 846
                 }
             },
@@ -10407,32 +10407,32 @@
             "event_availability": {
                 "CPI01": {
                     "event_type_id": "CPI01",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 346
                 },
                 "CPI02": {
                     "event_type_id": "CPI02",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 383
                 },
                 "CPI05": {
                     "event_type_id": "CPI05",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 348
                 },
                 "CPI03": {
                     "event_type_id": "CPI03",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 359
                 },
                 "CPI06": {
                     "event_type_id": "CPI06",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 380
                 },
                 "CPI04": {
                     "event_type_id": "CPI04",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 354
                 }
             },
@@ -10454,32 +10454,32 @@
             "event_availability": {
                 "CPI06": {
                     "event_type_id": "CPI06",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 768
                 },
                 "CPI02": {
                     "event_type_id": "CPI02",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 781
                 },
                 "CPI05": {
                     "event_type_id": "CPI05",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 806
                 },
                 "CPI03": {
                     "event_type_id": "CPI03",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 830
                 },
                 "CPI01": {
                     "event_type_id": "CPI01",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 803
                 },
                 "CPI04": {
                     "event_type_id": "CPI04",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 826
                 }
             },
@@ -10901,32 +10901,32 @@
             "event_availability": {
                 "CPI01": {
                     "event_type_id": "CPI01",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 796
                 },
                 "CPI02": {
                     "event_type_id": "CPI02",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 766
                 },
                 "CPI05": {
                     "event_type_id": "CPI05",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 759
                 },
                 "CPI03": {
                     "event_type_id": "CPI03",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 829
                 },
                 "CPI06": {
                     "event_type_id": "CPI06",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 828
                 },
                 "CPI04": {
                     "event_type_id": "CPI04",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 798
                 }
             },
@@ -11092,32 +11092,32 @@
             "event_availability": {
                 "CPI06": {
                     "event_type_id": "CPI06",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 517
                 },
                 "CPI02": {
                     "event_type_id": "CPI02",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 492
                 },
                 "CPI05": {
                     "event_type_id": "CPI05",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 489
                 },
                 "CPI03": {
                     "event_type_id": "CPI03",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 516
                 },
                 "CPI01": {
                     "event_type_id": "CPI01",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 500
                 },
                 "CPI04": {
                     "event_type_id": "CPI04",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 498
                 }
             },
@@ -11235,32 +11235,32 @@
             "event_availability": {
                 "CPI06": {
                     "event_type_id": "CPI06",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 473
                 },
                 "CPI01": {
                     "event_type_id": "CPI01",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 438
                 },
                 "CPI05": {
                     "event_type_id": "CPI05",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 485
                 },
                 "CPI03": {
                     "event_type_id": "CPI03",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 482
                 },
                 "CPI02": {
                     "event_type_id": "CPI02",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 483
                 },
                 "CPI04": {
                     "event_type_id": "CPI04",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 464
                 }
             },
@@ -11604,32 +11604,32 @@
             "event_availability": {
                 "CPI06": {
                     "event_type_id": "CPI06",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 597
                 },
                 "CPI01": {
                     "event_type_id": "CPI01",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 528
                 },
                 "CPI04": {
                     "event_type_id": "CPI04",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 626
                 },
                 "CPI03": {
                     "event_type_id": "CPI03",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 614
                 },
                 "CPI02": {
                     "event_type_id": "CPI02",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 609
                 },
                 "CPI05": {
                     "event_type_id": "CPI05",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 561
                 }
             },
@@ -11651,32 +11651,32 @@
             "event_availability": {
                 "CPI02": {
                     "event_type_id": "CPI02",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 491
                 },
                 "CPI01": {
                     "event_type_id": "CPI01",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 515
                 },
                 "CPI05": {
                     "event_type_id": "CPI05",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 513
                 },
                 "CPI03": {
                     "event_type_id": "CPI03",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 507
                 },
                 "CPI06": {
                     "event_type_id": "CPI06",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 503
                 },
                 "CPI04": {
                     "event_type_id": "CPI04",
-                    "ing": 1,
+                    "type_score": 1,
                     "id": 509
                 }
             },
@@ -12050,32 +12050,32 @@
             "event_availability": {
                 "CPI06": {
                     "event_type_id": "CPI06",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 186
                 },
                 "CPI02": {
                     "event_type_id": "CPI02",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 232
                 },
                 "CPI04": {
                     "event_type_id": "CPI04",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 256
                 },
                 "CPI03": {
                     "event_type_id": "CPI03",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 211
                 },
                 "CPI01": {
                     "event_type_id": "CPI01",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 231
                 },
                 "CPI05": {
                     "event_type_id": "CPI05",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 162
                 }
             },
@@ -12161,32 +12161,32 @@
             "event_availability": {
                 "CPI06": {
                     "event_type_id": "CPI06",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 151
                 },
                 "CPI02": {
                     "event_type_id": "CPI02",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 152
                 },
                 "CPI04": {
                     "event_type_id": "CPI04",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 175
                 },
                 "CPI03": {
                     "event_type_id": "CPI03",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 225
                 },
                 "CPI01": {
                     "event_type_id": "CPI01",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 210
                 },
                 "CPI05": {
                     "event_type_id": "CPI05",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 200
                 }
             },
@@ -12208,32 +12208,32 @@
             "event_availability": {
                 "CPI02": {
                     "event_type_id": "CPI02",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 429
                 },
                 "CPI01": {
                     "event_type_id": "CPI01",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 461
                 },
                 "CPI04": {
                     "event_type_id": "CPI04",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 434
                 },
                 "CPI03": {
                     "event_type_id": "CPI03",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 441
                 },
                 "CPI06": {
                     "event_type_id": "CPI06",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 459
                 },
                 "CPI05": {
                     "event_type_id": "CPI05",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 448
                 }
             },
@@ -12527,32 +12527,32 @@
             "event_availability": {
                 "CPI02": {
                     "event_type_id": "CPI02",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 217
                 },
                 "CPI01": {
                     "event_type_id": "CPI01",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 182
                 },
                 "CPI04": {
                     "event_type_id": "CPI04",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 160
                 },
                 "CPI03": {
                     "event_type_id": "CPI03",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 257
                 },
                 "CPI06": {
                     "event_type_id": "CPI06",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 236
                 },
                 "CPI05": {
                     "event_type_id": "CPI05",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 199
                 }
             },
@@ -12638,32 +12638,32 @@
             "event_availability": {
                 "CPI06": {
                     "event_type_id": "CPI06",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 748
                 },
                 "CPI01": {
                     "event_type_id": "CPI01",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 755
                 },
                 "CPI04": {
                     "event_type_id": "CPI04",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 740
                 },
                 "CPI03": {
                     "event_type_id": "CPI03",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 754
                 },
                 "CPI02": {
                     "event_type_id": "CPI02",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 749
                 },
                 "CPI05": {
                     "event_type_id": "CPI05",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 745
                 }
             },
@@ -12685,32 +12685,32 @@
             "event_availability": {
                 "CPI06": {
                     "event_type_id": "CPI06",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 697
                 },
                 "CPI01": {
                     "event_type_id": "CPI01",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 701
                 },
                 "CPI05": {
                     "event_type_id": "CPI05",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 693
                 },
                 "CPI03": {
                     "event_type_id": "CPI03",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 722
                 },
                 "CPI02": {
                     "event_type_id": "CPI02",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 711
                 },
                 "CPI04": {
                     "event_type_id": "CPI04",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 717
                 }
             },
@@ -12812,32 +12812,32 @@
             "event_availability": {
                 "CPI06": {
                     "event_type_id": "CPI06",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 309
                 },
                 "CPI02": {
                     "event_type_id": "CPI02",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 265
                 },
                 "CPI04": {
                     "event_type_id": "CPI04",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 286
                 },
                 "CPI03": {
                     "event_type_id": "CPI03",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 403
                 },
                 "CPI01": {
                     "event_type_id": "CPI01",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 395
                 },
                 "CPI05": {
                     "event_type_id": "CPI05",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 312
                 }
             },
@@ -12891,32 +12891,32 @@
             "event_availability": {
                 "CPI06": {
                     "event_type_id": "CPI06",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 689
                 },
                 "CPI02": {
                     "event_type_id": "CPI02",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 680
                 },
                 "CPI05": {
                     "event_type_id": "CPI05",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 676
                 },
                 "CPI03": {
                     "event_type_id": "CPI03",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 683
                 },
                 "CPI01": {
                     "event_type_id": "CPI01",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 687
                 },
                 "CPI04": {
                     "event_type_id": "CPI04",
-                    "ing": 1,
+                    "type_score": 1,
                     "id": 681
                 }
             },
@@ -12954,32 +12954,32 @@
             "event_availability": {
                 "CPI02": {
                     "event_type_id": "CPI02",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 275
                 },
                 "CPI01": {
                     "event_type_id": "CPI01",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 367
                 },
                 "CPI04": {
                     "event_type_id": "CPI04",
-                    "ing": 1,
+                    "type_score": 1,
                     "id": 351
                 },
                 "CPI03": {
                     "event_type_id": "CPI03",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 285
                 },
                 "CPI06": {
                     "event_type_id": "CPI06",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 279
                 },
                 "CPI05": {
                     "event_type_id": "CPI05",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 333
                 }
             },
@@ -13017,32 +13017,32 @@
             "event_availability": {
                 "CPI01": {
                     "event_type_id": "CPI01",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 787
                 },
                 "CPI02": {
                     "event_type_id": "CPI02",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 835
                 },
                 "CPI04": {
                     "event_type_id": "CPI04",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 760
                 },
                 "CPI03": {
                     "event_type_id": "CPI03",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 834
                 },
                 "CPI06": {
                     "event_type_id": "CPI06",
-                    "ing": 1,
+                    "type_score": 1,
                     "id": 817
                 },
                 "CPI05": {
                     "event_type_id": "CPI05",
-                    "ing": 1,
+                    "type_score": 1,
                     "id": 794
                 }
             },
@@ -13208,32 +13208,32 @@
             "event_availability": {
                 "CPI06": {
                     "event_type_id": "CPI06",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 778
                 },
                 "CPI01": {
                     "event_type_id": "CPI01",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 791
                 },
                 "CPI05": {
                     "event_type_id": "CPI05",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 824
                 },
                 "CPI03": {
                     "event_type_id": "CPI03",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 822
                 },
                 "CPI02": {
                     "event_type_id": "CPI02",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 795
                 },
                 "CPI04": {
                     "event_type_id": "CPI04",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 799
                 }
             },
@@ -13431,32 +13431,32 @@
             "event_availability": {
                 "CPI02": {
                     "event_type_id": "CPI02",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 773
                 },
                 "CPI01": {
                     "event_type_id": "CPI01",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 833
                 },
                 "CPI04": {
                     "event_type_id": "CPI04",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 783
                 },
                 "CPI03": {
                     "event_type_id": "CPI03",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 793
                 },
                 "CPI06": {
                     "event_type_id": "CPI06",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 800
                 },
                 "CPI05": {
                     "event_type_id": "CPI05",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 831
                 }
             },
@@ -13574,32 +13574,32 @@
             "event_availability": {
                 "CPI06": {
                     "event_type_id": "CPI06",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 518
                 },
                 "CPI02": {
                     "event_type_id": "CPI02",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 523
                 },
                 "CPI04": {
                     "event_type_id": "CPI04",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 519
                 },
                 "CPI03": {
                     "event_type_id": "CPI03",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 521
                 },
                 "CPI01": {
                     "event_type_id": "CPI01",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 522
                 },
                 "CPI05": {
                     "event_type_id": "CPI05",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 520
                 }
             },
@@ -13685,32 +13685,32 @@
             "event_availability": {
                 "CPI06": {
                     "event_type_id": "CPI06",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 739
                 },
                 "CPI01": {
                     "event_type_id": "CPI01",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 694
                 },
                 "CPI05": {
                     "event_type_id": "CPI05",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 698
                 },
                 "CPI03": {
                     "event_type_id": "CPI03",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 710
                 },
                 "CPI02": {
                     "event_type_id": "CPI02",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 713
                 },
                 "CPI04": {
                     "event_type_id": "CPI04",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 715
                 }
             },
@@ -13732,32 +13732,32 @@
             "event_availability": {
                 "CPI06": {
                     "event_type_id": "CPI06",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 213
                 },
                 "CPI01": {
                     "event_type_id": "CPI01",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 201
                 },
                 "CPI05": {
                     "event_type_id": "CPI05",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 259
                 },
                 "CPI03": {
                     "event_type_id": "CPI03",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 233
                 },
                 "CPI02": {
                     "event_type_id": "CPI02",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 227
                 },
                 "CPI04": {
                     "event_type_id": "CPI04",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 251
                 }
             },
@@ -13827,32 +13827,32 @@
             "event_availability": {
                 "CPI06": {
                     "event_type_id": "CPI06",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 277
                 },
                 "CPI02": {
                     "event_type_id": "CPI02",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 390
                 },
                 "CPI05": {
                     "event_type_id": "CPI05",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 297
                 },
                 "CPI03": {
                     "event_type_id": "CPI03",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 366
                 },
                 "CPI01": {
                     "event_type_id": "CPI01",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 314
                 },
                 "CPI04": {
                     "event_type_id": "CPI04",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 337
                 }
             },
@@ -14002,32 +14002,32 @@
             "event_availability": {
                 "CPI02": {
                     "event_type_id": "CPI02",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 435
                 },
                 "CPI01": {
                     "event_type_id": "CPI01",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 425
                 },
                 "CPI04": {
                     "event_type_id": "CPI04",
-                    "ing": 1,
+                    "type_score": 1,
                     "id": 457
                 },
                 "CPI03": {
                     "event_type_id": "CPI03",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 406
                 },
                 "CPI06": {
                     "event_type_id": "CPI06",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 450
                 },
                 "CPI05": {
                     "event_type_id": "CPI05",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 439
                 }
             },
@@ -14065,32 +14065,32 @@
             "event_availability": {
                 "CPI06": {
                     "event_type_id": "CPI06",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 825
                 },
                 "CPI02": {
                     "event_type_id": "CPI02",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 767
                 },
                 "CPI04": {
                     "event_type_id": "CPI04",
-                    "ing": 1,
+                    "type_score": 1,
                     "id": 804
                 },
                 "CPI03": {
                     "event_type_id": "CPI03",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 769
                 },
                 "CPI01": {
                     "event_type_id": "CPI01",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 789
                 },
                 "CPI05": {
                     "event_type_id": "CPI05",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 820
                 }
             },
@@ -14112,32 +14112,32 @@
             "event_availability": {
                 "CPI02": {
                     "event_type_id": "CPI02",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 149
                 },
                 "CPI01": {
                     "event_type_id": "CPI01",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 148
                 },
                 "CPI05": {
                     "event_type_id": "CPI05",
-                    "ing": 1,
+                    "type_score": 1,
                     "id": 155
                 },
                 "CPI03": {
                     "event_type_id": "CPI03",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 214
                 },
                 "CPI06": {
                     "event_type_id": "CPI06",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 205
                 },
                 "CPI04": {
                     "event_type_id": "CPI04",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 169
                 }
             },
@@ -14351,32 +14351,32 @@
             "event_availability": {
                 "CPI06": {
                     "event_type_id": "CPI06",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 460
                 },
                 "CPI02": {
                     "event_type_id": "CPI02",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 480
                 },
                 "CPI05": {
                     "event_type_id": "CPI05",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 451
                 },
                 "CPI03": {
                     "event_type_id": "CPI03",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 471
                 },
                 "CPI01": {
                     "event_type_id": "CPI01",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 476
                 },
                 "CPI04": {
                     "event_type_id": "CPI04",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 477
                 }
             },
@@ -14414,32 +14414,32 @@
             "event_availability": {
                 "CPI06": {
                     "event_type_id": "CPI06",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 472
                 },
                 "CPI01": {
                     "event_type_id": "CPI01",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 422
                 },
                 "CPI04": {
                     "event_type_id": "CPI04",
-                    "ing": 1,
+                    "type_score": 1,
                     "id": 412
                 },
                 "CPI03": {
                     "event_type_id": "CPI03",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 449
                 },
                 "CPI02": {
                     "event_type_id": "CPI02",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 467
                 },
                 "CPI05": {
                     "event_type_id": "CPI05",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 419
                 }
             },
@@ -14685,32 +14685,32 @@
             "event_availability": {
                 "CPI06": {
                     "event_type_id": "CPI06",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 682
                 },
                 "CPI02": {
                     "event_type_id": "CPI02",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 691
                 },
                 "CPI04": {
                     "event_type_id": "CPI04",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 679
                 },
                 "CPI03": {
                     "event_type_id": "CPI03",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 684
                 },
                 "CPI01": {
                     "event_type_id": "CPI01",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 686
                 },
                 "CPI05": {
                     "event_type_id": "CPI05",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 688
                 }
             },
@@ -14780,32 +14780,32 @@
             "event_availability": {
                 "CPI01": {
                     "event_type_id": "CPI01",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 700
                 },
                 "CPI02": {
                     "event_type_id": "CPI02",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 729
                 },
                 "CPI05": {
                     "event_type_id": "CPI05",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 708
                 },
                 "CPI03": {
                     "event_type_id": "CPI03",
-                    "ing": 1,
+                    "type_score": 1,
                     "id": 695
                 },
                 "CPI06": {
                     "event_type_id": "CPI06",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 726
                 },
                 "CPI04": {
                     "event_type_id": "CPI04",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 724
                 }
             },
@@ -14923,32 +14923,32 @@
             "event_availability": {
                 "CPI02": {
                     "event_type_id": "CPI02",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 814
                 },
                 "CPI01": {
                     "event_type_id": "CPI01",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 758
                 },
                 "CPI05": {
                     "event_type_id": "CPI05",
-                    "ing": 1,
+                    "type_score": 1,
                     "id": 823
                 },
                 "CPI03": {
                     "event_type_id": "CPI03",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 810
                 },
                 "CPI06": {
                     "event_type_id": "CPI06",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 813
                 },
                 "CPI04": {
                     "event_type_id": "CPI04",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 821
                 }
             },
@@ -14970,32 +14970,32 @@
             "event_availability": {
                 "CPI02": {
                     "event_type_id": "CPI02",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 190
                 },
                 "CPI01": {
                     "event_type_id": "CPI01",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 212
                 },
                 "CPI05": {
                     "event_type_id": "CPI05",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 161
                 },
                 "CPI03": {
                     "event_type_id": "CPI03",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 158
                 },
                 "CPI06": {
                     "event_type_id": "CPI06",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 209
                 },
                 "CPI04": {
                     "event_type_id": "CPI04",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 188
                 }
             },
@@ -15081,32 +15081,32 @@
             "event_availability": {
                 "CPI02": {
                     "event_type_id": "CPI02",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 776
                 },
                 "CPI01": {
                     "event_type_id": "CPI01",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 765
                 },
                 "CPI05": {
                     "event_type_id": "CPI05",
-                    "ing": 1,
+                    "type_score": 1,
                     "id": 832
                 },
                 "CPI03": {
                     "event_type_id": "CPI03",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 770
                 },
                 "CPI06": {
                     "event_type_id": "CPI06",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 801
                 },
                 "CPI04": {
                     "event_type_id": "CPI04",
-                    "ing": 1,
+                    "type_score": 1,
                     "id": 784
                 }
             },
@@ -15352,32 +15352,32 @@
             "event_availability": {
                 "CPI02": {
                     "event_type_id": "CPI02",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 268
                 },
                 "CPI01": {
                     "event_type_id": "CPI01",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 379
                 },
                 "CPI05": {
                     "event_type_id": "CPI05",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 264
                 },
                 "CPI03": {
                     "event_type_id": "CPI03",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 356
                 },
                 "CPI06": {
                     "event_type_id": "CPI06",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 369
                 },
                 "CPI04": {
                     "event_type_id": "CPI04",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 269
                 }
             },
@@ -15447,32 +15447,32 @@
             "event_availability": {
                 "CPI06": {
                     "event_type_id": "CPI06",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 531
                 },
                 "CPI02": {
                     "event_type_id": "CPI02",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 628
                 },
                 "CPI05": {
                     "event_type_id": "CPI05",
-                    "ing": 1,
+                    "type_score": 1,
                     "id": 546
                 },
                 "CPI03": {
                     "event_type_id": "CPI03",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 573
                 },
                 "CPI01": {
                     "event_type_id": "CPI01",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 577
                 },
                 "CPI04": {
                     "event_type_id": "CPI04",
-                    "ing": 1,
+                    "type_score": 1,
                     "id": 605
                 }
             },
@@ -15910,32 +15910,32 @@
             "event_availability": {
                 "CPI06": {
                     "event_type_id": "CPI06",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 318
                 },
                 "CPI01": {
                     "event_type_id": "CPI01",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 342
                 },
                 "CPI04": {
                     "event_type_id": "CPI04",
-                    "ing": 1,
+                    "type_score": 1,
                     "id": 320
                 },
                 "CPI03": {
                     "event_type_id": "CPI03",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 377
                 },
                 "CPI02": {
                     "event_type_id": "CPI02",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 373
                 },
                 "CPI05": {
                     "event_type_id": "CPI05",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 331
                 }
             },
@@ -16021,32 +16021,32 @@
             "event_availability": {
                 "CPI06": {
                     "event_type_id": "CPI06",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 273
                 },
                 "CPI01": {
                     "event_type_id": "CPI01",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 311
                 },
                 "CPI04": {
                     "event_type_id": "CPI04",
-                    "ing": 1,
+                    "type_score": 1,
                     "id": 270
                 },
                 "CPI03": {
                     "event_type_id": "CPI03",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 347
                 },
                 "CPI02": {
                     "event_type_id": "CPI02",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 326
                 },
                 "CPI05": {
                     "event_type_id": "CPI05",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 295
                 }
             },
@@ -16068,32 +16068,32 @@
             "event_availability": {
                 "CPI06": {
                     "event_type_id": "CPI06",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 809
                 },
                 "CPI02": {
                     "event_type_id": "CPI02",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 763
                 },
                 "CPI04": {
                     "event_type_id": "CPI04",
-                    "ing": 1,
+                    "type_score": 1,
                     "id": 779
                 },
                 "CPI03": {
                     "event_type_id": "CPI03",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 782
                 },
                 "CPI01": {
                     "event_type_id": "CPI01",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 786
                 },
                 "CPI05": {
                     "event_type_id": "CPI05",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 807
                 }
             },
@@ -16307,32 +16307,32 @@
             "event_availability": {
                 "CPI06": {
                     "event_type_id": "CPI06",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 468
                 },
                 "CPI01": {
                     "event_type_id": "CPI01",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 417
                 },
                 "CPI05": {
                     "event_type_id": "CPI05",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 413
                 },
                 "CPI03": {
                     "event_type_id": "CPI03",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 432
                 },
                 "CPI02": {
                     "event_type_id": "CPI02",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 431
                 },
                 "CPI04": {
                     "event_type_id": "CPI04",
-                    "ing": 1,
+                    "type_score": 1,
                     "id": 465
                 }
             },
@@ -16594,32 +16594,32 @@
             "event_availability": {
                 "CPI06": {
                     "event_type_id": "CPI06",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 291
                 },
                 "CPI02": {
                     "event_type_id": "CPI02",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 261
                 },
                 "CPI05": {
                     "event_type_id": "CPI05",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 310
                 },
                 "CPI03": {
                     "event_type_id": "CPI03",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 401
                 },
                 "CPI01": {
                     "event_type_id": "CPI01",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 316
                 },
                 "CPI04": {
                     "event_type_id": "CPI04",
-                    "ing": 1,
+                    "type_score": 1,
                     "id": 378
                 }
             },
@@ -16753,32 +16753,32 @@
             "event_availability": {
                 "CPI06": {
                     "event_type_id": "CPI06",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 474
                 },
                 "CPI02": {
                     "event_type_id": "CPI02",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 404
                 },
                 "CPI04": {
                     "event_type_id": "CPI04",
-                    "ing": 1,
+                    "type_score": 1,
                     "id": 410
                 },
                 "CPI03": {
                     "event_type_id": "CPI03",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 407
                 },
                 "CPI01": {
                     "event_type_id": "CPI01",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 466
                 },
                 "CPI05": {
                     "event_type_id": "CPI05",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 444
                 }
             },
@@ -16896,32 +16896,32 @@
             "event_availability": {
                 "CPI06": {
                     "event_type_id": "CPI06",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 623
                 },
                 "CPI02": {
                     "event_type_id": "CPI02",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 552
                 },
                 "CPI04": {
                     "event_type_id": "CPI04",
-                    "ing": 1,
+                    "type_score": 1,
                     "id": 536
                 },
                 "CPI03": {
                     "event_type_id": "CPI03",
-                    "ing": 1,
+                    "type_score": 1,
                     "id": 610
                 },
                 "CPI01": {
                     "event_type_id": "CPI01",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 558
                 },
                 "CPI05": {
                     "event_type_id": "CPI05",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 601
                 }
             },
@@ -16975,32 +16975,32 @@
             "event_availability": {
                 "CPI06": {
                     "event_type_id": "CPI06",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 263
                 },
                 "CPI02": {
                     "event_type_id": "CPI02",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 372
                 },
                 "CPI05": {
                     "event_type_id": "CPI05",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 287
                 },
                 "CPI03": {
                     "event_type_id": "CPI03",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 329
                 },
                 "CPI01": {
                     "event_type_id": "CPI01",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 302
                 },
                 "CPI04": {
                     "event_type_id": "CPI04",
-                    "ing": 1,
+                    "type_score": 1,
                     "id": 317
                 }
             },
@@ -17038,32 +17038,32 @@
             "event_availability": {
                 "CPI06": {
                     "event_type_id": "CPI06",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 583
                 },
                 "CPI01": {
                     "event_type_id": "CPI01",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 603
                 },
                 "CPI05": {
                     "event_type_id": "CPI05",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 625
                 },
                 "CPI03": {
                     "event_type_id": "CPI03",
-                    "ing": 1,
+                    "type_score": 1,
                     "id": 538
                 },
                 "CPI02": {
                     "event_type_id": "CPI02",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 587
                 },
                 "CPI04": {
                     "event_type_id": "CPI04",
-                    "ing": 1,
+                    "type_score": 1,
                     "id": 554
                 }
             },
@@ -17165,32 +17165,32 @@
             "event_availability": {
                 "CPI06": {
                     "event_type_id": "CPI06",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 252
                 },
                 "CPI01": {
                     "event_type_id": "CPI01",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 170
                 },
                 "CPI05": {
                     "event_type_id": "CPI05",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 184
                 },
                 "CPI03": {
                     "event_type_id": "CPI03",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 203
                 },
                 "CPI02": {
                     "event_type_id": "CPI02",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 230
                 },
                 "CPI04": {
                     "event_type_id": "CPI04",
-                    "ing": 1,
+                    "type_score": 1,
                     "id": 191
                 }
             },
@@ -17228,32 +17228,32 @@
             "event_availability": {
                 "CPI06": {
                     "event_type_id": "CPI06",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 156
                 },
                 "CPI01": {
                     "event_type_id": "CPI01",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 157
                 },
                 "CPI05": {
                     "event_type_id": "CPI05",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 250
                 },
                 "CPI03": {
                     "event_type_id": "CPI03",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 224
                 },
                 "CPI02": {
                     "event_type_id": "CPI02",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 242
                 },
                 "CPI04": {
                     "event_type_id": "CPI04",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 168
                 }
             },
@@ -17355,32 +17355,32 @@
             "event_availability": {
                 "CPI06": {
                     "event_type_id": "CPI06",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 534
                 },
                 "CPI01": {
                     "event_type_id": "CPI01",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 622
                 },
                 "CPI05": {
                     "event_type_id": "CPI05",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 627
                 },
                 "CPI03": {
                     "event_type_id": "CPI03",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 607
                 },
                 "CPI02": {
                     "event_type_id": "CPI02",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 619
                 },
                 "CPI04": {
                     "event_type_id": "CPI04",
-                    "ing": 1,
+                    "type_score": 1,
                     "id": 572
                 }
             },
@@ -17450,32 +17450,32 @@
             "event_availability": {
                 "CPI01": {
                     "event_type_id": "CPI01",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 674
                 },
                 "CPI02": {
                     "event_type_id": "CPI02",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 690
                 },
                 "CPI04": {
                     "event_type_id": "CPI04",
-                    "ing": 1,
+                    "type_score": 1,
                     "id": 675
                 },
                 "CPI03": {
                     "event_type_id": "CPI03",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 678
                 },
                 "CPI06": {
                     "event_type_id": "CPI06",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 677
                 },
                 "CPI05": {
                     "event_type_id": "CPI05",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 685
                 }
             },
@@ -17625,32 +17625,32 @@
             "event_availability": {
                 "CPI01": {
                     "event_type_id": "CPI01",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 501
                 },
                 "CPI02": {
                     "event_type_id": "CPI02",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 499
                 },
                 "CPI04": {
                     "event_type_id": "CPI04",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 497
                 },
                 "CPI03": {
                     "event_type_id": "CPI03",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 514
                 },
                 "CPI06": {
                     "event_type_id": "CPI06",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 505
                 },
                 "CPI05": {
                     "event_type_id": "CPI05",
-                    "ing": 1,
+                    "type_score": 1,
                     "id": 510
                 }
             },
@@ -17720,32 +17720,32 @@
             "event_availability": {
                 "CPI06": {
                     "event_type_id": "CPI06",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 299
                 },
                 "CPI02": {
                     "event_type_id": "CPI02",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 389
                 },
                 "CPI04": {
                     "event_type_id": "CPI04",
-                    "ing": 1,
+                    "type_score": 1,
                     "id": 319
                 },
                 "CPI03": {
                     "event_type_id": "CPI03",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 343
                 },
                 "CPI01": {
                     "event_type_id": "CPI01",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 364
                 },
                 "CPI05": {
                     "event_type_id": "CPI05",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 384
                 }
             },
@@ -17799,32 +17799,32 @@
             "event_availability": {
                 "CPI02": {
                     "event_type_id": "CPI02",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 349
                 },
                 "CPI01": {
                     "event_type_id": "CPI01",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 322
                 },
                 "CPI05": {
                     "event_type_id": "CPI05",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 345
                 },
                 "CPI03": {
                     "event_type_id": "CPI03",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 399
                 },
                 "CPI06": {
                     "event_type_id": "CPI06",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 375
                 },
                 "CPI04": {
                     "event_type_id": "CPI04",
-                    "ing": 1,
+                    "type_score": 1,
                     "id": 370
                 }
             },
@@ -17974,32 +17974,32 @@
             "event_availability": {
                 "CPI06": {
                     "event_type_id": "CPI06",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 282
                 },
                 "CPI02": {
                     "event_type_id": "CPI02",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 396
                 },
                 "CPI04": {
                     "event_type_id": "CPI04",
-                    "ing": 1,
+                    "type_score": 1,
                     "id": 283
                 },
                 "CPI03": {
                     "event_type_id": "CPI03",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 321
                 },
                 "CPI01": {
                     "event_type_id": "CPI01",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 361
                 },
                 "CPI05": {
                     "event_type_id": "CPI05",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 324
                 }
             },
@@ -18037,32 +18037,32 @@
             "event_availability": {
                 "CPI06": {
                     "event_type_id": "CPI06",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 719
                 },
                 "CPI02": {
                     "event_type_id": "CPI02",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 699
                 },
                 "CPI05": {
                     "event_type_id": "CPI05",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 733
                 },
                 "CPI03": {
                     "event_type_id": "CPI03",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 732
                 },
                 "CPI01": {
                     "event_type_id": "CPI01",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 731
                 },
                 "CPI04": {
                     "event_type_id": "CPI04",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 721
                 }
             },
@@ -18148,32 +18148,32 @@
             "event_availability": {
                 "CPI01": {
                     "event_type_id": "CPI01",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 494
                 },
                 "CPI02": {
                     "event_type_id": "CPI02",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 511
                 },
                 "CPI04": {
                     "event_type_id": "CPI04",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 493
                 },
                 "CPI03": {
                     "event_type_id": "CPI03",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 504
                 },
                 "CPI06": {
                     "event_type_id": "CPI06",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 508
                 },
                 "CPI05": {
                     "event_type_id": "CPI05",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 496
                 }
             },
@@ -18435,32 +18435,32 @@
             "event_availability": {
                 "CPI02": {
                     "event_type_id": "CPI02",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 544
                 },
                 "CPI01": {
                     "event_type_id": "CPI01",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 526
                 },
                 "CPI04": {
                     "event_type_id": "CPI04",
-                    "ing": 1,
+                    "type_score": 1,
                     "id": 629
                 },
                 "CPI03": {
                     "event_type_id": "CPI03",
-                    "ing": 1,
+                    "type_score": 1,
                     "id": 616
                 },
                 "CPI06": {
                     "event_type_id": "CPI06",
-                    "ing": 3,
+                    "type_score": 3,
                     "id": 599
                 },
                 "CPI05": {
                     "event_type_id": "CPI05",
-                    "ing": 2,
+                    "type_score": 2,
                     "id": 590
                 }
             },
