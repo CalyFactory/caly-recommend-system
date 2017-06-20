@@ -2,7 +2,7 @@ import os
 import sys
 os.environ["CALY_DB_CONF"] = "../key/conf.json"
 
-from reco.reco import Reco 
+from reco import Reco 
 import math
 import unittest
 import json
@@ -43,7 +43,36 @@ class TestReco(unittest.TestCase):
         self.assertTrue(
             a + b == expected_result
         )
-
+    """
+    def test_db(self):
+        reco = Reco(
+            test_data['test_load_all']['input'],
+            True,
+            user_click = {
+                "property_romantic": 70,
+                "property_active_dynamic": 18,
+                "property_active_static": 22,
+                "property_food_korean": 9,
+                "property_food_chinese": 10,
+                "property_food_japanese": 11,
+                "property_food_italian": 12,
+                "all": 120
+                
+            }
+        )
+        recoList = reco.get_all_list()
+        expectedList = test_item_data
+        
+        for category in expectedList:
+            for row in expectedList[category]:
+                self.assertTrue(
+                    row['reco_hashkey'] in [data['reco_hashkey'] for data in recoList[category]]
+                )
+            self.assertEqual(
+                len(expectedList[category]),
+                len(recoList[category])
+            )
+    """
     """
     test_load_all
     get_all_list()함수로 모든 데이터를 불러올 수 있는지 테스트
@@ -65,7 +94,7 @@ class TestReco(unittest.TestCase):
             '',
             external_data = {
                 'item_data': test_item_data,
-                'user_click': None
+                'user_click':None
             }
         )
         recoList = reco.get_all_list()
@@ -824,25 +853,6 @@ class TestReco(unittest.TestCase):
     
     
 
-# 테스트에 사용될 데이터 만드는 함수. 테스트 케이스는 아니고, db의 추천 데이터를 json파일로 만듬
-def save_all_recommend_item():
-    reco = Reco(json_data, show_external_data = False)
-    all_list = reco.get_all_list()
-
-    print(
-        json.dumps(
-            all_list,
-            indent = 4,
-            sort_keys=True,
-            ensure_ascii=False
-        )
-    )
-
-    with open('testItemData.json', 'w') as outfile:
-        json.dump(all_list, outfile, indent = 4)
-
-    with open('testItemDataEncoded.json', 'w') as outfile:
-        json.dump(all_list, outfile, indent = 4, ensure_ascii=False)
 
 # 테스트 실행
 if __name__ == '__main__':

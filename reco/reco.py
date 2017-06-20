@@ -24,7 +24,7 @@ class Reco:
         'place':40.7
     }
 
-    def __init__(self, json_data, show_external_data = True, external_data = None):
+    def __init__(self, json_data, show_external_data = True, external_data = None, user_click = None):
         self.json_data = json_data
         if 'user_hashkey' not in json_data:
             self.user_hashkey = ''
@@ -43,7 +43,10 @@ class Reco:
                 self.init_json_data = json.load(file)
             self.item_data = external_data['item_data']
             self.user_click = external_data['user_click'] 
-
+        
+        if user_click != None:
+            self.user_click = user_click
+            
         self.init_data()
 
     def init_data(self):
@@ -198,10 +201,9 @@ class Reco:
                     continue
                 self.user_type_click_count[key] += row[key] * hashkey_num
         
-        if self.test_mode == True:
-            if self.user_click != None:
-                self.user_type_click_count = self.user_click
-
+        if self.user_click != None:
+            self.user_type_click_count = self.user_click
+        
         #print(self.user_type_click_count)
         self.user_property_score = {}
         if self.user_type_click_count['all'] == 0:
